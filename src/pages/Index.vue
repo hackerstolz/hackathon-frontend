@@ -1,33 +1,54 @@
 <template>
   <Layout>
-
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
+    <v-content class="pa-0">
+      <h1>Hello!</h1>
+      <Intro id="intro" />
+      <!-- <About id="about" themeColor="primary" :isMobile="isMobile" />
+      <Challenges id="challenges" themeColor="secondary" :isMobile="isMobile" />
+      <Awards id="awards" themeColor="primary" :isMobile="isMobile" />
+      <TeamOverview id="teams" themeColor="primary" :isMobile="isMobile" />
+      <Location id="location" themeColor="secondary" />
+      <Schedule id="schedule" themeColor="secondary" :isMobile="isMobile" />
+      <Registration id="registration" themeColor="primary" :isMobile="isMobile" />
+      <Staff id="staff" themeColor="secondary" :isMobile="isMobile" />
+      <FAQ id="faq" themeColor="primary" />
+      <Parties id="parties" themeColor="secondary" :isMobile="isMobile" />
+      <Team id="team" themeColor="primary" :isMobile="isMobile" />
+      <Footer id="footer" themeColor="primary" :isMobile="isMobile" /> -->
+    </v-content>
   </Layout>
 </template>
 
 <script>
+// const sectionsContext = require.context(
+//   "../components/sections/",
+//   true,
+//   /[^Event].*\.vue$/
+// );
+
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Climathon'
+  },
+  name: 'Overview',
+  components: {
+    Intro: require('../components/sections/Intro.vue')
+    // ...sectionsContext.keys().reduce(
+    //   (map, key) => ({
+    //     ...map,
+    //     [sectionsContext(key).default.name]: sectionsContext(key).default
+    //   }),
+    //   {}
+    // )
+  },
+  props: {
+    isMobile: Boolean
   }
 }
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>
+<i18n>
+{}
+</i18n>
+
+<style scoped lang="stylus"></style>
