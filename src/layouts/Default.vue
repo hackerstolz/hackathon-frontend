@@ -143,7 +143,9 @@
         </v-btn>
       </v-toolbar>
 
-      <router-view :isMobile="isMobile"></router-view>
+      <!-- FIXME: check if isMobile is passed to slot. -->
+      <!-- <router-view :isMobile="isMobile"></router-view> -->
+      <slot :isMobile="isMobile" />
 
       <v-snackbar
         class="snackbar"
