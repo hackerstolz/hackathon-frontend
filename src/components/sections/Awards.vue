@@ -197,65 +197,65 @@ export default {
       mainAwards: [
         {
           key: 'climateGlobal',
-          img: require('../../assets/award/award-global.png'),
+          img: require('../../assets/awards/award-global.png'),
           color: this.$vuetify.theme.success,
           officialCriteria: true
         },
         {
           key: 'climateGrant',
-          img: require('../../assets/award/award-gold.svg'),
+          img: require('../../assets/awards/award-gold.svg'),
           color: this.$vuetify.theme.warning,
           officialCriteria: true
         }
       ],
       awards: [
-        {
-          key: 'shubAward',
-          img: require('../../assets/award/award-shub.png'),
-          color: this.$vuetify.theme.warning,
-          officialCriteria: true
-        },
-        {
-          key: 'projectTogetherAward',
-          img: require('../../assets/award/award-projecttogether.png'),
-          color: this.$vuetify.theme.warning,
-          officialCriteria: true
-        },
+        // {
+        //   key: 'shubAward',
+        //   img: require('../../assets/awards/award-shub.png'),
+        //   color: this.$vuetify.theme.warning,
+        //   officialCriteria: true
+        // },
+        // {
+        //   key: 'projectTogetherAward',
+        //   img: require('../../assets/awards/award-projecttogether.png'),
+        //   color: this.$vuetify.theme.warning,
+        //   officialCriteria: true
+        // },
         {
           key: 'cityPrize',
-          img: require('../../assets/award/award-red.svg'),
+          img: require('../../assets/awards/award-red.svg'),
           color: this.$vuetify.theme.error
-        },
-        {
-          key: 'mvvPrize',
-          challengeCategoryID: 0,
-          img: require('../../assets/sponsor/sponsor-mvv.jpg'),
-          color: this.$vuetify.theme.info
-        },
-        {
-          key: 'obPrize',
-          challengeCategoryID: 7,
-          img: require('../../assets/sponsor/sponsor-op.svg'),
-          color: this.$vuetify.theme.info
-        },
-        {
-          key: 'camelotPrize',
-          challengeCategoryID: 3,
-          img: require('../../assets/sponsor/sponsor-camelot.jpg'),
-          color: this.$vuetify.theme.info
-        },
-        {
-          key: 'rnvPrize',
-          challengeCategoryID: 1,
-          img: require('../../assets/sponsor/sponsor-rnv.svg'),
-          color: this.$vuetify.theme.info
-        },
-        {
-          key: 'bosPrize',
-          challengeCategoryID: 5,
-          img: require('../../assets/award/award-bos.jpg'),
-          color: this.$vuetify.theme.accent
         }
+        // {
+        //   key: 'mvvPrize',
+        //   challengeCategoryID: 0,
+        //   img: require('../../assets/sponsor/sponsor-mvv.jpg'),
+        //   color: this.$vuetify.theme.info
+        // },
+        // {
+        //   key: 'obPrize',
+        //   challengeCategoryID: 7,
+        //   img: require('../../assets/sponsor/sponsor-op.svg'),
+        //   color: this.$vuetify.theme.info
+        // },
+        // {
+        //   key: 'camelotPrize',
+        //   challengeCategoryID: 3,
+        //   img: require('../../assets/sponsor/sponsor-camelot.jpg'),
+        //   color: this.$vuetify.theme.info
+        // },
+        // {
+        //   key: 'rnvPrize',
+        //   challengeCategoryID: 1,
+        //   img: require('../../assets/sponsor/sponsor-rnv.svg'),
+        //   color: this.$vuetify.theme.info
+        // },
+        // {
+        //   key: 'bosPrize',
+        //   challengeCategoryID: 5,
+        //   img: require('../../assets/awards/award-bos.jpg'),
+        //   color: this.$vuetify.theme.accent
+        // }
       ]
     }
   }

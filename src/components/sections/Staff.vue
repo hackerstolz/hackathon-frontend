@@ -10,7 +10,7 @@
       <v-img
         v-if="speakers.length === 0"
         class="icon-large mt-4"
-        :src="require('../../assets/flat-icon-mic-large.svg')"
+        :src="require('../../assets/icons/flat-icon-mic-large.svg')"
         max-height="245px"
         max-width="245px"
         width="245px"
@@ -297,7 +297,7 @@
       <v-img
         v-if="mentors.length === 0"
         class="icon-large mt-4"
-        :src="require('../../assets/flat-icon-persons-large.svg')"
+        :src="require('../../assets/icons/flat-icon-persons-large.svg')"
         max-height="245px"
         max-width="245px"
         width="245px"
@@ -404,7 +404,7 @@ export default {
       speakers: [
         {
           speakerID: 'michael-groetsch',
-          icon: require('../../assets/speaker/speaker-mayor.jpg'),
+          icon: '', // require('../../assets/speaker/speaker-mayor.jpg'),
           name: 'Michael Grötsch',
           i18nSubtitle: [
             'Mayor of the City of Mannheim for Economy, Labour, Social Affairs and Culture',
@@ -420,7 +420,7 @@ export default {
         },
         {
           speakerID: 'julian-schroegel',
-          icon: require('../../assets/speaker/speaker-schroegel.jpeg'),
+          icon: '', // require('../../assets/speaker/speaker-schroegel.jpeg'),
           name: 'Julian Schrögel',
           i18nSubtitle: [
             'Head of Unit • Rhein-Neckar-Verkehr GmbH',
@@ -439,7 +439,7 @@ export default {
         },
         {
           speakerID: 'jonas-wagner',
-          icon: require('../../assets/speaker/speaker-wagner.jpg'),
+          icon: '', // require('../../assets/speaker/speaker-wagner.jpg'),
           name: 'Jonas Wagner',
           i18nSubtitle: ['ABB AG', 'ABB AG'],
           i18nDescription: ['"Mission to Zero"', '"Mission to Zero"'],
@@ -452,7 +452,7 @@ export default {
         },
         {
           speakerID: 'michael-thron',
-          icon: require('../../assets/speaker/speaker-michael.jpg'),
+          icon: '', // require('../../assets/speaker/speaker-michael.jpg'),
           name: 'Michael Thron',
           i18nSubtitle: [
             'Board member and founder of objective partner AG',
@@ -471,7 +471,7 @@ export default {
         },
         {
           speakerID: 'hannah-helmke',
-          icon: require('../../assets/speaker/speaker-hannah.jpg'),
+          icon: '', // require('../../assets/speaker/speaker-hannah.jpg'),
           name: 'Hannah Helmke',
           i18nSubtitle: [
             'Managing director and co-founder of right. based on science',
@@ -490,7 +490,7 @@ export default {
         },
         {
           speakerID: 'daniel-erlemeier',
-          icon: require('../../assets/speaker/speaker-daniel.jpg'),
+          icon: '', // require('../../assets/speaker/speaker-daniel.jpg'),
           name: 'Daniel Erlemeier',
           i18nSubtitle: [
             'Head of Donor Communications and Education, BOS Deutschland e.V.',
@@ -509,7 +509,7 @@ export default {
         },
         {
           speakerID: 'robert-thomann',
-          icon: require('../../assets/speaker/speaker-thomann.jpg'),
+          icon: '', // require('../../assets/speaker/speaker-thomann.jpg'),
           name: 'Dr. Robert Thomann',
           i18nSubtitle: [
             'Innovation Manager MVV Energy AG',
@@ -528,7 +528,7 @@ export default {
         },
         {
           speakerID: 'agnes-schoenfelder',
-          icon: require('../../assets/speaker/speaker-agnes.jpg'),
+          icon: '', // require('../../assets/speaker/speaker-agnes.jpg'),
           name: 'Agnes Schönfelder',
           i18nSubtitle: [
             'Head of the Climate Change Strategy Office, City of Mannheim',
@@ -548,7 +548,7 @@ export default {
       ],
       jury: [
         {
-          icon: require('../../assets/jury/jury-LMS.jpg'),
+          icon: '', // require('../../assets/jury/jury-LMS.jpg'),
           name: 'Prof. Dr. Laura Marie Edinger-Schons',
           i18nDescription: [
             'University of Mannheim | Business School | Chair of Corporate Social Responsibility',
@@ -562,7 +562,7 @@ export default {
           show: false
         },
         {
-          icon: require('../../assets/jury/jury-marianne.jpg'),
+          icon: '', // require('../../assets/jury/jury-marianne.jpg'),
           name: 'Marianne Crevon',
           i18nDescription: [
             'Financial Director Climate Protection Agency Mannheim gGmbH',
@@ -576,7 +576,7 @@ export default {
           show: false
         },
         {
-          icon: require('../../assets/jury/jury-thomann.jpg'),
+          icon: '', // require('../../assets/jury/jury-thomann.jpg'),
           name: 'Dr. Robert Thomann',
           i18nDescription: [
             'Innovation Manager MVV Energy AG',
@@ -590,7 +590,7 @@ export default {
           show: false
         },
         {
-          icon: require('../../assets/jury/jury-schreiber.jpg'),
+          icon: '', // require('../../assets/jury/jury-schreiber.jpg'),
           name: 'Clemens Schreiber',
           i18nDescription: [
             'Karlsruhe Institute of Technology (KIT)',
@@ -604,7 +604,7 @@ export default {
           show: false
         },
         {
-          icon: require('../../assets/jury/jury-sonja.jpg'),
+          icon: '', // require('../../assets/jury/jury-sonja.jpg'),
           name: 'Sonja Wilkens',
           i18nDescription: [
             'Startup Consultant for Economic and Structural Development of the City of Mannheim',
@@ -618,7 +618,7 @@ export default {
           show: false
         },
         {
-          icon: require('../../assets/jury/jury-schacht.jpg'),
+          icon: '', // require('../../assets/jury/jury-schacht.jpg'),
           name: 'Dr. Silvia Schacht',
           i18nDescription: [
             'Head of Digital Innovations Department • Rhein-Neckar-Verkehr GmbH',
@@ -632,7 +632,7 @@ export default {
           show: false
         }
         // {
-        //   icon: require("../../assets/flat-icon-scientist.svg"),
+        //   icon: require("../../assets/icons/flat-icon-scientist.svg"),
         //   i18nTitle: ["The Scientist", "Die Wissenschaftlerin"],
         //   i18nDescription: [
         //     "She observes, discusses and concludes with a knife sharp mind and a concentrated understanding.",
@@ -640,7 +640,7 @@ export default {
         //   ]
         // },
         // {
-        //   icon: require("../../assets/flat-icon-alien.svg"),
+        //   icon: require("../../assets/icons/flat-icon-alien.svg"),
         //   i18nTitle: ["The Second Scientist", "Der zweite Wissenschaftler"],
         //   i18nDescription: [
         //     "Experienced, brilliant and heard, our scientists cannot be ignored.",
@@ -648,7 +648,7 @@ export default {
         //   ]
         // },
         // {
-        //   icon: require("../../assets/flat-icon-man.svg"),
+        //   icon: require("../../assets/icons/flat-icon-man.svg"),
         //   i18nTitle: ["The Economist", "Der Ökonom"],
         //   i18nDescription: [
         //     "Every project must also be financed, if there are gaps in the business model our expert will find them.",
@@ -656,7 +656,7 @@ export default {
         //   ]
         // },
         // {
-        //   icon: require("../../assets/flat-icon-man-sunglasses.svg"),
+        //   icon: require("../../assets/icons/flat-icon-man-sunglasses.svg"),
         //   i18nTitle: ["Media Expert", "Medienexperte"],
         //   i18nDescription: [
         //     "With a broad overview of other climate projects, the media expert knows which needs are not yet covered.",
@@ -664,7 +664,7 @@ export default {
         //   ]
         // },
         // {
-        //   icon: require("../../assets/flat-icon-man-beard.svg"),
+        //   icon: require("../../assets/icons/flat-icon-man-beard.svg"),
         //   i18nTitle: ["Rep of the City", "Vertreter der Stadt"],
         //   i18nDescription: [
         //     "Mannheim is his specialty, you think you are already an expert of your city? Think about it again.",
@@ -672,7 +672,7 @@ export default {
         //   ]
         // },
         // {
-        //   icon: require("../../assets/flat-icon-woman.svg"),
+        //   icon: require("../../assets/icons/flat-icon-woman.svg"),
         //   i18nTitle: ["Hackerwoman", "Hackerwoman"],
         //   i18nDescription: [
         //     "0010 1001 1111 1001 1001 1000 0000 0111 0001 0110 1010 0101 0011 1100 0011 0000 0010 0100",
@@ -682,7 +682,7 @@ export default {
       ],
       mentors: [
         {
-          icon: require('../../assets/mentor/mentor-bandtel.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-bandtel.jpg'),
           name: 'Matthias Bandtel',
           category: MENTOR_CATEGORY.TEAM_BUILDER,
           i18nOrganisation: [
@@ -713,7 +713,7 @@ export default {
         //   ]
         // },
         {
-          icon: require('../../assets/mentor/mentor-boes.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-boes.jpg'),
           name: 'Matthias Bös',
           category: MENTOR_CATEGORY.TEAM_BUILDER,
           i18nOrganisation: [
@@ -730,7 +730,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-konstantin.jpeg'),
+          icon: '', // require('../../assets/mentor/mentor-konstantin.jpeg'),
           name: 'Konstantin Heine',
           category: MENTOR_CATEGORY.TEAM_BUILDER,
           i18nOrganisation: ['SAP SE', 'SAP SE'],
@@ -744,7 +744,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-robert.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-robert.jpg'),
           name: 'M.A., Robert Lahdo',
           category: MENTOR_CATEGORY.TEAM_BUILDER,
           i18nOrganisation: [
@@ -761,7 +761,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-elena.png'),
+          icon: '', // require('../../assets/mentor/mentor-elena.png'),
           name: 'Elena Langenfelder',
           category: MENTOR_CATEGORY.TEAM_BUILDER,
           i18nOrganisation: ['BASF SE', 'BASF SE'],
@@ -772,7 +772,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-batista.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-batista.jpg'),
           name: 'Catarina Batista',
           category: MENTOR_CATEGORY.TEAM_BUILDER,
           i18nOrganisation: [
@@ -789,7 +789,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-damian.png'),
+          icon: '', // require('../../assets/mentor/mentor-damian.png'),
           name: 'Damian Wrobel',
           category: MENTOR_CATEGORY.TEAM_BUILDER,
           i18nOrganisation: [
@@ -808,7 +808,7 @@ export default {
 
         // EXPERTS
         {
-          icon: require('../../assets/mentor/mentor-sergey.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-sergey.jpg'),
           name: 'M.Sc., Sergey Makaryan',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: ['', ''],
@@ -822,7 +822,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-bos.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-bos.jpg'),
           name: 'Denitza Toteva',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: ['BOS Deutschland e.V.', 'BOS Deutschland e.V.'],
@@ -836,7 +836,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-cookie.png'),
+          icon: '', // require('../../assets/mentor/mentor-cookie.png'),
           name: 'Christoph Martens',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: [
@@ -853,7 +853,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-schreiber.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-schreiber.jpg'),
           name: 'Clemens Schreiber',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: [
@@ -870,7 +870,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-joerg.jpeg'),
+          icon: '', // require('../../assets/mentor/mentor-joerg.jpeg'),
           name: 'Jörg Bernauer',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: ['Priming Cloud', 'Priming Cloud'],
@@ -884,7 +884,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-doose.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-doose.jpg'),
           name: 'Jens Doose',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: [
@@ -901,7 +901,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-michael.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-michael.jpg'),
           name: 'Michael Binder',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: ['UEBERBIT GmbH', 'UEBERBIT GmbH'],
@@ -915,7 +915,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-hannes.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-hannes.jpg'),
           name: 'Hannes Schütz',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: ['UEBERBIT GmbH', 'UEBERBIT GmbH'],
@@ -929,7 +929,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-leo.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-leo.jpg'),
           name: 'Leonard Luthe',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: ['', ''],
@@ -943,7 +943,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-jannik.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-jannik.jpg'),
           name: 'Jannik Jung',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: ['objective partner AG', 'objective partner AG'],
@@ -957,7 +957,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-conde.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-conde.jpg'),
           name: 'Pascal Conde',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: ['MVV Energy AG', 'MVV Energie AG'],
@@ -971,7 +971,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-bauer.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-bauer.jpg'),
           name: 'Julia Bauer',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: ['', ''],
@@ -985,7 +985,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-allbach.jpg'),
+          icon: '', // require('../../assets/mentor/mentor-allbach.jpg'),
           name: 'Dr. Benjamin Allbach',
           category: MENTOR_CATEGORY.EXPERT,
           i18nOrganisation: [
@@ -1004,7 +1004,7 @@ export default {
 
         // PITCH TRAINER
         {
-          icon: require('../../assets/mentor/mentor-uwe.jpeg'),
+          icon: '', // require('../../assets/mentor/mentor-uwe.jpeg'),
           name: 'Uwe Langohr',
           category: MENTOR_CATEGORY.PITCH_TRAINER,
           i18nOrganisation: ['4XP Ventures', '4XP Ventures'],
@@ -1015,7 +1015,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/mentor/mentor-elena.png'),
+          icon: '', // require('../../assets/mentor/mentor-elena.png'),
           name: 'Elena Langenfelder',
           category: MENTOR_CATEGORY.PITCH_TRAINER,
           i18nOrganisation: ['BASF SE', 'BASF SE'],

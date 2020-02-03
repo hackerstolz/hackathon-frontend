@@ -49,7 +49,7 @@
             <v-img
               class="speaker-icon"
               v-if="item.speaker"
-              :src="require('../../assets/flat-icon-schedule-mic.svg')"
+              :src="require('../../assets/icons/flat-icon-schedule-mic.svg')"
               max-height="36px"
               max-width="36px"
               width="36px"
@@ -120,7 +120,7 @@ export default {
           i18nDate: ['25. Oct 2019', '25. Okt 2019'],
           schedule: [
             {
-              icon: require('../../assets/flat-icon-schedule-batch.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-batch.svg'),
               time: '08:30',
               i18nTitle: [
                 'Registration & Onboarding',
@@ -132,7 +132,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-carrot.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-carrot.svg'),
               time: '08:45',
               i18nTitle: ['Welcome Snack', 'Willkommens Snack'],
               i18nDescription: [
@@ -141,7 +141,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-mic.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-mic.svg'),
               time: '10:00',
               i18nTitle: ['Key Note & Talks', 'Key Note & Vorträge'],
               i18nDescription: [
@@ -152,7 +152,7 @@ export default {
             {
               speaker: true,
               speakerID: 'michael-groetsch',
-              icon: require('../../assets/speaker/speaker-mayor.jpg'),
+              icon: '', // require('../../assets/speaker/speaker-mayor.jpg'),
               time: '10:00',
               i18nTitle: ['"Welcoming"', '"Grußwort"'],
               i18nDescription: [
@@ -163,7 +163,7 @@ export default {
             {
               speaker: true,
               speakerID: 'julian-schroegel',
-              icon: require('../../assets/speaker/speaker-schroegel.jpeg'),
+              icon: '', // require('../../assets/speaker/speaker-schroegel.jpeg'),
               time: '10:30',
               i18nTitle: [
                 '"Digital innovations and new business segments in public transport"',
@@ -177,7 +177,7 @@ export default {
             {
               speaker: true,
               speakerID: 'jonas-wagner',
-              icon: require('../../assets/speaker/speaker-wagner.jpg'),
+              icon: '', // require('../../assets/speaker/speaker-wagner.jpg'),
               time: '11:00',
               i18nTitle: ['"Mission to Zero"', '"Mission to Zero"'],
               i18nDescription: [
@@ -188,7 +188,7 @@ export default {
             {
               speaker: true,
               speakerID: 'michael-thron',
-              icon: require('../../assets/speaker/speaker-michael.jpg'),
+              icon: '', // require('../../assets/speaker/speaker-michael.jpg'),
               time: '11:30',
               i18nTitle: [
                 '"There is no planet B - What IT can contribute to climate protection"',
@@ -202,7 +202,7 @@ export default {
             {
               speaker: true,
               speakerID: 'hannah-helmke',
-              icon: require('../../assets/speaker/speaker-hannah.jpg'),
+              icon: '', // require('../../assets/speaker/speaker-hannah.jpg'),
               time: '12:00',
               i18nTitle: [
                 '"On the other side of the Rubicon"',
@@ -214,7 +214,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-lunch.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-lunch.svg'),
               time: '12:30',
               i18nTitle: ['Lunch time', 'Mittagspause'],
               i18nDescription: [
@@ -225,7 +225,7 @@ export default {
             {
               speaker: true,
               speakerID: 'daniel-erlemeier',
-              icon: require('../../assets/speaker/speaker-daniel.jpg'),
+              icon: '', // require('../../assets/speaker/speaker-daniel.jpg'),
               time: '13:30',
               i18nTitle: [
                 '"Why should you care about Indonesian peat?"',
@@ -239,7 +239,7 @@ export default {
             {
               speaker: true,
               speakerID: 'robert-thomann',
-              icon: require('../../assets/speaker/speaker-thomann.jpg'),
+              icon: '', // require('../../assets/speaker/speaker-thomann.jpg'),
               time: '14:00',
               i18nTitle: [
                 '"Urbanization, digitization, utilities - at the interface to the Smart City."',
@@ -253,7 +253,7 @@ export default {
             {
               speaker: true,
               speakerID: 'agnes-schoenfelder',
-              icon: require('../../assets/speaker/speaker-agnes.jpg'),
+              icon: '', // require('../../assets/speaker/speaker-agnes.jpg'),
               time: '14:30',
               i18nTitle: [
                 '"Wind of Change for Mannheim on Climate Track"',
@@ -265,7 +265,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-deadline.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-deadline.svg'),
               time: '15:00',
               i18nTitle: [
                 'Deadline Challenge Submission',
@@ -277,7 +277,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-pitch.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-pitch.svg'),
               time: '16:00',
               i18nTitle: ['Challenge Pitch Time', 'Challenge Pitch Zeit'],
               i18nDescription: [
@@ -286,7 +286,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-code.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-code.svg'),
               time: '17:00',
               i18nTitle: ['Start coding!', 'Beginn des Programmierens!'],
               // link to team registration site
@@ -303,7 +303,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-dinner.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-dinner.svg'),
               time: '19:00',
               i18nTitle: ['Dinner', 'Abendessen'],
               i18nDescription: [
@@ -312,7 +312,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-fire.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-fire.svg'),
               time: '22:00',
               i18nTitle: ['Night Coding', 'Nacht-Coding'],
               i18nDescription: [
@@ -327,7 +327,7 @@ export default {
           i18nDate: ['26. Oct 2019', '26. Okt 2019'],
           schedule: [
             {
-              icon: require('../../assets/flat-icon-schedule-croissant.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-croissant.svg'),
               time: '08:30',
               i18nTitle: ['Breakfast', 'Frühstück'],
               i18nDescription: [
@@ -336,7 +336,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-yoga.svg'),
+              icon: require('../../assets/icons/flat-icon-yoga.svg'),
               time: '10:00',
               i18nTitle: [
                 'Sweat & Code: Yoga Workout',
@@ -348,7 +348,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-noodles.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-noodles.svg'),
               time: '13:00',
               i18nTitle: ['Lunch time', 'Mittagszeit'],
               i18nDescription: [
@@ -357,7 +357,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-dinner-gold.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-dinner-gold.svg'),
               time: '19:00',
               i18nTitle: ['Dinner', 'Dinner'],
               i18nDescription: [
@@ -366,7 +366,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-owl.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-owl.svg'),
               time: '22:00',
               i18nTitle: ['Night Coding', 'Nacht-Coding'],
               i18nDescription: [
@@ -381,7 +381,7 @@ export default {
           i18nDate: ['27. Oct 2019', '27. Okt 2019'],
           schedule: [
             {
-              icon: require('../../assets/flat-icon-schedule-carrot.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-carrot.svg'),
               time: '08:30',
               i18nTitle: ['Breakfast', 'Frühstück'],
               i18nDescription: [
@@ -390,7 +390,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-timer.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-timer.svg'),
               time: '09:00',
               i18nTitle: ['Deadline of Coding', 'Frist fürs Coden'],
               // link to climathon site
@@ -408,7 +408,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-presentation.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-presentation.svg'),
               time: '10:00',
               i18nTitle: ['Pitches', 'Präsentationen der Lösungen'],
               i18nDescription: [
@@ -417,7 +417,7 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-lunch-gold.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-lunch-gold.svg'),
               time: '13:00',
               i18nTitle: ['Lunch Time', 'Mittagessen'],
               i18nDescription: [
@@ -426,13 +426,13 @@ export default {
               ]
             },
             {
-              icon: require('../../assets/flat-icon-schedule-award.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-award.svg'),
               time: '14:00',
               i18nTitle: ['Award Ceremony', 'Preisverleihung'],
               i18nDescription: ['Money rain and stuff.', 'Geldregen und so.']
             },
             {
-              icon: require('../../assets/flat-icon-schedule-beer.svg'),
+              icon: require('../../assets/icons/flat-icon-schedule-beer.svg'),
               time: '15:00',
               i18nTitle: ['Meet the Winners', 'Treffe die Gewinner'],
               i18nDescription: [

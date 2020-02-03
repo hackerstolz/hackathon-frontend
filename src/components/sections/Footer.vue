@@ -25,7 +25,7 @@
           <span>{{ $t('sloganBeforeHeart') }}</span>
           <v-img
             class="d-inline-block mx-1"
-            :src="require('../../assets/icon-heart.svg')"
+            :src="require('../../assets/icons/icon-heart.svg')"
             height="24"
             width="24"
             contain
@@ -36,7 +36,7 @@
         <div class="logos ma-3">
           <v-img
             class="mr-2"
-            :src="require('../../assets/logo-hackerstolz.svg')"
+            :src="require('../../assets/logos/logo-hackerstolz.svg')"
             max-height="40"
             max-width="232"
             width="20%"
@@ -46,7 +46,7 @@
           </v-img>
           <v-img
             class="mr-2"
-            :src="require('../../assets/logo-mannheim.svg')"
+            :src="require('../../assets/logos/logo-mannheim.svg')"
             max-height="40"
             max-width="160"
             width="20%"
@@ -57,7 +57,7 @@
         </div>
         <div class="logos ma-3">
           <v-img
-            :src="require('../../assets/logo-KIC-EU.svg')"
+            :src="require('../../assets/logos/logo-KIC-EU.svg')"
             max-height="40"
             width="58%"
             position="center"
@@ -115,23 +115,23 @@ export default {
   data: () => ({
     links: [
       {
-        icon: require('../../assets/icon-twitter.svg'),
+        icon: require('../../assets/icons/icon-twitter.svg'),
         href: 'https://twitter.com/hackerstolz'
       },
       {
-        icon: require('../../assets/icon-meetup.svg'),
+        icon: require('../../assets/icons/icon-meetup.svg'),
         href: 'https://www.meetup.com/de-DE/Hackschool-Rhein-Neckar/'
       },
       {
-        icon: require('../../assets/icon-facebook.svg'),
+        icon: require('../../assets/icons/icon-facebook.svg'),
         href: 'https://www.facebook.com/hackerstolz/'
       },
       {
-        icon: require('../../assets/icon-igr.svg'),
+        icon: require('../../assets/icons/icon-igr.svg'),
         href: 'https://www.instagram.com/hackerstolz/'
       },
       {
-        icon: require('../../assets/icon-hackerstolz.svg'),
+        icon: require('../../assets/icons/icon-hackerstolz.svg'),
         href: 'https://www.hackerstolz.de/'
       }
     ]

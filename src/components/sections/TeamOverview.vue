@@ -146,64 +146,64 @@ export default {
   data() {
     return {
       prices: [
-        {
-          text: 'Climate Grant Award',
-          description: 'Bike Drop, 1&ONLY, LoRaWahn',
-          color: this.$vuetify.theme.warning,
-          winner: true,
-          img: require('../../assets/price/price-climategrant.jpg')
-        },
-        {
-          text: 'S-HUB Award',
-          description: '1&ONLY, Zero2',
-          color: this.$vuetify.theme.warning,
-          winner: true,
-          img: require('../../assets/price/price-shub.jpg')
-        },
-        {
-          text: 'ProjectTogether Award',
-          description:
-            'Escape Apocalypse, Localot, Mvua Nzuri, MeetMe, Tender, Videoclip Crashtest',
-          color: this.$vuetify.theme.warning,
-          winner: true,
-          img: require('../../assets/price/price-projecttogether.jpg')
-        },
-        {
-          text: 'MVV Challenge Winner',
-          description: 'LoRaWahn',
-          color: this.$vuetify.theme.info,
-          winner: true,
-          img: require('../../assets/price/price-mvv.jpg')
-        },
-        {
-          text: 'CAMELOT Challenge Winner',
-          description: '1&ONLY, Zero2',
-          color: this.$vuetify.theme.info,
-          winner: true,
-          img: require('../../assets/price/price-camelot.jpg')
-        },
-        {
-          text: 'objective partner Challenge Winner',
-          description: 'Intel Inside',
-          color: this.$vuetify.theme.info,
-          winner: true,
-          img: require('../../assets/price/price-camelot.jpg')
-        },
-        {
-          text: 'rnv Challenge',
-          description: 'Bike Drop, op, Team Awesome, MaGreenLife, MeetMe',
-          color: this.$vuetify.theme.info,
-          winner: true,
-          img: require('../../assets/price/price-rnv.jpg')
-        },
-        {
-          text: 'City Challenge',
-          description:
-            'Bike Drop, Zero2, Escape Apocalypse, Extremwetter, MaGreenLife, Localot, MeetMe, Tender, Plantzilla',
-          color: this.$vuetify.theme.error,
-          winner: true,
-          img: require('../../assets/price/price-city.jpg')
-        }
+        // {
+        //   text: 'Climate Grant Award',
+        //   description: 'Bike Drop, 1&ONLY, LoRaWahn',
+        //   color: this.$vuetify.theme.warning,
+        //   winner: true,
+        //   img: require('../../assets/price/price-climategrant.jpg')
+        // },
+        // {
+        //   text: 'S-HUB Award',
+        //   description: '1&ONLY, Zero2',
+        //   color: this.$vuetify.theme.warning,
+        //   winner: true,
+        //   img: require('../../assets/price/price-shub.jpg')
+        // },
+        // {
+        //   text: 'ProjectTogether Award',
+        //   description:
+        //     'Escape Apocalypse, Localot, Mvua Nzuri, MeetMe, Tender, Videoclip Crashtest',
+        //   color: this.$vuetify.theme.warning,
+        //   winner: true,
+        //   img: require('../../assets/price/price-projecttogether.jpg')
+        // },
+        // {
+        //   text: 'MVV Challenge Winner',
+        //   description: 'LoRaWahn',
+        //   color: this.$vuetify.theme.info,
+        //   winner: true,
+        //   img: require('../../assets/price/price-mvv.jpg')
+        // },
+        // {
+        //   text: 'CAMELOT Challenge Winner',
+        //   description: '1&ONLY, Zero2',
+        //   color: this.$vuetify.theme.info,
+        //   winner: true,
+        //   img: require('../../assets/price/price-camelot.jpg')
+        // },
+        // {
+        //   text: 'objective partner Challenge Winner',
+        //   description: 'Intel Inside',
+        //   color: this.$vuetify.theme.info,
+        //   winner: true,
+        //   img: require('../../assets/price/price-camelot.jpg')
+        // },
+        // {
+        //   text: 'rnv Challenge',
+        //   description: 'Bike Drop, op, Team Awesome, MaGreenLife, MeetMe',
+        //   color: this.$vuetify.theme.info,
+        //   winner: true,
+        //   img: require('../../assets/price/price-rnv.jpg')
+        // },
+        // {
+        //   text: 'City Challenge',
+        //   description:
+        //     'Bike Drop, Zero2, Escape Apocalypse, Extremwetter, MaGreenLife, Localot, MeetMe, Tender, Plantzilla',
+        //   color: this.$vuetify.theme.error,
+        //   winner: true,
+        //   img: require('../../assets/price/price-city.jpg')
+        // }
       ],
       winners: [
         {

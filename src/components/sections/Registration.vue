@@ -111,7 +111,7 @@ export default {
       postEvent: true,
       types: [
         {
-          icon: require('../../assets/flat-icon-terminal.svg'),
+          icon: require('../../assets/icons/flat-icon-terminal.svg'),
           i18nTitle: ['Developer', 'Entwickler*in'],
           i18nDescription: [
             'Programmers who turn thoughts into code. Only the input speed of your keyboard sets you limits.',
@@ -119,7 +119,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/flat-icon-stack.svg'),
+          icon: require('../../assets/icons/flat-icon-stack.svg'),
           i18nTitle: ['Engineer', 'Techniker*in'],
           i18nDescription: [
             'With a deep scientific background you build the complex engine room of any technical project.',
@@ -127,7 +127,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/flat-icon-network.svg'),
+          icon: require('../../assets/icons/flat-icon-network.svg'),
           i18nTitle: ['Data Scientist', 'Datenwissenschaftler*in'],
           i18nDescription: [
             'You and data, it’s a long story. A mixture of data magic and a touch of AI.',
@@ -135,7 +135,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/flat-icon-tools.svg'),
+          icon: require('../../assets/icons/flat-icon-tools.svg'),
           i18nTitle: ['Maker', 'Macher*in'],
           i18nDescription: [
             'Loves tinkering around with hardware and IoT. Your hands start to itch when you hear a great idea.',
@@ -143,7 +143,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/flat-icon-bulp.svg'),
+          icon: require('../../assets/icons/flat-icon-bulp.svg'),
           i18nTitle: ['Idea Generator', 'Ideengenerator*in'],
           i18nDescription: [
             'You spark creation with your original ideas and understand the problem at hand.',
@@ -151,7 +151,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/flat-icon-astronaut.svg'),
+          icon: require('../../assets/icons/flat-icon-astronaut.svg'),
           i18nTitle: ['Superpower', 'Superkraft'],
           i18nDescription: [
             'Not techie or a designer, but your magic touch will bring projects to life.',
@@ -159,7 +159,7 @@ export default {
           ]
         },
         {
-          icon: require('../../assets/flat-icon-colors.svg'),
+          icon: require('../../assets/icons/flat-icon-colors.svg'),
           i18nTitle: ['Designer', 'Designer*in'],
           i18nDescription: [
             'In your skillful hands, dashboards and applications gain clarity and style.',

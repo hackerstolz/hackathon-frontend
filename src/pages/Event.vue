@@ -1,19 +1,20 @@
 <template>
   <Layout>
-    <!-- <EventHeader id="header" :isMobile="isMobile" themeColor="secondary" />
+    <EventHeader id="header" :isMobile="isMobile" themeColor="secondary" />
     <EventInfo id="info" :isMobile="isMobile" themeColor="secondary" />
     <EventLocation id="location" :isMobile="isMobile" themeColor="primary" />
     <EventBag id="bag" :isMobile="isMobile" themeColor="secondary" />
-    <Footer id="footer" themeColor="primary" /> -->
+    <Footer id="footer" themeColor="primary" />
   </Layout>
 </template>
 
 <script>
-// import EventHeader from "../components/sections/EventHeader.vue";
-// import EventInfo from "../components/sections/EventInfo.vue";
-// import EventLocation from "../components/sections/EventLocation.vue";
-// import EventBag from "../components/sections/EventBag.vue";
-// import Footer from "../components/sections/Footer.vue";
+import Footer from '../components/sections/Footer.vue'
+const sectionsContext = require.context(
+  '../components/sections/event/',
+  true,
+  /.*\.vue$/
+)
 
 export default {
   metaInfo: {
@@ -21,10 +22,13 @@ export default {
   },
   name: 'Event',
   components: {
-    EventHeader,
-    EventInfo,
-    EventLocation,
-    EventBag,
+    ...sectionsContext.keys().reduce(
+      (map, key) => ({
+        ...map,
+        [sectionsContext(key).default.name]: sectionsContext(key).default
+      }),
+      {}
+    ),
     Footer
   },
   props: {

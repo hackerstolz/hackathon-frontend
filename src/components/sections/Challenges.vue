@@ -196,7 +196,7 @@
         <h2 class="align-left">{{ $t('titleSubmit') }}</h2>
         <v-img
           class="mb-4"
-          :src="require('../../assets/flat-icon-puzzle.svg')"
+          :src="require('../../assets/icons/flat-icon-puzzle.svg')"
           max-height="128px"
           contain
         ></v-img>
@@ -313,7 +313,7 @@ export default {
         {
           id: 0,
           key: 'smartCity',
-          img: require('../../assets/flat-icon-smartCity.svg'),
+          img: require('../../assets/icons/flat-icon-smartCity.svg'),
           show: false,
           challenges: [
             {
@@ -384,7 +384,7 @@ export default {
         {
           id: 1,
           key: 'mobility',
-          img: require('../../assets/flat-icon-mobility.svg'),
+          img: require('../../assets/icons/flat-icon-mobility.svg'),
           show: false,
           challenges: [
             {
@@ -415,7 +415,7 @@ export default {
         {
           id: 2,
           key: 'retrofitting',
-          img: require('../../assets/flat-icon-retrofitting.svg'),
+          img: require('../../assets/icons/flat-icon-retrofitting.svg'),
           show: false,
           challenges: [
             {
@@ -446,7 +446,7 @@ export default {
         {
           id: 3,
           key: 'circularEconomy',
-          img: require('../../assets/flat-icon-circularEconomy.svg'),
+          img: require('../../assets/icons/flat-icon-circularEconomy.svg'),
           show: false,
           challenges: [
             {
@@ -477,7 +477,7 @@ export default {
         {
           id: 4,
           key: 'food',
-          img: require('../../assets/flat-icon-food.svg'),
+          img: require('../../assets/icons/flat-icon-food.svg'),
           show: false,
           challenges: [
             // {
@@ -508,7 +508,7 @@ export default {
         {
           id: 5,
           key: 'finance',
-          img: require('../../assets/flat-icon-finance.svg'),
+          img: require('../../assets/icons/flat-icon-finance.svg'),
           show: false,
           challenges: [
             {
@@ -536,7 +536,7 @@ export default {
         {
           id: 6,
           key: 'behaviour',
-          img: require('../../assets/flat-icon-behaviour.svg'),
+          img: require('../../assets/icons/flat-icon-behaviour.svg'),
           show: false,
           challenges: [
             {
@@ -567,7 +567,7 @@ export default {
         {
           id: 7,
           key: 'water',
-          img: require('../../assets/flat-icon-water.svg'),
+          img: require('../../assets/icons/flat-icon-water.svg'),
           show: false,
           challenges: [
             {
@@ -595,7 +595,7 @@ export default {
         {
           id: 8,
           key: 'energy',
-          img: require('../../assets/flat-icon-energy.svg'),
+          img: require('../../assets/icons/flat-icon-energy.svg'),
           show: false,
           challenges: [
             {
@@ -626,7 +626,7 @@ export default {
         {
           id: 9,
           key: 'extremeWeather',
-          img: require('../../assets/flat-icon-extremeWeather.svg'),
+          img: require('../../assets/icons/flat-icon-extremeWeather.svg'),
           show: false,
           challenges: [
             {
@@ -657,14 +657,14 @@ export default {
         {
           id: 10,
           key: 'waste',
-          img: require('../../assets/flat-icon-waste.svg'),
+          img: require('../../assets/icons/flat-icon-waste.svg'),
           show: false,
           challenges: []
         },
         {
           id: 11,
           key: 'pollution',
-          img: require('../../assets/flat-icon-pollution.svg'),
+          img: require('../../assets/icons/flat-icon-pollution.svg'),
           show: false,
           challenges: []
         }
