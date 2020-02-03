@@ -5,7 +5,8 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const nodeExternals = require('webpack-node-externals')
+const nodeExternals = require('webpack-node-externals');
+const t = require('./transformer.js');
 
 module.exports = function(api) {
   api.chainWebpack((config, { isServer }) => {
@@ -18,7 +19,7 @@ module.exports = function(api) {
     }
   })
 
-  api.loadSource(store => {
-    // Use the Data store API here: https://gridsome.org/docs/data-store-api
+  api.loadSource(actions => {
+    t.load("./src/admin/config.yml", "./", actions);
   })
 }

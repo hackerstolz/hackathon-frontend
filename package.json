@@ -14,7 +14,11 @@
     "vue-scrollto": "^2.17.1",
     "vue-stack-grid": "^1.1.0",
     "vue-videobg": "^2.0.0",
-    "vuetify": "^2.2.8"
+    "vuetify": "^2.2.8",
+	"gridsome-plugin-netlify-cms": "^1.0.9",
+    "netlify-cms": "^2.10.13",
+    "parse-md": "^2.0.4",
+    "uuid": "^3.4.0"
   },
   "devDependencies": {
     "stylus": "^0.54.7",
