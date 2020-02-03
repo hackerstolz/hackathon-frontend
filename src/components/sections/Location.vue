@@ -1,7 +1,7 @@
 <template>
   <section :style="{ backgroundColor: sectionColor }">
     <v-container>
-      <h2>{{ $t("title") }}</h2>
+      <h2>{{ $t('title') }}</h2>
     </v-container>
     <video-bg
       ref="videobg"
@@ -20,7 +20,7 @@
         }"
       ></div>
       <v-layout class="video-content flex align-center py-5" fill-height column>
-        <h3 class="align-left">{{ $t("locationSlogan") }}</h3>
+        <h3 class="align-left">{{ $t('locationSlogan') }}</h3>
         <!-- <v-flex xs12 align-end> -->
         <v-spacer />
         <v-icon class="pa-1" color="rgba(255, 255, 255, 0.38)" x-large>
@@ -37,10 +37,10 @@
           href="https://www.google.com/maps/place/mg:+mannheimer+gr%C3%BCndungszentren+gmbh/@49.4732698,8.4747424,15z/data=!4m5!3m4!1s0x0:0x9a435721e6fc738d!8m2!3d49.4732698!4d8.4747424"
           target="_blank"
           color="rgba(255, 255, 255, 0.8)"
-          outline
-          flat
+          outlined
+          text
         >
-          {{ $t("button.link2Maps") }}
+          {{ $t('button.link2Maps') }}
           <v-icon dark right>open_in_new</v-icon>
         </v-btn>
         <!-- </v-flex> -->
@@ -56,31 +56,31 @@
 </template>
 
 <script>
-import VideoBg from "vue-videobg";
+import VideoBg from 'vue-videobg'
 
 export default {
-  name: "Location",
+  name: 'Location',
   components: {
     VideoBg
   },
   props: {
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     }
   },
   mounted() {
     // set video to play in slow motion
-    this.$refs.videobg.$refs.video.playbackRate = 1; // 0.5;
+    this.$refs.videobg.$refs.video.playbackRate = 1 // 0.5;
   },
   computed: {
     sectionColor: function() {
       return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
         ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary;
+        : this.$vuetify.theme.primary
     }
   }
-};
+}
 </script>
 
 <i18n>

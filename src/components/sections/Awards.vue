@@ -1,7 +1,7 @@
 <template>
   <section :style="{ backgroundColor: sectionColor }">
     <v-container>
-      <h2>{{ $t("title") }}</h2>
+      <h2>{{ $t('title') }}</h2>
       <v-card
         v-for="(award, i) in mainAwards"
         :key="i"
@@ -25,12 +25,12 @@
           class="mt-2"
           width="auto"
           color="warning"
-          outline
-          flat
+          outlined
+          text
           small
           @click="criteriaShow = true"
         >
-          {{ $t("button.showCriteria") }}
+          {{ $t('button.showCriteria') }}
         </v-btn>
         <v-btn
           v-if="award.key === 'climateGrant'"
@@ -39,11 +39,11 @@
           target="_blank"
           width="auto"
           color="accent"
-          outline
-          flat
+          outlined
+          text
           small
         >
-          {{ $t("button.showFactSheet") }}
+          {{ $t('button.showFactSheet') }}
           <v-icon dark right>open_in_new</v-icon>
         </v-btn>
       </v-card>
@@ -87,11 +87,11 @@
               class="mt-2"
               width="auto"
               color="warning"
-              outline
-              flat
+              outlined
+              text
               small
             >
-              {{ $t("button.showCriteria") }}
+              {{ $t('button.showCriteria') }}
             </v-btn>
             <router-link
               v-if="typeof award.challengeCategoryID === 'number'"
@@ -101,11 +101,11 @@
                 class="mt-2"
                 width="auto"
                 :color="award.color"
-                outline
-                flat
+                outlined
+                text
                 small
               >
-                {{ $t("button.showChallenge") }}
+                {{ $t('button.showChallenge') }}
               </v-btn>
             </router-link>
           </v-card>
@@ -131,13 +131,13 @@
               <div class="ml-3 mr-4">&nbsp;</div>
               <v-spacer />
               <h3 class="mb-3">
-                {{ $t("juryCriteriaTitle") }}
+                {{ $t('juryCriteriaTitle') }}
               </h3>
               <v-spacer />
               <v-btn
                 class="ma-0"
                 color="accent"
-                flat
+                text
                 @click="criteriaShow = false"
                 icon
               >
@@ -155,8 +155,8 @@
           </div>
           <v-card-actions class="dialog-card-footer">
             <v-spacer />
-            <v-btn color="accent" flat @click="criteriaShow = false">{{
-              $t("button.close")
+            <v-btn color="accent" text @click="criteriaShow = false">{{
+              $t('button.close')
             }}</v-btn>
           </v-card-actions>
         </v-card>
@@ -166,16 +166,16 @@
 </template>
 
 <script>
-import debounce from "lodash/debounce";
-import { Stack, StackItem } from "vue-stack-grid";
+import debounce from 'lodash/debounce'
+import { Stack, StackItem } from 'vue-stack-grid'
 
 export default {
-  name: "Awards",
+  name: 'Awards',
   components: { Stack, StackItem },
   props: {
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     },
     isMobile: Boolean
   },
@@ -183,12 +183,12 @@ export default {
     sectionColor: function() {
       return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
         ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary;
+        : this.$vuetify.theme.primary
     }
   },
   methods: {
     reflow: debounce(function() {
-      this.$refs.stack.reflow();
+      this.$refs.stack.reflow()
     }, 100)
   },
   data() {
@@ -196,70 +196,70 @@ export default {
       criteriaShow: false,
       mainAwards: [
         {
-          key: "climateGlobal",
-          img: require("../../assets/award/award-global.png"),
+          key: 'climateGlobal',
+          img: require('../../assets/award/award-global.png'),
           color: this.$vuetify.theme.success,
           officialCriteria: true
         },
         {
-          key: "climateGrant",
-          img: require("../../assets/award/award-gold.svg"),
+          key: 'climateGrant',
+          img: require('../../assets/award/award-gold.svg'),
           color: this.$vuetify.theme.warning,
           officialCriteria: true
         }
       ],
       awards: [
         {
-          key: "shubAward",
-          img: require("../../assets/award/award-shub.png"),
+          key: 'shubAward',
+          img: require('../../assets/award/award-shub.png'),
           color: this.$vuetify.theme.warning,
           officialCriteria: true
         },
         {
-          key: "projectTogetherAward",
-          img: require("../../assets/award/award-projecttogether.png"),
+          key: 'projectTogetherAward',
+          img: require('../../assets/award/award-projecttogether.png'),
           color: this.$vuetify.theme.warning,
           officialCriteria: true
         },
         {
-          key: "cityPrize",
-          img: require("../../assets/award/award-red.svg"),
+          key: 'cityPrize',
+          img: require('../../assets/award/award-red.svg'),
           color: this.$vuetify.theme.error
         },
         {
-          key: "mvvPrize",
+          key: 'mvvPrize',
           challengeCategoryID: 0,
-          img: require("../../assets/sponsor/sponsor-mvv.jpg"),
+          img: require('../../assets/sponsor/sponsor-mvv.jpg'),
           color: this.$vuetify.theme.info
         },
         {
-          key: "obPrize",
+          key: 'obPrize',
           challengeCategoryID: 7,
-          img: require("../../assets/sponsor/sponsor-op.svg"),
+          img: require('../../assets/sponsor/sponsor-op.svg'),
           color: this.$vuetify.theme.info
         },
         {
-          key: "camelotPrize",
+          key: 'camelotPrize',
           challengeCategoryID: 3,
-          img: require("../../assets/sponsor/sponsor-camelot.jpg"),
+          img: require('../../assets/sponsor/sponsor-camelot.jpg'),
           color: this.$vuetify.theme.info
         },
         {
-          key: "rnvPrize",
+          key: 'rnvPrize',
           challengeCategoryID: 1,
-          img: require("../../assets/sponsor/sponsor-rnv.svg"),
+          img: require('../../assets/sponsor/sponsor-rnv.svg'),
           color: this.$vuetify.theme.info
         },
         {
-          key: "bosPrize",
+          key: 'bosPrize',
           challengeCategoryID: 5,
-          img: require("../../assets/award/award-bos.jpg"),
+          img: require('../../assets/award/award-bos.jpg'),
           color: this.$vuetify.theme.accent
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <i18n>

@@ -27,11 +27,11 @@
           href="https://www.mcc-berlin.net/en/research/co2-budget.html"
           target="_blank"
           color="#ffffff"
-          outline
+          outlined
           small
-          flat
+          text
         >
-          {{ $t("link2C02Budget") }}
+          {{ $t('link2C02Budget') }}
           <v-icon dark right small>open_in_new</v-icon>
         </v-btn>
       </div>
@@ -46,14 +46,14 @@
         </v-switch>
         <h1>
           <div>
-            {{ simulate2050 ? $t("simulation.titleLine1") : $t("titleLine1") }}
+            {{ simulate2050 ? $t('simulation.titleLine1') : $t('titleLine1') }}
           </div>
           <div>
-            {{ simulate2050 ? $t("simulation.titleLine2") : $t("titleLine2") }}
+            {{ simulate2050 ? $t('simulation.titleLine2') : $t('titleLine2') }}
           </div>
         </h1>
-        <h2>{{ simulate2050 ? $t("simulation.subtitle") : $t("subtitle") }}</h2>
-        <h3>{{ $t("date") }}&nbsp;•&nbsp;{{ $t("event") }}</h3>
+        <h2>{{ simulate2050 ? $t('simulation.subtitle') : $t('subtitle') }}</h2>
+        <h3>{{ $t('date') }}&nbsp;•&nbsp;{{ $t('event') }}</h3>
       </div>
       <div class="countdown-wrapper-event">
         <Countdown
@@ -66,6 +66,7 @@
         />
       </div>
     </header>
+
     <v-spacer />
     <v-spacer />
 
@@ -73,14 +74,14 @@
     <v-container color="transparent" class="footer mx-0">
       <div class="organizer">
         <p class="made-by-slogan my-3">
-          <span>{{ $t("sloganBeforeHeart") }}</span>
+          <span>{{ $t('sloganBeforeHeart') }}</span>
           <img
             class="d-inline-block mx-1"
             :src="require('../../assets/icons/icon-heart.svg')"
             height="24"
             width="24"
           />
-          <span>{{ $t("sloganAfterHeart") }}</span>
+          <span>{{ $t('sloganAfterHeart') }}</span>
         </p>
         <div class="logos ma-3">
           <v-img
@@ -121,24 +122,24 @@
 </template>
 
 <script>
-import Countdown from "../Countdown";
+import Countdown from '../Countdown'
 
 export default {
-  name: "Intro",
+  name: 'Intro',
   components: { Countdown },
   data() {
     return {
       simulate2050: null // null it indicates, that it was not used, yet, else a boolean
-    };
+    }
   },
   watch: {
     simulate2050(simulation) {
       // toggle theme colors
-      this.$vuetify.theme.primary = simulation ? "#140807" : "#10182F";
-      this.$vuetify.theme.secondary = simulation ? "#270F0D" : "#182445";
+      this.$vuetify.theme.primary = simulation ? '#140807' : '#10182F'
+      this.$vuetify.theme.secondary = simulation ? '#270F0D' : '#182445'
     }
   }
-};
+}
 </script>
 
 <i18n>

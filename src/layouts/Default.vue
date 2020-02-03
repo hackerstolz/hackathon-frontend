@@ -17,24 +17,26 @@
       <v-navigation-drawer class="navigation" app v-model="drawer">
         <v-toolbar class="ma-0 pa-0" color="transparent" flat>
           <v-menu bottom>
-            <v-btn slot="activator" flat>
-              {{ $t(`button.${$i18n.locale}`) }}
-            </v-btn>
+            <template v-slot:activator="{ on }">
+              <v-btn text>
+                {{ $t(`button.${$i18n.locale}`) }}
+              </v-btn>
+            </template>
 
             <v-list class="language-list">
-              <v-list-tile
+              <v-list-item
                 v-for="(lang, i) in langs"
                 :key="i"
                 @click="onSetNewLocale(lang)"
               >
-                <v-list-tile-title>
+                <v-list-item-title>
                   {{ $t(`label.${lang}`) }}
-                </v-list-tile-title>
-              </v-list-tile>
+                </v-list-item-title>
+              </v-list-item>
             </v-list>
           </v-menu>
           <v-spacer />
-          <v-btn flat @click.stop="drawer = !drawer" icon>
+          <v-btn text @click.stop="drawer = !drawer" icon>
             <v-icon>close</v-icon>
           </v-btn>
         </v-toolbar>
@@ -42,7 +44,7 @@
           <v-btn
             color="info"
             href="mailto:climathon@hackerstolz.de?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc."
-            flat
+            text
           >
             {{ $t('button.contactus') }}
           </v-btn>
@@ -50,38 +52,38 @@
             color="info"
             target="_blank"
             href="https://betterplace.org/p71036"
-            flat
+            text
           >
             {{ $t("button.donate") }}
           </v-btn> -->
         </v-layout>
         <v-list v-if="$route.name !== 'event'">
           <template v-for="(item, i) in menu">
-            <v-list-tile
+            <v-list-item
               v-scroll-to="`#${item}`"
               :key="item"
               ripple
               @click="() => {}"
             >
-              <v-list-tile-title class="menu-item">{{
+              <v-list-item-title class="menu-item">{{
                 $t(`label.${item}`)
-              }}</v-list-tile-title>
-            </v-list-tile>
+              }}</v-list-item-title>
+            </v-list-item>
             <v-divider v-if="i < menu.length - 1" :key="i" inset />
           </template>
         </v-list>
         <v-list v-if="$route.name === 'event'">
           <template v-for="(item, i) in menuEvent">
-            <v-list-tile
+            <v-list-item
               v-scroll-to="`#${item}`"
               :key="item"
               ripple
               @click="() => {}"
             >
-              <v-list-tile-title class="menu-item">{{
+              <v-list-item-title class="menu-item">{{
                 $t(`label.eventMenu.${item}`)
-              }}</v-list-tile-title>
-            </v-list-tile>
+              }}</v-list-item-title>
+            </v-list-item>
             <v-divider v-if="i < menu.length - 1" :key="i" inset />
           </template>
         </v-list>
@@ -99,18 +101,18 @@
         </router-link>
       </v-navigation-drawer>
 
-      <v-toolbar
+      <v-app-bar
         class="toolbar"
         app
         color="transparent"
         flat
-        :scroll-off-screen="isMobile"
+        :hide-on-scroll="isMobile"
       >
-        <v-toolbar-side-icon @click.stop="drawer = !drawer" />
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
         <v-btn
           class="hashtag"
-          flat
-          outline
+          text
+          outlined
           ripple
           small
           v-clipboard:copy="'#climathonMA'"
@@ -126,7 +128,7 @@
           :class="{ 'app-btn-register': true, large: !isMobile }"
           color="info"
           href="mailto:climathon@hackerstolz.de?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc."
-          flat
+          text
           :icon="isMobile"
         >
           {{ isMobile ? null : $t('button.contactus') }}
@@ -141,15 +143,16 @@
         >
           {{ isMobile ? $t('button.registerShort') : $t('button.register') }}
         </v-btn>
-      </v-toolbar>
+      </v-app-bar>
 
-      <!-- FIXME: check if isMobile is passed to slot. -->
-      <!-- <router-view :isMobile="isMobile"></router-view> -->
-      <slot :isMobile="isMobile" />
+      <v-content class="pa-0">
+        <!-- FIXME: check if isMobile is passed to slot. -->
+        <!-- <router-view :isMobile="isMobile"></router-view> -->
+        <slot :isMobile="isMobile" />
+      </v-content>
 
       <v-snackbar
         class="snackbar"
-        auto-height
         top
         v-model="notification.show"
         :color="notification.color"
@@ -162,7 +165,7 @@
           class="app-btn-snackbar"
           color="primary"
           dark
-          flat
+          text
           @click="notification.show = false"
         >
           {{ $t('label.snackbarClose') }}
@@ -170,7 +173,6 @@
       </v-snackbar>
       <v-snackbar
         class="snackbar"
-        auto-height
         v-model="snackbar.show"
         :color="snackbar.color"
         :multi-line="isMobile"
@@ -182,7 +184,7 @@
           class="app-btn-snackbar"
           color="primary"
           dark
-          flat
+          text
           @click="snackbar.show = false"
         >
           {{ $t('label.snackbarConfirm') }}

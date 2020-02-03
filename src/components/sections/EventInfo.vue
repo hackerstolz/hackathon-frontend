@@ -1,7 +1,7 @@
 <template>
   <section :style="{ backgroundColor: sectionColor }">
     <v-container>
-      <h2>{{ $t("title") }}</h2>
+      <h2>{{ $t('title') }}</h2>
       <stack
         ref="stack"
         :column-min-width="320"
@@ -17,9 +17,9 @@
             color="rgba(255,255,255,0.1)"
             flat
           >
-            <h3 class="mb-3">{{ $t("wlan") }}</h3>
+            <h3 class="mb-3">{{ $t('wlan') }}</h3>
             <p class="mb-3" v-html="$t('wlanSSID')"></p>
-            <p class="mb-3">{{ $t("wlanPassword") }}</p>
+            <p class="mb-3">{{ $t('wlanPassword') }}</p>
           </v-card>
         </stack-item>
 
@@ -31,8 +31,8 @@
             color="rgba(255,255,255,0.1)"
             flat
           >
-            <h3 class="mb-3">{{ $t("onboarding") }}</h3>
-            <p class="mb-3">{{ $t("onboardingText") }}</p>
+            <h3 class="mb-3">{{ $t('onboarding') }}</h3>
+            <p class="mb-3">{{ $t('onboardingText') }}</p>
             <v-btn
               class="onboarding my-3"
               href="https://forms.gle/k6VneYnai3pQiocSA"
@@ -42,7 +42,7 @@
               large
               color="success"
             >
-              {{ $t("onboardingBtn") }}
+              {{ $t('onboardingBtn') }}
               <v-icon dark right>open_in_new</v-icon>
             </v-btn>
           </v-card>
@@ -56,12 +56,12 @@
             color="rgba(255,255,255,0.1)"
             flat
           >
-            <h3 class="mb-3">{{ $t("socialMediaTag") }}</h3>
-            <p class="mb-3">{{ $t("socialMediaTagCopy") }}</p>
+            <h3 class="mb-3">{{ $t('socialMediaTag') }}</h3>
+            <p class="mb-3">{{ $t('socialMediaTagCopy') }}</p>
             <v-btn
               class="hashtag my-3"
-              flat
-              outline
+              text
+              outlined
               ripple
               large
               color="info"
@@ -78,8 +78,8 @@
             </v-btn>
             <v-btn
               class="hashtag my-3"
-              flat
-              outline
+              text
+              outlined
               ripple
               large
               color="info"
@@ -105,18 +105,18 @@
             color="rgba(255,255,255,0.1)"
             flat
           >
-            <h3 class="mb-3">{{ $t("joinSlack") }}</h3>
-            <p class="mb-3">{{ $t("joinSlackDescription") }}</p>
+            <h3 class="mb-3">{{ $t('joinSlack') }}</h3>
+            <p class="mb-3">{{ $t('joinSlackDescription') }}</p>
             <v-btn
               class="my-3"
               width="auto"
               href="https://join.slack.com/t/hackerstolz-community/shared_invite/enQtNzg4MjAyNDY3ODI1LWFhODJmYzJhMWQ2MmM3YzExMDg3NzI3NzcyODk5YzY1YjMwZjA3YjQ3ZGU4MmIyYTQ0NDI3NTgzZDJjZjYyYWE"
               target="_blank"
               color="accent"
-              outline
-              flat
+              outlined
+              text
             >
-              {{ $t("link2Slack") }}
+              {{ $t('link2Slack') }}
               <v-icon dark right>open_in_new</v-icon>
             </v-btn>
             <v-btn
@@ -125,10 +125,10 @@
               href="https://hackerstolz-community.slack.com/messages/CL3RDQNAV"
               target="_blank"
               color="accent"
-              outline
-              flat
+              outlined
+              text
             >
-              {{ $t("link2SlackChannel") }}
+              {{ $t('link2SlackChannel') }}
               <v-icon dark right>open_in_new</v-icon>
             </v-btn>
           </v-card>
@@ -142,8 +142,8 @@
             color="rgba(255,255,255,0.1)"
             flat
           >
-            <h3 class="mb-3">{{ $t("badges") }}</h3>
-            <p class="mb-3">{{ $t("badgesDescription") }}</p>
+            <h3 class="mb-3">{{ $t('badges') }}</h3>
+            <p class="mb-3">{{ $t('badgesDescription') }}</p>
             <v-chip
               class="ma-2 tags"
               color="yellow"
@@ -152,7 +152,7 @@
               text-color="black"
             >
               <v-icon light left>local_offer</v-icon>
-              {{ $t("badgeYello").toUpperCase() }}
+              {{ $t('badgeYello').toUpperCase() }}
             </v-chip>
             <v-chip
               class="ma-2 tags"
@@ -162,7 +162,7 @@
               text-color="black"
             >
               <v-icon light left>local_offer</v-icon>
-              {{ $t("badgeRed").toUpperCase() }}
+              {{ $t('badgeRed').toUpperCase() }}
             </v-chip>
             <v-chip
               class="ma-2 tags"
@@ -172,7 +172,7 @@
               text-color="white"
             >
               <v-icon left>local_offer</v-icon>
-              {{ $t("badgeIndigo").toUpperCase() }}
+              {{ $t('badgeIndigo').toUpperCase() }}
             </v-chip>
             <v-chip
               class="ma-2 tags"
@@ -182,7 +182,7 @@
               text-color="black"
             >
               <v-icon light left>local_offer</v-icon>
-              {{ $t("badgeOrange").toUpperCase() }}
+              {{ $t('badgeOrange').toUpperCase() }}
             </v-chip>
             <v-chip
               class="ma-2 tags"
@@ -192,7 +192,7 @@
               text-color="black"
             >
               <v-icon light left>local_offer</v-icon>
-              {{ $t("badgeBlue").toUpperCase() }}
+              {{ $t('badgeBlue').toUpperCase() }}
             </v-chip>
             <v-chip
               class="ma-2 tags"
@@ -202,7 +202,7 @@
               text-color="black"
             >
               <v-icon light left>local_offer</v-icon>
-              {{ $t("badgeGreen").toUpperCase() }}
+              {{ $t('badgeGreen').toUpperCase() }}
             </v-chip>
             <v-chip
               class="ma-2 tags"
@@ -212,7 +212,7 @@
               text-color="white"
             >
               <v-icon left>local_offer</v-icon>
-              {{ $t("badgeGreen").toUpperCase() }}
+              {{ $t('badgeGreen').toUpperCase() }}
             </v-chip>
           </v-card>
         </stack-item>
@@ -225,23 +225,23 @@
             color="rgba(255,255,255,0.1)"
             flat
           >
-            <h3 class="mb-3">{{ $t("participantMilestones") }}</h3>
-            <p class="mb-3">{{ $t("participantMilestonesDescription") }}</p>
+            <h3 class="mb-3">{{ $t('participantMilestones') }}</h3>
+            <p class="mb-3">{{ $t('participantMilestonesDescription') }}</p>
             <p class="mt-3 my-1" :style="{ color: $vuetify.theme.info }">
-              {{ $t("readRulesText") }}
+              {{ $t('readRulesText') }}
             </p>
             <v-btn
               class="my-3"
               width="auto"
               color="info"
-              outline
-              flat
+              outlined
+              text
               @click="rulesShow = true"
             >
-              {{ $t("readRules") }}
+              {{ $t('readRules') }}
             </v-btn>
             <p class="mt-3 my-1" :style="{ color: $vuetify.theme.warning }">
-              {{ $t("deadlineTeamSubmission") }}
+              {{ $t('deadlineTeamSubmission') }}
             </p>
             <v-btn
               class="my-3"
@@ -249,14 +249,14 @@
               href="https://forms.gle/mFXwVSbUUvz8jwM38"
               target="_blank"
               color="warning"
-              outline
-              flat
+              outlined
+              text
             >
-              {{ $t("registerYourTeam") }}
+              {{ $t('registerYourTeam') }}
               <v-icon dark right>open_in_new</v-icon>
             </v-btn>
             <p class="mt-3 my-1" :style="{ color: $vuetify.theme.error }">
-              {{ $t("deadlineSolutionSubmission") }}
+              {{ $t('deadlineSolutionSubmission') }}
             </p>
             <v-btn
               class="my-3"
@@ -264,10 +264,10 @@
               href="https://climathon.climate-kic.org/en/mannheim-challenges-page-2019"
               target="_blank"
               color="error"
-              outline
-              flat
+              outlined
+              text
             >
-              {{ $t("submitSolution") }}
+              {{ $t('submitSolution') }}
               <v-icon dark right>open_in_new</v-icon>
             </v-btn>
           </v-card>
@@ -291,10 +291,10 @@
         class="app-btn-snackbar"
         color="primary"
         dark
-        flat
+        text
         @click="notification.show = false"
       >
-        {{ $t("snackbarClose") }}
+        {{ $t('snackbarClose') }}
       </v-btn>
     </v-snackbar>
 
@@ -313,13 +313,13 @@
             <div class="ml-3 mr-4">&nbsp;</div>
             <v-spacer />
             <h3 class="mb-3">
-              {{ $t("codeOfConduct") }}
+              {{ $t('codeOfConduct') }}
             </h3>
             <v-spacer />
             <v-btn
               class="ma-0"
               color="accent"
-              flat
+              text
               @click="rulesShow = false"
               icon
             >
@@ -333,8 +333,8 @@
         </div>
         <v-card-actions class="dialog-card-footer">
           <v-spacer />
-          <v-btn color="accent" flat @click="rulesShow = false">{{
-            $t("close")
+          <v-btn color="accent" text @click="rulesShow = false">{{
+            $t('close')
           }}</v-btn>
         </v-card-actions>
       </v-card>
@@ -343,17 +343,17 @@
 </template>
 
 <script>
-import debounce from "lodash/debounce";
-import { Stack, StackItem } from "vue-stack-grid";
+import debounce from 'lodash/debounce'
+import { Stack, StackItem } from 'vue-stack-grid'
 
 export default {
-  name: "EventInfo",
+  name: 'EventInfo',
   components: { Stack, StackItem },
   props: {
     isMobile: Boolean,
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     }
   },
   data() {
@@ -361,33 +361,33 @@ export default {
       rulesShow: false,
       notification: {
         show: false,
-        color: "success",
+        color: 'success',
         timeout: 3000,
-        text: ""
+        text: ''
       },
       rulesI18nText: [
         "<strong>Eligibility</strong><ul><li>Attendees from all backgrounds, genders, geographies and skills are welcome. The only criteria is that you are PASSIONATE about contributing your creativity to solve this issue.</li><li>There is no age restriction to attend the hackathon. In case you are under 18, you need a signed waiver from the parent/legal guardian authorizing you to attend the hackathon. </li><li>Team members and employees of prize sponsors are not eligible to participate at the challenges owned by the sponsor. </li><li>There is no country restriction but you must be eligible to receive prizes (in case you win) and you are responsible for paying any taxes on the prize winnings.</li></ul><br/><strong>Actually Build Something</strong><ul><li>This isn’t a slidedeck hackathon! Build and demonstrate a working project or prototype, don’t just show us screenshots and slides. Seriously, you will not win the hackathon by building some fake mock-up.</li></ul><br/><strong>Write Your Code Here</strong><ul><li>The project you present must be coded entirely during the Hackathon. The only exceptions are for publicly available frameworks/APIs and open-source code that has been available for at least a month. If it feels shady to use the code, don’t.</li></ul><br/> <strong>Team Forming</strong><ul><li>Teams may include three to seven members.</li><li>Teams should have members with diverse skills (developer, designer) and skill levels (beginner, intermediate, expert).</li><li>Teams must be submitted by Midnight on the first day of the hackathon, Friday October 25.</li><li>Teams may submit to more than one challenge category, but we recommend that you focus and submit for only one!</li></ul><br/><strong>Conduct</strong><ul><li>This is, by all means, the most important rule. This is a very diverse environment, made up of many different humans, religions, sexual orientations, genders, and gender identities. </li><li>Any behavior or presentation that objectifies or belittles others will be halted, with the presenters immediately disqualified and removed from the event. Be Respectful Be kind to others. Don't insult or put down other attendees. Behave professionally. Remember that harassment and racist, sexist, or exclusionary jokes are not appropriate for this event. </li><li>Have Fun! Talk, work, connect - and don’t let the time crunch prevent you from having fun! Please remember to take a break now and then and relax.</li></ul><br/><strong>Code Audits</strong><ul><li>Participants will have their code audited by us to make sure it’s all new and legit.</li>Your code belongs to you and we won’t share it with anyone, but we will want to see it if you win. However, open sourcing the code is relatively normal at a hackathon.</li></ul><br/><strong>UseCode Version Control</strong><ul><li>Use Git or an equivalent to track your code as you write it. It’s good practice, and if it comes down to an audit, it’ll help you prove your code is new.</li></ul><br/><strong>Present The Project You Submitted</strong><ul><li>You must present your hack as described in your submission – if you deviate from your accepted submission, we’ll have to boot you from the stage. Don’t submit one thing and then abuse the stage and respect of the audience to present something different. Think about this presentation as combination of a pitch and a live demo. You only have 3 minutes, so hury yourself.</li></ul><br/><strong>Ownership</strong><ul><li>All intellectual property rights of hacks produced at the event belong to the attendees, and not to the organisers, sponsors, or partners. Teams will have full ownership of what they have created during the hackathon.</li><li>However, hackathon sponsors reserve the right to show off the great work you have done on our website, press releases, marketing materials and in promotion of next year’s hack. (We’re here to give you a leg-up, not to steal your work!).</li></ul>",
-        "<strong>Berechtigung</strong><ul><li>Teilnehmer aus allen Bereichen, Geschlechtern, Regionen und Kompetenzen sind willkommen. Das einzige Kriterium ist, dass du leidenschaftlich bist, wenn es darum geht, deine Kreativität einzubringen, um dieses Problem zu lösen.</li><li>Es gibt keine Altersbeschränkung für die Teilnahme am Hackathon. Wenn du unter 18 Jahre alt bist, benötigst du eine unterschriebene Verzichtserklärung der Erziehungsberechtigten, die dich zur Teilnahme am Hackathon berechtigt. </li><Teammitglieder und Mitarbeiter von Preisstiftern sind nicht berechtigt, an den Herausforderungen des Sponsors teilzunehmen. </li><li>Es gibt keine Länderbeschränkung, aber ihr müsst berechtigt sein, Preise zu erhalten (falls ihr gewinnt) und ihr seid für die Zahlung von Steuern auf die Preisgewinne verantwortlich.</li></ul><br/><strong>Aktuell etwas bauen</strong><ul><li>Das ist kein Slidedeck-Hackathon! Erstellt und demonstriert ein funktionierendes Projekt oder einen Prototyp, zeigt uns nicht nur Screenshots und Folien. Ernsthaft, du wirst den Hackathon nicht gewinnen, indem du ein gefälschtes Mock-up baust.</ul><br/><strong>Schreibt euren Code hier</strong><ul><li>Das Projekt, das ihr präsentiert, muss während des Hackathons vollständig entstanden sein. Ausgenommen sind nur öffentlich zugängliche Frameworks/APIs und Open-Source-Code, der seit mindestens einem Monat verfügbar ist.</li></ul><br/><strong>Teambildung</strong><ul><li>Teams können drei bis sieben Mitglieder umfassen.</li><li>Teams sollten Mitglieder mit unterschiedlichen Fähigkeiten (Entwickler, Designer) und Fähigkeiten (Anfänger, Mittelstufe, Experte) haben.<li>Teams müssen bis Mitternacht am ersten Tag des Hackathons, Freitag, den 25. Oktober, eingereicht werden.<li>Teams können sich bei mehr als einer Challenge-Kategorie anmelden, aber wir empfehlen, dass ihr euch auf eine einzige Kategorie konzentrieren und euch nur für eine Kategorie anmelden!</li></ul><br/><strong>Verhalten</strong><ul><li>Das ist auf jeden Fall die wichtigste Regel. Dies ist ein sehr vielfältiges Umfeld, das sich aus vielen Menschen unterschiedlicher Herkunft, Religionen, sexuellen Orientierungen, Geschlechtern und Geschlechtsidentitäten zusammensetzt. </li><li>Jedes Verhalten oder jede Präsentation, die andere objektiv oder herabwürdigt, wird gestoppt, wobei die Moderatoren sofort disqualifiziert und aus der Veranstaltung entfernt werden. Seid respektvoll und freundlich zu anderen. Beleidigt oder macht andere Teilnehmer nicht runter. Benimmt euch professionell. Denkt daran, dass Belästigung und rassistische, sexistische oder ausschließende Witze für dieses Ereignis nicht angemessen sind.</li><li>Hab Spaß! Sprechen, arbeiten, verbinden - und lasst euch nicht von der Zeitnot davon abhalten, Spaß zu haben! Bitte denkt daran, ab und zu eine Pause zu machen und euch zu entspannen.</li></ul><br/><strong>Code-Prüfungen</strong><ul><li>Teilnehmer werden ihren Code von uns auditieren lassen, um sicherzustellen, dass er neu und regelkonform ist.</li><li>Euer Code gehört euch und wir werden ihn mit niemandem teilen, aber wir werden ihn sehen wollen, wenn ihr gewinnt. Allerdings ist Open Sourcing der Code bei einem Hackathon relativ normal.</li></ul><br/><strong>Versionskontrolle des Codes verwenden</strong><ul><li>Verwendet git oder ein Äquivalent, um euren Code zu verfolgen, während ihr ihn schreibt. Es ist eine gute Praxis, und wenn es zu einem Audit kommt, wird es euch helfen zu beweisen, dass euer Code neu ist.</li></ul><br/><strong>Präsentiert das Projekt, das ihr eingereicht habt</strong>.<ul><li>Ihr müsst euren Hack bzw. eure Lösung wie in eurer Einreichung beschrieben präsentieren - wenn ihr von eurer Einreichung abweicht, müssen wir euch von der Bühne booten. Reiche nicht eine Sache ein und missbrauche dann die Bühne und den Respekt des Publikums, um etwas anderes zu präsentieren. Denkt an diese Präsentation als Kombination aus Pitch und Live-Demo. Du hast nur 3 Minuten, also beeil dich.</ul><br/><strong>Eigentümerschaft</strong><ul><li>Alle geistigen Eigentumsrechte an den auf der Veranstaltung produzierten Hacks liegen bei den Teilnehmern und nicht bei den Organisatoren, Sponsoren oder Partnern. Die Teams haben die volle Eigentümerschaft an dem, was sie während des Hackathons erstellt haben.</li><li>Die Organisatoren des Hackathons behalten sich jedoch das Recht vor, eure großartige Arbeit auf Websiten, in Pressemitteilungen, Marketingmaterialien und zur Förderung des Hacks im nächsten Jahr zu präsentieren. (Wir sind hier, um dir zu helfen, nicht um deine Arbeit zu stehlen!).</li></ul>"
+        '<strong>Berechtigung</strong><ul><li>Teilnehmer aus allen Bereichen, Geschlechtern, Regionen und Kompetenzen sind willkommen. Das einzige Kriterium ist, dass du leidenschaftlich bist, wenn es darum geht, deine Kreativität einzubringen, um dieses Problem zu lösen.</li><li>Es gibt keine Altersbeschränkung für die Teilnahme am Hackathon. Wenn du unter 18 Jahre alt bist, benötigst du eine unterschriebene Verzichtserklärung der Erziehungsberechtigten, die dich zur Teilnahme am Hackathon berechtigt. </li><Teammitglieder und Mitarbeiter von Preisstiftern sind nicht berechtigt, an den Herausforderungen des Sponsors teilzunehmen. </li><li>Es gibt keine Länderbeschränkung, aber ihr müsst berechtigt sein, Preise zu erhalten (falls ihr gewinnt) und ihr seid für die Zahlung von Steuern auf die Preisgewinne verantwortlich.</li></ul><br/><strong>Aktuell etwas bauen</strong><ul><li>Das ist kein Slidedeck-Hackathon! Erstellt und demonstriert ein funktionierendes Projekt oder einen Prototyp, zeigt uns nicht nur Screenshots und Folien. Ernsthaft, du wirst den Hackathon nicht gewinnen, indem du ein gefälschtes Mock-up baust.</ul><br/><strong>Schreibt euren Code hier</strong><ul><li>Das Projekt, das ihr präsentiert, muss während des Hackathons vollständig entstanden sein. Ausgenommen sind nur öffentlich zugängliche Frameworks/APIs und Open-Source-Code, der seit mindestens einem Monat verfügbar ist.</li></ul><br/><strong>Teambildung</strong><ul><li>Teams können drei bis sieben Mitglieder umfassen.</li><li>Teams sollten Mitglieder mit unterschiedlichen Fähigkeiten (Entwickler, Designer) und Fähigkeiten (Anfänger, Mittelstufe, Experte) haben.<li>Teams müssen bis Mitternacht am ersten Tag des Hackathons, Freitag, den 25. Oktober, eingereicht werden.<li>Teams können sich bei mehr als einer Challenge-Kategorie anmelden, aber wir empfehlen, dass ihr euch auf eine einzige Kategorie konzentrieren und euch nur für eine Kategorie anmelden!</li></ul><br/><strong>Verhalten</strong><ul><li>Das ist auf jeden Fall die wichtigste Regel. Dies ist ein sehr vielfältiges Umfeld, das sich aus vielen Menschen unterschiedlicher Herkunft, Religionen, sexuellen Orientierungen, Geschlechtern und Geschlechtsidentitäten zusammensetzt. </li><li>Jedes Verhalten oder jede Präsentation, die andere objektiv oder herabwürdigt, wird gestoppt, wobei die Moderatoren sofort disqualifiziert und aus der Veranstaltung entfernt werden. Seid respektvoll und freundlich zu anderen. Beleidigt oder macht andere Teilnehmer nicht runter. Benimmt euch professionell. Denkt daran, dass Belästigung und rassistische, sexistische oder ausschließende Witze für dieses Ereignis nicht angemessen sind.</li><li>Hab Spaß! Sprechen, arbeiten, verbinden - und lasst euch nicht von der Zeitnot davon abhalten, Spaß zu haben! Bitte denkt daran, ab und zu eine Pause zu machen und euch zu entspannen.</li></ul><br/><strong>Code-Prüfungen</strong><ul><li>Teilnehmer werden ihren Code von uns auditieren lassen, um sicherzustellen, dass er neu und regelkonform ist.</li><li>Euer Code gehört euch und wir werden ihn mit niemandem teilen, aber wir werden ihn sehen wollen, wenn ihr gewinnt. Allerdings ist Open Sourcing der Code bei einem Hackathon relativ normal.</li></ul><br/><strong>Versionskontrolle des Codes verwenden</strong><ul><li>Verwendet git oder ein Äquivalent, um euren Code zu verfolgen, während ihr ihn schreibt. Es ist eine gute Praxis, und wenn es zu einem Audit kommt, wird es euch helfen zu beweisen, dass euer Code neu ist.</li></ul><br/><strong>Präsentiert das Projekt, das ihr eingereicht habt</strong>.<ul><li>Ihr müsst euren Hack bzw. eure Lösung wie in eurer Einreichung beschrieben präsentieren - wenn ihr von eurer Einreichung abweicht, müssen wir euch von der Bühne booten. Reiche nicht eine Sache ein und missbrauche dann die Bühne und den Respekt des Publikums, um etwas anderes zu präsentieren. Denkt an diese Präsentation als Kombination aus Pitch und Live-Demo. Du hast nur 3 Minuten, also beeil dich.</ul><br/><strong>Eigentümerschaft</strong><ul><li>Alle geistigen Eigentumsrechte an den auf der Veranstaltung produzierten Hacks liegen bei den Teilnehmern und nicht bei den Organisatoren, Sponsoren oder Partnern. Die Teams haben die volle Eigentümerschaft an dem, was sie während des Hackathons erstellt haben.</li><li>Die Organisatoren des Hackathons behalten sich jedoch das Recht vor, eure großartige Arbeit auf Websiten, in Pressemitteilungen, Marketingmaterialien und zur Förderung des Hacks im nächsten Jahr zu präsentieren. (Wir sind hier, um dir zu helfen, nicht um deine Arbeit zu stehlen!).</li></ul>'
       ]
-    };
+    }
   },
   methods: {
     reflow: debounce(function() {
-      this.$refs.stack.reflow();
+      this.$refs.stack.reflow()
     }, 100),
     onCopySuccess(text) {
-      this.notification.text = text;
-      this.notification.show = true;
+      this.notification.text = text
+      this.notification.show = true
     }
   },
   computed: {
     sectionColor: function() {
       return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
         ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary;
+        : this.$vuetify.theme.primary
     }
   }
-};
+}
 </script>
 
 <i18n>

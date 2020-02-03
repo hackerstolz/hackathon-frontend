@@ -1,7 +1,7 @@
 <template>
   <section :style="{ backgroundColor: sectionColor }">
     <v-container>
-      <h2>{{ $t("sponsorsTitle") }}</h2>
+      <h2>{{ $t('sponsorsTitle') }}</h2>
       <p
         v-if="!postEvent"
         class="intro-sponsors mt-5 mb-4"
@@ -12,8 +12,8 @@
         color="info"
         target="_blank"
         href="https://betterplace.org/p71036"
-        flat
-        outline
+        text
+        outlined
       >
         {{ $t("button.donate") }}
         <v-icon right>card_giftcard</v-icon>
@@ -82,8 +82,8 @@
             "
             :to="'/overview/challenges/' + sponsor.challengeCategoryID"
           >
-            <v-btn class="mt-2" width="auto" color="info" outline flat small>
-              {{ $t("button.showChallenge") }}
+            <v-btn class="mt-2" width="auto" color="info" outlined text small>
+              {{ $t('button.showChallenge') }}
             </v-btn>
           </router-link>
           <div
@@ -97,17 +97,17 @@
           </div>
         </v-flex>
       </v-layout>
-      <p class="outro-sponsors my-5">{{ $t("outroSponsors") }}</p>
+      <p class="outro-sponsors my-5">{{ $t('outroSponsors') }}</p>
       <v-layout row align-center justify-center wrap>
         <v-btn
           class="mx-2"
           href="https://www.iso.org/iso-50001-energy-management.html"
           target="_blank"
           color="accent"
-          outline
-          flat
+          outlined
+          text
         >
-          {{ $t("button.link2Iso500001") }}
+          {{ $t('button.link2Iso500001') }}
           <v-icon dark right>open_in_new</v-icon>
         </v-btn>
         <v-btn
@@ -115,10 +115,10 @@
           href="https://www.right-basedonscience.de/en/xdc-model/"
           target="_blank"
           color="accent"
-          outline
-          flat
+          outlined
+          text
         >
-          {{ $t("button.link2XDC") }}
+          {{ $t('button.link2XDC') }}
           <v-icon dark right>open_in_new</v-icon>
         </v-btn>
         <v-btn
@@ -126,15 +126,15 @@
           href="https://www.cdp.net/en/companies/companies-scores"
           target="_blank"
           color="accent"
-          outline
-          flat
+          outlined
+          text
         >
-          {{ $t("button.link2CDP") }}
+          {{ $t('button.link2CDP') }}
           <v-icon dark right>open_in_new</v-icon>
         </v-btn>
       </v-layout>
 
-      <h2>{{ $t("partnersTitle") }}</h2>
+      <h2>{{ $t('partnersTitle') }}</h2>
       <p class="intro-partners my-5" v-html="$t('introPartners')"></p>
       <v-img
         v-if="partners.length === 0"
@@ -183,7 +183,7 @@
             }"
           >
             {{
-              $i18n.locale === "en" ? partner.purpose[0] : partner.purpose[1]
+              $i18n.locale === 'en' ? partner.purpose[0] : partner.purpose[1]
             }}
           </p>
         </v-flex>
@@ -194,11 +194,11 @@
 
 <script>
 export default {
-  name: "Parties",
+  name: 'Parties',
   props: {
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     },
     isMobile: Boolean
   },
@@ -206,7 +206,7 @@ export default {
     sectionColor: function() {
       return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
         ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary;
+        : this.$vuetify.theme.primary
     }
   },
   data() {
@@ -214,101 +214,101 @@ export default {
       postEvent: true,
       sponsors: [
         {
-          icon: require("../../assets/sponsor/sponsor-op.svg"),
-          name: "objective partner",
+          icon: require('../../assets/sponsor/sponsor-op.svg'),
+          name: 'objective partner',
           challenge: true,
           challengeCategoryID: 7
         },
         {
-          icon: require("../../assets/sponsor/sponsor-rnv.svg"),
-          name: "Rhein-Neckar-Verkehr GmbH",
+          icon: require('../../assets/sponsor/sponsor-rnv.svg'),
+          name: 'Rhein-Neckar-Verkehr GmbH',
           challenge: true,
           challengeCategoryID: 1
         },
         {
-          icon: require("../../assets/sponsor/sponsor-gbg.svg"),
-          name: "GBG Mannheim",
+          icon: require('../../assets/sponsor/sponsor-gbg.svg'),
+          name: 'GBG Mannheim',
           challenge: true,
           challengeCategoryID: 0
         },
         {
-          icon: require("../../assets/sponsor/sponsor-mvv.jpg"),
-          name: "MVV Energie AG",
+          icon: require('../../assets/sponsor/sponsor-mvv.jpg'),
+          name: 'MVV Energie AG',
           challenge: true,
           challengeCategoryID: 0
         },
         {
-          icon: require("../../assets/sponsor/sponsor-camelot.jpg"),
-          name: "CAMELOT Management Consultants AG",
+          icon: require('../../assets/sponsor/sponsor-camelot.jpg'),
+          name: 'CAMELOT Management Consultants AG',
           challenge: true,
           challengeCategoryID: null
         },
         {
-          icon: require("../../assets/sponsor/sponsor-valantic.jpg"),
-          name: "valantic",
+          icon: require('../../assets/sponsor/sponsor-valantic.jpg'),
+          name: 'valantic',
           challenge: false,
           challengeCategoryID: null
         },
         {
-          icon: require("../../assets/sponsor/sponsor-basf.svg"),
-          name: "BASF SE",
+          icon: require('../../assets/sponsor/sponsor-basf.svg'),
+          name: 'BASF SE',
           challenge: false,
           challengeCategoryID: null
         },
         {
-          icon: require("../../assets/sponsor/sponsor-ueberbit.svg"),
-          name: "UEBERBIT GmbH",
+          icon: require('../../assets/sponsor/sponsor-ueberbit.svg'),
+          name: 'UEBERBIT GmbH',
           challenge: false,
           challengeCategoryID: null
         },
         {
-          icon: require("../../assets/sponsor/sponsor-onwerk.jpeg"),
-          name: "Onwerk GmbH",
+          icon: require('../../assets/sponsor/sponsor-onwerk.jpeg'),
+          name: 'Onwerk GmbH',
           challenge: false,
           challengeCategoryID: null
         }
       ],
       partners: [
         {
-          icon: require("../../assets/partner/partner-startup-ma.svg"),
-          name: "STARTUP MANNHEIM",
+          icon: require('../../assets/partner/partner-startup-ma.svg'),
+          name: 'STARTUP MANNHEIM',
           important: true,
-          purpose: ["Location Partner", "Location Partner"]
+          purpose: ['Location Partner', 'Location Partner']
         },
         {
-          icon: require("../../assets/partner/partner-ksa.svg"),
-          name: "Klimaschutzagentur Mannheim",
+          icon: require('../../assets/partner/partner-ksa.svg'),
+          name: 'Klimaschutzagentur Mannheim',
           important: true,
-          purpose: ["Sustainability Partner", "Sustainability Partner"]
+          purpose: ['Sustainability Partner', 'Sustainability Partner']
         },
         {
-          icon: require("../../assets/partner/partner-shub.png"),
-          name: "S-HUB Accelerator",
+          icon: require('../../assets/partner/partner-shub.png'),
+          name: 'S-HUB Accelerator',
           important: true,
-          purpose: ["Award Partner", "Award Partner"]
+          purpose: ['Award Partner', 'Award Partner']
         },
         {
-          icon: require("../../assets/partner/partner-projecttogether.png"),
-          name: "ProjectTogether",
+          icon: require('../../assets/partner/partner-projecttogether.png'),
+          name: 'ProjectTogether',
           important: true,
-          purpose: ["Award Partner", "Award Partner"]
+          purpose: ['Award Partner', 'Award Partner']
         },
         {
-          icon: require("../../assets/partner/partner-kompass.jpg"),
-          name: "Hochschule Mannheim • Kompass",
+          icon: require('../../assets/partner/partner-kompass.jpg'),
+          name: 'Hochschule Mannheim • Kompass',
           important: false,
-          purpose: ["Network Partner", "Netzwerk Partner"]
+          purpose: ['Network Partner', 'Netzwerk Partner']
         },
         {
-          icon: require("../../assets/partner/partner-stocard.jpg"),
-          name: "Stocard GmbH",
+          icon: require('../../assets/partner/partner-stocard.jpg'),
+          name: 'Stocard GmbH',
           important: false,
-          purpose: ["Hydration Mate", "Hydration Mate"]
+          purpose: ['Hydration Mate', 'Hydration Mate']
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <i18n>

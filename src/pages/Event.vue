@@ -1,11 +1,11 @@
 <template>
-  <v-content class="pa-0">
+  <Layout>
     <!-- <EventHeader id="header" :isMobile="isMobile" themeColor="secondary" />
     <EventInfo id="info" :isMobile="isMobile" themeColor="secondary" />
     <EventLocation id="location" :isMobile="isMobile" themeColor="primary" />
     <EventBag id="bag" :isMobile="isMobile" themeColor="secondary" />
     <Footer id="footer" themeColor="primary" /> -->
-  </v-content>
+  </Layout>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
   metaInfo: {
     title: 'Event Infos'
   },
-  name: "Event",
+  name: 'Event',
   components: {
     EventHeader,
     EventInfo,
@@ -31,9 +31,9 @@ export default {
     isMobile: Boolean
   },
   data() {
-    return {};
+    return {}
   }
-};
+}
 </script>
 
 <i18n>

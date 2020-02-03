@@ -1,7 +1,7 @@
 <template>
   <section :style="{ backgroundColor: sectionColor }">
     <v-container>
-      <h2>{{ $t("prices") }}</h2>
+      <h2>{{ $t('prices') }}</h2>
       <stack
         class="mb-5"
         ref="stack"
@@ -50,7 +50,7 @@
         </stack-item>
       </stack>
 
-      <h2>{{ $t("title") }}</h2>
+      <h2>{{ $t('title') }}</h2>
       <stack
         ref="stack"
         :column-min-width="320"
@@ -104,11 +104,11 @@
               color="white"
               :href="winner.sulutionURL"
               target="_blank"
-              outline
-              flat
+              outlined
+              text
               small
             >
-              {{ $t("btnShowSolution") }}
+              {{ $t('btnShowSolution') }}
             </v-btn>
           </v-card>
         </stack-item>
@@ -118,16 +118,16 @@
 </template>
 
 <script>
-import debounce from "lodash/debounce";
-import { Stack, StackItem } from "vue-stack-grid";
+import debounce from 'lodash/debounce'
+import { Stack, StackItem } from 'vue-stack-grid'
 
 export default {
-  name: "TeamOverview",
+  name: 'TeamOverview',
   components: { Stack, StackItem },
   props: {
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     },
     isMobile: Boolean
   },
@@ -135,422 +135,422 @@ export default {
     sectionColor: function() {
       return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
         ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary;
+        : this.$vuetify.theme.primary
     }
   },
   methods: {
     reflow: debounce(function() {
-      this.$refs.stack.reflow();
+      this.$refs.stack.reflow()
     }, 100)
   },
   data() {
     return {
       prices: [
         {
-          text: "Climate Grant Award",
-          description: "Bike Drop, 1&ONLY, LoRaWahn",
+          text: 'Climate Grant Award',
+          description: 'Bike Drop, 1&ONLY, LoRaWahn',
           color: this.$vuetify.theme.warning,
           winner: true,
-          img: require("../../assets/price/price-climategrant.jpg")
+          img: require('../../assets/price/price-climategrant.jpg')
         },
         {
-          text: "S-HUB Award",
-          description: "1&ONLY, Zero2",
+          text: 'S-HUB Award',
+          description: '1&ONLY, Zero2',
           color: this.$vuetify.theme.warning,
           winner: true,
-          img: require("../../assets/price/price-shub.jpg")
+          img: require('../../assets/price/price-shub.jpg')
         },
         {
-          text: "ProjectTogether Award",
+          text: 'ProjectTogether Award',
           description:
-            "Escape Apocalypse, Localot, Mvua Nzuri, MeetMe, Tender, Videoclip Crashtest",
+            'Escape Apocalypse, Localot, Mvua Nzuri, MeetMe, Tender, Videoclip Crashtest',
           color: this.$vuetify.theme.warning,
           winner: true,
-          img: require("../../assets/price/price-projecttogether.jpg")
+          img: require('../../assets/price/price-projecttogether.jpg')
         },
         {
-          text: "MVV Challenge Winner",
-          description: "LoRaWahn",
+          text: 'MVV Challenge Winner',
+          description: 'LoRaWahn',
           color: this.$vuetify.theme.info,
           winner: true,
-          img: require("../../assets/price/price-mvv.jpg")
+          img: require('../../assets/price/price-mvv.jpg')
         },
         {
-          text: "CAMELOT Challenge Winner",
-          description: "1&ONLY, Zero2",
+          text: 'CAMELOT Challenge Winner',
+          description: '1&ONLY, Zero2',
           color: this.$vuetify.theme.info,
           winner: true,
-          img: require("../../assets/price/price-camelot.jpg")
+          img: require('../../assets/price/price-camelot.jpg')
         },
         {
-          text: "objective partner Challenge Winner",
-          description: "Intel Inside",
+          text: 'objective partner Challenge Winner',
+          description: 'Intel Inside',
           color: this.$vuetify.theme.info,
           winner: true,
-          img: require("../../assets/price/price-camelot.jpg")
+          img: require('../../assets/price/price-camelot.jpg')
         },
         {
-          text: "rnv Challenge",
-          description: "Bike Drop, op, Team Awesome, MaGreenLife, MeetMe",
+          text: 'rnv Challenge',
+          description: 'Bike Drop, op, Team Awesome, MaGreenLife, MeetMe',
           color: this.$vuetify.theme.info,
           winner: true,
-          img: require("../../assets/price/price-rnv.jpg")
+          img: require('../../assets/price/price-rnv.jpg')
         },
         {
-          text: "City Challenge",
+          text: 'City Challenge',
           description:
-            "Bike Drop, Zero2, Escape Apocalypse, Extremwetter, MaGreenLife, Localot, MeetMe, Tender, Plantzilla",
+            'Bike Drop, Zero2, Escape Apocalypse, Extremwetter, MaGreenLife, Localot, MeetMe, Tender, Plantzilla',
           color: this.$vuetify.theme.error,
           winner: true,
-          img: require("../../assets/price/price-city.jpg")
+          img: require('../../assets/price/price-city.jpg')
         }
       ],
       winners: [
         {
-          title: "Bike Drop",
+          title: 'Bike Drop',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "Climate Grant Award",
+              text: 'Climate Grant Award',
               color: this.$vuetify.theme.warning,
               winner: true
             },
             {
-              text: "City Challenge",
+              text: 'City Challenge',
               color: this.$vuetify.theme.error,
               winner: false
             },
             {
-              text: "RNV Challenge",
+              text: 'RNV Challenge',
               color: this.$vuetify.theme.info,
               winner: false
             }
           ],
           descriptionI18n: {
-            de: "Der Fahrradbaum - eine Design-Bike-Station.",
-            en: "The Bike Tree – a design bike station."
+            de: 'Der Fahrradbaum - eine Design-Bike-Station.',
+            en: 'The Bike Tree – a design bike station.'
           },
           sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/biketree-final"
+            'https://climathon.climate-kic.org/en/solutions/biketree-final'
         },
         {
-          title: "1&ONLY",
+          title: '1&ONLY',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "Climate Grant Award",
+              text: 'Climate Grant Award',
               color: this.$vuetify.theme.warning,
               winner: true
             },
             {
-              text: "S-HUB Award",
+              text: 'S-HUB Award',
               color: this.$vuetify.theme.warning,
               winner: true
             },
             {
-              text: "CAMELOT Challenge Winner",
+              text: 'CAMELOT Challenge Winner',
               color: this.$vuetify.theme.info,
               winner: true
             }
           ],
           descriptionI18n: {
             de:
-              "BendiT - Eine Plattform zur Beschleunigung der industriellen Symbiose.",
-            en: "BendiT - A platform to accelerate Industrial symbiosis."
+              'BendiT - Eine Plattform zur Beschleunigung der industriellen Symbiose.',
+            en: 'BendiT - A platform to accelerate Industrial symbiosis.'
           },
           sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/benit-the-industrial-symbiosis-accelerator"
+            'https://climathon.climate-kic.org/en/solutions/benit-the-industrial-symbiosis-accelerator'
         },
         {
-          title: "LoRaWahn",
+          title: 'LoRaWahn',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "Climate Grant Award",
+              text: 'Climate Grant Award',
               color: this.$vuetify.theme.warning,
               winner: true
             },
             {
-              text: "MVV Challenge Winner",
+              text: 'MVV Challenge Winner',
               color: this.$vuetify.theme.info,
               winner: true
             }
           ],
           descriptionI18n: {
             de:
-              "Zeigen Sie dem Anwender mit LoRaWan-Sensoren, wie viel CO2 er sparen kann.",
-            en: "Show the user with LoRaWan sensors how much co2 he can save."
+              'Zeigen Sie dem Anwender mit LoRaWan-Sensoren, wie viel CO2 er sparen kann.',
+            en: 'Show the user with LoRaWan sensors how much co2 he can save.'
           },
           sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/consider-your-consequences"
+            'https://climathon.climate-kic.org/en/solutions/consider-your-consequences'
         },
         {
-          title: "Zero2",
+          title: 'Zero2',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "S-HUB Award",
+              text: 'S-HUB Award',
               color: this.$vuetify.theme.warning,
               winner: true
             },
             {
-              text: "CAMELOT Challenge Winner",
+              text: 'CAMELOT Challenge Winner',
               color: this.$vuetify.theme.info,
               winner: true
             },
             {
-              text: "City Challenge",
+              text: 'City Challenge',
               color: this.$vuetify.theme.error,
               winner: false
             }
           ],
           descriptionI18n: {
-            de: "FoodAbdruck- eine umweltfreundliche Einkaufsliste.",
-            en: "FoodAbdruck- an environmental friendly shopping list."
+            de: 'FoodAbdruck- eine umweltfreundliche Einkaufsliste.',
+            en: 'FoodAbdruck- an environmental friendly shopping list.'
           },
           sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/foodabdruck"
+            'https://climathon.climate-kic.org/en/solutions/foodabdruck'
         },
         {
-          title: "op",
+          title: 'op',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "RNV Challenge",
+              text: 'RNV Challenge',
               color: this.$vuetify.theme.info,
               winner: false
             }
           ],
           descriptionI18n: {
             de:
-              "Informationen zum öffentlichen Nahverkehr für Menschen mit Behinderungen.",
-            en: "Public transportation information for handicapped people."
+              'Informationen zum öffentlichen Nahverkehr für Menschen mit Behinderungen.',
+            en: 'Public transportation information for handicapped people.'
           },
           sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/public-transportation-information-for-handicapped-people"
+            'https://climathon.climate-kic.org/en/solutions/public-transportation-information-for-handicapped-people'
         },
         {
-          title: "Team Awesome",
+          title: 'Team Awesome',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "RNV Challenge",
+              text: 'RNV Challenge',
               color: this.$vuetify.theme.info,
               winner: false
             }
           ],
           descriptionI18n: {
-            de: "tram! Wieder auf Kurs kommen.",
-            en: "tramn! Getting back on track."
+            de: 'tram! Wieder auf Kurs kommen.',
+            en: 'tramn! Getting back on track.'
           },
-          sulutionURL: "https://climathon.climate-kic.org/en/solutions/tramn"
+          sulutionURL: 'https://climathon.climate-kic.org/en/solutions/tramn'
         },
         {
-          title: "Intel Inside",
+          title: 'Intel Inside',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "Objective Partner Challenge Winner",
+              text: 'Objective Partner Challenge Winner',
               color: this.$vuetify.theme.info,
               winner: true
             }
           ],
           descriptionI18n: {
             de:
-              "Bereitstellung eines tragbaren Sensorpakets und einer App für eine Heatmap für die Bewässerung.",
+              'Bereitstellung eines tragbaren Sensorpakets und einer App für eine Heatmap für die Bewässerung.',
             en:
-              "Providing portable Sensor pack and App for an irrigation Heatmap."
+              'Providing portable Sensor pack and App for an irrigation Heatmap.'
           },
           sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/helping-low-income-farmers-with-intelligent-water-management-systems"
+            'https://climathon.climate-kic.org/en/solutions/helping-low-income-farmers-with-intelligent-water-management-systems'
         },
         {
-          title: "Escape Apocalypse",
+          title: 'Escape Apocalypse',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "ProjectTogether Award",
+              text: 'ProjectTogether Award',
               color: this.$vuetify.theme.warning,
               winner: true
             },
             {
-              text: "City Challenge",
+              text: 'City Challenge',
               color: this.$vuetify.theme.error,
               winner: false
             }
           ],
           descriptionI18n: {
             de:
-              "App, die Informationen vermittelt und spielerisch umweltbewusstes Handeln in den Alltag integriert.",
+              'App, die Informationen vermittelt und spielerisch umweltbewusstes Handeln in den Alltag integriert.',
             en:
-              "App that conveys information and integrates environmentally conscious actions into everyday life in a playful way."
+              'App that conveys information and integrates environmentally conscious actions into everyday life in a playful way.'
           },
           sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/escape-apocalypse"
+            'https://climathon.climate-kic.org/en/solutions/escape-apocalypse'
         },
         {
-          title: "Extremwetter",
+          title: 'Extremwetter',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "City Challenge",
+              text: 'City Challenge',
               color: this.$vuetify.theme.error,
               winner: false
             },
             {
-              text: "GBG Challenge",
+              text: 'GBG Challenge',
               color: this.$vuetify.theme.info,
               winner: false
             }
           ],
           descriptionI18n: {
-            de: "Heute auf das Extremwetter von morgen vorbereiten.",
-            en: "Preparing Today for Extreme Weather Tomorrow."
+            de: 'Heute auf das Extremwetter von morgen vorbereiten.',
+            en: 'Preparing Today for Extreme Weather Tomorrow.'
           },
           sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/extreme-weather"
+            'https://climathon.climate-kic.org/en/solutions/extreme-weather'
         },
         {
-          title: "MaGreenLife",
+          title: 'MaGreenLife',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "City Challenge",
+              text: 'City Challenge',
               color: this.$vuetify.theme.error,
               winner: false
             },
             {
-              text: "RNV Challenge",
-              color: this.$vuetify.theme.info,
-              winner: false
-            }
-          ],
-          descriptionI18n: {
-            de:
-              "MaGreenLife belohnt den Nutzer für sein klimafreundliches Verhalten und gibt der Stadt oder den öffentlichen Verkehrsunternehmen die Möglichkeit, Daten und Ideen von ihren Mitnutzern zu sammeln.",
-            en:
-              "MaGreenLife rewards the user for climate-friendly behavior and gives the city or public transport organisation a possibility to gather data and ideas from their fellow users."
-          },
-          sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/magreenlife"
-        },
-        {
-          title: "Localot",
-          // img: require("../../assets/winner/winner-shub.png"),
-          awards: [
-            {
-              text: "ProjectTogether Award",
-              color: this.$vuetify.theme.warning,
-              winner: true
-            },
-            {
-              text: "City Challenge",
-              color: this.$vuetify.theme.error,
-              winner: false
-            }
-          ],
-          descriptionI18n: {
-            de:
-              "Localot ist DIE Plattform, um lokale Einzelhändler mit ihren Kunden durch einen nachhaltigen und abfallfreien Lieferservice zu verbinden.",
-            en:
-              "Localot is THE platform to connect local retailers with their customers through a sustainable and zero-waste delivery service."
-          },
-          sulutionURL: "https://climathon.climate-kic.org/en/solutions/localot"
-        },
-        {
-          title: "Mvua Nzuri",
-          // img: require("../../assets/winner/winner-shub.png"),
-          awards: [
-            {
-              text: "ProjectTogether Award",
-              color: this.$vuetify.theme.warning,
-              winner: true
-            }
-          ],
-          descriptionI18n: {
-            de:
-              "Über ein in sich geschlossenes und selbstorganisierendes Bewässerungssystem, das sogar bessere Bewässerungsstrategien vorschlagen kann.",
-            en:
-              "About a self-contained and self-organizing irrigation system that can even suggest better farming strategies."
-          },
-          sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/make-irrigation-great-again"
-        },
-        {
-          title: "MeetMe",
-          // img: require("../../assets/winner/winner-shub.png"),
-          awards: [
-            {
-              text: "ProjectTogether Award",
-              color: this.$vuetify.theme.warning,
-              winner: true
-            },
-            {
-              text: "City Challenge",
-              color: this.$vuetify.theme.error,
-              winner: false
-            },
-            {
-              text: "RNV Challenge",
+              text: 'RNV Challenge',
               color: this.$vuetify.theme.info,
               winner: false
             }
           ],
           descriptionI18n: {
             de:
-              "Unsere App MeetMe hilft Menschen, während ihrer Reise mit öffentlichen Verkehrsmitteln echte soziale Kontakte zu knüpfen, die nicht nur helfen, Probleme der sozialen Isolation zu bewältigen, sondern auch dazu beitragen, dass öffentliche Verkehrsmittel eine völlig neue Erfahrung werden.",
+              'MaGreenLife belohnt den Nutzer für sein klimafreundliches Verhalten und gibt der Stadt oder den öffentlichen Verkehrsunternehmen die Möglichkeit, Daten und Ideen von ihren Mitnutzern zu sammeln.',
             en:
-              "Our app MeetMe helps people to get genuine social contacts during their journey on public transportation which not only helps to face against problems of social isolation but helps public transportation to be a totally new experience."
+              'MaGreenLife rewards the user for climate-friendly behavior and gives the city or public transport organisation a possibility to gather data and ideas from their fellow users.'
           },
           sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/mobile-application-to-make-public-transport-more-attractive-by-facing-against-social-isolation"
+            'https://climathon.climate-kic.org/en/solutions/magreenlife'
         },
         {
-          title: "Tender",
+          title: 'Localot',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "ProjectTogether Award",
+              text: 'ProjectTogether Award',
               color: this.$vuetify.theme.warning,
               winner: true
             },
             {
-              text: "City Challenge",
-              color: this.$vuetify.theme.error,
-              winner: false
-            }
-          ],
-          descriptionI18n: {
-            de: "Garten-App, die soziale Kontakte und Bildung ermöglicht.",
-            en: "Gardening app facilitating social connections and education."
-          },
-          sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/community-gardening-app"
-        },
-        {
-          title: "Plantzilla",
-          // img: require("../../assets/winner/winner-shub.png"),
-          awards: [
-            {
-              text: "City Challenge",
+              text: 'City Challenge',
               color: this.$vuetify.theme.error,
               winner: false
             }
           ],
           descriptionI18n: {
             de:
-              "Eine Anwendung zur Überwachung, Steuerung und Interaktion mit Anlagen.",
-            en: "An application to monitor, control, and interact with plants."
+              'Localot ist DIE Plattform, um lokale Einzelhändler mit ihren Kunden durch einen nachhaltigen und abfallfreien Lieferservice zu verbinden.',
+            en:
+              'Localot is THE platform to connect local retailers with their customers through a sustainable and zero-waste delivery service.'
           },
-          sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/plantopia"
+          sulutionURL: 'https://climathon.climate-kic.org/en/solutions/localot'
         },
         {
-          title: "Videoclip Crashtest",
+          title: 'Mvua Nzuri',
           // img: require("../../assets/winner/winner-shub.png"),
           awards: [
             {
-              text: "ProjectTogether Award",
+              text: 'ProjectTogether Award',
+              color: this.$vuetify.theme.warning,
+              winner: true
+            }
+          ],
+          descriptionI18n: {
+            de:
+              'Über ein in sich geschlossenes und selbstorganisierendes Bewässerungssystem, das sogar bessere Bewässerungsstrategien vorschlagen kann.',
+            en:
+              'About a self-contained and self-organizing irrigation system that can even suggest better farming strategies.'
+          },
+          sulutionURL:
+            'https://climathon.climate-kic.org/en/solutions/make-irrigation-great-again'
+        },
+        {
+          title: 'MeetMe',
+          // img: require("../../assets/winner/winner-shub.png"),
+          awards: [
+            {
+              text: 'ProjectTogether Award',
+              color: this.$vuetify.theme.warning,
+              winner: true
+            },
+            {
+              text: 'City Challenge',
+              color: this.$vuetify.theme.error,
+              winner: false
+            },
+            {
+              text: 'RNV Challenge',
+              color: this.$vuetify.theme.info,
+              winner: false
+            }
+          ],
+          descriptionI18n: {
+            de:
+              'Unsere App MeetMe hilft Menschen, während ihrer Reise mit öffentlichen Verkehrsmitteln echte soziale Kontakte zu knüpfen, die nicht nur helfen, Probleme der sozialen Isolation zu bewältigen, sondern auch dazu beitragen, dass öffentliche Verkehrsmittel eine völlig neue Erfahrung werden.',
+            en:
+              'Our app MeetMe helps people to get genuine social contacts during their journey on public transportation which not only helps to face against problems of social isolation but helps public transportation to be a totally new experience.'
+          },
+          sulutionURL:
+            'https://climathon.climate-kic.org/en/solutions/mobile-application-to-make-public-transport-more-attractive-by-facing-against-social-isolation'
+        },
+        {
+          title: 'Tender',
+          // img: require("../../assets/winner/winner-shub.png"),
+          awards: [
+            {
+              text: 'ProjectTogether Award',
+              color: this.$vuetify.theme.warning,
+              winner: true
+            },
+            {
+              text: 'City Challenge',
+              color: this.$vuetify.theme.error,
+              winner: false
+            }
+          ],
+          descriptionI18n: {
+            de: 'Garten-App, die soziale Kontakte und Bildung ermöglicht.',
+            en: 'Gardening app facilitating social connections and education.'
+          },
+          sulutionURL:
+            'https://climathon.climate-kic.org/en/solutions/community-gardening-app'
+        },
+        {
+          title: 'Plantzilla',
+          // img: require("../../assets/winner/winner-shub.png"),
+          awards: [
+            {
+              text: 'City Challenge',
+              color: this.$vuetify.theme.error,
+              winner: false
+            }
+          ],
+          descriptionI18n: {
+            de:
+              'Eine Anwendung zur Überwachung, Steuerung und Interaktion mit Anlagen.',
+            en: 'An application to monitor, control, and interact with plants.'
+          },
+          sulutionURL:
+            'https://climathon.climate-kic.org/en/solutions/plantopia'
+        },
+        {
+          title: 'Videoclip Crashtest',
+          // img: require("../../assets/winner/winner-shub.png"),
+          awards: [
+            {
+              text: 'ProjectTogether Award',
               color: this.$vuetify.theme.warning,
               winner: true
             }
@@ -562,12 +562,12 @@ export default {
               'Fossil Free Karlsruhe wants to challenge residents with FAKTOR2 by asking: "How quickly can power generation by rooftop solar panels be doubled?" Therefore, Fossil Free Karlsruhe wants to create an advertisement to fire up people nationwide in support for FAKTOR2.'
           },
           sulutionURL:
-            "https://climathon.climate-kic.org/en/solutions/videoclip-crashtest-with-two-animated-dummies-on-their-way-to-death"
+            'https://climathon.climate-kic.org/en/solutions/videoclip-crashtest-with-two-animated-dummies-on-their-way-to-death'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <i18n>
