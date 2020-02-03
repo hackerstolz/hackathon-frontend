@@ -6,11 +6,11 @@
   "descriptions": [
     {
       "language": "DE",
-      "description": "Mobility Challenge Beschreibung"
+      "description": "Mobility Kategorie Beschreibung"
     },
     {
       "language": "EN",
-      "description": "Mobility Challenge Description"
+      "description": "Mobility Category Description"
     }
   ]
 }
