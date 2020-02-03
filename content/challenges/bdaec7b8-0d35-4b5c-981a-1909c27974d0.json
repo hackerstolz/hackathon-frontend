@@ -1,0 +1,30 @@
+{
+  "id": "bdaec7b8-0d35-4b5c-981a-1909c27974d0",
+  "title": "Challenge A",
+  "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "Eine Mobility Challenge mit Tech und City Sponsor"
+    },
+    {
+      "language": "EN",
+      "description": "A mobility challenge having a tech as well as city sponsor"
+    }
+  ],
+  "price": "8a17e8ee-357b-4cb1-bd05-7db4d6c7c9bf",
+  "sponsor": "a40dc0da-167c-4225-b53e-99aa966cb63a",
+  "badges": [
+    {
+      "badge": "0f6538d9-13af-4731-873d-4a736a1c3d5b"
+    },
+    {
+      "badge": "22d25bc6-b53c-492f-ab73-a4c68b4c9f6d"
+    }
+  ],
+  "categories": [
+    {
+      "category": "61b0dad7-08e4-4b7b-b8a6-66bb5268f1cf"
+    }
+  ]
+}
