@@ -16,6 +16,14 @@ module.exports = function(api) {
         })
       ])
     }
+
+    // webpack config for i18n: https://github.com/intlify/vue-i18n-loader
+    config.module
+      .rule('i18n')
+      .resourceQuery(/blockType=i18n/)
+      .type('javascript/auto')
+      .use('i18n')
+      .loader('@kazupon/vue-i18n-loader')
   })
 
   api.loadSource(store => {

@@ -142,7 +142,7 @@ export default {
 }
 </script>
 
-<i18n>
+<i18n lang="json5">
 {
   "en": {
     "date": "25.-27. October",
