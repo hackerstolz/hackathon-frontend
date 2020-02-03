@@ -28,6 +28,6 @@ module.exports = function(api) {
   })
 
   api.loadSource(store => {
-    t.load("./src/admin/config.yml", "./", actions);
+    t.load("./src/admin/config.yml", "./", store);
   })
 }
