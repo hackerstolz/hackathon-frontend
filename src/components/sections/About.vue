@@ -1,7 +1,7 @@
 <template>
   <section :style="{ backgroundColor: sectionColor }">
     <v-container>
-      <h2 class="align-left">{{ $t("titleWhy") }}</h2>
+      <h2 class="align-left">{{ $t('titleWhy') }}</h2>
       <div class="small-earth d-inline-block mx-1">
         <v-img
           :src="require('../../assets/earth-small.svg')"
@@ -10,26 +10,26 @@
           contain
         >
         </v-img>
-        <div class="pa-2">{{ $t("imgDescription") }}</div>
+        <div class="pa-2">{{ $t('imgDescription') }}</div>
         <v-btn
           class="link-to-cgoal mb-4"
           href="https://www.ipcc.ch/sr15/"
           target="_blank"
           color="accent"
-          outline
-          flat
+          outlined
+          text
         >
-          {{ $t("button.link2Goal") }}
+          {{ $t('button.link2Goal') }}
           <v-icon dark right>open_in_new</v-icon>
         </v-btn>
       </div>
       <p class="align-left">
-        {{ $t("textWhy") }}
+        {{ $t('textWhy') }}
       </p>
 
-      <h2 class="align-center">{{ $t("titleWhat") }}</h2>
-      <p class="align-center">{{ $t("textWhat[0]") }}</p>
-      <p class="align-center">{{ $t("textWhat[1]") }}</p>
+      <h2 class="align-center">{{ $t('titleWhat') }}</h2>
+      <p class="align-center">{{ $t('textWhat[0]') }}</p>
+      <p class="align-center">{{ $t('textWhat[1]') }}</p>
 
       <v-layout
         class="article-container"
@@ -77,7 +77,7 @@
         </v-card>
       </v-layout>
 
-      <h2 class="align-left">{{ $t("unoGoalsTitle") }}</h2>
+      <h2 class="align-left">{{ $t('unoGoalsTitle') }}</h2>
       <p class="align-left" v-html="$t('unoGoalsText')"></p>
       <v-layout
         row
@@ -112,11 +112,11 @@
 
 <script>
 export default {
-  name: "About",
+  name: 'About',
   props: {
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     },
     isMobile: Boolean
   },
@@ -124,30 +124,30 @@ export default {
     sectionColor: function() {
       return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
         ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary;
+        : this.$vuetify.theme.primary
     }
   },
   data() {
     return {
       goals: [
-        "https://www.un.org/sustainabledevelopment/sustainable-development-goals/",
-        "https://www.un.org/sustainabledevelopment/poverty/",
-        "https://www.un.org/sustainabledevelopment/hunger/",
-        "https://www.un.org/sustainabledevelopment/health/",
-        "https://www.un.org/sustainabledevelopment/education/",
-        "https://www.un.org/sustainabledevelopment/gender-equality/",
-        "https://www.un.org/sustainabledevelopment/water-and-sanitation/",
-        "https://www.un.org/sustainabledevelopment/energy/",
-        "https://www.un.org/sustainabledevelopment/economic-growth/",
-        "https://www.un.org/sustainabledevelopment/infrastructure-industrialization/",
-        "https://www.un.org/sustainabledevelopment/inequality/",
-        "https://www.un.org/sustainabledevelopment/cities/",
-        "https://www.un.org/sustainabledevelopment/sustainable-consumption-production/",
-        "https://www.un.org/sustainabledevelopment/climate-change/",
-        "https://www.un.org/sustainabledevelopment/oceans/",
-        "https://www.un.org/sustainabledevelopment/biodiversity/",
-        "https://www.un.org/sustainabledevelopment/peace-justice/",
-        "https://www.un.org/sustainabledevelopment/globalpartnerships/"
+        'https://www.un.org/sustainabledevelopment/sustainable-development-goals/',
+        'https://www.un.org/sustainabledevelopment/poverty/',
+        'https://www.un.org/sustainabledevelopment/hunger/',
+        'https://www.un.org/sustainabledevelopment/health/',
+        'https://www.un.org/sustainabledevelopment/education/',
+        'https://www.un.org/sustainabledevelopment/gender-equality/',
+        'https://www.un.org/sustainabledevelopment/water-and-sanitation/',
+        'https://www.un.org/sustainabledevelopment/energy/',
+        'https://www.un.org/sustainabledevelopment/economic-growth/',
+        'https://www.un.org/sustainabledevelopment/infrastructure-industrialization/',
+        'https://www.un.org/sustainabledevelopment/inequality/',
+        'https://www.un.org/sustainabledevelopment/cities/',
+        'https://www.un.org/sustainabledevelopment/sustainable-consumption-production/',
+        'https://www.un.org/sustainabledevelopment/climate-change/',
+        'https://www.un.org/sustainabledevelopment/oceans/',
+        'https://www.un.org/sustainabledevelopment/biodiversity/',
+        'https://www.un.org/sustainabledevelopment/peace-justice/',
+        'https://www.un.org/sustainabledevelopment/globalpartnerships/'
       ],
       articles: [
         // {
@@ -163,9 +163,9 @@ export default {
         //     "https://medium.com/@Hackerstolz/42-hours-at-a-hackathon-4f6444a3c3bd"
         // }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <i18n>

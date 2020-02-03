@@ -1,30 +1,27 @@
 <template>
   <Layout>
-    <v-content class="pa-0">
-      <h1>Hello!</h1>
-      <Intro id="intro" />
-      <!-- <About id="about" themeColor="primary" :isMobile="isMobile" />
-      <Challenges id="challenges" themeColor="secondary" :isMobile="isMobile" />
-      <Awards id="awards" themeColor="primary" :isMobile="isMobile" />
-      <TeamOverview id="teams" themeColor="primary" :isMobile="isMobile" />
-      <Location id="location" themeColor="secondary" />
-      <Schedule id="schedule" themeColor="secondary" :isMobile="isMobile" />
-      <Registration id="registration" themeColor="primary" :isMobile="isMobile" />
-      <Staff id="staff" themeColor="secondary" :isMobile="isMobile" />
-      <FAQ id="faq" themeColor="primary" />
-      <Parties id="parties" themeColor="secondary" :isMobile="isMobile" />
-      <Team id="team" themeColor="primary" :isMobile="isMobile" />
-      <Footer id="footer" themeColor="primary" :isMobile="isMobile" /> -->
-    </v-content>
+    <Intro id="intro" />
+    <About id="about" themeColor="primary" :isMobile="isMobile" />
+    <Challenges id="challenges" themeColor="secondary" :isMobile="isMobile" />
+    <Awards id="awards" themeColor="primary" :isMobile="isMobile" />
+    <TeamOverview id="teams" themeColor="primary" :isMobile="isMobile" />
+    <Location id="location" themeColor="secondary" />
+    <Schedule id="schedule" themeColor="secondary" :isMobile="isMobile" />
+    <Registration id="registration" themeColor="primary" :isMobile="isMobile" />
+    <Staff id="staff" themeColor="secondary" :isMobile="isMobile" />
+    <FAQ id="faq" themeColor="primary" />
+    <Parties id="parties" themeColor="secondary" :isMobile="isMobile" />
+    <Team id="team" themeColor="primary" :isMobile="isMobile" />
+    <Footer id="footer" themeColor="primary" :isMobile="isMobile" />
   </Layout>
 </template>
 
 <script>
-// const sectionsContext = require.context(
-//   "../components/sections/",
-//   true,
-//   /[^Event].*\.vue$/
-// );
+const sectionsContext = require.context(
+  '../components/sections/',
+  false,
+  /.*\.vue$/
+)
 
 export default {
   metaInfo: {
@@ -32,14 +29,13 @@ export default {
   },
   name: 'Overview',
   components: {
-    Intro: require('../components/sections/Intro.vue')
-    // ...sectionsContext.keys().reduce(
-    //   (map, key) => ({
-    //     ...map,
-    //     [sectionsContext(key).default.name]: sectionsContext(key).default
-    //   }),
-    //   {}
-    // )
+    ...sectionsContext.keys().reduce(
+      (map, key) => ({
+        ...map,
+        [sectionsContext(key).default.name]: sectionsContext(key).default
+      }),
+      {}
+    )
   },
   props: {
     isMobile: Boolean

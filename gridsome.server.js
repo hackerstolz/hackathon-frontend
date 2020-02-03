@@ -5,8 +5,7 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const nodeExternals = require('webpack-node-externals');
-const t = require('./transformer.js');
+const nodeExternals = require('webpack-node-externals')
 
 module.exports = function(api) {
   api.chainWebpack((config, { isServer }) => {
@@ -17,9 +16,17 @@ module.exports = function(api) {
         })
       ])
     }
+
+    // webpack config for i18n: https://github.com/intlify/vue-i18n-loader
+    config.module
+      .rule('i18n')
+      .resourceQuery(/blockType=i18n/)
+      .type('javascript/auto')
+      .use('i18n')
+      .loader('@kazupon/vue-i18n-loader')
   })
 
-  api.loadSource(actions => {
-    t.load("./src/admin/config.yml", "./", actions);
+  api.loadSource(store => {
+    // Use the Data store API here: https://gridsome.org/docs/data-store-api
   })
 }

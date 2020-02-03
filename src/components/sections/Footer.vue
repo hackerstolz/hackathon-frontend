@@ -22,21 +22,21 @@
 
       <div class="organizer my-5">
         <p class="made-by-slogan my-3">
-          <span>{{ $t("sloganBeforeHeart") }}</span>
+          <span>{{ $t('sloganBeforeHeart') }}</span>
           <v-img
             class="d-inline-block mx-1"
-            :src="require('../../assets/icon-heart.svg')"
+            :src="require('../../assets/icons/icon-heart.svg')"
             height="24"
             width="24"
             contain
           >
           </v-img>
-          <span>{{ $t("sloganAfterHeart") }}</span>
+          <span>{{ $t('sloganAfterHeart') }}</span>
         </p>
         <div class="logos ma-3">
           <v-img
             class="mr-2"
-            :src="require('../../assets/logo-hackerstolz.svg')"
+            :src="require('../../assets/logos/logo-hackerstolz.svg')"
             max-height="40"
             max-width="232"
             width="20%"
@@ -46,7 +46,7 @@
           </v-img>
           <v-img
             class="mr-2"
-            :src="require('../../assets/logo-mannheim.svg')"
+            :src="require('../../assets/logos/logo-mannheim.svg')"
             max-height="40"
             max-width="160"
             width="20%"
@@ -57,7 +57,7 @@
         </div>
         <div class="logos ma-3">
           <v-img
-            :src="require('../../assets/logo-KIC-EU.svg')"
+            :src="require('../../assets/logos/logo-KIC-EU.svg')"
             max-height="40"
             width="58%"
             position="center"
@@ -67,7 +67,7 @@
         </div>
       </div>
 
-      <h4 class="credits-title my-1">{{ $t("creditsTitle") }}</h4>
+      <h4 class="credits-title my-1">{{ $t('creditsTitle') }}</h4>
       <p class="credits pa-2 mb-5" v-html="$t('credits')"></p>
 
       <v-divider></v-divider>
@@ -83,11 +83,11 @@
           class="mb-4"
           href="https://www.hackerstolz.de/impressum/"
           target="_blank"
-          outline
+          outlined
           small
-          flat
+          text
         >
-          {{ $t("button.link2Legal") }}
+          {{ $t('button.link2Legal') }}
           <v-icon dark right>open_in_new</v-icon>
         </v-btn>
       </v-layout>
@@ -97,11 +97,11 @@
 
 <script>
 export default {
-  name: "Footer",
+  name: 'Footer',
   props: {
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     },
     isMobile: Boolean
   },
@@ -109,34 +109,34 @@ export default {
     sectionColor: function() {
       return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
         ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary;
+        : this.$vuetify.theme.primary
     }
   },
   data: () => ({
     links: [
       {
-        icon: require("../../assets/icon-twitter.svg"),
-        href: "https://twitter.com/hackerstolz"
+        icon: require('../../assets/icons/icon-twitter.svg'),
+        href: 'https://twitter.com/hackerstolz'
       },
       {
-        icon: require("../../assets/icon-meetup.svg"),
-        href: "https://www.meetup.com/de-DE/Hackschool-Rhein-Neckar/"
+        icon: require('../../assets/icons/icon-meetup.svg'),
+        href: 'https://www.meetup.com/de-DE/Hackschool-Rhein-Neckar/'
       },
       {
-        icon: require("../../assets/icon-facebook.svg"),
-        href: "https://www.facebook.com/hackerstolz/"
+        icon: require('../../assets/icons/icon-facebook.svg'),
+        href: 'https://www.facebook.com/hackerstolz/'
       },
       {
-        icon: require("../../assets/icon-igr.svg"),
-        href: "https://www.instagram.com/hackerstolz/"
+        icon: require('../../assets/icons/icon-igr.svg'),
+        href: 'https://www.instagram.com/hackerstolz/'
       },
       {
-        icon: require("../../assets/icon-hackerstolz.svg"),
-        href: "https://www.hackerstolz.de/"
+        icon: require('../../assets/icons/icon-hackerstolz.svg'),
+        href: 'https://www.hackerstolz.de/'
       }
     ]
   })
-};
+}
 </script>
 
 <i18n>

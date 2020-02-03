@@ -1,7 +1,7 @@
 <template>
   <section :style="{ backgroundColor: sectionColor }">
     <v-container>
-      <h2>{{ $t("title") }}</h2>
+      <h2>{{ $t('title') }}</h2>
       <p class="introText my-5" v-html="$t('introText')"></p>
       <v-layout class="my-4" row wrap align-start justify-center>
         <v-flex
@@ -23,19 +23,19 @@
             contain
           ></v-img>
           <p class="type-title my-1">
-            {{ $i18n.locale === "en" ? type.i18nTitle[0] : type.i18nTitle[1] }}
+            {{ $i18n.locale === 'en' ? type.i18nTitle[0] : type.i18nTitle[1] }}
           </p>
           <p class="type-description my-1">
             {{
-              $i18n.locale === "en"
+              $i18n.locale === 'en'
                 ? type.i18nDescription[0]
                 : type.i18nDescription[1]
             }}
           </p>
         </v-flex>
       </v-layout>
-      <p class="highlightText my-3">{{ $t("highlightText") }}</p>
-      <p v-if="!postEvent" class="outroText my-5">{{ $t("outroText") }}</p>
+      <p class="highlightText my-3">{{ $t('highlightText') }}</p>
+      <p v-if="!postEvent" class="outroText my-5">{{ $t('outroText') }}</p>
       <v-card
         v-if="!postEvent"
         class="my-5"
@@ -55,10 +55,10 @@
           href="https://hackerstolz.mptickets.com"
           target="_blank"
           color="info"
-          outline
-          flat
+          outlined
+          text
         >
-          {{ $t("button.link2Ticktes") }}
+          {{ $t('button.link2Ticktes') }}
           <v-icon dark right>open_in_new</v-icon>
         </v-btn>
         <v-btn
@@ -67,10 +67,10 @@
           href="http://community.hackerstolz.de"
           target="_blank"
           color="warning"
-          outline
-          flat
+          outlined
+          text
         >
-          {{ $t("button.link2Slack") }}
+          {{ $t('button.link2Slack') }}
           <v-icon dark right>open_in_new</v-icon>
         </v-btn>
       </v-layout>
@@ -83,7 +83,7 @@
         color="success"
         large
       >
-        {{ $t("button.buyTickets") }}
+        {{ $t('button.buyTickets') }}
       </v-btn>
     </v-container>
   </section>
@@ -91,11 +91,11 @@
 
 <script>
 export default {
-  name: "Registration",
+  name: 'Registration',
   props: {
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     },
     isMobile: Boolean
   },
@@ -103,7 +103,7 @@ export default {
     sectionColor: function() {
       return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
         ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary;
+        : this.$vuetify.theme.primary
     }
   },
   data() {
@@ -111,65 +111,65 @@ export default {
       postEvent: true,
       types: [
         {
-          icon: require("../../assets/flat-icon-terminal.svg"),
-          i18nTitle: ["Developer", "Entwickler*in"],
+          icon: require('../../assets/icons/flat-icon-terminal.svg'),
+          i18nTitle: ['Developer', 'Entwickler*in'],
           i18nDescription: [
-            "Programmers who turn thoughts into code. Only the input speed of your keyboard sets you limits.",
-            "Programmierer, die Gedanken in Code verwandeln. Nur die Eingabegeschwindigkeit deiner Tastatur setzt dir Grenzen."
+            'Programmers who turn thoughts into code. Only the input speed of your keyboard sets you limits.',
+            'Programmierer, die Gedanken in Code verwandeln. Nur die Eingabegeschwindigkeit deiner Tastatur setzt dir Grenzen.'
           ]
         },
         {
-          icon: require("../../assets/flat-icon-stack.svg"),
-          i18nTitle: ["Engineer", "Techniker*in"],
+          icon: require('../../assets/icons/flat-icon-stack.svg'),
+          i18nTitle: ['Engineer', 'Techniker*in'],
           i18nDescription: [
-            "With a deep scientific background you build the complex engine room of any technical project.",
-            "Mit einem tiefen wissenschaftlichen Hintergrund baust du den komplexen Maschinenraum eines jeden technischen Projekts."
+            'With a deep scientific background you build the complex engine room of any technical project.',
+            'Mit einem tiefen wissenschaftlichen Hintergrund baust du den komplexen Maschinenraum eines jeden technischen Projekts.'
           ]
         },
         {
-          icon: require("../../assets/flat-icon-network.svg"),
-          i18nTitle: ["Data Scientist", "Datenwissenschaftler*in"],
+          icon: require('../../assets/icons/flat-icon-network.svg'),
+          i18nTitle: ['Data Scientist', 'Datenwissenschaftler*in'],
           i18nDescription: [
-            "You and data, it’s a long story. A mixture of data magic and a touch of AI.",
-            "Du und Daten, es ist eine lange Geschichte. Eine Mischung aus Datenmagie und einem Hauch von KI."
+            'You and data, it’s a long story. A mixture of data magic and a touch of AI.',
+            'Du und Daten, es ist eine lange Geschichte. Eine Mischung aus Datenmagie und einem Hauch von KI.'
           ]
         },
         {
-          icon: require("../../assets/flat-icon-tools.svg"),
-          i18nTitle: ["Maker", "Macher*in"],
+          icon: require('../../assets/icons/flat-icon-tools.svg'),
+          i18nTitle: ['Maker', 'Macher*in'],
           i18nDescription: [
-            "Loves tinkering around with hardware and IoT. Your hands start to itch when you hear a great idea.",
-            "Liebt es, an Hardware und IoT herumzubasteln. Deine Hände fangen an zu jucken, wenn du eine tolle Idee hörst."
+            'Loves tinkering around with hardware and IoT. Your hands start to itch when you hear a great idea.',
+            'Liebt es, an Hardware und IoT herumzubasteln. Deine Hände fangen an zu jucken, wenn du eine tolle Idee hörst.'
           ]
         },
         {
-          icon: require("../../assets/flat-icon-bulp.svg"),
-          i18nTitle: ["Idea Generator", "Ideengenerator*in"],
+          icon: require('../../assets/icons/flat-icon-bulp.svg'),
+          i18nTitle: ['Idea Generator', 'Ideengenerator*in'],
           i18nDescription: [
-            "You spark creation with your original ideas and understand the problem at hand.",
-            "Du inspirierst die Kreation mit deinen originellen Ideen und verstehst das anstehende Problem."
+            'You spark creation with your original ideas and understand the problem at hand.',
+            'Du inspirierst die Kreation mit deinen originellen Ideen und verstehst das anstehende Problem.'
           ]
         },
         {
-          icon: require("../../assets/flat-icon-astronaut.svg"),
-          i18nTitle: ["Superpower", "Superkraft"],
+          icon: require('../../assets/icons/flat-icon-astronaut.svg'),
+          i18nTitle: ['Superpower', 'Superkraft'],
           i18nDescription: [
-            "Not techie or a designer, but your magic touch will bring projects to life.",
-            "Nicht Techniker oder Designer, aber deine magische Note wird Projekte zum Leben erwecken."
+            'Not techie or a designer, but your magic touch will bring projects to life.',
+            'Nicht Techniker oder Designer, aber deine magische Note wird Projekte zum Leben erwecken.'
           ]
         },
         {
-          icon: require("../../assets/flat-icon-colors.svg"),
-          i18nTitle: ["Designer", "Designer*in"],
+          icon: require('../../assets/icons/flat-icon-colors.svg'),
+          i18nTitle: ['Designer', 'Designer*in'],
           i18nDescription: [
-            "In your skillful hands, dashboards and applications gain clarity and style.",
-            "In deinen geschickten Händen gewinnen Dashboards und Anwendungen an Klarheit und Stil."
+            'In your skillful hands, dashboards and applications gain clarity and style.',
+            'In deinen geschickten Händen gewinnen Dashboards und Anwendungen an Klarheit und Stil.'
           ]
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <i18n>
