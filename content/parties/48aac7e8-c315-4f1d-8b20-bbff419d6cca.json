@@ -1,0 +1,28 @@
+{
+  "id": "48aac7e8-c315-4f1d-8b20-bbff419d6cca",
+  "name": "Mentor Muster",
+  "image": "/images/uploads/favicon.png",
+  "roles": [
+    {
+      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+      "role": "9aa5d3cb-8fe8-4b35-89de-22192c7ecd23",
+      "title": "Challenge Mentor",
+      "timeslot": [
+        {
+          "from": "1605265247",
+          "to": "1605301200"
+        },
+        {
+          "from": "1605258000",
+          "to": "1605301200"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "EN",
+          "description": "As expert in A he will help you to develop you business modell"
+        }
+      ]
+    }
+  ]
+}
