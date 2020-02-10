@@ -92,6 +92,14 @@ collections:
         searchFields: ["id", "name"]
         valueField: "id"
         displayFields: ["name"]
+      - label: Type
+        name: type
+        widget: "relation"
+        required: false
+        collection: "type"
+        searchFields: ["id", "title"]
+        valueField: "id"
+        displayFields: ["title"]
       - label: Badges
         name: badges
         widget: list
@@ -132,6 +140,23 @@ collections:
         media_library:
           config:
             max_file_size: 256000 # 250kb
+  - name: "type"
+    label: "Challenge Type"
+    folder: "content/types"
+    create: true
+    format: json
+    slug: "{{slug}}"
+    identifier_field: id
+    summary: "{{title}} ({{id}})"
+    fields:
+      - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: Descriptions
+        name: descriptions
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Description, name: description, widget: markdown}
   - name: "category"
     label: "Category"
     folder: "content/categories"
@@ -201,7 +226,9 @@ collections:
       - label: Roles
         name: roles
         widget: list
+        summary: "{{title}}"
         fields:
+          - {label: "Title", name: "title", widget: "string"}  
           - label: Hackathon
             name: hackathon
             widget: "relation"
@@ -209,15 +236,27 @@ collections:
             searchFields: ["id", "title"]
             valueField: "id"
             displayFields: ["title"]
+          - label: Challenge
+            name: challenge
+            widget: "relation"
+            collection: "challenge"
+            searchFields: ["id", "title"]
+            valueField: "id"
+            displayFields: ["title"]
+            required: false
           - label: Role
             name: role
             widget: "relation"
             collection: "role"
             searchFields: ["id", "title"]
             valueField: "id"
-            displayFields: ["title"]
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Timeslot", name: "timeslot", widget: "string", required: false}
+            displayFields: ["title"]                  
+          - label: Timeslot
+            name: timeslot
+            widget: list
+            fields:                
+                - {label: "From", name: "from", widget: "datetime", format: "X", required: false}
+                - {label: "To", name: "to", widget: "datetime", format: "X", required: false}
           - label: Descriptions
             name: descriptions
             widget: list
