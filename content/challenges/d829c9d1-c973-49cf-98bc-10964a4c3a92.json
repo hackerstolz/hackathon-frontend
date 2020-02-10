@@ -1,9 +1,6 @@
 {
-  "price": "8a17e8ee-357b-4cb1-bd05-7db4d6c7c9bf",
+  "price": "c8301192-d005-462f-8a53-b06c9f865471",
   "badges": [
-    {
-      "badge": "0f6538d9-13af-4731-873d-4a736a1c3d5b"
-    },
     {
       "badge": "22d25bc6-b53c-492f-ab73-a4c68b4c9f6d"
     }
@@ -12,17 +9,17 @@
   "descriptions": [
     {
       "language": "DE",
-      "description": "Eine Mobility Challenge mit Tech und City Sponsor"
+      "description": "LoRaWAN Technology ist ..."
     },
     {
       "language": "EN",
-      "description": "A mobility challenge having a tech as well as city sponsor"
+      "description": "Use LoRaWAN for ..."
     }
   ],
-  "title": "Challenge A",
+  "title": "Technology B",
   "sponsor": "a40dc0da-167c-4225-b53e-99aa966cb63a",
-  "type": "f03fd5ed-dc66-4c9b-a480-4b8f114fefe2",
-  "id": "bdaec7b8-0d35-4b5c-981a-1909c27974d0",
+  "type": "b294ad5d-8aea-4ef0-b40e-da923a846216",
+  "id": "d829c9d1-c973-49cf-98bc-10964a4c3a92",
   "image": "/images/uploads/favicon.png",
   "categories": [
     {

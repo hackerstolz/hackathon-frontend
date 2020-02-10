@@ -1,0 +1,14 @@
+{
+  "id": "c8301192-d005-462f-8a53-b06c9f865471",
+  "title": "Tech Price",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "Wenn ihr Technology XY verwendet, qualifziert ..."
+    },
+    {
+      "language": "EN",
+      "description": "If you are using technology..."
+    }
+  ]
+}
