@@ -4,10 +4,10 @@
   "image": "/images/uploads/favicon.png",
   "roles": [
     {
+      "title": "Challenge Mentor",
       "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
       "challenge": "bdaec7b8-0d35-4b5c-981a-1909c27974d0",
       "role": "9aa5d3cb-8fe8-4b35-89de-22192c7ecd23",
-      "title": "Challenge Mentor",
       "timeslot": [
         {
           "from": "1605265247",
@@ -26,10 +26,10 @@
       ]
     },
     {
-      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
-      "challenge": "bdaec7b8-0d35-4b5c-981a-1909c27974d0",
-      "role": "1dcafdb8-4816-48e3-86a6-0820577f5e3d",
       "title": "A talk about Climate Change",
+      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+      "challenge": "",
+      "role": "1dcafdb8-4816-48e3-86a6-0820577f5e3d",
       "timeslot": [
         {
           "from": "1605258000",
