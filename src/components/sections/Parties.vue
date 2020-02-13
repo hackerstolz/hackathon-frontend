@@ -62,26 +62,23 @@
               'my-1': true
             }"
           >{{ sponsor.name }}</p>
-          <router-link
+          <v-btn
             v-if="
               sponsor.challenge &&
-                typeof sponsor.challengeCategoryID === 'number'
+                sponsor.challengeID !== null
             "
-            :to="'/overview/challenges/' + sponsor.challengeCategoryID"
-          >
-            <v-btn
-              class="mt-2"
-              width="auto"
-              color="info"
-              outlined
-              text
-              small
-            >{{ $t('button.showChallenge') }}</v-btn>
-          </router-link>
+            class="mt-2"
+            width="auto"
+            color="info"
+            outlined
+            text
+            small
+            @click="() => ($scrollTo(`#challenge-${sponsor.challengeID}`))"
+          >{{ $t('button.showChallenge') }}</v-btn>
           <div
             v-if="
               !sponsor.challenge ||
-                typeof sponsor.challengeCategoryID !== 'number'
+                sponsor.challengeID === null
             "
             style="height: 42px"
           >&nbsp;</div>
@@ -202,55 +199,55 @@ export default {
           icon: "", // require('../../assets/sponsor/sponsor-op.svg'),
           name: "objective partner",
           challenge: true,
-          challengeCategoryID: 7
+          challengeID: 7
         },
         {
           icon: "", // require('../../assets/sponsor/sponsor-rnv.svg'),
           name: "Rhein-Neckar-Verkehr GmbH",
           challenge: true,
-          challengeCategoryID: 1
+          challengeID: 1
         },
         {
           icon: "", // require('../../assets/sponsor/sponsor-gbg.svg'),
           name: "GBG Mannheim",
           challenge: true,
-          challengeCategoryID: 0
+          challengeID: 0
         },
         {
           icon: "", // require('../../assets/sponsor/sponsor-mvv.jpg'),
           name: "MVV Energie AG",
           challenge: true,
-          challengeCategoryID: 0
+          challengeID: 0
         },
         {
           icon: "", // require('../../assets/sponsor/sponsor-camelot.jpg'),
           name: "CAMELOT Management Consultants AG",
           challenge: true,
-          challengeCategoryID: null
+          challengeID: null
         },
         {
           icon: "", // require('../../assets/sponsor/sponsor-valantic.jpg'),
           name: "valantic",
           challenge: false,
-          challengeCategoryID: null
+          challengeID: null
         },
         {
           icon: "", // require('../../assets/sponsor/sponsor-basf.svg'),
           name: "BASF SE",
           challenge: false,
-          challengeCategoryID: null
+          challengeID: null
         },
         {
           icon: "", // require('../../assets/sponsor/sponsor-ueberbit.svg'),
           name: "UEBERBIT GmbH",
           challenge: false,
-          challengeCategoryID: null
+          challengeID: null
         },
         {
           icon: "", // require('../../assets/sponsor/sponsor-onwerk.jpeg'),
           name: "Onwerk GmbH",
           challenge: false,
-          challengeCategoryID: null
+          challengeID: null
         }
       ],
       partners: [

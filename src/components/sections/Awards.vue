@@ -70,19 +70,16 @@
               text
               small
             >{{ $t('button.showCriteria') }}</v-btn>
-            <router-link
-              v-if="typeof award.challengeCategoryID === 'number'"
-              :to="'/overview/challenges/' + award.challengeCategoryID"
-            >
-              <v-btn
-                class="mt-2"
-                width="auto"
-                :color="award.color"
-                outlined
-                text
-                small
-              >{{ $t('button.showChallenge') }}</v-btn>
-            </router-link>
+            <v-btn
+              v-if="award.challengeID !== null"
+              class="mt-2"
+              width="auto"
+              :color="award.color"
+              outlined
+              text
+              small
+              @click="() => ($scrollTo(`#challenge-${award.challengeID}`))"
+            >{{ $t('button.showChallenge') }}</v-btn>
           </v-card>
         </stack-item>
       </stack>
@@ -193,31 +190,31 @@ export default {
         }
         // {
         //   key: 'mvvPrize',
-        //   challengeCategoryID: 0,
+        //   challengeID: 0,
         //   img: require('../../assets/sponsor/sponsor-mvv.jpg'),
         //   color: this.$vuetify.theme.themes.dark.info
         // },
         // {
         //   key: 'obPrize',
-        //   challengeCategoryID: 7,
+        //   challengeID: 7,
         //   img: require('../../assets/sponsor/sponsor-op.svg'),
         //   color: this.$vuetify.theme.themes.dark.info
         // },
         // {
         //   key: 'camelotPrize',
-        //   challengeCategoryID: 3,
+        //   challengeID: 3,
         //   img: require('../../assets/sponsor/sponsor-camelot.jpg'),
         //   color: this.$vuetify.theme.themes.dark.info
         // },
         // {
         //   key: 'rnvPrize',
-        //   challengeCategoryID: 1,
+        //   challengeID: 1,
         //   img: require('../../assets/sponsor/sponsor-rnv.svg'),
         //   color: this.$vuetify.theme.themes.dark.info
         // },
         // {
         //   key: 'bosPrize',
-        //   challengeCategoryID: 5,
+        //   challengeID: 5,
         //   img: require('../../assets/awards/award-bos.jpg'),
         //   color: this.$vuetify.theme.themes.dark.accent
         // }

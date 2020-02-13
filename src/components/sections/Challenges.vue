@@ -11,161 +11,156 @@
         monitor-images-loaded
       >
         <stack-item v-for="category in categoriesSorted" :key="category.id" class="stack-grid-item">
-          <router-link :to="'/overview/challenges/' + category.id">
-            <v-card
-              :class="{
-                card: true,
-                'pa-3': true,
-                'active-challenges': category.challenges.length > 0
-              }"
-              :color="
-                category.challenges.length > 0
-                  ? 'rgba(76,174,121,0.2)'
-                  : 'rgba(255,255,255,0.1)'
-              "
-              ripple
-              flat
+          <v-card
+            :class="{
+              card: true,
+              'pa-3': true,
+              'active-challenges': category.challenges.length > 0
+            }"
+            :color="
+              category.challenges.length > 0
+                ? 'rgba(76,174,121,0.2)'
+                : 'rgba(255,255,255,0.1)'
+            "
+            ripple
+            flat
+            @click="category.show = true"
+          >
+            <h3 class="mb-3">{{ $t(`categories.${category.key}.title`) }}</h3>
+            <v-img :src="category.img" max-height="128px" contain @load="reflow"></v-img>
+            <div
+              v-if="category.challenges.length === 0"
+              class="count my-3"
+            >{{ $tc('challengeCount', category.challenges.length) }}</div>
+            <v-btn
+              v-if="category.challenges.length > 0"
+              class="my-3"
+              color="accent"
+              outlined
+              text
+              small
             >
-              <h3 class="mb-3">{{ $t(`categories.${category.key}.title`) }}</h3>
-              <v-img :src="category.img" max-height="128px" contain @load="reflow"></v-img>
-              <div
-                v-if="category.challenges.length === 0"
-                class="count my-3"
-              >{{ $tc('challengeCount', category.challenges.length) }}</div>
-              <v-btn
-                v-if="category.challenges.length > 0"
-                class="my-3"
-                color="accent"
-                outlined
-                text
-                small
-              >
-                {{ $tc('challengeCount', category.challenges.length) }}
-                <!-- <v-icon dark right>open_in_browser</v-icon> -->
-              </v-btn>
-              <p class="description">
-                {{
-                $t(`categories.${category.key}.description`)
-                .slice(0, 100)
-                .concat('...')
-                }}
-              </p>
+              {{ $tc('challengeCount', category.challenges.length) }}
+              <!-- <v-icon dark right>open_in_browser</v-icon> -->
+            </v-btn>
+            <p class="description">
+              {{
+              $t(`categories.${category.key}.description`)
+              .slice(0, 100)
+              .concat('...')
+              }}
+            </p>
 
-              <v-dialog
-                v-model="category.show"
-                scrollable
-                width="80%"
-                max-width="640px"
-                :fullscreen="isMobile"
-                @input="v => v || onNavBack()"
+            <v-dialog
+              v-model="category.show"
+              scrollable
+              width="80%"
+              max-width="640px"
+              :fullscreen="isMobile"
+              @input="category.show = false"
+            >
+              <v-card
+                :class="{
+                  card: true,
+                  'active-challenges': category.challenges.length > 0
+                }"
+                color="#2f3a58"
               >
-                <v-card
+                <div
                   :class="{
-                    card: true,
-                    'active-challenges': category.challenges.length > 0
+                    'dialog-card-content': true,
+                    'pa-3': true
                   }"
-                  color="#2f3a58"
                 >
-                  <div
-                    :class="{
-                      'dialog-card-content': true,
-                      'pa-3': true
-                    }"
-                  >
-                    <v-layout row>
-                      <div class="ml-3 mr-4">&nbsp;</div>
-                      <v-spacer />
-                      <h3 class="mb-3">{{ $t(`categories.${category.key}.title`) }}</h3>
-                      <v-spacer />
-                      <router-link to="/overview/challenges">
-                        <v-btn class="ma-0" color="accent" text @click="category.show = false" icon>
-                          <v-icon>close</v-icon>
-                        </v-btn>
-                      </router-link>
-                    </v-layout>
-                    <v-img :src="category.img" max-height="128px" contain></v-img>
-                    <div class="count my-3">{{ $tc('challengeCount', category.challenges.length) }}</div>
-                    <p
-                      class="description"
-                      v-show="category.show"
-                    >{{ $t(`categories.${category.key}.description`) }}</p>
-                    <div class="challenge" v-for="(challenge, j) in category.challenges" :key="j">
-                      <v-img
-                        :class="{
-                          batch: true,
-                          [challenge.type.toLowerCase()]: true,
-                          'mt-5': true,
-                          'mb-4': true
-                        }"
-                        :src="
-                          require(`../../assets/challenge-${challenge.type.toLowerCase()}.svg`)
-                        "
-                        max-height="84px"
-                        contain
-                      ></v-img>
-                      <p
-                        :class="{
-                          author: true,
-                          [challenge.type.toLowerCase()]: true,
-                          'mb-4': true
-                        }"
-                        v-html="
-                          $i18n.locale === 'en'
-                            ? challenge.i18nAuthor[0]
-                            : challenge.i18nAuthor[1]
-                        "
-                      ></p>
-                      <h4
-                        class="mb-4"
-                        v-html="
-                          $i18n.locale === 'en'
-                            ? challenge.i18nTitle[0]
-                            : challenge.i18nTitle[1]
-                        "
-                      ></h4>
-                      <h5 class="mb-2">{{ $t('challangeSummary') }}</h5>
-                      <p
-                        class="mb-4"
-                        v-html="
-                          $i18n.locale === 'en'
-                            ? challenge.i18nSummary[0]
-                            : challenge.i18nSummary[1]
-                        "
-                      ></p>
-                      <h5 class="mb-2">{{ $t('challangeDescription') }}</h5>
-                      <p
-                        class="mb-4"
-                        v-html="
-                          $i18n.locale === 'en'
-                            ? challenge.i18nDescription[0]
-                            : challenge.i18nDescription[1]
-                        "
-                      ></p>
-                      <h5 class="mb-2">{{ $t('challangeVision') }}</h5>
-                      <p
-                        class="mb-4"
-                        v-html="
-                          $i18n.locale === 'en'
-                            ? challenge.i18nVision[0]
-                            : challenge.i18nVision[1]
-                        "
-                      ></p>
-                    </div>
-                  </div>
-                  <v-card-actions class="dialog-card-footer">
+                  <v-layout row>
+                    <div class="ml-3 mr-4">&nbsp;</div>
                     <v-spacer />
-                    <router-link to="/overview/challenges">
-                      <v-btn color="accent" text>
-                        {{
-                        $t('button.close')
-                        }}
-                      </v-btn>
-                    </router-link>
-                  </v-card-actions>
-                </v-card>
-              </v-dialog>
-            </v-card>
-          </router-link>
+                    <h3 class="mb-3">{{ $t(`categories.${category.key}.title`) }}</h3>
+                    <v-spacer />
+                    <v-btn class="ma-0" color="accent" text @click="category.show = false" icon>
+                      <v-icon>close</v-icon>
+                    </v-btn>
+                  </v-layout>
+                  <v-img :src="category.img" max-height="128px" contain></v-img>
+                  <div class="count my-3">{{ $tc('challengeCount', category.challenges.length) }}</div>
+                  <p
+                    class="description"
+                    v-show="category.show"
+                  >{{ $t(`categories.${category.key}.description`) }}</p>
+                  <div class="challenge" v-for="(challenge, j) in category.challenges" :key="j">
+                    <v-img
+                      :class="{
+                        batch: true,
+                        [challenge.type.toLowerCase()]: true,
+                        'mt-5': true,
+                        'mb-4': true
+                      }"
+                      :src="
+                        require(`../../assets/challenge-${challenge.type.toLowerCase()}.svg`)
+                      "
+                      max-height="84px"
+                      contain
+                    ></v-img>
+                    <p
+                      :class="{
+                        author: true,
+                        [challenge.type.toLowerCase()]: true,
+                        'mb-4': true
+                      }"
+                      v-html="
+                        $i18n.locale === 'en'
+                          ? challenge.i18nAuthor[0]
+                          : challenge.i18nAuthor[1]
+                      "
+                    ></p>
+                    <h4
+                      class="mb-4"
+                      v-html="
+                        $i18n.locale === 'en'
+                          ? challenge.i18nTitle[0]
+                          : challenge.i18nTitle[1]
+                      "
+                    ></h4>
+                    <h5 class="mb-2">{{ $t('challangeSummary') }}</h5>
+                    <p
+                      class="mb-4"
+                      v-html="
+                        $i18n.locale === 'en'
+                          ? challenge.i18nSummary[0]
+                          : challenge.i18nSummary[1]
+                      "
+                    ></p>
+                    <h5 class="mb-2">{{ $t('challangeDescription') }}</h5>
+                    <p
+                      class="mb-4"
+                      v-html="
+                        $i18n.locale === 'en'
+                          ? challenge.i18nDescription[0]
+                          : challenge.i18nDescription[1]
+                      "
+                    ></p>
+                    <h5 class="mb-2">{{ $t('challangeVision') }}</h5>
+                    <p
+                      class="mb-4"
+                      v-html="
+                        $i18n.locale === 'en'
+                          ? challenge.i18nVision[0]
+                          : challenge.i18nVision[1]
+                      "
+                    ></p>
+                  </div>
+                </div>
+                <v-card-actions class="dialog-card-footer">
+                  <v-spacer />
+                  <v-btn color="accent" text @click="category.show = false">
+                    {{
+                    $t('button.close')
+                    }}
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+          </v-card>
         </stack-item>
       </stack>
 
@@ -237,28 +232,22 @@ export default {
     }
   },
   methods: {
-    onNavBack() {
-      this.$router.push({
-        name: "overview",
-        params: { section: "challenges", id: "none" }
-      });
-    },
     routeUpdate($route) {
-      if (
-        $route &&
-        ($route.name === "overview" || $route.name === "overviewDetails") &&
-        $route.params.section === "challenges"
-      ) {
-        const index = parseInt($route.params.id, 10);
-
-        if (!isNaN(index) && index >= 0 && index < this.categories.length) {
-          this.toggleTile(index);
-        } else {
-          this.closeTiles();
-        }
-      } else {
-        this.closeTiles();
-      }
+      // FIXME: auto extend challenge if called via URL param
+      // if (
+      //   $route &&
+      //   ($route.name === "overview" || $route.name === "overviewDetails") &&
+      //   $route.params.section === "challenges"
+      // ) {
+      //   const index = parseInt($route.params.id, 10);
+      //   if (!isNaN(index) && index >= 0 && index < this.categories.length) {
+      //     this.toggleTile(index);
+      //   } else {
+      //     this.closeTiles();
+      //   }
+      // } else {
+      //   this.closeTiles();
+      // }
     },
     toggleTile(i) {
       const clickedCategory = this.categories[i];
@@ -290,7 +279,9 @@ export default {
           show: false,
           challenges: [
             {
+              ID: 100,
               type: CHALLENGE_TYPE.SPONSOR,
+              categoryID: 0,
               i18nAuthor: [
                 "GBG - Mannheimer housing company ltd.",
                 "GBG - Mannheimer Wohnungsbaugesellschaft mbH"
@@ -313,7 +304,9 @@ export default {
               ]
             },
             {
+              ID: 101,
               type: CHALLENGE_TYPE.SPONSOR,
+              categoryID: 0,
               i18nAuthor: ["MVV Energy AG", "MVV Energie AG"],
               i18nTitle: [
                 "How can life in the city of Mannheim be made more liveable through the use of LoRaWAN technology?",
@@ -361,7 +354,9 @@ export default {
           show: false,
           challenges: [
             {
+              ID: 102,
               type: CHALLENGE_TYPE.SPONSOR,
+              categoryID: 1,
               i18nAuthor: [
                 "Rhein-Neckar-Verkehr GmbH",
                 "Rhein-Neckar-Verkehr GmbH"
@@ -392,7 +387,9 @@ export default {
           show: false,
           challenges: [
             {
+              ID: 103,
               type: CHALLENGE_TYPE.CITY,
+              categoryID: 2,
               i18nAuthor: [
                 "City of Mannheim • Department of Real Estate Management",
                 "Stadt Mannheim • Fachbereich Immobilienmanagement"
@@ -423,7 +420,9 @@ export default {
           show: false,
           challenges: [
             {
+              ID: 104,
               type: CHALLENGE_TYPE.SPONSOR,
+              categoryID: 3,
               i18nAuthor: [
                 "CAMELOT Management Consultant AG",
                 "CAMELOT Management Consultant AG"
@@ -452,31 +451,7 @@ export default {
           key: "food",
           img: require("../../assets/icons/flat-icon-food.svg"),
           show: false,
-          challenges: [
-            // {
-            //   type: CHALLENGE_TYPE.COMMUNITY,
-            //   i18nAuthor: [
-            //     "Micro Agriculture • Community Vegetable Growing e.V.",
-            //     "Mikro Landwirtschaft • gemeinschaftlicher Gemüseanbau e.V."
-            //   ],
-            //   i18nTitle: [
-            //     "How can everyone grow their own vegetables in the fields in a climate-friendly way?",
-            //     "Wie kann jeder auf dem Acker sein eigenes Gemüse gemeinschaftlich klimagerecht selbst anbauen?"
-            //   ],
-            //   i18nSummary: [
-            //     "Digital supports the cultivation of your own vegetables on the field. Mikro Landwirtschaft wants to set up an online platform for the rental of arable land as communal fields on which even laymen can successfully grow their own vegetables with digital support and smart tools. Protecting the bees, improving the soil, fresh vegetables, packaging-free, without chemicals and long transport routes, a meeting place in the district and promotion of health could thus become a reality.",
-            //     "Digital unterstützt auf dem Acker das eigene Gemüse anbauen. Mikro Landwirtschaft will dazu eine Online-Plattform aufbauen für die Vermietung von Ackerflächen als Gemeinschaftsäcker auf denen auch Laien mit digitaler Unterstützung und smarten Tools erfolgreich ihr eigenes Gemüse anbauen können. Schutz der Bienen, Verbesserung der Böden, Frisches Gemüse, verpackungsfrei, ohne Chemie und lange Transportwege, ein Treffpunkt im Stadtteil und eine Förderung für die Gesundheit könnte so Wirklichkeit werden."
-            //   ],
-            //   i18nDescription: [
-            //     "With so far three pilot community farmers in Mannheim, Micro Agriculture has extensive experience and data on the needs of users and has conducted some experiments and built up test. In addition, research has been carried out into possible tools and approaches. An actual implementation of the results is possible. Micro agriculture is a new concept of agriculture. Industrial agriculture manages to produce food cheaply, but causes problems for the climate, biodiversity, soils, groundwater and health. Alternative agricultural concepts are often not scalable. Micro Agriculture wants to rebuild the lost link between agriculture and consumers. Data sets, existing concepts and further information will be provided very soon.",
-            //     "Mit bisher drei Pilot-Gemeinschaftsäckern in Mannheim hat Mikro Landwirtschaft umfangreiche Erfahrung und Daten zu den Bedürfnissen der Nutzer und hat einige Experimente durchgeführt und Test aufgebaut. Außerdem ist eine Recherche möglicher Tools und Ansätze gemacht. Eine tatsächliche Umsetzung der Ergebnisse ist möglich. Mikro Landwirtschaft ist ein neues Konzept der Landwirtschaft. Die industrielle Landwirtschaft schafft es billig Lebensmittel zu produzieren, dabei verursacht sie aber Probleme für das Klima, die Artenvielfalt, die Böden, das Grundwasser und die Gesundheit schafft. Alternative Konzepte der Landwirtschaft sind bisher oft nicht skallierbar. Die verlorene Verbindung zwischen Landwirtschaft und Verbrauchern möchte Mikro Landwirtschaft wieder aufbauen. Datensätze, existierende Konzepte und weiter Informationen werden in sehr bald nachgeliefert."
-            //   ],
-            //   i18nVision: [
-            //     "<ul class='list'><li>What tools and instruments are needed to successfully grow your own vegetables on a communal farmland as a layperson?</li><li>How can cultivation planning be simplified, which vegetables have to be sown when, when do I have to take care of them how?</li><li>How can the exchange between micro farmers be supported?</li><li>How can the knowledge transfer of the horticultural basics be solved?</li><li>How to distinguish weeds from vegetables?</li><li>Wear smart tools and sensors show at home that you have to water?</li><li>How can pieces of the common field be rented?<li>How can I find a partner for my field piece?</li><li>How can farmers or other operators of communal farmyards rent their field plots as easily as possible?</li><li>How could community farmer operators manage and care for their fields as easily as possible?</li></ul>The result could be an online platform with an online marketplace, with various loosely coupled or integrated tools. Components could include a social media tool for internal communication, crop planners and the ability to integrate your own smart devices. For operators, computers could be created for the required shortage of compost, manure, tools and water, which could be determined on the basis of various factors such as size, location, soil condition and nutrient supply.<br/>The non-profit association Mikro Landwirtschaft could then implement the solution found into reality and enable many new community farmers in Germany and thus make a major contribution to climate-friendly agriculture.",
-            //     "<ul class='list'><li>Welche Tools und Instrumente braucht es, um auf einem Gemeinschaftsacker als Laie erfolgreich sein eigenes Gemüse anzubauen?</li><li>Wie kann die Anbauplanung vereinfacht werden, welches Gemüse muss wann gesät werden, wann muss ich es wie pflegen?</li><li>Wie kann der Austausch zwischen den Mikro Landwirten unterstützt werden?</li><li>Wie kann die Wissensvermittlung der gärtnerischen Grundlagen gelöst werden?</li><li>Wie kann man Unkraut von Gemüse unterscheiden?</li><li>Weche smarten Tools und Sensoren zeigen schon Zuhause an, dass man gießen muss?</li><li>Wie können Feldstücke des Gemeinschaftsackers vermietet werden?<li>Wie finde ich Mitmacher für mein Feldstück?</li><li>Wie können Landwirte oder andere Betreiber von Gemeinschaftsäckern möglichst einfach ihre Feldstücke vermieten?</li><li>Wie könnten Betreiber von Gemeinschaftsäckern die Äcker möglichst einfach verwalten und betreuen?</li></ul>Das Ergebnis könnte eine Online Plattform mit einem Online Marktplatz sein, mit verschiedenen lose gekoppelten oder integrierten Tools. Bestandteile könnten ein Social Media Tool für die interne Kommunikation, Anbauplaner und die Möglichkeit eigene smarte Geräte zu integrieren beinhalten. Für Betreiber könnten Rechner für die benötigte Mange Kompost, Mist, Werkzeug und Wasser entstehen, die anhand verschiedener Faktoren wie Größe, Standort, Bodenbeschaffenheit und Nährstoffversorgung ermittelt werden könnten.<br/>Die gefundene Lösung könnte der gemeinnützige Verein Mikro Landwirtschaft dann in die Realität umsetzen und viele neue Gemeinschaftsäcker in Deutschland ermöglichen und so einen großen beitrag für eine klimagerechte Landwirtschaft leisten."
-            //   ]
-            // }
-          ]
+          challenges: []
         },
         {
           id: 5,
@@ -485,7 +460,9 @@ export default {
           show: false,
           challenges: [
             {
+              ID: 105,
               type: CHALLENGE_TYPE.COMMUNITY,
+              categoryID: 5,
               i18nAuthor: ["BOS Deutschland e.V.", "BOS Deutschland e.V."],
               i18nTitle: [
                 "How can we motivate people to support reforestation projects?",
@@ -513,7 +490,9 @@ export default {
           show: false,
           challenges: [
             {
+              ID: 106,
               type: CHALLENGE_TYPE.CITY,
+              categoryID: 6,
               i18nAuthor: [
                 "Climate Protection Agency Mannheim",
                 "Klimaschutzagentur Mannheim"
@@ -544,7 +523,9 @@ export default {
           show: false,
           challenges: [
             {
+              ID: 107,
               type: CHALLENGE_TYPE.SPONSOR,
+              categoryID: 7,
               i18nAuthor: ["objective partner AG", "objective partner AG"],
               i18nTitle: [
                 "How can technology support African farmers with smarter irrigation?",
@@ -572,7 +553,9 @@ export default {
           show: false,
           challenges: [
             {
+              ID: 108,
               type: CHALLENGE_TYPE.COMMUNITY,
+              categoryID: 8,
               i18nAuthor: [
                 "Fossil Free Karlsruhe • FAKTOR2",
                 "Fossil Free Karlsruhe • FAKTOR2"
@@ -603,7 +586,9 @@ export default {
           show: false,
           challenges: [
             {
+              ID: 109,
               type: CHALLENGE_TYPE.CITY,
+              categoryID: 9,
               i18nAuthor: [
                 "City of Mannheim - Climate Protection Control Centre",
                 "Stadt Mannheim – Klimaschutzleitstelle"
@@ -641,7 +626,8 @@ export default {
           show: false,
           challenges: []
         }
-      ]
+      ],
+      challenges: []
     };
   }
 };
