@@ -115,37 +115,31 @@
           <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
             <h3 class="mb-3">{{ $t('badges') }}</h3>
             <p class="mb-3">{{ $t('badgesDescription') }}</p>
-            <v-chip class="ma-2 tags" color="yellow" label :large="!isMobile" text-color="black">
+            <v-chip class="ma-2 tags" color="yellow" label :small="isMobile" text-color="black">
               <v-icon light left>local_offer</v-icon>
               {{ $t('badgeYello').toUpperCase() }}
             </v-chip>
-            <v-chip class="ma-2 tags" color="red" label :large="!isMobile" text-color="black">
+            <v-chip class="ma-2 tags" color="red" label :small="isMobile" text-color="black">
               <v-icon light left>local_offer</v-icon>
               {{ $t('badgeRed').toUpperCase() }}
             </v-chip>
-            <v-chip class="ma-2 tags" color="indigo" label :large="!isMobile" text-color="white">
+            <v-chip class="ma-2 tags" color="indigo" label :small="isMobile" text-color="white">
               <v-icon left>local_offer</v-icon>
               {{ $t('badgeIndigo').toUpperCase() }}
             </v-chip>
-            <v-chip class="ma-2 tags" color="orange" label :large="!isMobile" text-color="black">
+            <v-chip class="ma-2 tags" color="orange" label :small="isMobile" text-color="black">
               <v-icon light left>local_offer</v-icon>
               {{ $t('badgeOrange').toUpperCase() }}
             </v-chip>
-            <v-chip
-              class="ma-2 tags"
-              color="light-blue"
-              label
-              :large="!isMobile"
-              text-color="black"
-            >
+            <v-chip class="ma-2 tags" color="light-blue" label :small="isMobile" text-color="black">
               <v-icon light left>local_offer</v-icon>
               {{ $t('badgeBlue').toUpperCase() }}
             </v-chip>
-            <v-chip class="ma-2 tags" color="green" label :large="!isMobile" text-color="black">
+            <v-chip class="ma-2 tags" color="green" label :small="isMobile" text-color="black">
               <v-icon light left>local_offer</v-icon>
               {{ $t('badgeGreen').toUpperCase() }}
             </v-chip>
-            <v-chip class="ma-2 tags" color="black" label :large="!isMobile" text-color="white">
+            <v-chip class="ma-2 tags" color="black" label :small="isMobile" text-color="white">
               <v-icon left>local_offer</v-icon>
               {{ $t('badgeGreen').toUpperCase() }}
             </v-chip>

@@ -30,7 +30,7 @@
                 winner: price.winner
               }"
               :color="price.color"
-              :large="!isMobile"
+              :small="isMobile"
               text-color="black"
             >
               <v-icon v-if="price.winner" light left>emoji_events</v-icon>
@@ -71,7 +71,7 @@
                 winner: award.winner
               }"
               :color="award.color"
-              :large="!isMobile"
+              :small="isMobile"
               text-color="black"
             >
               <v-icon v-if="award.winner" light left>emoji_events</v-icon>
@@ -86,7 +86,7 @@
               target="_blank"
               outlined
               text
-              small
+              :small="isMobile"
             >{{ $t('btnShowSolution') }}</v-btn>
           </v-card>
         </stack-item>

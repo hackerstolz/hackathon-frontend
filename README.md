@@ -30,7 +30,7 @@ https://climathon.hackerstolz.de/#?lang=en
 
 ### Open Bugs
 
-[ ] Enable support for section URL parameter  
+[ ] Enable support for `section` URL parameter  
 [ ] Initial html lang is set to "en"  
 [ ] Replace challenge categories by challenges directly  
 [ ] Fix chip size  
