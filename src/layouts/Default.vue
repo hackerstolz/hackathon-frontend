@@ -209,11 +209,11 @@ export default {
       // switch locale
       this.$root.$i18n.locale = lang;
 
-      // update document attribute
-      document.querySelector("html").setAttribute("lang", lang);
-
       // switch vuetify locale
       this.$vuetify.lang.current = lang;
+
+      // a11y: ensures the lang attribute of the <html> element has a valid value
+      document.querySelector("html").setAttribute("lang", lang);
     },
     routeUpdate($route) {
       // FIXME: fix scroll to section

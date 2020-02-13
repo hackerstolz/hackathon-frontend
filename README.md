@@ -20,10 +20,18 @@ yarn build
 yarn explore
 ```
 
+### URL hash query parameters
+
+Use parameter `lang` to force the display of either `de` or `en`. The final URL then looks like:
+
+```
+https://climathon.hackerstolz.de/#?lang=en
+```
+
 ### Open Bugs
 
-[ ] Enable support for language and section URL parameter  
-[ ] Langueg switch is not working  
+[ ] Enable support for section URL parameter  
+[ ] Initial html lang is set to "en"  
 [ ] Replace challenge categories by challenges directly  
 [ ] Fix chip size  
 [ ] Fix image fallback sizes and placeholder

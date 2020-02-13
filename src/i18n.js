@@ -125,13 +125,8 @@ const [selectedUsersLocale] =
     availableI18nLocales.some(i18nLocale => i18nLocale === lang)
   ) || []
 
-// a11y: ensures the lang attribute of the <html> element has a valid value
-document
-  .getElementsByTagName('html')[0]
-  .setAttribute('lang', selectedUsersLocale)
-
 export const i18nOptions = {
   locale: selectedUsersLocale,
-  fallbackLocale: selectedUsersLocale || 'en',
+  fallbackLocale: selectedUsersLocale,
   messages: loadLocaleMessages(availableI18nLocales)
 }
