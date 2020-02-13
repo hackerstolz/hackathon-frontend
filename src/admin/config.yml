@@ -274,3 +274,35 @@ collections:
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
       - {label: "Title", name: "title", widget: "string"}
+  - name: "timetable"
+    label: "Timetable"
+    folder: "content/timetables"
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: id
+    summary: "{{title}} ({{id}})"
+    fields:
+      - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
+      - {label: "Title", name: "title", widget: "string"}      
+      - label: Hackathon
+        name: hackathon
+        widget: "relation"
+        collection: "hackathon"
+        searchFields: ["id", "title"]
+        valueField: "id"
+        displayFields: ["title"]
+      - {label: "Date", name: "date", widget: "datetime", format: "X", timeFormat: false}
+      - label: Slots
+        name: slot
+        widget: list
+        fields:
+          - {label: "Title", name: "title", widget: "string"}            
+          - {label: "From", name: "from", widget: "datetime", format: "X", required: false}
+          - {label: "To", name: "to", widget: "datetime", format: "X", required: false}
+          - label: Descriptions
+            name: descriptions
+            widget: list
+            fields:
+              - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+              - {label: Description, name: description, widget: markdown}
