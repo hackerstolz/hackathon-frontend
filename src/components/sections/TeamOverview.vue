@@ -51,7 +51,7 @@
       >
         <stack-item v-for="(winner, i) in winners" :key="i" class="stack-grid-item">
           <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
-            <h3 class="mb-1">{{ $t(winner.title) }}</h3>
+            <h3 class="mb-1">{{ winner.title }}</h3>
             <v-img
               v-if="winner.img"
               :src="winner.img"
@@ -60,7 +60,7 @@
               contain
               @load="reflow"
             ></v-img>
-            <p class="description mb-4" v-html="$t(winner.descriptionI18n[$i18n.locale])"></p>
+            <p class="description mb-4" v-html="winner.descriptionI18n[$i18n.locale]"></p>
             <v-chip
               v-for="(award, i) in winner.awards"
               :key="i"
