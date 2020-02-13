@@ -144,15 +144,17 @@
 </template>
 
 <script>
-// import { setI18nLanguage } from '../i18n'
+import { setI18nLanguage } from "../i18n";
 import { setTimeout } from "timers";
 
 export default {
   name: "DefaultLayout",
+  props: {
+    isMobile: Boolean
+  },
   data() {
     return {
       postEvent: true,
-      isMobile: false,
       langs: ["en", "de"],
       darkMode: true,
       drawer: false,
@@ -197,10 +199,6 @@ export default {
         this.routeUpdate(this.$route);
       }
     }, 1500);
-
-    // reigster resize handler
-    this.onResize();
-    window.addEventListener("resize", this.onResize, { passive: true });
   },
   methods: {
     onCopySuccess(text) {
@@ -208,13 +206,14 @@ export default {
       this.notification.show = true;
     },
     onSetNewLocale(lang) {
-      // // switch locale
-      // setI18nLanguage(lang)
-      // // switch vuetify locale
-      // this.$vuetify.lang.current = lang
-    },
-    onResize() {
-      this.isMobile = window.innerWidth <= 600;
+      // switch locale
+      this.$root.$i18n.locale = lang;
+
+      // update document attribute
+      document.querySelector("html").setAttribute("lang", lang);
+
+      // switch vuetify locale
+      this.$vuetify.lang.current = lang;
     },
     routeUpdate($route) {
       // FIXME: fix scroll to section

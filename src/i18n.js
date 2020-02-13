@@ -135,11 +135,3 @@ export const i18nOptions = {
   fallbackLocale: selectedUsersLocale || 'en',
   messages: loadLocaleMessages(availableI18nLocales)
 }
-
-export function setI18nLanguage(lang) {
-  // FIXME: check how to switch locales
-  // Vue.config.lang = lang
-  i18n.locale = lang
-  document.querySelector('html').setAttribute('lang', lang)
-  return lang
-}
