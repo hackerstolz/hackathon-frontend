@@ -19,3 +19,12 @@ yarn build
 ```
 yarn explore
 ```
+
+### Open Bugs
+
+[ ] Enable support for language and section URL parameter  
+[ ] Langueg switch is not working  
+[ ] Replace challenge categories by challenges directly  
+[ ] Fix chip size  
+[ ] Fix image fallback sizes and placeholder  
+[ ] `isMobile` property is not forwarded to layout slot

@@ -12,9 +12,23 @@ import { i18nOptions } from './i18n'
 import 'vuetify/dist/vuetify.min.css'
 
 export default async function(Vue, { appOptions, router, head, isClient }) {
+  // add fonts
   head.link.push({
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
+  })
+  head.link.push({
+    rel: 'stylesheet',
+    href:
+      'https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap'
+  })
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css?family=Roboto:900&display=swap'
+  })
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://use.typekit.net/bmh1yvg.css'
   })
 
   const vuetifyOptions = {

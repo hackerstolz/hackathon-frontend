@@ -209,7 +209,6 @@
     <!-- SNACKBAR -->
     <v-snackbar
       class="snackbar"
-      auto-height
       top
       v-model="notification.show"
       :color="notification.color"

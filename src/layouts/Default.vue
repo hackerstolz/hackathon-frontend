@@ -18,7 +18,7 @@
         <v-toolbar class="ma-0 pa-0" color="transparent" flat>
           <v-menu bottom>
             <template v-slot:activator="{ on }">
-              <v-btn text>{{ $t(`button.${$i18n.locale}`) }}</v-btn>
+              <v-btn text v-on="on">{{ $t(`button.${$i18n.locale}`) }}</v-btn>
             </template>
 
             <v-list class="language-list">
@@ -180,6 +180,38 @@ import { setTimeout } from "timers";
 
 export default {
   name: "App",
+  // TODO: replace by query information
+  metaInfo: {
+    title: "Climathon 2019 • Mannheim",
+    meta: [
+      // OPEN GRAPH (e.g. Facebook)
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://climathon.hackerstolz.de" },
+      { property: "og:site_name", content: "Climathon 2019 • Mannheim" },
+      { property: "og:title", content: "Climathon 2019 • Mannheim" },
+      {
+        property: "og:description",
+        content:
+          "🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!"
+      },
+      { property: "og:image", content: require("../../static/meta-thumb.jpg") },
+
+      // TWITTER
+      { name: "twitter:title", content: "Climathon 2019 • Mannheim" },
+      {
+        name: "twitter:description",
+        content:
+          "🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!"
+      },
+      {
+        name: "twitter:image",
+        content: require("../../static/meta-thumb.jpg")
+      },
+      { name: "twitter:image:alt", content: "Climathon 2019 • Mannheim" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@hackerstolz" }
+    ]
+  },
   data() {
     return {
       postEvent: true,
