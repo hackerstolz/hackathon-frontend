@@ -19,22 +19,24 @@
 
 <script>
 export default {
-  name: 'EventHeader',
+  name: "EventHeader",
   props: {
     isMobile: Boolean,
     themeColor: {
       type: String,
-      default: 'primary'
+      default: "primary"
     }
   },
   computed: {
     sectionColor: function() {
-      return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
-        ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary
+      return Object.keys(this.$vuetify.theme.themes.dark).indexOf(
+        this.themeColor
+      ) !== -1
+        ? this.$vuetify.theme.themes.dark[this.themeColor]
+        : this.$vuetify.theme.themes.dark.primary;
     }
   }
-}
+};
 </script>
 
 <i18n>
@@ -51,16 +53,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-section
-  display flex
-  flex-direction column
-  justify-content center
-  align-items center
-  padding-top 64px
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 64px;
 
-  header
-    z-index 1
-    display flex
-    flex-direction row
-    align-items center
+  header {
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
 </style>

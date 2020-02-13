@@ -13,13 +13,11 @@
         <h3 class="mb-1">{{ $t(`awards.${award.key}.title`) }}</h3>
         <h4 class="mb-3">{{ $t(`awards.${award.key}.place`) }}</h4>
         <v-img :src="award.img" max-height="128px" contain></v-img>
-        <div :style="{ color: award.color }" class="prize my-3">
-          {{ $t(`awards.${award.key}.prize`) }}
-        </div>
-        <p
-          class="description"
-          v-html="$t(`awards.${award.key}.description`)"
-        ></p>
+        <div
+          :style="{ color: award.color }"
+          class="prize my-3"
+        >{{ $t(`awards.${award.key}.prize`) }}</div>
+        <p class="description" v-html="$t(`awards.${award.key}.description`)"></p>
         <v-btn
           v-if="award.officialCriteria"
           class="mt-2"
@@ -29,9 +27,7 @@
           text
           small
           @click="criteriaShow = true"
-        >
-          {{ $t('button.showCriteria') }}
-        </v-btn>
+        >{{ $t('button.showCriteria') }}</v-btn>
         <v-btn
           v-if="award.key === 'climateGrant'"
           class="mt-2"
@@ -55,33 +51,16 @@
         :gutter-height="24"
         monitor-images-loaded
       >
-        <stack-item
-          v-for="(award, i) in awards"
-          :key="i"
-          class="stack-grid-item"
-        >
-          <v-card
-            class="card pa-3"
-            width="100%"
-            color="rgba(255,255,255,0.1)"
-            flat
-          >
+        <stack-item v-for="(award, i) in awards" :key="i" class="stack-grid-item">
+          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
             <h3 class="mb-1">{{ $t(`awards.${award.key}.title`) }}</h3>
             <h4 class="mb-3">{{ $t(`awards.${award.key}.place`) }}</h4>
-            <v-img
-              :src="award.img"
-              max-height="128px"
-              height="128px"
-              contain
-              @load="reflow"
-            ></v-img>
-            <div :style="{ color: award.color }" class="prize my-3">
-              {{ $t(`awards.${award.key}.prize`) }}
-            </div>
-            <p
-              class="description"
-              v-html="$t(`awards.${award.key}.description`)"
-            ></p>
+            <v-img :src="award.img" max-height="128px" height="128px" contain @load="reflow"></v-img>
+            <div
+              :style="{ color: award.color }"
+              class="prize my-3"
+            >{{ $t(`awards.${award.key}.prize`) }}</div>
+            <p class="description" v-html="$t(`awards.${award.key}.description`)"></p>
             <v-btn
               v-if="award.officialCriteria"
               class="mt-2"
@@ -90,9 +69,7 @@
               outlined
               text
               small
-            >
-              {{ $t('button.showCriteria') }}
-            </v-btn>
+            >{{ $t('button.showCriteria') }}</v-btn>
             <router-link
               v-if="typeof award.challengeCategoryID === 'number'"
               :to="'/overview/challenges/' + award.challengeCategoryID"
@@ -104,9 +81,7 @@
                 outlined
                 text
                 small
-              >
-                {{ $t('button.showChallenge') }}
-              </v-btn>
+              >{{ $t('button.showChallenge') }}</v-btn>
             </router-link>
           </v-card>
         </stack-item>
@@ -130,34 +105,22 @@
             <v-layout row>
               <div class="ml-3 mr-4">&nbsp;</div>
               <v-spacer />
-              <h3 class="mb-3">
-                {{ $t('juryCriteriaTitle') }}
-              </h3>
+              <h3 class="mb-3">{{ $t('juryCriteriaTitle') }}</h3>
               <v-spacer />
-              <v-btn
-                class="ma-0"
-                color="accent"
-                text
-                @click="criteriaShow = false"
-                icon
-              >
+              <v-btn class="ma-0" color="accent" text @click="criteriaShow = false" icon>
                 <v-icon>close</v-icon>
               </v-btn>
             </v-layout>
-            <p
-              class="annotation-text mb-4"
-              v-html="$t('juryCriteriaIntro')"
-            ></p>
-            <p
-              class="long-description mb-4"
-              v-html="$t('juryCriteriaList')"
-            ></p>
+            <p class="annotation-text mb-4" v-html="$t('juryCriteriaIntro')"></p>
+            <p class="long-description mb-4" v-html="$t('juryCriteriaList')"></p>
           </div>
           <v-card-actions class="dialog-card-footer">
             <v-spacer />
-            <v-btn color="accent" text @click="criteriaShow = false">{{
+            <v-btn color="accent" text @click="criteriaShow = false">
+              {{
               $t('button.close')
-            }}</v-btn>
+              }}
+            </v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -166,29 +129,31 @@
 </template>
 
 <script>
-import debounce from 'lodash/debounce'
-import { Stack, StackItem } from 'vue-stack-grid'
+import debounce from "lodash/debounce";
+import { Stack, StackItem } from "vue-stack-grid";
 
 export default {
-  name: 'Awards',
+  name: "Awards",
   components: { Stack, StackItem },
   props: {
     themeColor: {
       type: String,
-      default: 'primary'
+      default: "primary"
     },
     isMobile: Boolean
   },
   computed: {
     sectionColor: function() {
-      return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
-        ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary
+      return Object.keys(this.$vuetify.theme.themes.dark).indexOf(
+        this.themeColor
+      ) !== -1
+        ? this.$vuetify.theme.themes.dark[this.themeColor]
+        : this.$vuetify.theme.themes.dark.primary;
     }
   },
   methods: {
     reflow: debounce(function() {
-      this.$refs.stack.reflow()
+      this.$refs.stack.reflow();
     }, 100)
   },
   data() {
@@ -196,15 +161,15 @@ export default {
       criteriaShow: false,
       mainAwards: [
         {
-          key: 'climateGlobal',
-          img: require('../../assets/awards/award-global.png'),
-          color: this.$vuetify.theme.success,
+          key: "climateGlobal",
+          img: require("../../assets/awards/award-global.png"),
+          color: this.$vuetify.theme.themes.dark.success,
           officialCriteria: true
         },
         {
-          key: 'climateGrant',
-          img: require('../../assets/awards/award-gold.svg'),
-          color: this.$vuetify.theme.warning,
+          key: "climateGrant",
+          img: require("../../assets/awards/award-gold.svg"),
+          color: this.$vuetify.theme.themes.dark.warning,
           officialCriteria: true
         }
       ],
@@ -212,54 +177,54 @@ export default {
         // {
         //   key: 'shubAward',
         //   img: require('../../assets/awards/award-shub.png'),
-        //   color: this.$vuetify.theme.warning,
+        //   color: this.$vuetify.theme.themes.dark.warning,
         //   officialCriteria: true
         // },
         // {
         //   key: 'projectTogetherAward',
         //   img: require('../../assets/awards/award-projecttogether.png'),
-        //   color: this.$vuetify.theme.warning,
+        //   color: this.$vuetify.theme.themes.dark.warning,
         //   officialCriteria: true
         // },
         {
-          key: 'cityPrize',
-          img: require('../../assets/awards/award-red.svg'),
-          color: this.$vuetify.theme.error
+          key: "cityPrize",
+          img: require("../../assets/awards/award-red.svg"),
+          color: this.$vuetify.theme.themes.dark.error
         }
         // {
         //   key: 'mvvPrize',
         //   challengeCategoryID: 0,
         //   img: require('../../assets/sponsor/sponsor-mvv.jpg'),
-        //   color: this.$vuetify.theme.info
+        //   color: this.$vuetify.theme.themes.dark.info
         // },
         // {
         //   key: 'obPrize',
         //   challengeCategoryID: 7,
         //   img: require('../../assets/sponsor/sponsor-op.svg'),
-        //   color: this.$vuetify.theme.info
+        //   color: this.$vuetify.theme.themes.dark.info
         // },
         // {
         //   key: 'camelotPrize',
         //   challengeCategoryID: 3,
         //   img: require('../../assets/sponsor/sponsor-camelot.jpg'),
-        //   color: this.$vuetify.theme.info
+        //   color: this.$vuetify.theme.themes.dark.info
         // },
         // {
         //   key: 'rnvPrize',
         //   challengeCategoryID: 1,
         //   img: require('../../assets/sponsor/sponsor-rnv.svg'),
-        //   color: this.$vuetify.theme.info
+        //   color: this.$vuetify.theme.themes.dark.info
         // },
         // {
         //   key: 'bosPrize',
         //   challengeCategoryID: 5,
         //   img: require('../../assets/awards/award-bos.jpg'),
-        //   color: this.$vuetify.theme.accent
+        //   color: this.$vuetify.theme.themes.dark.accent
         // }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <i18n>
@@ -419,94 +384,117 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-section
-  h2
-    font-family Gagalin,sans-serif
-    font-weight 400
-    font-style normal
-    font-size 28px
-    letter-spacing 1.4px
-    text-align center
-    color #ffffff
-    margin-top 128px
-    margin-bottom 64px
+section {
+  h2 {
+    font-family: Gagalin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 128px;
+    margin-bottom: 64px;
+  }
 
-  .card
-    h3
-      font-family Gagalin,sans-serif
-      font-weight 400
-      font-style normal
-      font-size 20px
-      letter-spacing 1px
-      color rgba(255, 255, 255, 0.8)
-    h4
-      font-family Roboto Condensed,sans-serif
-      font-weight 600
-      font-size 14px
-      font-style normal
-      line-height 1.2
-      letter-spacing 0.5px
-      text-transform uppercase
-      color rgba(255, 255, 255, 0.6)
-    .prize
-      font-family Roboto Condensed,sans-serif
-      font-weight 600
-      font-size 16px
-      line-height 1.4
-      letter-spacing 1px
-      text-transform uppercase
-      text-align center
-      color inherit
-    .description
-      font-family Roboto Condensed,sans-serif
-      font-weight 400
-      font-size 20px
-      line-height 1.4
-      letter-spacing 1px
-      text-align center
-      color rgba(255, 255, 255, 0.8)
+  .card {
+    h3 {
+      font-family: Gagalin, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.8);
+    }
 
-  .infoArea
-    margin-bottom 128px
-    .awardInfo
-      font-family Roboto Condensed,sans-serif
-      font-weight 400
-      font-size 20px
-      line-height 1.4
-      letter-spacing normal
-      text-align center
-      color rgba(255, 255, 255, 0.8)
+    h4 {
+      font-family: Roboto Condensed, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+    }
 
-.card
-  height 100%
-  h3
-    font-family Gagalin,sans-serif
-    font-weight 400
-    font-style normal
-    font-size 24px
-    letter-spacing 1px
-    color rgba(255, 255, 255, 0.8)
-  .annotation-text
-    font-family Roboto Condensed,sans-serif
-    font-weight 400
-    font-size 20px
-    font-style normal
-    line-height 1.2
-    letter-spacing 0.5px
-    text-align inherit
-    color #ffffff
-  .long-description
-    font-family Roboto Condensed,sans-serif
-    font-size 20px
-    line-height 1.4
-    letter-spacing 1px
-    text-align center
-    color rgba(255, 255, 255, 0.8)
-  .dialog-card-footer
-    button
-      font-family Gagalin,sans-serif
-      font-weight 400
-      font-style normal
-      font-size 20px
-      letter-spacing 1.5px
+    .prize {
+      font-family: Roboto Condensed, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.4;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-align: center;
+      color: inherit;
+    }
+
+    .description {
+      font-family: Roboto Condensed, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 1.4;
+      letter-spacing: 1px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .infoArea {
+    margin-bottom: 128px;
+
+    .awardInfo {
+      font-family: Roboto Condensed, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 1.4;
+      letter-spacing: normal;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+.card {
+  height: 100%;
+
+  h3 {
+    font-family: Gagalin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .annotation-text {
+    font-family: Roboto Condensed, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    text-align: inherit;
+    color: #ffffff;
+  }
+
+  .long-description {
+    font-family: Roboto Condensed, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .dialog-card-footer {
+    button {
+      font-family: Gagalin, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 20px;
+      letter-spacing: 1.5px;
+    }
+  }
+}
 </style>

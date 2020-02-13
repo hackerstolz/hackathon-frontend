@@ -23,13 +23,11 @@
         <h3 class="align-left">{{ $t('locationSlogan') }}</h3>
         <!-- <v-flex xs12 align-end> -->
         <v-spacer />
-        <v-icon class="pa-1" color="rgba(255, 255, 255, 0.38)" x-large>
-          place
-        </v-icon>
+        <v-icon class="pa-1" color="rgba(255, 255, 255, 0.38)" x-large>place</v-icon>
         <p class="location-text pa-1">
-          MAFINEX-Technologiezentrum<br />
-          Julius-Hatry-Str. 1<br />
-          68163 Mannheim
+          MAFINEX-Technologiezentrum
+          <br />Julius-Hatry-Str. 1
+          <br />68163 Mannheim
         </p>
         <v-btn
           class="my-2"
@@ -56,31 +54,33 @@
 </template>
 
 <script>
-import VideoBg from 'vue-videobg'
+import VideoBg from "vue-videobg";
 
 export default {
-  name: 'Location',
+  name: "Location",
   components: {
     VideoBg
   },
   props: {
     themeColor: {
       type: String,
-      default: 'primary'
+      default: "primary"
     }
   },
   mounted() {
     // set video to play in slow motion
-    this.$refs.videobg.$refs.video.playbackRate = 1 // 0.5;
+    this.$refs.videobg.$refs.video.playbackRate = 1; // 0.5;
   },
   computed: {
     sectionColor: function() {
-      return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
-        ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary
+      return Object.keys(this.$vuetify.theme.themes.dark).indexOf(
+        this.themeColor
+      ) !== -1
+        ? this.$vuetify.theme.themes.dark[this.themeColor]
+        : this.$vuetify.theme.themes.dark.primary;
     }
   }
-}
+};
 </script>
 
 <i18n>
@@ -104,65 +104,79 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-section
-  h2
-    font-family Gagalin,sans-serif
-    font-weight 400
-    font-style normal
-    font-size 28px
-    letter-spacing 1.4px
-    text-align center
-    color #ffffff
-    margin-top 128px
-    margin-bottom 64px
+section {
+  h2 {
+    font-family: Gagalin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 128px;
+    margin-bottom: 64px;
+  }
 
-  .video-container
-    .shade-top
-      position absolute
-      z-index 1
-      top 0
-      left 0
-      right 0
-      content ''
-      width 100%
-      height 30%
+  .video-container {
+    .shade-top {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      content: '';
+      width: 100%;
+      height: 30%;
+    }
 
-    .shade-bottom
-      position absolute
-      z-index 1
-      bottom 0
-      left 0
-      right 0
-      content ''
-      width 100%
-      height 30%
+    .shade-bottom {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: '';
+      width: 100%;
+      height: 30%;
+    }
 
-    .video-content
-      position relative
-      z-index 2
-      h3
-        max-width 640px
-        margin 0 auto
-        font-family Gagalin,sans-serif
-        font-weight 400
-        font-style normal
-        font-size 70px
-        line-height 1
-        letter-spacing 3.5px
-        text-align center
-        color rgba(255, 255, 255, 0.38)
-        @media screen and (max-width: 600px)
-          font-size 32px
-      .location-text
+    .video-content {
+      position: relative;
+      z-index: 2;
+
+      h3 {
+        max-width: 640px;
+        margin: 0 auto;
+        font-family: Gagalin, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 70px;
+        line-height: 1;
+        letter-spacing: 3.5px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.38);
+
+        @media screen and (max-width: 600px) {
+          font-size: 32px;
+        }
+      }
+
+      .location-text {
         // TODO: font seems not to be available on mobile
-        font-family Roboto
-        font-weight 900
-        font-size 28px
-        font-style normal
-        line-height 1.2
-        letter-spacing 6px
-        text-align center
-        color rgba(255, 255, 255, 0.8)
-        @media screen and (max-width: 600px)
-          font-size 18px
+        font-family: Roboto;
+        font-weight: 900;
+        font-size: 28px;
+        font-style: normal;
+        line-height: 1.2;
+        letter-spacing: 6px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.8);
+
+        @media screen and (max-width: 600px) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
 </style>

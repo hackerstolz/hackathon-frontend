@@ -16,9 +16,7 @@
         <h3
           :style="{ color: item.greenBatch ? '#A8E5A3' : null }"
           class="faq-title my-1 mx-3"
-        >
-          {{ $i18n.locale === "en" ? item.i18nTitle[0] : item.i18nTitle[1] }}
-        </h3>
+        >{{ $i18n.locale === "en" ? item.i18nTitle[0] : item.i18nTitle[1] }}</h3>
         <v-expand-transition>
           <p
             v-if="item.show"
@@ -43,9 +41,11 @@ export default {
   },
   computed: {
     sectionColor: function() {
-      return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
-        ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary;
+      return Object.keys(this.$vuetify.theme.themes.dark).indexOf(
+        this.themeColor
+      ) !== -1
+        ? this.$vuetify.theme.themes.dark[this.themeColor]
+        : this.$vuetify.theme.themes.dark.primary;
     }
   },
   methods: {
@@ -242,35 +242,43 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-section
-  padding-bottom 128px
-  h2
-    font-family Gagalin,sans-serif
-    font-weight 400
-    font-style normal
-    font-size 28px
-    letter-spacing 1.4px
-    text-align center
-    color #ffffff
-    margin-top 128px
-    margin-bottom 64px
+section {
+  padding-bottom: 128px;
 
-  .faq-card
-    cursor pointer
-    .faq-title
-      font-family Roboto Condensed,sans-serif
-      font-weight 600
-      font-size 20px
-      line-height 1.4
-      letter-spacing normal
-      text-align left
-      color rgba(255, 255, 255, 0.8)
-    .faq-text
-      font-family Roboto Condensed,sans-serif
-      font-weight 400
-      font-size 20px
-      line-height 1.4
-      letter-spacing normal
-      text-align left
-      color rgba(255, 255, 255, 0.8)
+  h2 {
+    font-family: Gagalin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 128px;
+    margin-bottom: 64px;
+  }
+
+  .faq-card {
+    cursor: pointer;
+
+    .faq-title {
+      font-family: Roboto Condensed, sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1.4;
+      letter-spacing: normal;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .faq-text {
+      font-family: Roboto Condensed, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 1.4;
+      letter-spacing: normal;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
 </style>

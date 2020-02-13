@@ -2,11 +2,7 @@
   <section :style="{ backgroundColor: sectionColor }">
     <v-container>
       <h2>{{ $t('sponsorsTitle') }}</h2>
-      <p
-        v-if="!postEvent"
-        class="intro-sponsors mt-5 mb-4"
-        v-html="$t('introSponsors')"
-      ></p>
+      <p v-if="!postEvent" class="intro-sponsors mt-5 mb-4" v-html="$t('introSponsors')"></p>
       <!-- <v-btn
         class="mb-5"
         color="info"
@@ -17,7 +13,7 @@
       >
         {{ $t("button.donate") }}
         <v-icon right>card_giftcard</v-icon>
-      </v-btn> -->
+      </v-btn>-->
       <v-img
         v-if="sponsors.length === 0"
         class="icon-large mt-4"
@@ -28,14 +24,7 @@
         width="245px"
         contain
       ></v-img>
-      <v-layout
-        v-if="sponsors.length > 0"
-        class="my-4"
-        row
-        wrap
-        align-center
-        justify-center
-      >
+      <v-layout v-if="sponsors.length > 0" class="my-4" row wrap align-center justify-center>
         <v-flex
           v-for="(sponsor, i) in sponsors"
           :key="i"
@@ -72,9 +61,7 @@
               challenge: sponsor.challenge,
               'my-1': true
             }"
-          >
-            {{ sponsor.name }}
-          </p>
+          >{{ sponsor.name }}</p>
           <router-link
             v-if="
               sponsor.challenge &&
@@ -82,9 +69,14 @@
             "
             :to="'/overview/challenges/' + sponsor.challengeCategoryID"
           >
-            <v-btn class="mt-2" width="auto" color="info" outlined text small>
-              {{ $t('button.showChallenge') }}
-            </v-btn>
+            <v-btn
+              class="mt-2"
+              width="auto"
+              color="info"
+              outlined
+              text
+              small
+            >{{ $t('button.showChallenge') }}</v-btn>
           </router-link>
           <div
             v-if="
@@ -92,9 +84,7 @@
                 typeof sponsor.challengeCategoryID !== 'number'
             "
             style="height: 42px"
-          >
-            &nbsp;
-          </div>
+          >&nbsp;</div>
         </v-flex>
       </v-layout>
       <p class="outro-sponsors my-5">{{ $t('outroSponsors') }}</p>
@@ -146,14 +136,7 @@
         width="245px"
         contain
       ></v-img>
-      <v-layout
-        v-if="partners.length > 0"
-        class="my-4"
-        row
-        wrap
-        align-center
-        justify-center
-      >
+      <v-layout v-if="partners.length > 0" class="my-4" row wrap align-center justify-center>
         <v-flex
           v-for="(partner, i) in partners"
           :key="i"
@@ -183,7 +166,7 @@
             }"
           >
             {{
-              $i18n.locale === 'en' ? partner.purpose[0] : partner.purpose[1]
+            $i18n.locale === 'en' ? partner.purpose[0] : partner.purpose[1]
             }}
           </p>
         </v-flex>
@@ -194,19 +177,21 @@
 
 <script>
 export default {
-  name: 'Parties',
+  name: "Parties",
   props: {
     themeColor: {
       type: String,
-      default: 'primary'
+      default: "primary"
     },
     isMobile: Boolean
   },
   computed: {
     sectionColor: function() {
-      return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
-        ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary
+      return Object.keys(this.$vuetify.theme.themes.dark).indexOf(
+        this.themeColor
+      ) !== -1
+        ? this.$vuetify.theme.themes.dark[this.themeColor]
+        : this.$vuetify.theme.themes.dark.primary;
     }
   },
   data() {
@@ -214,101 +199,101 @@ export default {
       postEvent: true,
       sponsors: [
         {
-          icon: '', // require('../../assets/sponsor/sponsor-op.svg'),
-          name: 'objective partner',
+          icon: "", // require('../../assets/sponsor/sponsor-op.svg'),
+          name: "objective partner",
           challenge: true,
           challengeCategoryID: 7
         },
         {
-          icon: '', // require('../../assets/sponsor/sponsor-rnv.svg'),
-          name: 'Rhein-Neckar-Verkehr GmbH',
+          icon: "", // require('../../assets/sponsor/sponsor-rnv.svg'),
+          name: "Rhein-Neckar-Verkehr GmbH",
           challenge: true,
           challengeCategoryID: 1
         },
         {
-          icon: '', // require('../../assets/sponsor/sponsor-gbg.svg'),
-          name: 'GBG Mannheim',
+          icon: "", // require('../../assets/sponsor/sponsor-gbg.svg'),
+          name: "GBG Mannheim",
           challenge: true,
           challengeCategoryID: 0
         },
         {
-          icon: '', // require('../../assets/sponsor/sponsor-mvv.jpg'),
-          name: 'MVV Energie AG',
+          icon: "", // require('../../assets/sponsor/sponsor-mvv.jpg'),
+          name: "MVV Energie AG",
           challenge: true,
           challengeCategoryID: 0
         },
         {
-          icon: '', // require('../../assets/sponsor/sponsor-camelot.jpg'),
-          name: 'CAMELOT Management Consultants AG',
+          icon: "", // require('../../assets/sponsor/sponsor-camelot.jpg'),
+          name: "CAMELOT Management Consultants AG",
           challenge: true,
           challengeCategoryID: null
         },
         {
-          icon: '', // require('../../assets/sponsor/sponsor-valantic.jpg'),
-          name: 'valantic',
+          icon: "", // require('../../assets/sponsor/sponsor-valantic.jpg'),
+          name: "valantic",
           challenge: false,
           challengeCategoryID: null
         },
         {
-          icon: '', // require('../../assets/sponsor/sponsor-basf.svg'),
-          name: 'BASF SE',
+          icon: "", // require('../../assets/sponsor/sponsor-basf.svg'),
+          name: "BASF SE",
           challenge: false,
           challengeCategoryID: null
         },
         {
-          icon: '', // require('../../assets/sponsor/sponsor-ueberbit.svg'),
-          name: 'UEBERBIT GmbH',
+          icon: "", // require('../../assets/sponsor/sponsor-ueberbit.svg'),
+          name: "UEBERBIT GmbH",
           challenge: false,
           challengeCategoryID: null
         },
         {
-          icon: '', // require('../../assets/sponsor/sponsor-onwerk.jpeg'),
-          name: 'Onwerk GmbH',
+          icon: "", // require('../../assets/sponsor/sponsor-onwerk.jpeg'),
+          name: "Onwerk GmbH",
           challenge: false,
           challengeCategoryID: null
         }
       ],
       partners: [
         {
-          icon: '', // require('../../assets/partner/partner-startup-ma.svg'),
-          name: 'STARTUP MANNHEIM',
+          icon: "", // require('../../assets/partner/partner-startup-ma.svg'),
+          name: "STARTUP MANNHEIM",
           important: true,
-          purpose: ['Location Partner', 'Location Partner']
+          purpose: ["Location Partner", "Location Partner"]
         },
         {
-          icon: '', // require('../../assets/partner/partner-ksa.svg'),
-          name: 'Klimaschutzagentur Mannheim',
+          icon: "", // require('../../assets/partner/partner-ksa.svg'),
+          name: "Klimaschutzagentur Mannheim",
           important: true,
-          purpose: ['Sustainability Partner', 'Sustainability Partner']
+          purpose: ["Sustainability Partner", "Sustainability Partner"]
         },
         {
-          icon: '', // require('../../assets/partner/partner-shub.png'),
-          name: 'S-HUB Accelerator',
+          icon: "", // require('../../assets/partner/partner-shub.png'),
+          name: "S-HUB Accelerator",
           important: true,
-          purpose: ['Award Partner', 'Award Partner']
+          purpose: ["Award Partner", "Award Partner"]
         },
         {
-          icon: '', // require('../../assets/partner/partner-projecttogether.png'),
-          name: 'ProjectTogether',
+          icon: "", // require('../../assets/partner/partner-projecttogether.png'),
+          name: "ProjectTogether",
           important: true,
-          purpose: ['Award Partner', 'Award Partner']
+          purpose: ["Award Partner", "Award Partner"]
         },
         {
-          icon: '', // require('../../assets/partner/partner-kompass.jpg'),
-          name: 'Hochschule Mannheim • Kompass',
+          icon: "", // require('../../assets/partner/partner-kompass.jpg'),
+          name: "Hochschule Mannheim • Kompass",
           important: false,
-          purpose: ['Network Partner', 'Netzwerk Partner']
+          purpose: ["Network Partner", "Netzwerk Partner"]
         },
         {
-          icon: '', // require('../../assets/partner/partner-stocard.jpg'),
-          name: 'Stocard GmbH',
+          icon: "", // require('../../assets/partner/partner-stocard.jpg'),
+          name: "Stocard GmbH",
           important: false,
-          purpose: ['Hydration Mate', 'Hydration Mate']
+          purpose: ["Hydration Mate", "Hydration Mate"]
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <i18n>
@@ -346,71 +331,89 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-section
-  padding-bottom 128px
-  h2
-    font-family Gagalin,sans-serif
-    font-weight 400
-    font-style normal
-    font-size 28px
-    letter-spacing 1.4px
-    text-align center
-    color #ffffff
-    margin-top 128px
-    margin-bottom 64px
+section {
+  padding-bottom: 128px;
 
-  .icon-large
-    margin 0 auto
+  h2 {
+    font-family: Gagalin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 128px;
+    margin-bottom: 64px;
+  }
 
-  .intro-sponsors, .outro-sponsors, .intro-partners
-    font-family Roboto Condensed,sans-serif
-    font-weight 400
-    font-size 20px
-    line-height 1.4
-    letter-spacing normal
-    text-align center
-    color rgba(255, 255, 255, 0.8)
-    &.outro-sponsors
-      color #A8E5A3
+  .icon-large {
+    margin: 0 auto;
+  }
 
-  .stack-grid-item
-    position relative
-    transition all 300ms
-    display flex
-    flex-direction column
-    align-items center
-    justify-content center
-    background-color rgba(255,255,255,0.1)
-    border-radius 8px
-    .sponsor-title, .partner-title
-      font-family Roboto Condensed,sans-serif
-      font-weight 600
-      font-style normal
-      font-size 20px
-      font-stretch normal
-      line-height 1
-      letter-spacing 1px
-      text-align inherit
-      color #ffffff
-      &.challenge
-        color #ffffff // #70B4DF
-    .partner-subtitle
-      font-family click-clack,sans-serif
-      font-weight 500
-      font-size 20px
-      font-style normal
-      line-height 1.2
-      letter-spacing 0.5px
-      text-align inherit
-      color darken(#FFFFFF, 20%)
-      &.important
-        color #70B4DF
-    .batch
-      position absolute
-      pointer-events none
-      z-index 1
-      top 0
-      right auto
-      left auto
-      transform translateY(-42%) translateX(-45%)
+  .intro-sponsors, .outro-sponsors, .intro-partners {
+    font-family: Roboto Condensed, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+
+    &.outro-sponsors {
+      color: #A8E5A3;
+    }
+  }
+
+  .stack-grid-item {
+    position: relative;
+    transition: all 300ms;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+
+    .sponsor-title, .partner-title {
+      font-family: Roboto Condensed, sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 20px;
+      font-stretch: normal;
+      line-height: 1;
+      letter-spacing: 1px;
+      text-align: inherit;
+      color: #ffffff;
+
+      &.challenge {
+        color: #ffffff; // #70B4DF
+      }
+    }
+
+    .partner-subtitle {
+      font-family: click-clack, sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+      text-align: inherit;
+      color: darken(#FFFFFF, 20%);
+
+      &.important {
+        color: #70B4DF;
+      }
+    }
+
+    .batch {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      top: 0;
+      right: auto;
+      left: auto;
+      transform: translateY(-42%) translateX(-45%);
+    }
+  }
+}
 </style>

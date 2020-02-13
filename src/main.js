@@ -22,13 +22,18 @@ export default async function(Vue, { appOptions, router, head, isClient }) {
       t: (key, ...params) => i18n.t(key, params)
     },
     theme: {
-      primary: '#10182F',
-      secondary: '#182445',
-      accent: '#A8E5A3',
-      error: '#DD543B',
-      info: '#70B4DF',
-      success: '#4CAE79',
-      warning: '#FFC533'
+      dark: true,
+      themes: {
+        dark: {
+          primary: '#10182F',
+          secondary: '#182445',
+          accent: '#A8E5A3',
+          error: '#DD543B',
+          info: '#70B4DF',
+          success: '#4CAE79',
+          warning: '#FFC533'
+        }
+      }
     }
   }
 

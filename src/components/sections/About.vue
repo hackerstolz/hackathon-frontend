@@ -122,9 +122,9 @@ export default {
   },
   computed: {
     sectionColor: function() {
-      return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
-        ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary
+      return Object.keys(this.$vuetify.theme.themes.dark).indexOf(this.themeColor) !== -1
+        ? this.$vuetify.theme.themes.dark[this.themeColor]
+        : this.$vuetify.theme.themes.dark.primary
     }
   },
   data() {

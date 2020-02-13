@@ -12,12 +12,7 @@
       >
         <!-- Bleib deinem Becher Treu Becher -->
         <stack-item class="stack-grid-item">
-          <v-card
-            class="card pa-3"
-            width="100%"
-            color="rgba(255,255,255,0.1)"
-            flat
-          >
+          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
             <h3 class="mb-3">{{ $t('cup') }}</h3>
             <div class="icon">{{ '☕️' }}</div>
             <p class="mb-3" v-html="$t('cupDescription')"></p>
@@ -26,12 +21,7 @@
 
         <!-- Bügelflasche -->
         <stack-item class="stack-grid-item">
-          <v-card
-            class="card pa-3"
-            width="100%"
-            color="rgba(255,255,255,0.1)"
-            flat
-          >
+          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
             <h3 class="mb-3">{{ $t('bottle') }}</h3>
             <div class="icon">{{ '🚰' }}</div>
             <p class="mb-3" v-html="$t('bottleDescription')"></p>
@@ -40,12 +30,7 @@
 
         <!-- Stoffbeutel -->
         <stack-item class="stack-grid-item">
-          <v-card
-            class="card pa-3"
-            width="100%"
-            color="rgba(255,255,255,0.1)"
-            flat
-          >
+          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
             <h3 class="mb-3">{{ $t('smallBag') }}</h3>
             <div class="icon">{{ '👝' }}</div>
             <p class="mb-3">{{ $t('smallBagDescription') }}</p>
@@ -54,12 +39,7 @@
 
         <!-- Post-Its -->
         <stack-item class="stack-grid-item">
-          <v-card
-            class="card pa-3"
-            width="100%"
-            color="rgba(255,255,255,0.1)"
-            flat
-          >
+          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
             <h3 class="mb-3">{{ $t('postItsBag') }}</h3>
             <div class="icon">{{ '📝' }}</div>
             <p class="mb-3">{{ $t('postItsBagDescription') }}</p>
@@ -68,12 +48,7 @@
 
         <!-- Sattelschutz -->
         <stack-item class="stack-grid-item">
-          <v-card
-            class="card pa-3"
-            width="100%"
-            color="rgba(255,255,255,0.1)"
-            flat
-          >
+          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
             <h3 class="mb-3">{{ $t('saddleProtectionBag') }}</h3>
             <div class="icon">{{ '🚲' }}</div>
             <p class="mb-3">{{ $t('saddleProtectionBagDescription') }}</p>
@@ -82,12 +57,7 @@
 
         <!-- Seedbomb -->
         <stack-item class="stack-grid-item">
-          <v-card
-            class="card pa-3"
-            width="100%"
-            color="rgba(255,255,255,0.1)"
-            flat
-          >
+          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
             <h3 class="mb-3">{{ $t('seedbomb') }}</h3>
             <div class="icon">{{ '🌺' }}</div>
             <p class="mb-3">{{ $t('seedbombDescription') }}</p>
@@ -96,12 +66,7 @@
 
         <!-- Sticker -->
         <stack-item class="stack-grid-item">
-          <v-card
-            class="card pa-3"
-            width="100%"
-            color="rgba(255,255,255,0.1)"
-            flat
-          >
+          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
             <h3 class="mb-3">{{ $t('sticker') }}</h3>
             <div class="icon">{{ '🌍' }}</div>
             <p class="mb-3">{{ $t('stickerDescription') }}</p>
@@ -113,31 +78,33 @@
 </template>
 
 <script>
-import debounce from 'lodash/debounce'
-import { Stack, StackItem } from 'vue-stack-grid'
+import debounce from "lodash/debounce";
+import { Stack, StackItem } from "vue-stack-grid";
 
 export default {
-  name: 'EventBag',
+  name: "EventBag",
   components: { Stack, StackItem },
   props: {
     themeColor: {
       type: String,
-      default: 'primary'
+      default: "primary"
     }
   },
   methods: {
     reflow: debounce(function() {
-      this.$refs.stack.reflow()
+      this.$refs.stack.reflow();
     }, 100)
   },
   computed: {
     sectionColor: function() {
-      return Object.keys(this.$vuetify.theme).indexOf(this.themeColor) !== -1
-        ? this.$vuetify.theme[this.themeColor]
-        : this.$vuetify.theme.primary
+      return Object.keys(this.$vuetify.theme.themes.dark).indexOf(
+        this.themeColor
+      ) !== -1
+        ? this.$vuetify.theme.themes.dark[this.themeColor]
+        : this.$vuetify.theme.themes.dark.primary;
     }
   }
-}
+};
 </script>
 
 <i18n>
@@ -186,52 +153,64 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-section
-  padding 64px 0
-  h2
-    font-family Gagalin,sans-serif
-    font-weight 400
-    font-style normal
-    font-size 28px
-    letter-spacing 1.4px
-    text-align center
-    color #ffffff
-    margin 64px 0
+section {
+  padding: 64px 0;
 
-  .intro
-    font-family Roboto Condensed,sans-serif
-    font-weight 400
-    font-size 20px
-    line-height 1.4
-    letter-spacing normal
-    text-align center
-    color #A8E5A3
+  h2 {
+    font-family: Gagalin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: #ffffff;
+    margin: 64px 0;
+  }
 
-  .card
-    h3
-      font-family Gagalin,sans-serif
-      font-weight 400
-      font-style normal
-      font-size 20px
-      letter-spacing 1px
-      color rgba(255, 255, 255, 0.8)
-    .icon
-      font-size 60px
-    h4
-      font-family Roboto Condensed,sans-serif
-      font-weight 600
-      font-size 14px
-      font-style normal
-      line-height 1.2
-      letter-spacing 0.5px
-      text-transform uppercase
-      color rgba(255, 255, 255, 0.6)
-    p
-      font-family Roboto Condensed,sans-serif
-      font-weight 400
-      font-size 20px
-      line-height 1.4
-      letter-spacing 1px
-      text-align center
-      color rgba(255, 255, 255, 0.8)
+  .intro {
+    font-family: Roboto Condensed, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: center;
+    color: #A8E5A3;
+  }
+
+  .card {
+    h3 {
+      font-family: Gagalin, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .icon {
+      font-size: 60px;
+    }
+
+    h4 {
+      font-family: Roboto Condensed, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    p {
+      font-family: Roboto Condensed, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 1.4;
+      letter-spacing: 1px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
 </style>
