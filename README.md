@@ -32,7 +32,8 @@ https://climathon.hackerstolz.de/#?lang=en
 
 [ ] Enable support for `section` and `id` (for archived hackathons) URL parameter  
 [ ] Initial html lang is set to "en"  
-[ ] Replace challenge categories by challenges directly  
+[X] Replace challenge categories by challenges directly  
+[ ] auto extend challenge if called via URL param  
 [ ] Fix image fallback sizes and placeholder  
 [ ] fix scroll to initial section  
-[ ] auto extend challenge if called via URL param
+[ ] add aftermovie to intro section

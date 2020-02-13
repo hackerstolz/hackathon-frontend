@@ -164,6 +164,72 @@
         </stack-item>
       </stack>
 
+      <v-row justify="center">
+        <v-expansion-panels popout flat>
+          <v-expansion-panel v-for="(challenge,i) in challenges" :key="i">
+            <v-expansion-panel-header
+              :id="`challenge-${challenge.ID}`"
+              color="rgba(76,174,121,0.2)"
+              ripple
+            >
+              <div>
+                <p
+                  :class="{
+                        author: true,
+                        [challenge.type.toLowerCase()]: true,
+                        'mb-4': true
+                      }"
+                  v-html="
+                        $i18n.locale === 'en'
+                          ? challenge.i18nAuthor[0]
+                          : challenge.i18nAuthor[1]
+                      "
+                ></p>
+                <h4
+                  class="mb-4"
+                  v-html="
+                        $i18n.locale === 'en'
+                          ? challenge.i18nTitle[0]
+                          : challenge.i18nTitle[1]
+                      "
+                ></h4>
+              </div>
+            </v-expansion-panel-header>
+            <v-expansion-panel-content color="rgba(76,174,121,0.2)">
+              <div>
+                <h5 class="mb-2">{{ $t('challangeSummary') }}</h5>
+                <p
+                  class="mb-4"
+                  v-html="
+                        $i18n.locale === 'en'
+                          ? challenge.i18nSummary[0]
+                          : challenge.i18nSummary[1]
+                      "
+                ></p>
+                <h5 class="mb-2">{{ $t('challangeDescription') }}</h5>
+                <p
+                  class="mb-4"
+                  v-html="
+                        $i18n.locale === 'en'
+                          ? challenge.i18nDescription[0]
+                          : challenge.i18nDescription[1]
+                      "
+                ></p>
+                <h5 class="mb-2">{{ $t('challangeVision') }}</h5>
+                <p
+                  class="mb-4"
+                  v-html="
+                        $i18n.locale === 'en'
+                          ? challenge.i18nVision[0]
+                          : challenge.i18nVision[1]
+                      "
+                ></p>
+              </div>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
+      </v-row>
+
       <div class="submitArea">
         <h2 class="align-left">{{ $t('titleSubmit') }}</h2>
         <v-img
@@ -325,26 +391,6 @@ export default {
                 '<ul class="list"><li>Die Lösung kann sich entweder auf einen bestimmten Teilbereich (z.B. Mobilität oder Ener-gieversorgung) fokussieren, oder die Stadt als Ganzes betrachten. Den Ideen sind keine Grenzen gesetzt, solange LoRaWAN dies technisch unterstützt. </li><li>Für die Challenge werden Euch aktuelle Sensordaten aus der Stadt zur Verfügung gestellt, die via LoRaWAN übertragen werden.</li><li>Ihr habt die Möglichkeit ein Konzept zu entwickeln oder Prototypen praktisch umzusetzen – ob Ihr die von uns zur Verfügung gestellten Daten nutzt, bleibt dabei euch überlassen. </li>Die Lösung kann entweder eine Anwendung für die Gemeinde (z.B. Optimierungsvorschläge) oder für die Bürger (z.B. Anreiz für nachhaltigeres Verhalten) darstellen.</li></ul>Wir freuen uns auf Eure Ideen!'
               ]
             }
-            // {
-            //   type: CHALLENGE_TYPE.SPONSOR,
-            //   i18nAuthor: [
-            //     "GBG - Mannheimer housing company ltd.",
-            //     "GBG - Mannheimer Wohnungsbaugesellschaft mbH"
-            //   ],
-            //   i18nTitle: [
-            //     "What new business models can the housing industry offer (e.g. drone loading columns on roofs, logistics hubs, etc.) to support smart and climate-friendly urban development?",
-            //     "Welche neuen Geschäftsmodelle kann die Wohnungswirtschaft anbieten (z.B. Drohnenladesäulen auf Dächern, Logistikzentren, etc.), um eine intelligente und klimafreundliche Stadtentwicklung zu unterstützen?"
-            //   ],
-            //   i18nSummary: [
-            //     "With around 18,846 apartments, GBG Mannheim is the largest local housing association in Baden-Württemberg. It provides living space for about 13 percent of Mannheim's citizens. On commission from the City of Mannheim, GBG is taking over individual construction projects that are important for the sustainable development of the city.",
-            //     "Die GBG Mannheim ist mit rund 18.846 Wohnungen die größte lokale Wohnungsgesellschaft in Baden-Württemberg. Sie bietet rund 13 Prozent der Mannheimer Bevölkerung Lebensraum. Im Auftrag der Stadt Mannheim übernimmt die GBG einzelne Bauvorhaben, die für die nachhaltige Entwicklung der Stadt wichtig sind."
-            //   ],
-            //   i18nDescription: ["Feel free!", "Fühlt euch frei!"],
-            //   i18nVision: [
-            //     "There are no limits to your imagination in this challenge.",
-            //     "Der Fantasie sind bei dieser Herausforderung keine Grenzen gesetzt."
-            //   ]
-            // }
           ]
         },
         {
@@ -627,7 +673,105 @@ export default {
           challenges: []
         }
       ],
-      challenges: []
+      challenges: [
+        {
+          ID: 100,
+          type: CHALLENGE_TYPE.SPONSOR,
+          categoryID: 0,
+          i18nAuthor: [
+            "GBG - Mannheimer housing company ltd.",
+            "GBG - Mannheimer Wohnungsbaugesellschaft mbH"
+          ],
+          i18nTitle: [
+            'How could an algorithm for a smart and climate-friendly calculation of future housing demand, housing location and housing characteristics ("foresighted housing supply") look like and which data could be networked in a new way typical for mashup?',
+            'Wie könnte ein Algorithmus zur intelligenten und klimafreundlichen Berechnung von zukünftigem Wohnungsbedarf, Wohnlage und Wohnungseigenschaften ("vorausschauendes Wohnungsangebot") aussehen und welche Daten könnten auf neue Mashup-typische Weise vernetzt werden?'
+          ],
+          i18nSummary: [
+            'With around 18,846 apartments, GBG Mannheim is the largest local housing association in Baden-Württemberg. It provides living space for about 13 percent of Mannheim\'s citizens. On commission from the City of Mannheim, GBG is taking over individual construction projects that are important for the sustainable development of the city. How could an algorithm for a smart and climate-friendly calculation of future housing demand, housing location and housing characteristics ("foresighted housing supply") look like and which data could be networked in a new way typical for meshup?',
+            'Die GBG Mannheim ist mit rund 18.846 Wohnungen die größte lokale Wohnungsgesellschaft in Baden-Württemberg. Sie bietet rund 13 Prozent der Mannheimer Bevölkerung Lebensraum. Im Auftrag der Stadt Mannheim übernimmt die GBG einzelne Bauvorhaben, die für die nachhaltige Entwicklung der Stadt wichtig sind. Wie könnte ein Algorithmus zur intelligenten und klimafreundlichen Berechnung von zukünftigem Wohnungsbedarf, Wohnlage und Wohnungseigenschaften ("vorausschauendes Wohnungsangebot") aussehen und welche Daten könnten auf neue Meshup-typische Weise vernetzt werden?'
+          ],
+          i18nDescription: [
+            "<ul class='list'><li>A wide variety of creative and visionary data can be \"linked\"! Also very complex!</li><li>For example: statistical data (birth rate, death rate, place of residence, place of work, but also future data that may become available through an X-Road architecture in Germany), data from the housing sector, social media data or participative data and IoT data (e.g. environmental data).</li></ul>",
+            "<ul class='list'><li>Eine Vielzahl von kreativen und visionären Daten kann \"verknüpft\" werden! Auch sehr komplex!</li><li><li>Zum Beispiel: statistische Daten (Geburtenrate, Sterblichkeitsrate, Wohnort, Arbeitsplatz, aber auch zukünftige Daten, die durch eine X-Road-Architektur in Deutschland verfügbar werden können), Daten aus dem Wohnungssektor, Social Media-Daten oder partizipative Daten und IoT-Daten (z.B. Umweltdaten).</li></ul>"
+          ],
+          i18nVision: [
+            "There are no limits to your imagination in this challenge.",
+            "Der Fantasie sind bei dieser Herausforderung keine Grenzen gesetzt."
+          ]
+        },
+        {
+          ID: 101,
+          type: CHALLENGE_TYPE.SPONSOR,
+          categoryID: 0,
+          i18nAuthor: ["MVV Energy AG", "MVV Energie AG"],
+          i18nTitle: [
+            "How can life in the city of Mannheim be made more liveable through the use of LoRaWAN technology?",
+            "Wie kann das Leben in der Stadt Mannheim durch die Verwendung der LoRaWAN-Technologie lebenswerter gestaltet werden?"
+          ],
+          i18nSummary: [
+            "Create the cities of the future today. The development of a city into a Smart City is an individual task for every community. Smart Cities support the efficient, sustainable and liveable design of cities by intelligently using municipal infrastructure. This will be boosted with the help of IoT and various IT, mobile and cloud computing technologies.",
+            "Die Städte der Zukunft schon heute gestalten. Die Entwicklung einer Stadt zur „Smart City“ ist eine kommunale Zukunftsaufgabe. Smart Cities unterstützen eine effiziente, nachhaltige und lebenswerte Gestaltung der Städte durch die intelligente Nutzung der kommunalen Infrastruk-tur. Diese wird mit Hilfe von IoT und diversen IT-, Mobile- und Cloud-Computing-Technologien weiter vorangetrieben."
+          ],
+          i18nDescription: [
+            "In this context, MVV Energie AG is setting up a LoRaWAN (Long Range Wide Area Network) in Mannheim to enable efficient and cost-effective data collection. LoRaWAN is a great technology to collect, transmit and intelligently evaluate environmental data such as meteorological data or air pollutants. We are striving to monitor emissions and derive measures to improve the quality of life. In urban gardening, sensors can be used to measure moisture levels in order to motivate the community to maintain the garden, e.g. through reward systems. Thus the following ques-tion arises: How can life in the city of Mannheim be made more liveable through the use of LoRaWAN technology?",
+            "In diesem Zusammenhang baut MVV Energie AG ein LoRaWAN (Long Range Wide Area Network) in Mannheim auf, um so eine effiziente und kostengünstige Datenerfassung zu ermöglichen. Über LoRaWAN können u.a. Umweltdaten (wie z.B. meteorologische Daten oder Luftschadstoffe) erfasst, übertragen und intelligent ausgewertet werden. Diese Informationen können wir nut-zen, um Emissionen zu überwachen und Maßnahmen zur Verbesserung der Lebensqualität umzu-setzen. Aber auch in anderen Bereichen wie beispielsweise beim Urban Gardening können Sen-soren zur Erdfeuchtigkeitsmessung eingesetzt werden und so die Community zur Pflege des Gar-tens (z.B. über Belohnungssysteme) zu motivieren. Somit stellt sich folgende Frage: Wie kann das Leben in der Stadt Mannheim durch die Verwendung der LoRaWAN-Technologie lebenswerter gestaltet werden?"
+          ],
+          i18nVision: [
+            '<ul class="list"><li>The solution can either focus on a specific aspect e.g. mobility, energy supply etc., or con-sider the city as a whole. There are no limits to the ideas as long as LoRaWAN supports this technically. </li><li>For the challenge, current sensor data from the city, transmitted via LoRaWAN, will be made available to you. - You have the possibility to develop a concept or to realize prototypes - if you use the data provided by us is up to you. </li><li>The solution can either be an application for the municipality (B2M e.g. optimization sugges-tions) or for the citizens (B2C e.g. incentive for more sustainable behaviour).</li></ul>We are looking forward to your ideas!',
+            '<ul class="list"><li>Die Lösung kann sich entweder auf einen bestimmten Teilbereich (z.B. Mobilität oder Ener-gieversorgung) fokussieren, oder die Stadt als Ganzes betrachten. Den Ideen sind keine Grenzen gesetzt, solange LoRaWAN dies technisch unterstützt. </li><li>Für die Challenge werden Euch aktuelle Sensordaten aus der Stadt zur Verfügung gestellt, die via LoRaWAN übertragen werden.</li><li>Ihr habt die Möglichkeit ein Konzept zu entwickeln oder Prototypen praktisch umzusetzen – ob Ihr die von uns zur Verfügung gestellten Daten nutzt, bleibt dabei euch überlassen. </li>Die Lösung kann entweder eine Anwendung für die Gemeinde (z.B. Optimierungsvorschläge) oder für die Bürger (z.B. Anreiz für nachhaltigeres Verhalten) darstellen.</li></ul>Wir freuen uns auf Eure Ideen!'
+          ]
+        },
+        {
+          ID: 102,
+          type: CHALLENGE_TYPE.SPONSOR,
+          categoryID: 1,
+          i18nAuthor: [
+            "Rhein-Neckar-Verkehr GmbH",
+            "Rhein-Neckar-Verkehr GmbH"
+          ],
+          i18nTitle: [
+            "By which means does a modern and smart public transportation system really change our behaviour, enhance our lives, and protects the environment?",
+            "Mit welchen Mitteln verändert ein modernes und intelligentes öffentliches Verkehrssystem wirklich unser Verhalten, verbessert unser Leben und schützt die Umwelt?"
+          ],
+          i18nSummary: [
+            "Mobility, as a basic need of mankind, affects all of us permanently. The Rhein-Neckar-Verkehr GmbH (rnv) fosters a sustainable strategy of innovation, efficiency, an increase of the modal split, benefits for the environment, and cohesiveness to ensure the highest quality possible for its existing customers. In addition, the rnv strives to attract as many new customers as possible - esp. those switching from the usage of their own car to the usage of public transportation.</br>Now you can be part of this offensive by shaping the public transportation sector towards a customer-focused mobility as a service landscape by using data in new ways, taking advantage of digitalization and new technology, and by the innovative combination of hard- and software in the internet of things.",
+            "Mobilität als Grundbedürfnis des Menschen betrifft uns alle dauerhaft. Die Rhein-Neckar-Verkehr GmbH (rnv) fördert eine nachhaltige Strategie der Innovation, Effizienz, Erhöhung des Modal Splits, Nutzen für die Umwelt und Kohäsion, um ihren Bestandskunden die bestmögliche Qualität zu gewährleisten. Darüber hinaus ist die rnv bestrebt, möglichst viele neue Kunden zu gewinnen - insbesondere solche, die von der Nutzung des eigenen Autos auf die Nutzung des öffentlichen Verkehrs umsteigen.<br/><br/>Jetzt kannst du Teil dieser Offensive sein, indem du den ÖPNV durch neue Datennutzung, Nutzung von offenen Daten, Digitalisierung und neuen Technologien sowie durch die innovative Kombination von Hard- und Software im Internet der Dinge zu einer kundenorientierten Mobilitätslandschaft entwickelst."
+          ],
+          i18nDescription: [
+            'The rnv provides its open service Start.Info API as well as already published data on its open data portal for its 81 bus and tram lines plus exclusive data just for this challenge! Together with all kinds of additional data from partner challenges or the web you can focus on one or more topics in the context of the following areas:<ul class="list"><li>Navigation for mobility-impaired and visually handicapped people to and from our stops, within our vehicles, etc. Tons of open maps, open routing services, gits with open source codes are available. Different technologies may apply. Do you want to solve this jigsaw?</li><li>Enhancements of the rnv/VRN eTarif app: What is your dream of seamless traveling without the need of having a ticket? CICO, CIBO, BIBO! Psycho?</li><li>Occupancy rates of our public transportation vehicles allow varieties towards a more efficient usage of our vehicles. But how to get the data as cheap as possible for a given accuracy? How to predict those rates? How to influence customer behaviour in using our vehicles as a win-win? How to…??? It’s your turn!</li><li>User information itself: What are the newest trends or the latest technologies to inform our customers on the go or at a location? What kind of information can be given by stationary monitors and all kinds of wearables? Think for example about mobility hubs or how a new residential quarter should look like, if no individual cars are allowed?</li></ul>',
+            "Die rnv bietet seinen offenen Dienst Start.Info API sowie bereits veröffentlichte Daten auf seinem offenen Datenportal für seine 81 Bus- und Straßenbahnlinien sowie exklusive Daten speziell für diese Herausforderung! Zusammen mit möglichen Zusatzdaten von Partnerherausforderungen oder dem Web kannst du dich auf ein oder mehrere Themen im Rahmen der folgenden Bereiche konzentrieren: <br/><br/>Navigation für mobilitätseingeschränkte und sehbehinderte Menschen zu und von unseren Haltestellen, innerhalb unserer Fahrzeuge, etc. Tonnen von offenen Karten, offenen Routing-Diensten, Gits mit offenen Quellcodes sind verfügbar. Es können verschiedene Technologien zum Einsatz kommen. Möchtest du dieses Puzzle lösen? <br/><br/>Erweiterungen der rnv/VRN eTarif App: Was ist dein Traum vom nahtlosen Reisen ohne Ticket? CICO, CIBO, BIBO! Psycho? <br/><br/>Auslastung unserer öffentlichen Verkehrsmittel ermöglicht Varianten zu einer effizienteren Nutzung unserer Fahrzeuge. Aber wie bekommt man die Daten bei einer gegebenen Genauigkeit so günstig wie möglich? Wie kann man die Auslastungvorhersagen? Wie kann man das Kundenverhalten beim Einsatz unserer Fahrzeuge als Win-Win-Situation beeinflussen? Wie kann man....??? Du bist an der Reihe! <br/><br/>Benutzerinformationen selbst: Welche sind die neuesten Trends oder die neuesten Technologien, um unsere Kunden unterwegs oder an einem Standort zu informieren? Welche Informationen können stationäre Monitore und alle Arten von Wearables liefern? Denkezum Beispiel an Mobilitätszentren oder wie ein neues Wohnquartier aussehen soll, wenn keine Pkw mehr im Quartier erlaubt sind?"
+          ],
+          i18nVision: [
+            "We encourage you and strongly believe that you will come up with awesome ideas and thoughts, lovely sketches and scribbles, solutions, prototypes, and demonstrators, we never even dared to dream about before. The sky is the limit!",
+            "Wir ermutigen dich und glauben fest daran, dass du fantastische Ideen und Gedanken, schöne Skizzen, Lösungen, Prototypen und Demonstratoren hervorbringen wirst, von denen wir noch nie zuvor geträumt haben. The sky is the limit!"
+          ]
+        },
+        {
+          ID: 103,
+          type: CHALLENGE_TYPE.CITY,
+          categoryID: 2,
+          i18nAuthor: [
+            "City of Mannheim • Department of Real Estate Management",
+            "Stadt Mannheim • Fachbereich Immobilienmanagement"
+          ],
+          i18nTitle: [
+            "How must a central data management system be technically prepared in order to integrate sensors of real estate management that have not been able to interact so far?",
+            "Wie muss ein zentrales Datenmanagementsystem technisch vorbereitet werden, damit bislang nicht interaktionsfähige Sensoren des Immobilienmanagements eingebunden werden können?"
+          ],
+          i18nSummary: [
+            "All technical tasks and functions are integrated in the technical real estate management of the City of Mannheim in order to view the tasks from the perspective of the entire life cycle of a building. The field of building technology consists of 2 teams (heating, air-conditioning and sanitary technology as well as electrical/telecommunications and elevator technology) and the respective workshops.",
+            "Im technischen Immobilienmanagement der Stadt Mannheim sind alle technischen Aufgaben und Funktionen gebündelt, um die Aufgaben mit Blick auf den gesamten Lebenszyklus eines Gebäudes zu betrachten. Das Sachgebiet Gebäudetechnik besteht aus 2 Teams (Wärme, Klima- und Sanitärtechnik sowie Elektro-/Fernmelde- und Aufzugstechnik) und den jeweils zugeordneten Werkstätten."
+          ],
+          i18nDescription: [
+            "The following points must be noted when developing the solution:<ul class='list'><li>About 430 buildings are to be integrated in between 2 and 10 sensors.</li><li>The buildings are spread over the whole area of the city of Mannheim.</li><li>Solutions with wireless technology are preferable to wired solutions.</li><li>Cyber Security Standards according to the German Federal Office for Information Security have to be adhered to.</li></ul>",
+            "Zur Entwicklung der Lösung müssen folgende Punkte beachtet werden:<ul class='list'><li>Es sollen in etwa 430 Gebäuden zwischen 2 bis zu 10 Sensoren eingebunden wer-den.</li><li>Die Gebäude sind über das gesamte Gebiet der Stadt Mannheim verstreut.</li><li>Lösungen mit Funktechnik sind kabelgebundenen Lösungen vorzuziehen.</li><li>Cyber Security Standards nach Bundesamt für Sicherheit in der Informationstechnik sind zwingend einzuhalten.</li></ul>"
+          ],
+          i18nVision: [
+            "We hope our criterias are well defined, beside that there are really no limits to your imagination in this challenge.",
+            "Wir hoffen unsere Kriterien sind gut definiert, davon abgesehen sind deiner Phantasie in dieser Challenge wirklich keine Grenzen gesetzt."
+          ]
+        }
+      ]
     };
   }
 };
