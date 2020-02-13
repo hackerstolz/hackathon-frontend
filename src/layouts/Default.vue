@@ -1,18 +1,5 @@
 <template>
-  <div id="app">
-    <!-- TODO: use gridsome navigation -->
-    <!-- <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
-    <slot/>
-    </div>-->
+  <div id="default-layout">
     <v-app :dark.sync="darkMode">
       <v-navigation-drawer class="navigation" app v-model="drawer">
         <v-toolbar class="ma-0 pa-0" color="transparent" flat>
@@ -38,14 +25,6 @@
             href="mailto:climathon@hackerstolz.de?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc."
             text
           >{{ $t('button.contactus') }}</v-btn>
-          <!-- <v-btn
-            color="info"
-            target="_blank"
-            href="https://betterplace.org/p71036"
-            text
-          >
-            {{ $t("button.donate") }}
-          </v-btn>-->
         </v-layout>
         <v-list v-if="$route.path !== '/event'">
           <template v-for="(item, i) in menu">
@@ -122,9 +101,7 @@
       </v-app-bar>
 
       <v-content class="pa-0">
-        <!-- FIXME: check if isMobile is passed to slot. -->
-        <!-- <router-view :isMobile="isMobile"></router-view> -->
-        <slot :isMobile="isMobile" />
+        <slot />
       </v-content>
 
       <v-snackbar
@@ -166,52 +143,12 @@
   </div>
 </template>
 
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
-
 <script>
 // import { setI18nLanguage } from '../i18n'
 import { setTimeout } from "timers";
 
 export default {
-  name: "App",
-  // TODO: replace by query information
-  metaInfo: {
-    title: "Climathon 2019 • Mannheim",
-    meta: [
-      // OPEN GRAPH (e.g. Facebook)
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://climathon.hackerstolz.de" },
-      { property: "og:site_name", content: "Climathon 2019 • Mannheim" },
-      { property: "og:title", content: "Climathon 2019 • Mannheim" },
-      {
-        property: "og:description",
-        content:
-          "🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!"
-      },
-      { property: "og:image", content: require("../../static/meta-thumb.jpg") },
-
-      // TWITTER
-      { name: "twitter:title", content: "Climathon 2019 • Mannheim" },
-      {
-        name: "twitter:description",
-        content:
-          "🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!"
-      },
-      {
-        name: "twitter:image",
-        content: require("../../static/meta-thumb.jpg")
-      },
-      { name: "twitter:image:alt", content: "Climathon 2019 • Mannheim" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@hackerstolz" }
-    ]
-  },
+  name: "DefaultLayout",
   data() {
     return {
       postEvent: true,
@@ -253,8 +190,6 @@ export default {
       // show snackbar with delay
       this.snackbar.show = true;
     }, 500);
-
-    console.log(this.$route);
 
     setTimeout(() => {
       // nav to section initially
@@ -380,26 +315,7 @@ export default {
 </i18n>
 
 <style lang="stylus">
-@font-face {
-  font-family: Gagalin;
-  font-style: normal;
-  font-font-weight: 400;
-  text-rendering: optimizeLegibility;
-  src: local('Gagalin-Regular'), url('../assets/fonts/Gagalin-Regular.woff2') format('woff2'), url('../assets/fonts/Gagalin-Regular.woff'), url('../assets/fonts/Gagalin-Regular.ttf'), url('../assets/fonts/Gagalin-Regular.otf');
-}
-
-html, body {
-  -webkit-overflow-scrolling: touch;
-  overflow-x: hidden;
-}
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-
+#default-layout {
   .toolbar {
     z-index: 5;
 

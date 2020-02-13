@@ -26,5 +26,4 @@ yarn explore
 [ ] Langueg switch is not working  
 [ ] Replace challenge categories by challenges directly  
 [ ] Fix chip size  
-[ ] Fix image fallback sizes and placeholder  
-[ ] `isMobile` property is not forwarded to layout slot
+[ ] Fix image fallback sizes and placeholder
