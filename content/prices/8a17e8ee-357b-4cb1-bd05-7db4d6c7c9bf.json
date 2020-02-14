@@ -1,6 +1,16 @@
 {
   "id": "8a17e8ee-357b-4cb1-bd05-7db4d6c7c9bf",
-  "title": "City Price",
+  "name": "City Price",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Stadtpreis"
+    },
+    {
+      "language": "EN",
+      "title": "City Price"
+    }
+  ],
   "descriptions": [
     {
       "language": "DE",
