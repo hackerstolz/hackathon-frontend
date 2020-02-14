@@ -187,7 +187,7 @@ export default {
           key: "cityPrize",
           img: require("../../assets/awards/award-red.svg"),
           color: this.$vuetify.theme.themes.dark.error,
-          challengeID: 1
+          challengeID: 100
         }
         // {
         //   key: 'mvvPrize',

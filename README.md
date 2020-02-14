@@ -44,12 +44,11 @@ https://climathon.hackerstolz.de/#?challenge=aft3-jehg-28hb-nnmj7
 
 [ ] Initial html lang is set to "en"  
 [X] Replace challenge categories by challenges directly  
-[ ] auto extend challenge if called via URL param  
-[ ] Fix image fallback sizes and placeholder  
-[ ] fix scroll to initial section
+[ ] Fix image fallback sizes and placeholder
 
 ### TODO
 
 [ ] Replace static json data with queryies  
 [ ] Replace navigation (`g-link`) with hackathon specific IDs
-[ ] add aftermovie to intro section
+[ ] Add aftermovie to intro section  
+[ ] Update route when navigating to challenge from sponsor or price section

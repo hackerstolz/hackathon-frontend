@@ -37,9 +37,11 @@
               'mx-4': true,
               avatar: item.speaker
             }"
-            :src="item.icon"
+            :lazy-src="require('../../../static/placeholder.svg')"
+            :src="item.icon || require('../../../static/placeholder.svg')"
             max-height="96px"
             max-width="96px"
+            height="96px"
             width="96px"
             cover
           >

@@ -26,9 +26,11 @@
         >
           <v-img
             class="mx-4 my-2 avatar-image speaker"
-            :src="speaker.icon"
+            :lazy-src="require('../../../static/placeholder.svg')"
+            :src="speaker.icon || require('../../../static/placeholder.svg')"
             max-height="96px"
             max-width="96px"
+            height="96px"
             width="96px"
             cover
           ></v-img>
@@ -69,9 +71,11 @@
                 </v-layout>
                 <v-img
                   class="mb-2 avatar"
-                  :src="speaker.icon"
+                  :lazy-src="require('../../../static/placeholder.svg')"
+                  :src="speaker.icon || require('../../../static/placeholder.svg')"
                   max-height="128px"
                   max-width="128px"
+                  height="128px"
                   width="128px"
                   cover
                 ></v-img>
@@ -134,9 +138,11 @@
         >
           <v-img
             class="mx-4 my-2 avatar-image judge"
-            :src="judge.icon"
+            :lazy-src="require('../../../static/placeholder.svg')"
+            :src="judge.icon || require('../../../static/placeholder.svg')"
             max-height="96px"
             max-width="96px"
+            height="96px"
             width="96px"
             cover
           ></v-img>
@@ -177,9 +183,11 @@
                 </v-layout>
                 <v-img
                   class="mb-4 avatar"
-                  :src="judge.icon"
+                  :lazy-src="require('../../../static/placeholder.svg')"
+                  :src="judge.icon || require('../../../static/placeholder.svg')"
                   max-height="128px"
                   max-width="128px"
+                  height="128px"
                   width="128px"
                   cover
                 ></v-img>
@@ -269,9 +277,11 @@
         >
           <v-img
             :class="`mx-4 my-2 avatar-image mentor ${mentor.category}`"
-            :src="mentor.icon"
+            :lazy-src="require('../../../static/placeholder.svg')"
+            :src="mentor.icon || require('../../../static/placeholder.svg')"
             max-height="96px"
             max-width="96px"
+            height="96px"
             width="96px"
             cover
           ></v-img>

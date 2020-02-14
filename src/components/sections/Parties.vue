@@ -48,7 +48,8 @@
           ></v-img>
           <v-img
             class="mx-4 my-2"
-            :src="sponsor.icon"
+            :lazy-src="require('../../../static/placeholder.svg')"
+            :src="sponsor.icon || require('../../../static/placeholder.svg')"
             max-height="160px"
             max-width="160px"
             height="160px"
@@ -147,7 +148,8 @@
         >
           <v-img
             class="mx-4 my-2"
-            :src="partner.icon"
+            :lazy-src="require('../../../static/placeholder.svg')"
+            :src="partner.icon || require('../../../static/placeholder.svg')"
             max-height="160px"
             max-width="160px"
             height="160px"

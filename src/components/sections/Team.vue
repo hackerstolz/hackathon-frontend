@@ -16,11 +16,13 @@
         >
           <v-img
             class="avatar mx-4 my-2"
-            :src="member.avatar"
+            :lazy-src="require('../../../static/placeholder.svg')"
+            :src="member.avatar || require('../../../static/placeholder.svg')"
             max-height="96px"
             max-width="96px"
+            height="96px"
             width="96px"
-            contain
+            cover
           ></v-img>
           <p class="member-name my-1">{{ member.name }}</p>
           <p

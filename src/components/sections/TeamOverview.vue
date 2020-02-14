@@ -14,8 +14,10 @@
           <v-card class="card pb-2" width="100%" color="rgba(255,255,255,0.1)" flat>
             <v-img
               class="white--text align-end mb-4"
+              :lazy-src="require('../../../static/placeholder.svg')"
+              :src="price.img || require('../../../static/placeholder.svg')"
               :height="isMobile ? '200px' : '250px'"
-              :src="price.img"
+              :min-height="isMobile ? '200px' : '250px'"
               @load="reflow"
             >
               <v-card-title>
@@ -53,8 +55,8 @@
           <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
             <h3 class="mb-1">{{ winner.title }}</h3>
             <v-img
-              v-if="winner.img"
-              :src="winner.img"
+              :lazy-src="require('../../../static/placeholder.svg')"
+              :src="winner.img || require('../../../static/placeholder.svg')"
               max-height="128px"
               height="128px"
               contain
