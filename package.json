@@ -7,8 +7,13 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "core-js": "2.6.11",
     "gridsome": "^0.7.0",
+    "gridsome-plugin-netlify-cms": "^1.0.9",
     "lodash": "^4.17.15",
+    "netlify-cms": "^2.10.13",
+    "parse-md": "^2.0.4",
+    "uuid": "^3.4.0",
     "vue-clipboard2": "^0.3.1",
     "vue-i18n": "^8.15.3",
     "vue-scrollto": "^2.17.1",

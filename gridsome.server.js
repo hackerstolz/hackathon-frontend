@@ -6,6 +6,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const nodeExternals = require('webpack-node-externals')
+const t = require('./transformer.js');
 
 module.exports = function(api) {
   api.chainWebpack((config, { isServer }) => {
@@ -27,7 +28,7 @@ module.exports = function(api) {
   })
 
   api.loadSource(store => {
-    // Use the Data store API here: https://gridsome.org/docs/data-store-api
+    t.load("./src/admin/config.yml", "./", store);
   })
 
   // config dynamic routes

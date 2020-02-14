@@ -1,0 +1,16 @@
+{
+  "id": "61b0dad7-08e4-4b7b-b8a6-66bb5268f1cf",
+  "title": "Mobility",
+  "image": "/images/uploads/favicon.png",
+  "price": "8a17e8ee-357b-4cb1-bd05-7db4d6c7c9bf",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "Mobility Kategorie Beschreibung"
+    },
+    {
+      "language": "EN",
+      "description": "Mobility Category Description"
+    }
+  ]
+}
