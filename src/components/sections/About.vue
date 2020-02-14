@@ -3,13 +3,7 @@
     <v-container>
       <h2 class="align-left">{{ $t('titleWhy') }}</h2>
       <div class="small-earth d-inline-block mx-1">
-        <v-img
-          :src="require('../../assets/earth-small.svg')"
-          height="216"
-          width="320"
-          contain
-        >
-        </v-img>
+        <v-img :src="require('../../assets/earth-small.svg')" height="216" width="320" contain></v-img>
         <div class="pa-2">{{ $t('imgDescription') }}</div>
         <v-btn
           class="link-to-cgoal mb-4"
@@ -20,24 +14,16 @@
           text
         >
           {{ $t('button.link2Goal') }}
-          <v-icon dark right>open_in_new</v-icon>
+          <v-icon dark right small>open_in_new</v-icon>
         </v-btn>
       </div>
-      <p class="align-left">
-        {{ $t('textWhy') }}
-      </p>
+      <p class="align-left">{{ $t('textWhy') }}</p>
 
       <h2 class="align-center">{{ $t('titleWhat') }}</h2>
       <p class="align-center">{{ $t('textWhat[0]') }}</p>
       <p class="align-center">{{ $t('textWhat[1]') }}</p>
 
-      <v-layout
-        class="article-container"
-        align-center
-        justify-center
-        flexbox
-        wrap
-      >
+      <v-layout class="article-container" align-center justify-center flexbox wrap>
         <!-- Climate KIC VIDEO -->
         <iframe
           style="border-radius: 8px;"
@@ -47,8 +33,7 @@
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        >
-        </iframe>
+        ></iframe>
         <v-card
           v-for="(article, i) in articles"
           :key="i"
@@ -61,15 +46,11 @@
         >
           <v-img :src="article.img" height="118px">
             <v-container fill-height fluid pa-2>
-              <v-icon class="link-icon pa-1" small>
-                open_in_new
-              </v-icon>
+              <v-icon class="link-icon pa-1" small>open_in_new</v-icon>
               <v-layout fill-height column>
                 <v-spacer />
                 <v-flex xs6 align-end>
-                  <span class="article-text pa-1">
-                    {{ $t(article.i18nLink) }}
-                  </span>
+                  <span class="article-text pa-1">{{ $t(article.i18nLink) }}</span>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -79,13 +60,7 @@
 
       <h2 class="align-left">{{ $t('unoGoalsTitle') }}</h2>
       <p class="align-left" v-html="$t('unoGoalsText')"></p>
-      <v-layout
-        row
-        :align-center="isMobile"
-        :justify-center="isMobile"
-        flexbox
-        wrap
-      >
+      <v-layout row :align-center="isMobile" :justify-center="isMobile" flexbox wrap>
         <v-card
           v-for="(goal, j) in goals"
           :key="j"
@@ -102,8 +77,7 @@
             :max-width="isMobile ? '96px' : '128px'"
             :height="isMobile ? '96px' : '128px'"
             :width="isMobile ? '96px' : '128px'"
-          >
-          </v-img>
+          ></v-img>
         </v-card>
       </v-layout>
     </v-container>
@@ -112,42 +86,44 @@
 
 <script>
 export default {
-  name: 'About',
+  name: "About",
   props: {
     themeColor: {
       type: String,
-      default: 'primary'
+      default: "primary"
     },
     isMobile: Boolean
   },
   computed: {
     sectionColor: function() {
-      return Object.keys(this.$vuetify.theme.themes.dark).indexOf(this.themeColor) !== -1
+      return Object.keys(this.$vuetify.theme.themes.dark).indexOf(
+        this.themeColor
+      ) !== -1
         ? this.$vuetify.theme.themes.dark[this.themeColor]
-        : this.$vuetify.theme.themes.dark.primary
+        : this.$vuetify.theme.themes.dark.primary;
     }
   },
   data() {
     return {
       goals: [
-        'https://www.un.org/sustainabledevelopment/sustainable-development-goals/',
-        'https://www.un.org/sustainabledevelopment/poverty/',
-        'https://www.un.org/sustainabledevelopment/hunger/',
-        'https://www.un.org/sustainabledevelopment/health/',
-        'https://www.un.org/sustainabledevelopment/education/',
-        'https://www.un.org/sustainabledevelopment/gender-equality/',
-        'https://www.un.org/sustainabledevelopment/water-and-sanitation/',
-        'https://www.un.org/sustainabledevelopment/energy/',
-        'https://www.un.org/sustainabledevelopment/economic-growth/',
-        'https://www.un.org/sustainabledevelopment/infrastructure-industrialization/',
-        'https://www.un.org/sustainabledevelopment/inequality/',
-        'https://www.un.org/sustainabledevelopment/cities/',
-        'https://www.un.org/sustainabledevelopment/sustainable-consumption-production/',
-        'https://www.un.org/sustainabledevelopment/climate-change/',
-        'https://www.un.org/sustainabledevelopment/oceans/',
-        'https://www.un.org/sustainabledevelopment/biodiversity/',
-        'https://www.un.org/sustainabledevelopment/peace-justice/',
-        'https://www.un.org/sustainabledevelopment/globalpartnerships/'
+        "https://www.un.org/sustainabledevelopment/sustainable-development-goals/",
+        "https://www.un.org/sustainabledevelopment/poverty/",
+        "https://www.un.org/sustainabledevelopment/hunger/",
+        "https://www.un.org/sustainabledevelopment/health/",
+        "https://www.un.org/sustainabledevelopment/education/",
+        "https://www.un.org/sustainabledevelopment/gender-equality/",
+        "https://www.un.org/sustainabledevelopment/water-and-sanitation/",
+        "https://www.un.org/sustainabledevelopment/energy/",
+        "https://www.un.org/sustainabledevelopment/economic-growth/",
+        "https://www.un.org/sustainabledevelopment/infrastructure-industrialization/",
+        "https://www.un.org/sustainabledevelopment/inequality/",
+        "https://www.un.org/sustainabledevelopment/cities/",
+        "https://www.un.org/sustainabledevelopment/sustainable-consumption-production/",
+        "https://www.un.org/sustainabledevelopment/climate-change/",
+        "https://www.un.org/sustainabledevelopment/oceans/",
+        "https://www.un.org/sustainabledevelopment/biodiversity/",
+        "https://www.un.org/sustainabledevelopment/peace-justice/",
+        "https://www.un.org/sustainabledevelopment/globalpartnerships/"
       ],
       articles: [
         // {
@@ -163,9 +139,9 @@ export default {
         //     "https://medium.com/@Hackerstolz/42-hours-at-a-hackathon-4f6444a3c3bd"
         // }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <i18n>
@@ -211,90 +187,128 @@ export default {
 <style scoped lang="stylus">
 // FIXME: get import globals work
 // @import '../globals'
+section {
+  padding-bottom: 104px;
 
-section
-  padding-bottom 104px
-  h2
-    font-family Gagalin,sans-serif
-    font-weight 400
-    font-style normal
-    font-size 28px
-    letter-spacing 1.4px
-    color #ffffff
-    margin-top 128px
-    margin-bottom 64px
-    &.align-left
-      text-align left
-    &.align-center
-      text-align center
+  h2 {
+    font-family: Gagalin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    letter-spacing: 1.4px;
+    color: #ffffff;
+    margin-top: 128px;
+    margin-bottom: 64px;
 
-  p
-    font-family Roboto Condensed,sans-serif
-    font-weight 400
-    font-style normal
-    font-size 20px
-    line-height 1.4
+    &.align-left {
+      text-align: left;
+    }
+
+    &.align-center {
+      text-align: center;
+    }
+  }
+
+  p {
+    font-family: Roboto Condensed, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+
+    line-height 1.4 {
       // TODO: replace with constants
-    color rgba(255, 255, 255, 0.8)
-    &.align-left
-      text-align left
-    &.align-center
-      text-align center
+    }
 
-  .small-earth
-    float right
-    div
-      font-family click-clack,sans-serif
-      font-weight 300
-      font-size 20px
-      line-height 1.2
+    color: rgba(255, 255, 255, 0.8);
+
+    &.align-left {
+      text-align: left;
+    }
+
+    &.align-center {
+      text-align: center;
+    }
+  }
+
+  .small-earth {
+    float: right;
+
+    div {
+      font-family: click-clack, sans-serif;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 1.2;
       // TODO: replace with constants
-      color #A8E5A3
-    .link-to-cgoal
-      font-family Roboto Condensed,sans-serif
-      font-weight 400
-      font-style normal
-      letter-spacing 1px
+      color: #A8E5A3;
+    }
 
-  .article-container
-    margin-top 64px
-    .blog-article
-      position relative
-      cursor pointer
-      overflow hidden
-      border-radius 8px
-      .link-icon
-        position absolute
-        top 8px
-        right 8px
-        // TODO: replace with constants
-        background-color #1c88c6
-      .article-text
-        width 196px
-        height 54px
-        font-family Gagalin,sans-serif
-        font-weight 400
-        font-style normal
-        font-size 16px
-        line-height 1.13
-        letter-spacing 1.6px
-        text-align center
-        // TODO: replace with constants
-      &:nth-child(odd)
-        .article-text, .link-icon
-          color #ffffff
-          background-color #1c88c6
-      &:nth-child(even)
-        .article-text, .link-icon
-          color #10182F
-          background-color #A8E5A3
+    .link-to-cgoal {
+      font-family: Roboto Condensed, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 1px;
+    }
+  }
 
-  .uno-goal-card
-    .uno-goal-img
-      opacity 0.25
-      transition all 300ms
-      &:hover
-        opacity 1
-      @media screen and (max-width: 600px)
-        opacity 1
+  .article-container {
+    margin-top: 64px;
+
+    .blog-article {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 8px;
+
+      .link-icon {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        // TODO: replace with constants
+        background-color: #1c88c6;
+      }
+
+      .article-text {
+        width: 196px;
+        height: 54px;
+        font-family: Gagalin, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 1.13;
+        letter-spacing: 1.6px;
+        text-align: center;
+        // TODO: replace with constants
+      }
+
+      &:nth-child(odd) {
+        .article-text, .link-icon {
+          color: #ffffff;
+          background-color: #1c88c6;
+        }
+      }
+
+      &:nth-child(even) {
+        .article-text, .link-icon {
+          color: #10182F;
+          background-color: #A8E5A3;
+        }
+      }
+    }
+  }
+
+  .uno-goal-card {
+    .uno-goal-img {
+      opacity: 0.25;
+      transition: all 300ms;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      @media screen and (max-width: 600px) {
+        opacity: 1;
+      }
+    }
+  }
+}
 </style>

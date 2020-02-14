@@ -20,7 +20,7 @@
         <p class="description" v-html="$t(`awards.${award.key}.description`)"></p>
         <v-btn
           v-if="award.officialCriteria"
-          class="mt-2"
+          class="mt-2 mr-2"
           width="auto"
           color="warning"
           outlined
@@ -40,7 +40,7 @@
           small
         >
           {{ $t('button.showFactSheet') }}
-          <v-icon dark right>open_in_new</v-icon>
+          <v-icon dark right small>open_in_new</v-icon>
         </v-btn>
       </v-card>
 

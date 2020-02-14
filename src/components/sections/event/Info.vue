@@ -44,11 +44,10 @@
             <h3 class="mb-3">{{ $t('socialMediaTag') }}</h3>
             <p class="mb-3">{{ $t('socialMediaTagCopy') }}</p>
             <v-btn
-              class="hashtag my-3"
+              class="hashtag my-3 mr-2"
               text
               outlined
               ripple
-              large
               color="info"
               v-clipboard:copy="'#climathonMA'"
               v-clipboard:success="
@@ -58,13 +57,15 @@
                   )
               "
               @click="() => {}"
-            >#climathonMA</v-btn>
+            >
+              #climathonMA
+              <v-icon right x-small>filter_none</v-icon>
+            </v-btn>
             <v-btn
               class="hashtag my-3"
               text
               outlined
               ripple
-              large
               color="info"
               v-clipboard:copy="'#Climathon'"
               v-clipboard:success="
@@ -74,7 +75,10 @@
                   )
               "
               @click="() => {}"
-            >#Climathon</v-btn>
+            >
+              #Climathon
+              <v-icon right x-small>filter_none</v-icon>
+            </v-btn>
           </v-card>
         </stack-item>
 
@@ -93,7 +97,7 @@
               text
             >
               {{ $t('link2Slack') }}
-              <v-icon dark right>open_in_new</v-icon>
+              <v-icon dark right small>open_in_new</v-icon>
             </v-btn>
             <v-btn
               class="my-3"
@@ -105,7 +109,7 @@
               text
             >
               {{ $t('link2SlackChannel') }}
-              <v-icon dark right>open_in_new</v-icon>
+              <v-icon dark right small>open_in_new</v-icon>
             </v-btn>
           </v-card>
         </stack-item>
@@ -177,7 +181,7 @@
               text
             >
               {{ $t('registerYourTeam') }}
-              <v-icon dark right>open_in_new</v-icon>
+              <v-icon dark right small>open_in_new</v-icon>
             </v-btn>
             <p
               class="mt-3 my-1"
@@ -193,7 +197,7 @@
               text
             >
               {{ $t('submitSolution') }}
-              <v-icon dark right>open_in_new</v-icon>
+              <v-icon dark right small>open_in_new</v-icon>
             </v-btn>
           </v-card>
         </stack-item>

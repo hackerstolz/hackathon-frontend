@@ -1,11 +1,11 @@
 <template>
   <div id="default-layout">
     <v-app :dark.sync="darkMode">
-      <v-navigation-drawer class="navigation" app v-model="drawer">
-        <v-toolbar class="ma-0 pa-0" color="transparent" flat>
+      <v-navigation-drawer class="navigation pa-4" app v-model="drawer">
+        <v-layout row class="ma-0 mb-4">
           <v-menu bottom>
             <template v-slot:activator="{ on }">
-              <v-btn text v-on="on">{{ $t(`button.${$i18n.locale}`) }}</v-btn>
+              <v-btn outlined v-on="on">{{ $t(`button.${$i18n.locale}`) }}</v-btn>
             </template>
 
             <v-list class="language-list">
@@ -18,13 +18,28 @@
           <v-btn text @click.stop="drawer = !drawer" icon>
             <v-icon>close</v-icon>
           </v-btn>
-        </v-toolbar>
-        <v-layout row>
+        </v-layout>
+        <v-layout column class="ma-0" justify-center>
           <v-btn
+            class="mb-4"
             color="info"
             href="mailto:climathon@hackerstolz.de?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc."
             text
           >{{ $t('button.contactus') }}</v-btn>
+          <g-link :to="$route.path !== '/event' ? '/event' : '/'">
+            <v-btn class="mb-4" color="success" width="100%" raised @click="() => {}">
+              {{
+              $route.path !== '/event'
+              ? $t('button.toEvent')
+              : $t('button.toOverview')
+              }}
+              <v-icon right>
+                {{
+                $route.path !== '/event' ? 'room' : 'public'
+                }}
+              </v-icon>
+            </v-btn>
+          </g-link>
         </v-layout>
         <v-list v-if="$route.path !== '/event'">
           <template v-for="(item, i) in menu">
@@ -35,7 +50,7 @@
                 }}
               </v-list-item-title>
             </v-list-item>
-            <v-divider v-if="i < menu.length - 1" :key="i" inset />
+            <v-divider v-if="i < menu.length - 1" :key="i" />
           </template>
         </v-list>
         <v-list v-if="$route.path === '/event'">
@@ -47,29 +62,17 @@
                 }}
               </v-list-item-title>
             </v-list-item>
-            <v-divider v-if="i < menu.length - 1" :key="i" inset />
+            <v-divider v-if="i < menu.length - 1" :key="i" />
           </template>
         </v-list>
-        <g-link :to="$route.path !== '/event' ? '/event' : '/'">
-          <v-btn color="success" width="100%" raised @click="() => {}">
-            {{
-            $route.path !== '/event'
-            ? $t('button.toEvent')
-            : $t('button.toOverview')
-            }}
-            <v-icon right>
-              {{
-              $route.path !== '/event' ? 'room' : 'public'
-              }}
-            </v-icon>
-          </v-btn>
-        </g-link>
       </v-navigation-drawer>
 
       <v-app-bar class="toolbar" app color="transparent" flat :hide-on-scroll="isMobile">
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer">
+          <v-icon>menu</v-icon>
+        </v-app-bar-nav-icon>
         <v-btn
-          class="hashtag"
+          class="hashtag mx-2"
           text
           outlined
           ripple
@@ -79,7 +82,10 @@
             () => copySuccess($t('label.hashtagCopySuccess'))
           "
           @click="() => {}"
-        >#climathonMA</v-btn>
+        >
+          #climathonMA
+          <v-icon right x-small>filter_none</v-icon>
+        </v-btn>
         <v-spacer></v-spacer>
         <v-btn
           :class="{ 'app-btn-register': true, large: !isMobile }"
