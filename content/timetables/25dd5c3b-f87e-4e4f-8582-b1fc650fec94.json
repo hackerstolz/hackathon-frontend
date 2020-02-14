@@ -5,7 +5,16 @@
   "date": "1605292023",
   "slot": [
     {
-      "title": "Onboarding",
+      "titles": [
+        {
+          "language": "DE",
+          "title": "Onboarding"
+        },
+        {
+          "language": "EN",
+          "title": "Onboarding"
+        }
+      ],
       "from": "1605254400",
       "to": "1605259800",
       "descriptions": [
@@ -20,9 +29,24 @@
       ]
     },
     {
-      "title": "Welcome",
+      "titles": [
+        {
+          "language": "DE",
+          "title": "Eröffnung"
+        },
+        {
+          "language": "EN",
+          "title": "Welcome"
+        }
+      ],
       "from": "1605259800",
-      "to": "1605261600"
+      "to": "1605261600",
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Eine Rede!"
+        }
+      ]
     }
   ]
 }
