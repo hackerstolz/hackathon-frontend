@@ -35,5 +35,10 @@ https://climathon.hackerstolz.de/#?lang=en
 [X] Replace challenge categories by challenges directly  
 [ ] auto extend challenge if called via URL param  
 [ ] Fix image fallback sizes and placeholder  
-[ ] fix scroll to initial section  
+[ ] fix scroll to initial section
+
+### TODO
+
+[ ] Replace static json data with queryies  
+[ ] Replace navigation (`g-link`) with hackathon specific IDs
 [ ] add aftermovie to intro section

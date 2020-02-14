@@ -36,7 +36,7 @@ const stringifyQuery = query =>
   }, null) || ''
 
 // get query object from URL
-const getUrlQuery = () => {
+export const getUrlHashQuery = () => {
   // parse existing hash query
   const hash = location.hash || '#'
   const hashSearchIndex = hash.indexOf('?')
@@ -93,7 +93,7 @@ const getUserAcceptLocales = () => {
     'en'
 
   // determine locale configured via URL parameter
-  const query = getUrlQuery()
+  const query = getUrlHashQuery()
   const urlParamLanguage = query.lang || ''
 
   // split locales with a region code

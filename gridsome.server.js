@@ -29,4 +29,18 @@ module.exports = function(api) {
   api.loadSource(store => {
     // Use the Data store API here: https://gridsome.org/docs/data-store-api
   })
+
+  // config dynamic routes
+  api.createPages(({ createPage }) => {
+    createPage({
+      path: '/:id',
+      component: './src/pages/Index.vue'
+    })
+  })
+  api.createPages(({ createPage }) => {
+    createPage({
+      path: '/event/:id',
+      component: './src/pages/Event.vue'
+    })
+  })
 }

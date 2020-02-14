@@ -144,7 +144,7 @@
 </template>
 
 <script>
-import { setI18nLanguage } from "../i18n";
+import { getUrlHashQuery as getQuery } from "../i18n";
 import { setTimeout } from "timers";
 
 export default {
@@ -216,9 +216,11 @@ export default {
       document.querySelector("html").setAttribute("lang", lang);
     },
     routeUpdate($route) {
-      // FIXME: fix scroll to section
-      if ($route && $route.name === "home" && $route.params.section) {
-        this.$scrollTo(`#${$route.params.section}`);
+      const query = getQuery();
+
+      // scroll to section if defined
+      if (query.section && document.getElementById(query.section)) {
+        this.$scrollTo(`#${query.section}`);
       }
     }
   },
