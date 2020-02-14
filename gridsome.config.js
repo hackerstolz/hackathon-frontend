@@ -5,16 +5,16 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Hackathon',
   plugins: [
     {
-		use: 'gridsome-plugin-netlify-cms',
-		options: {
-			publicPath: '/admin/',
-			modulePath: 'src/admin/index.js',
-			configPath: 'src/admin/config.yml',
-			htmlPath: 	'src/admin/index.html'
-		}
+      use: 'gridsome-plugin-netlify-cms',
+      options: {
+        publicPath: '/admin/',
+        modulePath: 'src/admin/index.js',
+        configPath: 'src/admin/config.yml',
+        htmlPath: 'src/admin/index.html'
+      }
     }
   ]
 }
