@@ -1,6 +1,16 @@
 {
   "id": "c8301192-d005-462f-8a53-b06c9f865471",
-  "title": "Tech Price",
+  "name": "Tech Price LoRaWAN",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Technologie Preis LoRaWAN"
+    },
+    {
+      "language": "EN",
+      "title": "Technologie Price LoRaWAN"
+    }
+  ],
   "descriptions": [
     {
       "language": "DE",
