@@ -42,9 +42,7 @@ https://climathon.hackerstolz.de/#?challenge=aft3-jehg-28hb-nnmj7
 
 ### Open Bugs
 
-[ ] Initial html lang is set to "en"  
-[X] Replace challenge categories by challenges directly  
-[ ] Fix image fallback sizes and placeholder
+[X] Replace challenge categories by challenges directly
 
 ### TODO
 

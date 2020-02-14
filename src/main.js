@@ -12,6 +12,11 @@ import { i18nOptions } from './i18n'
 import 'vuetify/dist/vuetify.min.css'
 
 export default async function(Vue, { appOptions, router, head, isClient }) {
+  const { locale } = i18nOptions || {}
+
+  // add attributes to HTML tag
+  head.htmlAttrs = { lang: locale }
+
   // add fonts
   head.link.push({
     rel: 'stylesheet',

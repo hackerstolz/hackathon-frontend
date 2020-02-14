@@ -9,7 +9,7 @@
             </template>
 
             <v-list class="language-list">
-              <v-list-item v-for="(lang, i) in langs" :key="i" @click="onSetNewLocale(lang)">
+              <v-list-item v-for="(lang, i) in langs" :key="i" @click="setNewLocale(lang)">
                 <v-list-item-title>{{ $t(`label.${lang}`) }}</v-list-item-title>
               </v-list-item>
             </v-list>
@@ -76,7 +76,7 @@
           small
           v-clipboard:copy="'#climathonMA'"
           v-clipboard:success="
-            () => onCopySuccess($t('label.hashtagCopySuccess'))
+            () => copySuccess($t('label.hashtagCopySuccess'))
           "
           @click="() => {}"
         >#climathonMA</v-btn>
@@ -152,6 +152,11 @@ export default {
   props: {
     isMobile: Boolean
   },
+  metaInfo() {
+    htmlAttrs: {
+      lang: this.$root.$i18n.locale;
+    }
+  },
   data() {
     return {
       postEvent: true,
@@ -196,16 +201,16 @@ export default {
     setTimeout(() => {
       // nav to section initially
       if (this.$route) {
-        this.routeUpdate(this.$route);
+        this.routeUpdate();
       }
     }, 1500);
   },
   methods: {
-    onCopySuccess(text) {
+    copySuccess(text) {
       this.notification.text = text;
       this.notification.show = true;
     },
-    onSetNewLocale(lang) {
+    setNewLocale(lang) {
       // switch locale
       this.$root.$i18n.locale = lang;
 
@@ -215,18 +220,23 @@ export default {
       // a11y: ensures the lang attribute of the <html> element has a valid value
       document.querySelector("html").setAttribute("lang", lang);
     },
-    routeUpdate($route) {
-      const query = getQuery();
+    routeUpdate() {
+      const query = getQuery() || {};
 
       // scroll to section if defined
       if (query.section && document.getElementById(query.section)) {
         this.$scrollTo(`#${query.section}`);
       }
+
+      // switch language
+      if (query.lang && query.lang !== this.$root.$i18n.locale) {
+        this.setNewLocale(query.lang);
+      }
     }
   },
   watch: {
-    $route: function(value) {
-      this.routeUpdate(value);
+    $route() {
+      this.routeUpdate();
     }
   }
 };
