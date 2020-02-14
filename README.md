@@ -40,10 +40,6 @@ Use parameter `challenge` to auto scroll and display to a specific challenge:
 https://climathon.hackerstolz.de/#?challenge=aft3-jehg-28hb-nnmj7
 ```
 
-### Open Bugs
-
-[X] Replace challenge categories by challenges directly
-
 ### TODO
 
 [ ] Replace static json data with queryies  
