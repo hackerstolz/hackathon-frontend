@@ -226,7 +226,6 @@ collections:
       - label: Roles
         name: roles
         widget: list
-        summary: "{{title}}"
         fields:
           - {label: "Title", name: "title", widget: "string"}  
           - label: Hackathon
@@ -298,7 +297,7 @@ collections:
         widget: list
         fields:
           - {label: "Title", name: "title", widget: "string"}            
-          - {label: "From", name: "from", widget: "datetime", format: "X", required: false}
+          - {label: "From", name: "from", widget: "datetime", format: "X"}
           - {label: "To", name: "to", widget: "datetime", format: "X", required: false}
           - label: Descriptions
             name: descriptions
