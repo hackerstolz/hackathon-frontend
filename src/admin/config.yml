@@ -6,6 +6,7 @@ backend:
 # media_folder: "" # Media files will be stored in the repo under images/uploads
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
+logo_url: "https://www.hackerstolz.de/wp-content/uploads/2015/07/hackerstolz-logo.svg"
 
 collections:
   - name: "hackathon" # Used in routes
@@ -42,9 +43,9 @@ collections:
             name: price
             widget: "relation"
             collection: "price"
-            searchFields: ["id", "title"]
+            searchFields: ["id", "name"]
             valueField: "id"
-            displayFields: ["title"]
+            displayFields: ["name"]
   - name: "challenge"
     label: "Challenge"
     folder: "content/challenges"
@@ -52,10 +53,16 @@ collections:
     format: json
     slug: "{{slug}}"
     identifier_field: id
-    summary: "{{title}} ({{id}})"
+    summary: "{{name}} ({{id}})"
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Name", name: "name", widget: "string"}
+      - label: Titles
+        name: titles
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Title, name: title, widget: string}
       - label: Hackathon
         name: hackathon
         widget: "relation"
@@ -81,9 +88,9 @@ collections:
         widget: "relation"
         required: false
         collection: "price"
-        searchFields: ["id", "title"]
+        searchFields: ["id", "name"]
         valueField: "id"
-        displayFields: ["title"]
+        displayFields: ["name"]
       - label: Sponsor
         name: sponsor
         widget: "relation"
@@ -179,9 +186,9 @@ collections:
         widget: "relation"
         required: false
         collection: "price"
-        searchFields: ["id", "title"]
+        searchFields: ["id", "name"]
         valueField: "id"
-        displayFields: ["title"]
+        displayFields: ["name"]
       - label: Descriptions
         name: descriptions
         widget: list
@@ -195,10 +202,16 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: id
-    summary: "{{title}} ({{id}})"
+    summary: "{{name}} ({{id}})"
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Name", name: "name", widget: "string"}
+      - label: Titles
+        name: titles
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Title, name: title, widget: string}
       - label: Descriptions
         name: descriptions
         widget: list
@@ -239,9 +252,9 @@ collections:
             name: challenge
             widget: "relation"
             collection: "challenge"
-            searchFields: ["id", "title"]
+            searchFields: ["id", "name"]
             valueField: "id"
-            displayFields: ["title"]
+            displayFields: ["name"]
             required: false
           - label: Role
             name: role
@@ -295,10 +308,14 @@ collections:
       - label: Slots
         name: slot
         widget: list
-        fields:
-          - {label: "Title", name: "title", widget: "string"}            
+        fields:          
+          - label: Titles
+            name: titles
+            widget: list
+            fields:
+              - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+              - {label: Title, name: title, widget: string}
           - {label: "From", name: "from", widget: "datetime", format: "X"}
-          - {label: "To", name: "to", widget: "datetime", format: "X", required: false}
           - label: Descriptions
             name: descriptions
             widget: list
