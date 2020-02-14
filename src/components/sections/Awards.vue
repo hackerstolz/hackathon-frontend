@@ -71,7 +71,7 @@
               small
             >{{ $t('button.showCriteria') }}</v-btn>
             <v-btn
-              v-if="award.challengeID !== null"
+              v-if="award.challengeID !== null && award.challengeID !== undefined"
               class="mt-2"
               width="auto"
               :color="award.color"
@@ -186,7 +186,8 @@ export default {
         {
           key: "cityPrize",
           img: require("../../assets/awards/award-red.svg"),
-          color: this.$vuetify.theme.themes.dark.error
+          color: this.$vuetify.theme.themes.dark.error,
+          challengeID: 1
         }
         // {
         //   key: 'mvvPrize',

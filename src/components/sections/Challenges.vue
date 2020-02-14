@@ -165,13 +165,13 @@
       </stack>
 
       <v-row justify="center">
-        <v-expansion-panels popout flat>
-          <v-expansion-panel v-for="(challenge,i) in challenges" :key="i">
-            <v-expansion-panel-header
-              :id="`challenge-${challenge.ID}`"
-              color="rgba(76,174,121,0.2)"
-              ripple
-            >
+        <v-expansion-panels popout flat :value="challengeOpen">
+          <v-expansion-panel
+            :id="`challenge-${challenge.ID}`"
+            v-for="(challenge,i) in challenges"
+            :key="i"
+          >
+            <v-expansion-panel-header color="rgba(76,174,121,0.2)" ripple>
               <div>
                 <p
                   :class="{
@@ -263,6 +263,7 @@
 import clone from "lodash/clone";
 import debounce from "lodash/debounce";
 import { Stack, StackItem } from "vue-stack-grid";
+import { getUrlHashQuery as getQuery } from "../../i18n";
 
 const CHALLENGE_TYPE = {
   CITY: "CITY",
@@ -299,31 +300,23 @@ export default {
   },
   methods: {
     routeUpdate($route) {
-      // FIXME: auto extend challenge if called via URL param
-      // if (
-      //   $route &&
-      //   ($route.name === "overview" || $route.name === "overviewDetails") &&
-      //   $route.params.section === "challenges"
-      // ) {
-      //   const index = parseInt($route.params.id, 10);
-      //   if (!isNaN(index) && index >= 0 && index < this.categories.length) {
-      //     this.toggleTile(index);
-      //   } else {
-      //     this.closeTiles();
-      //   }
-      // } else {
-      //   this.closeTiles();
-      // }
-    },
-    toggleTile(i) {
-      const clickedCategory = this.categories[i];
-      const prevShow = this.categories[i].show;
+      const query = getQuery();
+      const validChallenge =
+        query.challenge &&
+        document.getElementById(`challenge-${query.challenge}`);
 
-      this.categories.forEach(c => (c.show = false));
-      clickedCategory.show = !prevShow;
+      // scroll to and display challenge if defined
+      if (validChallenge) {
+        this.$scrollTo(`#challenge-${query.challenge}`);
+        this.expandChallenge(query.challenge);
+      }
     },
-    closeTiles() {
-      this.categories.forEach(c => (c.show = false));
+    expandChallenge(challengeID) {
+      this.challenges.forEach((c, i) =>
+        c.ID.toString() === challengeID.toString()
+          ? ((c.expand = true), (this.challengeOpen = i))
+          : (c.expand = false)
+      );
     },
     reflow: debounce(function() {
       this.$refs.stack.reflow();
@@ -673,10 +666,12 @@ export default {
           challenges: []
         }
       ],
+      challengeOpen: null,
       challenges: [
         {
           ID: 100,
           type: CHALLENGE_TYPE.SPONSOR,
+          expand: false,
           categoryID: 0,
           i18nAuthor: [
             "GBG - Mannheimer housing company ltd.",
@@ -702,6 +697,7 @@ export default {
         {
           ID: 101,
           type: CHALLENGE_TYPE.SPONSOR,
+          expand: false,
           categoryID: 0,
           i18nAuthor: ["MVV Energy AG", "MVV Energie AG"],
           i18nTitle: [
@@ -724,6 +720,7 @@ export default {
         {
           ID: 102,
           type: CHALLENGE_TYPE.SPONSOR,
+          expand: false,
           categoryID: 1,
           i18nAuthor: [
             "Rhein-Neckar-Verkehr GmbH",
@@ -749,6 +746,7 @@ export default {
         {
           ID: 103,
           type: CHALLENGE_TYPE.CITY,
+          expand: false,
           categoryID: 2,
           i18nAuthor: [
             "City of Mannheim • Department of Real Estate Management",

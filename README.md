@@ -28,9 +28,20 @@ Use parameter `lang` to force the display of either `de` or `en`. The final URL 
 https://climathon.hackerstolz.de/#?lang=en
 ```
 
+Use parameter `section` to auto scroll to a specific page section:
+
+```
+https://climathon.hackerstolz.de/#?section=faq
+```
+
+Use parameter `challenge` to auto scroll and display to a specific challenge:
+
+```
+https://climathon.hackerstolz.de/#?challenge=aft3-jehg-28hb-nnmj7
+```
+
 ### Open Bugs
 
-[ ] Enable support for `section` and `id` (for archived hackathons) URL parameter  
 [ ] Initial html lang is set to "en"  
 [X] Replace challenge categories by challenges directly  
 [ ] auto extend challenge if called via URL param  
