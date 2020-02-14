@@ -1,5 +1,6 @@
 {
   "price": "c8301192-d005-462f-8a53-b06c9f865471",
+  "name": "Tech - LoRaWAN",
   "badges": [
     {
       "badge": "22d25bc6-b53c-492f-ab73-a4c68b4c9f6d"
@@ -16,10 +17,19 @@
       "description": "Use LoRaWAN for ..."
     }
   ],
-  "title": "Technology B",
   "sponsor": "a40dc0da-167c-4225-b53e-99aa966cb63a",
   "type": "b294ad5d-8aea-4ef0-b40e-da923a846216",
   "id": "d829c9d1-c973-49cf-98bc-10964a4c3a92",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Nutzt LoRaWAN um ..."
+    },
+    {
+      "language": "EN",
+      "title": "Use LoRaWAN for ..."
+    }
+  ],
   "image": "/images/uploads/favicon.png",
   "categories": [
     {
