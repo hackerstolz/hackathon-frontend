@@ -22,31 +22,26 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Active", name: "active", widget: "boolean", default: false}
       - {label: "Default", name: "default", widget: "boolean", default: false}
-      - label: "Logo"
-        name: "logo"
+      - {label: "Twitter Handle", name: "twitter", widget: "string"}
+      - {label: "Hashtag", name: "hashtag", widget: "string"}
+      - label: "Thumbnail"
+        name: "thumbnail"
         widget: "image"
-        required: false
         media_library:
           config:
-            max_file_size: 256000 # 250kb
-      - label: Descriptions
-        name: descriptions
-        widget: list
-        fields:
-          - {label: Language, name: language, widget: select, options: ["DE", "EN"], default: "DE"}
-          - {label: Description, name: description, widget: markdown}
-      - {label: "From", name: "from", widget: "datetime", format: "X", timeFormat: false}
-      - {label: "To", name: "to", widget: "datetime", format: "X", timeFormat: false}
+            max_file_size: 250000 # 250kb
+      - {label: "From", name: "from", widget: "datetime", format: "X"}
+      - {label: "To", name: "to", widget: "datetime", format: "X"}
       - {label: "Duration", name: "duration", widget: "number", valueType: "int", hint: "Hackduration in Hours"}
-      - label: Prices
-        name: prices
+      - label: Awards
+        name: awards
         widget: list
         required: false
         fields:
-          - label: Price
-            name: price
+          - label: Award
+            name: award
             widget: "relation"
-            collection: "price"
+            collection: "award"
             searchFields: ["id", "name"]
             valueField: "id"
             displayFields: ["name"]
@@ -87,11 +82,11 @@ collections:
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: Description, name: description, widget: markdown}
-      - label: Price
-        name: price
+      - label: Award
+        name: award
         widget: "relation"
         required: false
-        collection: "price"
+        collection: "award"
         searchFields: ["id", "name"]
         valueField: "id"
         displayFields: ["name"]
@@ -111,17 +106,7 @@ collections:
         searchFields: ["id", "title"]
         valueField: "id"
         displayFields: ["title"]
-      - label: Badges
-        name: badges
-        widget: list
-        fields:
-          - label: Badge
-            name: badge
-            widget: "relation"
-            collection: "badge"
-            searchFields: ["id", "title"]
-            valueField: "id"
-            displayFields: ["title"]
+
       - label: Categories
         name: categories
         widget: list
@@ -133,24 +118,6 @@ collections:
             searchFields: ["id", "title"]
             valueField: "id"
             displayFields: ["title"]
-  - name: "badge"
-    label: "Badge"
-    folder: "content/badges"
-    create: true
-    format: json
-    slug: "{{slug}}"
-    identifier_field: id
-    summary: "{{title}} ({{id}})"
-    fields:
-      - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
-      - {label: "Title", name: "title", widget: "string"}
-      - label: "Image"
-        name: "image"
-        widget: "image"
-        required: false
-        media_library:
-          config:
-            max_file_size: 256000 # 250kb
   - name: "type"
     label: "Challenge Type"
     folder: "content/types"
@@ -185,11 +152,11 @@ collections:
         media_library:
           config:
             max_file_size: 256000 # 250kb
-      - label: Price
-        name: price
+      - label: Award
+        name: award
         widget: "relation"
         required: false
-        collection: "price"
+        collection: "award"
         searchFields: ["id", "name"]
         valueField: "id"
         displayFields: ["name"]
@@ -199,9 +166,9 @@ collections:
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: Description, name: description, widget: markdown}
-  - name: "price"
-    label: "Price"
-    folder: "content/prices"
+  - name: "award"
+    label: "Award"
+    folder: "content/awards"
     format: json
     create: true
     slug: "{{slug}}"
@@ -216,12 +183,25 @@ collections:
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string}
+      - label: Prize
+        name: prize
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Prize, name: prize, widget: string}
       - label: Descriptions
         name: descriptions
         widget: list
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
-          - {label: Description, name: description, widget: markdown, hint: "Please describe the Price who is applicable and which rules apply."}     
+          - {label: Description, name: description, widget: markdown, hint: "Please describe the award."}  
+      - label: Criteria
+        name: criteria
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Criteria, name: criteria, widget: markdown, hint: "Please describe the criteria which apply for this awards."}     
   - name: "party"
     label: "Party"
     folder: "content/parties"
@@ -320,6 +300,13 @@ collections:
               - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
               - {label: Title, name: title, widget: string}
           - {label: "From", name: "from", widget: "datetime", format: "X"}
+          - label: Image
+            name: image
+            widget: "image"
+            required: false
+            media_library:
+              config:
+                max_file_size: 265000 
           - label: Descriptions
             name: descriptions
             widget: list
