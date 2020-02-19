@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <Intro id="intro" />
+    <Intro id="intro" :hackathon="$page ? $page.hackathon : defaultHackathon" />
     <About id="about" themeColor="primary" :isMobile="isMobile" />
     <Challenges id="challenges" themeColor="secondary" :isMobile="isMobile" />
     <Awards id="awards" themeColor="primary" :isMobile="isMobile" />
@@ -15,6 +15,43 @@
     <Footer id="footer" themeColor="primary" :isMobile="isMobile" />
   </Layout>
 </template>
+
+<page-query>
+query ($id: ID!) {
+  hackathon(id: $id) {
+    id
+    title
+    descriptions { language description }
+    from
+    to
+    duration
+  }
+  allChallenge(filter: {hackathon: {eq:$id}}) {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+}
+</page-query>
+
+<static-query>
+query {
+  allHackathon(filter: {default: {eq: true}}) {
+    edges {
+      node {
+        id
+        title
+        descriptions { language description }
+        from
+        to
+        duration
+      }
+    }
+  }
+}
+</static-query>
 
 <script>
 const sectionsContext = require.context(
@@ -39,6 +76,21 @@ export default {
   },
   props: {
     isMobile: Boolean
+  },
+  computed: {
+    defaultHackathon() {
+      const defaultHackathons = this.$static.allHackathon.edges || [
+        { node: {} }
+      ]
+      const [{ node: defaultHackathon }] = defaultHackathons
+
+      return defaultHackathon || {}
+    }
+  },
+  mounted() {
+    console.log(this.$static)
+    console.log(this.$page)
+    console.log(this.$props.hackathon)
   }
 }
 </script>

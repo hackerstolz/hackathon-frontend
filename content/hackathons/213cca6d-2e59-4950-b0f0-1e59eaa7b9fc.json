@@ -1,0 +1,15 @@
+{
+  "id": "213cca6d-2e59-4950-b0f0-1e59eaa7b9fc",
+  "title": "Climathon 2021 Mannheim",
+  "active": false,
+  "default": false,
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "2021 Hackathon"
+    }
+  ],
+  "from": "1613715300",
+  "to": "1613758500",
+  "duration": 40
+}

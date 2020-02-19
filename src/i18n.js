@@ -128,5 +128,21 @@ const [selectedUsersLocale] =
 export const i18nOptions = {
   locale: selectedUsersLocale,
   fallbackLocale: selectedUsersLocale,
-  messages: loadLocaleMessages(availableI18nLocales)
+  messages: loadLocaleMessages(availableI18nLocales),
+  dateTimeFormats: {
+    en: {
+      short: {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      }
+    },
+    de: {
+      short: {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      }
+    }
+  }
 }

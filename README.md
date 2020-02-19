@@ -20,6 +20,16 @@ yarn build
 yarn explore
 ```
 
+### Explore routes
+
+- `/`: Hackathon landing page
+- `/event`: Hackathon on-event site
+- `/${hackathon-id}`: Hackathon landing page (with hackathon specific ID)
+- `/event/${hackathon-id}`: Hackathon on-event site (with hackathon specific ID)
+
+- `___explore`: Graph QL explorer
+- `/admin/`: Admin route
+
 ### URL hash query parameters
 
 Use parameter `lang` to force the display of either `de` or `en`. The final URL then looks like:
@@ -44,5 +54,6 @@ https://climathon.hackerstolz.de/#?challenge=aft3-jehg-28hb-nnmj7
 
 [ ] Replace static json data with queryies  
 [ ] Replace navigation (`g-link`) with hackathon specific IDs
-[ ] Add aftermovie to intro section  
+[ ] Add aftermovie to intro section (and other missing attributes in schema)
 [ ] Update route when navigating to challenge from sponsor or price section
+[ ] Add dropdown switch for archived hackathons

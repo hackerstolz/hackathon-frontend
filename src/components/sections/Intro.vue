@@ -1,7 +1,9 @@
 <template>
-  <section :class="{
+  <section
+    :class="{
       'simulated-2050': simulate2050
-    }">
+    }"
+  >
     <div
       :class="{
         'simulation-blend': true,
@@ -42,22 +44,40 @@
           color="error"
         ></v-switch>
         <h1>
-          <div>{{ simulate2050 ? $t('simulation.titleLine1') : $t('titleLine1') }}</div>
-          <div>{{ simulate2050 ? $t('simulation.titleLine2') : $t('titleLine2') }}</div>
+          <div>
+            {{
+              simulate2050
+                ? $t('simulation.titleLine1')
+                : $t('titleLine1', {
+                    year: new Date(
+                      parseInt(hackathon.from, 10) * 1000
+                    ).getFullYear()
+                  })
+            }}
+          </div>
+          <div>
+            {{ simulate2050 ? $t('simulation.titleLine2') : $t('titleLine2') }}
+          </div>
         </h1>
         <h2>{{ simulate2050 ? $t('simulation.subtitle') : $t('subtitle') }}</h2>
-        <h3>{{ $t('date') }}&nbsp;•&nbsp;{{ $t('event') }}</h3>
+        <h3>
+          {{
+            /* TODO: add custom formatter */
+            $d(new Date(parseInt(hackathon.from, 10) * 1000), 'short')
+          }}&nbsp;•&nbsp;{{ $t('event', { duration: hackathon.duration }) }}
+        </h3>
       </div>
       <div class="countdown-wrapper-event">
         <Countdown
           :time="
             simulate2050
               ? 0
-              : Math.max(0, new Date(2019, 9, 25, 8, 30).getTime() - Date.now())
+              : Math.max(0, parseInt(hackathon.from, 10) * 1000 - Date.now())
           "
           :title="$t('countdownEvent')"
         />
       </div>
+      {{ /* getI18nNode(hackathon.descriptions, $i18n.locale).description */ }}
     </header>
 
     <v-spacer />
@@ -114,37 +134,64 @@
   </section>
 </template>
 
+<static-query>
+query {
+  allHackathon(filter: {default: {eq: true}}) {
+    edges {
+      node {
+        id
+        title
+        descriptions { language description }
+        from
+        to
+        duration
+      }
+    }
+  }
+}
+</static-query>
+
 <script>
-import Countdown from "../Countdown";
+import Countdown from '../Countdown'
 
 export default {
-  name: "Intro",
+  name: 'Intro',
   components: { Countdown },
+  props: { hackathon: Object },
   data() {
     return {
       simulate2050: null // null it indicates, that it was not used, yet, else a boolean
-    };
+    }
+  },
+  methods: {
+    getI18nNode(i18nNodes = [], lang) {
+      const locale = lang.toUpperCase()
+      const [i18nNode] = i18nNodes.filter(
+        n => n.language === locale || n.language === locale.split('-'[0])
+      ) || [{}]
+
+      return i18nNode
+    }
   },
   watch: {
     simulate2050(simulation) {
       // toggle theme colors
       this.$vuetify.theme.themes.dark.primary = simulation
-        ? "#140807"
-        : "#10182F";
+        ? '#140807'
+        : '#10182F'
       this.$vuetify.theme.themes.dark.secondary = simulation
-        ? "#270F0D"
-        : "#182445";
+        ? '#270F0D'
+        : '#182445'
     }
   }
-};
+}
 </script>
 
 <i18n lang="json5">
 {
   "en": {
-    "date": "25.-27. October",
-    "event": "40h Hackathon",
-    "titleLine1": "CLIMATHON 2019",
+    "event": "{duration}h Hackathon",
+    "titleLine1": "CLIMATHON {year}",
     "titleLine2": "MANNHEIM",
     "subtitle": "Drive climate action!",
     "sloganBeforeHeart": "A hackathon made with",
@@ -160,9 +207,8 @@ export default {
     }
   },
   "de": {
-    "date": "25.-27. Oktober",
-    "event": "40h Hackathon",
-    "titleLine1": "CLIMATHON 2019",
+    "event": "{duration}h Hackathon",
+    "titleLine1": "CLIMATHON {year}",
     "titleLine2": "MANNHEIM",
     "subtitle": "Klimaschutz antreiben!",
     "sloganBeforeHeart": "Ein Hackathon gemacht mit",

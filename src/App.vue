@@ -4,64 +4,56 @@
   </div>
 </template>
 
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
-
 <script>
 export default {
-  name: "App",
+  name: 'App',
   // TODO: replace by query information
   metaInfo: {
-    title: "Climathon 2019 • Mannheim",
+    title: 'Climathon 2019 • Mannheim',
     meta: [
       // OPEN GRAPH (e.g. Facebook)
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://climathon.hackerstolz.de" },
-      { property: "og:site_name", content: "Climathon 2019 • Mannheim" },
-      { property: "og:title", content: "Climathon 2019 • Mannheim" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://climathon.hackerstolz.de' },
+      { property: 'og:site_name', content: 'Climathon 2019 • Mannheim' },
+      { property: 'og:title', content: 'Climathon 2019 • Mannheim' },
       {
-        property: "og:description",
+        property: 'og:description',
         content:
-          "🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!"
+          '🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!'
       },
-      { property: "og:image", content: require("../static/meta-thumb.jpg") },
+      { property: 'og:image', content: require('../static/meta-thumb.jpg') },
 
       // TWITTER
-      { name: "twitter:title", content: "Climathon 2019 • Mannheim" },
+      { name: 'twitter:title', content: 'Climathon 2019 • Mannheim' },
       {
-        name: "twitter:description",
+        name: 'twitter:description',
         content:
-          "🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!"
+          '🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!'
       },
       {
-        name: "twitter:image",
-        content: require("../static/meta-thumb.jpg")
+        name: 'twitter:image',
+        content: require('../static/meta-thumb.jpg')
       },
-      { name: "twitter:image:alt", content: "Climathon 2019 • Mannheim" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@hackerstolz" }
+      { name: 'twitter:image:alt', content: 'Climathon 2019 • Mannheim' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@hackerstolz' }
     ]
   },
   data() {
     return {
       isMobile: false
-    };
+    }
   },
   mounted() {
-    this.onResize();
-    window.addEventListener("resize", this.onResize, { passive: true });
+    this.onResize()
+    window.addEventListener('resize', this.onResize, { passive: true })
   },
   methods: {
     onResize() {
-      this.isMobile = window.innerWidth <= 600;
+      this.isMobile = window.innerWidth <= 600
     }
   }
-};
+}
 </script>
 
 <style lang="stylus">

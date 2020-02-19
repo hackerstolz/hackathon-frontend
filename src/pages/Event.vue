@@ -8,6 +8,19 @@
   </Layout>
 </template>
 
+<page-query>
+query ($id: ID!) {
+  hackathon(id: $id) {
+    id
+    title
+    descriptions { language description }
+    from
+    to
+    duration
+  }
+}
+</page-query>
+
 <script>
 import Footer from '../components/sections/Footer.vue'
 const sectionsContext = require.context(

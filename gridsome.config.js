@@ -16,5 +16,18 @@ module.exports = {
         htmlPath: 'src/admin/index.html'
       }
     }
-  ]
+  ],
+  templates: {
+    hackathon: [
+      {
+        path: '/:id',
+        component: './src/pages/Index.vue'
+      },
+      {
+        name: 'event',
+        path: '/event/:id',
+        component: './src/pages/Event.vue'
+      }
+    ]
+  }
 }
