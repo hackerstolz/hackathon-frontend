@@ -3,7 +3,12 @@
     <v-container>
       <h2 class="align-left">{{ $t('titleWhy') }}</h2>
       <div class="small-earth d-inline-block mx-1">
-        <v-img :src="require('../../assets/earth-small.svg')" height="216" width="320" contain></v-img>
+        <v-img
+          :src="require('../../assets/earth-small.svg')"
+          height="216"
+          width="320"
+          contain
+        ></v-img>
         <div class="pa-2">{{ $t('imgDescription') }}</div>
         <v-btn
           class="link-to-cgoal mb-4"
@@ -23,7 +28,13 @@
       <p class="align-center">{{ $t('textWhat[0]') }}</p>
       <p class="align-center">{{ $t('textWhat[1]') }}</p>
 
-      <v-layout class="article-container" align-center justify-center flexbox wrap>
+      <v-layout
+        class="article-container"
+        align-center
+        justify-center
+        flexbox
+        wrap
+      >
         <!-- Climate KIC VIDEO -->
         <iframe
           style="border-radius: 8px;"
@@ -50,7 +61,9 @@
               <v-layout fill-height column>
                 <v-spacer />
                 <v-flex xs6 align-end>
-                  <span class="article-text pa-1">{{ $t(article.i18nLink) }}</span>
+                  <span class="article-text pa-1">{{
+                    $t(article.i18nLink)
+                  }}</span>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -60,7 +73,13 @@
 
       <h2 class="align-left">{{ $t('unoGoalsTitle') }}</h2>
       <p class="align-left" v-html="$t('unoGoalsText')"></p>
-      <v-layout row :align-center="isMobile" :justify-center="isMobile" flexbox wrap>
+      <v-layout
+        row
+        :align-center="isMobile"
+        :justify-center="isMobile"
+        flexbox
+        wrap
+      >
         <v-card
           v-for="(goal, j) in goals"
           :key="j"
@@ -86,11 +105,11 @@
 
 <script>
 export default {
-  name: "About",
+  name: 'About',
   props: {
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     },
     isMobile: Boolean
   },
@@ -100,30 +119,30 @@ export default {
         this.themeColor
       ) !== -1
         ? this.$vuetify.theme.themes.dark[this.themeColor]
-        : this.$vuetify.theme.themes.dark.primary;
+        : this.$vuetify.theme.themes.dark.primary
     }
   },
   data() {
     return {
       goals: [
-        "https://www.un.org/sustainabledevelopment/sustainable-development-goals/",
-        "https://www.un.org/sustainabledevelopment/poverty/",
-        "https://www.un.org/sustainabledevelopment/hunger/",
-        "https://www.un.org/sustainabledevelopment/health/",
-        "https://www.un.org/sustainabledevelopment/education/",
-        "https://www.un.org/sustainabledevelopment/gender-equality/",
-        "https://www.un.org/sustainabledevelopment/water-and-sanitation/",
-        "https://www.un.org/sustainabledevelopment/energy/",
-        "https://www.un.org/sustainabledevelopment/economic-growth/",
-        "https://www.un.org/sustainabledevelopment/infrastructure-industrialization/",
-        "https://www.un.org/sustainabledevelopment/inequality/",
-        "https://www.un.org/sustainabledevelopment/cities/",
-        "https://www.un.org/sustainabledevelopment/sustainable-consumption-production/",
-        "https://www.un.org/sustainabledevelopment/climate-change/",
-        "https://www.un.org/sustainabledevelopment/oceans/",
-        "https://www.un.org/sustainabledevelopment/biodiversity/",
-        "https://www.un.org/sustainabledevelopment/peace-justice/",
-        "https://www.un.org/sustainabledevelopment/globalpartnerships/"
+        'https://www.un.org/sustainabledevelopment/sustainable-development-goals/',
+        'https://www.un.org/sustainabledevelopment/poverty/',
+        'https://www.un.org/sustainabledevelopment/hunger/',
+        'https://www.un.org/sustainabledevelopment/health/',
+        'https://www.un.org/sustainabledevelopment/education/',
+        'https://www.un.org/sustainabledevelopment/gender-equality/',
+        'https://www.un.org/sustainabledevelopment/water-and-sanitation/',
+        'https://www.un.org/sustainabledevelopment/energy/',
+        'https://www.un.org/sustainabledevelopment/economic-growth/',
+        'https://www.un.org/sustainabledevelopment/infrastructure-industrialization/',
+        'https://www.un.org/sustainabledevelopment/inequality/',
+        'https://www.un.org/sustainabledevelopment/cities/',
+        'https://www.un.org/sustainabledevelopment/sustainable-consumption-production/',
+        'https://www.un.org/sustainabledevelopment/climate-change/',
+        'https://www.un.org/sustainabledevelopment/oceans/',
+        'https://www.un.org/sustainabledevelopment/biodiversity/',
+        'https://www.un.org/sustainabledevelopment/peace-justice/',
+        'https://www.un.org/sustainabledevelopment/globalpartnerships/'
       ],
       articles: [
         // {
@@ -139,9 +158,9 @@ export default {
         //     "https://medium.com/@Hackerstolz/42-hours-at-a-hackathon-4f6444a3c3bd"
         // }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <i18n>

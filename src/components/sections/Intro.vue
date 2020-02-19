@@ -1,7 +1,9 @@
 <template>
-  <section :class="{
+  <section
+    :class="{
       'simulated-2050': simulate2050
-    }">
+    }"
+  >
     <div
       :class="{
         'simulation-blend': true,
@@ -42,8 +44,12 @@
           color="error"
         ></v-switch>
         <h1>
-          <div>{{ simulate2050 ? $t('simulation.titleLine1') : $t('titleLine1') }}</div>
-          <div>{{ simulate2050 ? $t('simulation.titleLine2') : $t('titleLine2') }}</div>
+          <div>
+            {{ simulate2050 ? $t('simulation.titleLine1') : $t('titleLine1') }}
+          </div>
+          <div>
+            {{ simulate2050 ? $t('simulation.titleLine2') : $t('titleLine2') }}
+          </div>
         </h1>
         <h2>{{ simulate2050 ? $t('simulation.subtitle') : $t('subtitle') }}</h2>
         <h3>{{ $t('date') }}&nbsp;•&nbsp;{{ $t('event') }}</h3>
@@ -114,29 +120,38 @@
   </section>
 </template>
 
+<static-query>
+query {
+  hackathon (id: "33bf2af2-513c-4e59-9ed2-ff09147298ae") {
+    id,
+    title
+  }
+}
+</static-query>
+
 <script>
-import Countdown from "../Countdown";
+import Countdown from '../Countdown'
 
 export default {
-  name: "Intro",
+  name: 'Intro',
   components: { Countdown },
   data() {
     return {
       simulate2050: null // null it indicates, that it was not used, yet, else a boolean
-    };
+    }
   },
   watch: {
     simulate2050(simulation) {
       // toggle theme colors
       this.$vuetify.theme.themes.dark.primary = simulation
-        ? "#140807"
-        : "#10182F";
+        ? '#140807'
+        : '#10182F'
       this.$vuetify.theme.themes.dark.secondary = simulation
-        ? "#270F0D"
-        : "#182445";
+        ? '#270F0D'
+        : '#182445'
     }
   }
-};
+}
 </script>
 
 <i18n lang="json5">
