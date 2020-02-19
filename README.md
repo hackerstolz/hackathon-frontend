@@ -54,5 +54,6 @@ https://climathon.hackerstolz.de/#?challenge=aft3-jehg-28hb-nnmj7
 
 [ ] Replace static json data with queryies  
 [ ] Replace navigation (`g-link`) with hackathon specific IDs
-[ ] Add aftermovie to intro section  
+[ ] Add aftermovie to intro section (and other missing attributes in schema)
 [ ] Update route when navigating to challenge from sponsor or price section
+[ ] Add dropdown switch for archived hackathons

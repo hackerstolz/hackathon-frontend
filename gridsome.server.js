@@ -6,7 +6,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const nodeExternals = require('webpack-node-externals')
-const t = require('./transformer.js');
+const t = require('./transformer.js')
 
 module.exports = function(api) {
   api.chainWebpack((config, { isServer }) => {
@@ -28,20 +28,6 @@ module.exports = function(api) {
   })
 
   api.loadSource(store => {
-    t.load("./src/admin/config.yml", "./", store);
-  })
-
-  // config dynamic routes
-  api.createPages(({ createPage }) => {
-    createPage({
-      path: '/:id',
-      component: './src/pages/Index.vue'
-    })
-  })
-  api.createPages(({ createPage }) => {
-    createPage({
-      path: '/event/:id',
-      component: './src/pages/Event.vue'
-    })
+    t.load('./src/admin/config.yml', './', store)
   })
 }
