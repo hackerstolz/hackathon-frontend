@@ -1,9 +1,9 @@
 {
-  "id": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
-  "title": "Climathon 2020 Mannheim",
-  "active": true,
   "default": true,
+  "active": true,
+  "from": "1605286005",
   "logo": "/images/uploads/favicon.png",
+  "duration": 40,
   "descriptions": [
     {
       "language": "DE",
@@ -13,5 +13,8 @@
       "language": "EN",
       "description": "Second year in a row we are proud to host ..."
     }
-  ]
+  ],
+  "title": "Climathon 2020 Mannheim",
+  "id": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+  "to": "1605458805"
 }
