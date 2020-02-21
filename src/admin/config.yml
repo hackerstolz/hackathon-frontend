@@ -118,14 +118,6 @@ collections:
         searchFields: ["id", "name"]
         valueField: "id"
         displayFields: ["name"]
-      - label: Sponsor
-        name: sponsor
-        widget: "relation"
-        required: false
-        collection: "party"
-        searchFields: ["id", "name"]
-        valueField: "id"
-        displayFields: ["name"]
       - label: Type
         name: type
         widget: "relation"
@@ -134,18 +126,21 @@ collections:
         searchFields: ["id", "title"]
         valueField: "id"
         displayFields: ["title"]
-
-      - label: Categories
-        name: categories
+      - label: Category
+        name: category
+        widget: "relation"
+        collection: "category"
+        required: false
+        searchFields: ["id", "title"]
+        valueField: "id"
+        displayFields: ["title"]
+      - label: Author
+        name: author
         widget: list
+        hint: "Name the author or provider of the challenge"
         fields:
-          - label: Category
-            name: category
-            widget: "relation"
-            collection: "category"
-            searchFields: ["id", "title"]
-            valueField: "id"
-            displayFields: ["title"]
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: author, name: author, widget: string}
   - name: "link"
     label: "Link"
     folder: "content/links"
@@ -195,6 +190,7 @@ collections:
       - label: "Image"
         name: "image"
         widget: "image"
+        required: false
         media_library:
           config:
             max_file_size: 256000 # 250kb
@@ -223,6 +219,13 @@ collections:
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
       - {label: "Name", name: "name", widget: "string"}
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: false
+        media_library:
+          config:
+            max_file_size: 256000 # 250kb
       - label: Titles
         name: titles
         widget: list
