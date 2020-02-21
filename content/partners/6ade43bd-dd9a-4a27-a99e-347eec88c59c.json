@@ -1,0 +1,21 @@
+{
+  "id": "6ade43bd-dd9a-4a27-a99e-347eec88c59c",
+  "nameInternal": "MVV",
+  "names": [
+    {
+      "language": "DE",
+      "name": "MVV Energie AG"
+    },
+    {
+      "language": "EN",
+      "name": "MVV Energie AG"
+    }
+  ],
+  "roles": [
+    {
+      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+      "challenge": "d829c9d1-c973-49cf-98bc-10964a4c3a92",
+      "isSponsor": true
+    }
+  ]
+}
