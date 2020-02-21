@@ -1,16 +1,15 @@
 {
   "id": "61b0dad7-08e4-4b7b-b8a6-66bb5268f1cf",
-  "title": "Mobility",
-  "image": "/images/uploads/favicon.png",
-  "price": "8a17e8ee-357b-4cb1-bd05-7db4d6c7c9bf",
+  "title": "Smart City",
+  "image": "/images/uploads/flat-icon-smartCity.svg",
   "descriptions": [
     {
       "language": "DE",
-      "description": "Mobility Kategorie Beschreibung"
+      "description": "Smart City ist die Königsdisziplin für ganzheitliche Entwicklungskonzepte, die darauf abzielen, Städte effizienter, technologisch fortschrittlicher, grüner und sozialer zu gestalten. Dazu gehören technische, wirtschaftliche und gesellschaftliche Innovationen, die moderne Technologien in den Bereichen Energie, Mobilität, Stadtplanung, Verwaltung und Kommunikation kombinieren. Mit dem Ziel, das Nachhaltigkeitspotenzial der Stadt zu maximieren und die Lebensqualität ihrer Bewohner zu verbessern."
     },
     {
       "language": "EN",
-      "description": "Mobility Category Description"
+      "description": "Smart City is the supreme discipline for holistic development concepts aimed at making cities more efficient, technologically advanced, greener and more socially inclusive. These concepts include technical, economic and societal innovations that combine modern technologies in the fields of energy, mobility, urban planning, administration and communications. All with the aim of maximising the city’s sustainability potential and improving the quality of life for its inhabitants."
     }
   ]
 }
