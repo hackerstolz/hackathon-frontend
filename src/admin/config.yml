@@ -73,6 +73,18 @@ collections:
             searchFields: ["id", "name"]
             valueField: "id"
             displayFields: ["name"]
+      - label: FAQs
+        name: faqs
+        widget: list
+        required: false
+        fields:
+          - label: FAQ
+            name: faw
+            widget: "relation"
+            collection: "faq"
+            searchFields: ["id", "name"]
+            valueField: "id"
+            displayFields: ["name"]
   - name: "challenge"
     label: "Challenge"
     folder: "content/challenges"
@@ -131,9 +143,9 @@ collections:
         widget: "relation"
         collection: "category"
         required: false
-        searchFields: ["id", "title"]
+        searchFields: ["id", "name"]
         valueField: "id"
-        displayFields: ["title"]
+        displayFields: ["name"]
       - label: Author
         name: author
         widget: list
@@ -169,7 +181,7 @@ collections:
     summary: "{{title}} ({{id}})"
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"} 
       - label: Descriptions
         name: descriptions
         widget: list
@@ -183,10 +195,16 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: id
-    summary: "{{title}} ({{id}})"
+    summary: "{{name}} ({{id}})"
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Name", name: "name", widget: "string", hint: "Used in Admin UI only"}
+      - label: Titles
+        name: titles
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Title, name: title, widget: string}  
       - label: "Image"
         name: "image"
         widget: "image"
@@ -218,7 +236,7 @@ collections:
     summary: "{{name}} ({{id}})"
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
-      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Name", name: "name", widget: "string", hint: "Used in Admin UI only"}
       - label: "Image"
         name: "image"
         widget: "image"
@@ -251,9 +269,9 @@ collections:
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: Criteria, name: criteria, widget: markdown, hint: "Please describe the criteria which apply for this awards."}     
-  - name: "party"
-    label: "Party"
-    folder: "content/parties"
+  - name: "person"
+    label: "Person"
+    folder: "content/persons"
     format: json
     create: true
     slug: "{{slug}}"
@@ -262,6 +280,7 @@ collections:
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
       - {label: "Name", name: "name", widget: "string"}
+      - {label: "Salutation", name: "salutation", widget: select, options: ["W", "M"]}
       - label: Image
         name: image
         widget: "image"
@@ -273,7 +292,7 @@ collections:
         name: roles
         widget: list
         fields:
-          - {label: "Title", name: "title", widget: "string"}  
+          - {label: "Title", name: "title", widget: "string", hint: "Used in Admin UI only??? Obsolete?"}  
           - label: Hackathon
             name: hackathon
             widget: "relation"
@@ -288,26 +307,47 @@ collections:
             searchFields: ["id", "name"]
             valueField: "id"
             displayFields: ["name"]
-            required: false
+            required: false          
+            hint: "Only if clearly related to a Challenge in context of this role"
           - label: Role
             name: role
             widget: "relation"
             collection: "role"
             searchFields: ["id", "title"]
             valueField: "id"
-            displayFields: ["title"]                  
-          - label: Timeslot
-            name: timeslot
+            displayFields: ["title"]                
+          - label: Professions
+            name: professions            
             widget: list
+            required: false  
+            hint: "Professional background in context of this role"
+            fields:
+              - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+              - {label: Profession, name: profession, widget: string}  
+          - label: Talk Titles
+            name: talkTitles            
+            widget: list
+            required: false  
+            hint: "If a speaker: What is the title of the Talk?"
+            fields:
+              - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+              - {label: Talk Title, name: talkTitle, widget: string}  
+          - label: Timeslots
+            name: timeslots
+            widget: list
+            required: false  
+            hint: "Time of availability at Hackathon"
             fields:                
                 - {label: "From", name: "from", widget: "datetime", format: "X", required: false}
                 - {label: "To", name: "to", widget: "datetime", format: "X", required: false}
           - label: Descriptions
-            name: descriptions
+            name: descriptions            
             widget: list
+            required: false  
+            hint: "Usage: Speaker details"
             fields:
               - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
-              - {label: Description, name: description, widget: markdown}              
+              - {label: Description, name: description, widget: text}              
   - name: "role"
     label: "Role"
     folder: "content/roles"
@@ -319,6 +359,56 @@ collections:
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
       - {label: "Title", name: "title", widget: "string"}
+  - name: "partner"
+    label: "Partner"
+    folder: "content/partners"
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: id
+    summary: "{{nameInternal}} ({{id}})"
+    fields:
+      - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
+      - {label: "(internal) Name", name: "nameInternal", widget: "string", hint: "Used in Admin UI only"}
+      - label: Names
+        name: names
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Name, name: name, widget: string}  
+      - label: Logo
+        name: logo
+        widget: "image"
+        required: false
+        media_library:
+          config:
+            max_file_size: 256000 
+      - label: Roles
+        name: roles
+        widget: list
+        fields:                  
+          - label: Hackathon
+            name: hackathon
+            widget: "relation"
+            collection: "hackathon"
+            searchFields: ["id", "title"]
+            valueField: "id"
+            displayFields: ["title"]
+          - label: Challenge
+            name: challenge
+            widget: "relation"
+            collection: "challenge"
+            searchFields: ["id", "name"]
+            valueField: "id"
+            displayFields: ["name"]
+            required: false     
+          - {label: "Sponsor", name: "isSponsor", widget: "boolean", default: false}
+          - label: Subtitles
+            name: subtitles
+            widget: list
+            fields:
+              - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+              - {label: subtitle, name: subtitle, widget: string}    
   - name: "timetable"
     label: "Timetable"
     folder: "content/timetables"
@@ -339,15 +429,16 @@ collections:
         displayFields: ["title"]
       - {label: "Date", name: "date", widget: "datetime", format: "X", timeFormat: false}
       - label: Slots
-        name: slot
+        name: slots
         widget: list
         fields:          
           - label: Titles
             name: titles
             widget: list
+            hint: "Optional, is overwritten if Speaker is selected"
             fields:
               - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
-              - {label: Title, name: title, widget: string}
+              - {label: Title, name: title, widget: string}              
           - {label: "From", name: "from", widget: "datetime", format: "X"}
           - label: Image
             name: image
@@ -355,10 +446,49 @@ collections:
             required: false
             media_library:
               config:
-                max_file_size: 265000 
+                max_file_size: 256000 
+          - label: External Link
+            name: linkExternal
+            widget: "relation"
+            collection: "link"
+            required: false
+            searchFields: ["id", "name"]
+            valueField: "id"
+            displayFields: ["name"]
+          - label: Speaker
+            name: speaker
+            widget: "relation"
+            collection: "person"
+            required: false
+            searchFields: ["id", "name"]
+            valueField: "id"
+            displayFields: ["name"]
           - label: Descriptions
             name: descriptions
             widget: list
             fields:
               - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
-              - {label: Description, name: description, widget: markdown}
+              - {label: Description, name: description, widget: text}
+  - name: "faq"
+    label: "FAQs"
+    folder: "content/faqs"
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: id
+    summary: "{{name}} ({{id}})"
+    fields:
+      - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
+      - {label: "Name", name: "name", widget: "string", hint: "Used in Admin UI only"}
+      - label: Question
+        name: question
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Question, name: question, widget: string}
+      - label: Answer
+        name: answer
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Answer, name: answer, widget: markdown}
