@@ -1,6 +1,16 @@
 {
   "id": "61b0dad7-08e4-4b7b-b8a6-66bb5268f1cf",
-  "title": "Smart City",
+  "name": "Smart City",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Smart City"
+    },
+    {
+      "language": "EN",
+      "title": "Smart City"
+    }
+  ],
   "image": "/images/uploads/flat-icon-smartCity.svg",
   "descriptions": [
     {
