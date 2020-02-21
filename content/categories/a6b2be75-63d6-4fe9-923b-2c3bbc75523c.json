@@ -1,0 +1,15 @@
+{
+  "id": "a6b2be75-63d6-4fe9-923b-2c3bbc75523c",
+  "title": "Mobility",
+  "image": "/images/uploads/flat-icon-mobility.svg",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "Bislang war die Transportindustrie am widerstandsfähigsten gegen den Fortschritt bei den Emissionen. Gleichzeitig sind die Städte entscheidend für die Bewältigung dieser Herausforderung, da sie mit dem Mobilitäts-Trilemma aus sauberer Luft, Kohlenstoff und Staus konfrontiert sind und gleichzeitig mit immer höheren Anforderungen an den Transport von Menschen und Gütern konfrontiert sind."
+    },
+    {
+      "language": "EN",
+      "description": "Until now, the transport industry has been the most resistant to emissions progress. At the same time, cities are key in tackling this challenge as they are faced with the mobility trilemma of clean air, carbon, and congestion whilst facing ever increasing demands to move people and goods around."
+    }
+  ]
+}
