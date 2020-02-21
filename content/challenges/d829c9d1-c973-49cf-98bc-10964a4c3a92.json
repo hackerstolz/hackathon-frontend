@@ -1,39 +1,38 @@
 {
-  "price": "c8301192-d005-462f-8a53-b06c9f865471",
-  "name": "Tech - LoRaWAN",
-  "badges": [
+  "author": [
     {
-      "badge": "22d25bc6-b53c-492f-ab73-a4c68b4c9f6d"
+      "language": "DE",
+      "author": "MVV Energie AG"
+    },
+    {
+      "language": "EN",
+      "author": "MVV Energie AG"
     }
   ],
+  "name": "MVV Tech-Challenge 2019",
   "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
   "descriptions": [
     {
       "language": "DE",
-      "description": "LoRaWAN Technology ist ..."
+      "description": "##### ZUSAMMENFASSUNG\n\nDie Städte der Zukunft schon heute gestalten. Die Entwicklung einer Stadt zur „Smart City“ ist eine kommunale Zukunftsaufgabe. Smart Cities unterstützen eine effiziente, nachhaltige und lebenswerte Gestaltung der Städte durch die intelligente Nutzung der kommunalen Infrastruk-tur. Diese wird mit Hilfe von IoT und diversen IT-, Mobile- und Cloud-Computing-Technologien weiter vorangetrieben.\n\n##### STATUS QUO & RESSOURCEN\n\nIn diesem Zusammenhang baut MVV Energie AG ein LoRaWAN (Long Range Wide Area Network) in Mannheim auf, um so eine effiziente und kostengünstige Datenerfassung zu ermöglichen. Über LoRaWAN können u.a. Umweltdaten (wie z.B. meteorologische Daten oder Luftschadstoffe) erfasst, übertragen und intelligent ausgewertet werden. Diese Informationen können wir nut-zen, um Emissionen zu überwachen und Maßnahmen zur Verbesserung der Lebensqualität umzu-setzen. Aber auch in anderen Bereichen wie beispielsweise beim Urban Gardening können Sen-soren zur Erdfeuchtigkeitsmessung eingesetzt werden und so die Community zur Pflege des Gar-tens (z.B. über Belohnungssysteme) zu motivieren. Somit stellt sich folgende Frage: Wie kann das Leben in der Stadt Mannheim durch die Verwendung der LoRaWAN-Technologie lebenswerter gestaltet werden?\n\n##### VISION & ERGEBNIS\n\n\n\n* Die Lösung kann sich entweder auf einen bestimmten Teilbereich (z.B. Mobilität oder Ener-gieversorgung) fokussieren, oder die Stadt als Ganzes betrachten. Den Ideen sind keine Grenzen gesetzt, solange LoRaWAN dies technisch unterstützt.\n* Für die Challenge werden Euch aktuelle Sensordaten aus der Stadt zur Verfügung gestellt, die via LoRaWAN übertragen werden.\n* Ihr habt die Möglichkeit ein Konzept zu entwickeln oder Prototypen praktisch umzusetzen – ob Ihr die von uns zur Verfügung gestellten Daten nutzt, bleibt dabei euch überlassen.\n\nWir freuen uns auf Eure Ideen!"
     },
     {
       "language": "EN",
-      "description": "Use LoRaWAN for ..."
+      "description": "##### SUMMARY\n\nMobility, as a basic need of mankind, affects all of us permanently. The Rhein-Neckar-Verkehr GmbH (rnv) fosters a sustainable strategy of innovation, efficiency, an increase of the modal split, benefits for the environment, and cohesiveness to ensure the highest quality possible for its existing customers. In addition, the rnv strives to attract as many new customers as possible - esp. those switching from the usage of their own car to the usage of public transportation.\\\nNow you can be part of this offensive by shaping the public transportation sector towards a customer-focused mobility as a service landscape by using data in new ways, taking advantage of digitalization and new technology, and by the innovative combination of hard- and software in the internet of things.\n\n##### STATUS QUO & RESOURCES\n\nThe rnv provides its open service Start.Info API as well as already published data on its open data portal for its 81 bus and tram lines plus exclusive data just for this challenge! Together with all kinds of additional data from partner challenges or the web you can focus on one or more topics in the context of the following areas:\n\n* Navigation for mobility-impaired and visually handicapped people to and from our stops, within our vehicles, etc. Tons of open maps, open routing services, gits with open source codes are available. Different technologies may apply. Do you want to solve this jigsaw?\n* Enhancements of the rnv/VRN eTarif app: What is your dream of seamless traveling without the need of having a ticket? CICO, CIBO, BIBO! Psycho?\n* Occupancy rates of our public transportation vehicles allow varieties towards a more efficient usage of our vehicles. But how to get the data as cheap as possible for a given accuracy? How to predict those rates? How to influence customer behaviour in using our vehicles as a win-win? How to…??? It’s your turn!\n* User information itself: What are the newest trends or the latest technologies to inform our customers on the go or at a location? What kind of information can be given by stationary monitors and all kinds of wearables? Think for example about mobility hubs or how a new residential quarter should look like, if no individual cars are allowed?\n\n\n\n##### VISION & OUTCOME\n\nWe encourage you and strongly believe that you will come up with awesome ideas and thoughts, lovely sketches and scribbles, solutions, prototypes, and demonstrators, we never even dared to dream about before. The sky is the limit!"
     }
   ],
-  "sponsor": "a40dc0da-167c-4225-b53e-99aa966cb63a",
   "type": "b294ad5d-8aea-4ef0-b40e-da923a846216",
   "id": "d829c9d1-c973-49cf-98bc-10964a4c3a92",
   "titles": [
     {
       "language": "DE",
-      "title": "Nutzt LoRaWAN um ..."
+      "title": "Wie kann das Leben in der Stadt Mannheim durch die Verwendung der LoRaWAN-Technologie lebenswerter gestaltet werden?"
     },
     {
       "language": "EN",
-      "title": "Use LoRaWAN for ..."
+      "title": "By which means does a modern and smart public transportation system really change our behaviour, enhance our lives, and protects the environment?"
     }
   ],
-  "image": "/images/uploads/favicon.png",
-  "categories": [
-    {
-      "category": "61b0dad7-08e4-4b7b-b8a6-66bb5268f1cf"
-    }
-  ]
+  "image": "",
+  "category": "61b0dad7-08e4-4b7b-b8a6-66bb5268f1cf"
 }
