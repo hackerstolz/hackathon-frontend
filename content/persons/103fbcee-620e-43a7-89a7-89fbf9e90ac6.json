@@ -8,8 +8,26 @@
       "title": "Speaker ",
       "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
       "role": "1dcafdb8-4816-48e3-86a6-0820577f5e3d",
-      "profession": "Geschäftsführerin und Mitbegründerin von right. based on science",
-      "talkTitle": "Auf der anderen Seite des Rubikon",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Geschäftsführerin und Mitbegründerin von right. based on science"
+        },
+        {
+          "language": "EN",
+          "profession": "Managing director and co-founder of right. based on science"
+        }
+      ],
+      "talkTitles": [
+        {
+          "language": "DE",
+          "talkTitle": "Auf der anderen Seite des Rubikon"
+        },
+        {
+          "language": "EN",
+          "talkTitle": "On the other side of the Rubicon"
+        }
+      ],
       "descriptions": [
         {
           "language": "DE",
