@@ -79,7 +79,7 @@ collections:
         required: false
         fields:
           - label: FAQ
-            name: faw
+            name: faq
             widget: "relation"
             collection: "faq"
             searchFields: ["id", "name"]

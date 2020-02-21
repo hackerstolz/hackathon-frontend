@@ -8,6 +8,7 @@ const NC_LIST = 'list';
 const NC_RELATION = 'relation';
 const NC_DEFAULT_FORMAT = 'frontmatter';    //if format not specified
 const NC_DEFAULT_ID = 'title';              //if identifier_field not specified
+const INDENT = "\t";
 
 const SUPPORTED_FORMATS = ['json','frontmatter'];
 const PRINT_LOG = true;
@@ -45,20 +46,25 @@ class SchemaCollection{
 	}
 	
 	getFullGraphQuery(){
-		var query = this.name + "(id: <ID>){";
-		for (var field of this.fields.values()) {		
-			query += " \n" + field.getQuery("\t");
+		return "query{\n" + INDENT + this.name + '(id: "<ID>"){\n' + this.getFieldQuery(INDENT + INDENT) + " \n" + INDENT + "}\n}";
+	}
+	
+	getFieldQuery(indent){
+		var query = "";
+		for (var field of this.fields.values()) {	
+			if(query !== "") query += " \n";
+			query += field.getQuery(indent, this.fields.size);
 		}
-		return query + " \n}";
+		return query;
 	}
 }
 
-class SchemaNode{
-	
-	constructor(name, label, widget, parent){
+class SchemaNode{	
+	constructor(name, label, widget, collections, parent){
 		this.name = name;
 		this.label = label;
 		this.widget = widget;		
+		this.collections = collections;
 		this.parent = parent; //keep reference to parent
 		this.fields = new Map();
 		this.relation = {
@@ -80,15 +86,25 @@ class SchemaNode{
 		this.fields.set(fieldName, fieldNode);
 	}	
 	
-	getQuery(indent){
-		var query = indent + this.name;
-		if(this.fields.size > 0){
-			query += "{";
-			for (var field of this.fields.values()) {		
-				query += " \n" + field.getQuery(indent + "\t");
+	getQuery(indent, parentListSize){
+		var query = "";
+		if(this.relation.collection !== ''){ //relation case
+			if(parentListSize > 1) {
+				query = indent + this.name + "{\n" + this.collections.get(this.relation.collection).getFieldQuery(indent + INDENT) + " \n" + indent + "}";
+			}else{
+				query = this.collections.get(this.relation.collection).getFieldQuery(indent);
 			}
-			query += " \n" + indent + "}";
-		}
+		}else{
+			query = indent + this.name;
+			if(this.fields.size > 0){ //list case
+				query += "{";
+				for (var field of this.fields.values()) {		
+					query += " \n" + field.getQuery(indent + INDENT, this.fields.size);
+				}
+				query += " \n" + indent + "}";				
+			}
+			query += " # " + this.label;
+		}		
 		return query;
 	}
 }
@@ -151,6 +167,7 @@ class SchemaParser{
 											name,
 											configNodeField.get('label'),
 											configNodeField.get('widget'),
+											this.collections, //for retrieving infos via relations
 											schemaNode
 											);
             //Add Field to parent Node (Collection or List Field)
