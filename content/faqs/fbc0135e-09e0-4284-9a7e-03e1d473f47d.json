@@ -1,0 +1,24 @@
+{
+  "id": "fbc0135e-09e0-4284-9a7e-03e1d473f47d",
+  "name": "What can I do to minimize my footprint during the event?",
+  "question": [
+    {
+      "language": "DE",
+      "question": "Was kann ich tun, um meinen ökologischen Fussabdruck während der Veranstaltung zu minimieren?"
+    },
+    {
+      "language": "EN",
+      "question": "What can I do to minimize my footprint during the event?"
+    }
+  ],
+  "answer": [
+    {
+      "language": "DE",
+      "answer": "Benutze Zug, öffentliche Verkehrsmittel oder Fahrrad. Sehe dir auch [Mannheim Green CIty Tickets](https://modellstadt.de/) an. Vermeide Flugzeug, Taxi oder Auto, nutze Carsharing-Potenziale, wenn du gezwungen bist, ein Auto zu benutzen, z.B. [BlaBlaCar](https://www.blablacar.de/). Und werft einen Blick auf CO2-Kompensationsseiten wie [atmosfair](https://www.atmosfair.de/de/), [myclimate](https://www.atmosfair.de/de/org/de/), [ClimatePartner](https://www.climatepartner.com/de) und [Klimakollekte](https://klima-kollekte.de/). Wir hoffen, dir bald nähere Informationen darüber geben zu können, wie du deinen ökologischen Fußabdruck so klein wie möglich halten kannst."
+    },
+    {
+      "language": "EN",
+      "answer": "Use train, public transportation or bicycle. Check out [Mannheim Green CIty Tickets](https://modellstadt.de/). Avoid plain, cap or car, use car sharing potentials if you are forced to use a car, e.g. [BlaBlaCar](https://www.blablacar.de/). And take a look at CO2 offset pages such as [atmosfair](https://www.atmosfair.de/de/), [myclimate](https://www.myclimate.org/de/), [ClimatePartner](https://www.climatepartner.com/de) and [Klimakollekte](https://klima-kollekte.de/). We hope to provide more detailed information soon on how to keep your ecological footprint as small as possible."
+    }
+  ]
+}
