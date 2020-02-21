@@ -27,6 +27,17 @@
           "description": "No worries, for all people not coming for the talks, registration will be open until 15:00."
         }
       ]
+    },
+    {
+      "titles": [],
+      "from": "1605265200",
+      "image": "/images/uploads/HannahHelmke.jpg",
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Sollte nicht angezeigt werden weil Speaker"
+        }
+      ]
     }
   ]
 }
