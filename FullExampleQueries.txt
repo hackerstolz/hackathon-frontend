@@ -1,0 +1,194 @@
+=== Query for Hackathon === 
+hackathon(id: <ID>){ 
+	id 
+	urlName 
+	title 
+	default 
+	active 
+	from 
+	to 
+	duration 
+	eventPageActive 
+	contactEmail 
+	twitter 
+	hashtag 
+	linkTicketshop 
+	linkCommunity 
+	thumbnail 
+	descriptions{ 
+		language 
+		description 
+	} 
+	awards{ 
+		award 
+	} 
+	faqs{ 
+		faw 
+	} 
+} 
+=== Query for Challenge === 
+challenge(id: <ID>){ 
+	id 
+	name 
+	titles{ 
+		language 
+		title 
+	} 
+	hackathon 
+	image 
+	descriptions{ 
+		language 
+		description 
+	} 
+	award 
+	type 
+	category 
+	author{ 
+		language 
+		author 
+	} 
+} 
+=== Query for Link === 
+link(id: <ID>){ 
+	id 
+	name 
+	url 
+	titles{ 
+		language 
+		title 
+	} 
+} 
+=== Query for Challenge Type === 
+type(id: <ID>){ 
+	id 
+	title 
+	descriptions{ 
+		language 
+		description 
+	} 
+} 
+=== Query for Category === 
+category(id: <ID>){ 
+	id 
+	name 
+	titles{ 
+		language 
+		title 
+	} 
+	image 
+	award 
+	descriptions{ 
+		language 
+		description 
+	} 
+} 
+=== Query for Award === 
+award(id: <ID>){ 
+	id 
+	name 
+	image 
+	titles{ 
+		language 
+		title 
+		subtitle 
+	} 
+	prize{ 
+		language 
+		prize 
+	} 
+	descriptions{ 
+		language 
+		description 
+	} 
+	criteria{ 
+		language 
+		criteria 
+	} 
+} 
+=== Query for Person === 
+person(id: <ID>){ 
+	id 
+	name 
+	salutation 
+	image 
+	roles{ 
+		title 
+		hackathon 
+		challenge 
+		role 
+		professions{ 
+			language 
+			profession 
+		} 
+		talkTitles{ 
+			language 
+			talkTitle 
+		} 
+		timeslots{ 
+			from 
+			to 
+		} 
+		descriptions{ 
+			language 
+			description 
+		} 
+	} 
+} 
+=== Query for Role === 
+role(id: <ID>){ 
+	id 
+	title 
+} 
+=== Query for Partner === 
+partner(id: <ID>){ 
+	id 
+	nameInternal 
+	names{ 
+		language 
+		name 
+	} 
+	logo 
+	roles{ 
+		hackathon 
+		challenge 
+		isSponsor 
+		subtitles{ 
+			language 
+			subtitle 
+		} 
+	} 
+} 
+=== Query for Timetable === 
+timetable(id: <ID>){ 
+	id 
+	title 
+	hackathon 
+	date 
+	slots{ 
+		titles{ 
+			language 
+			title 
+		} 
+		from 
+		image 
+		linkExternal 
+		speaker 
+		descriptions{ 
+			language 
+			description 
+		} 
+	} 
+} 
+=== Query for FAQs === 
+faq(id: <ID>){ 
+	id 
+	name 
+	question{ 
+		language 
+		question 
+	} 
+	answer{ 
+		language 
+		answer 
+	} 
+} 

@@ -19,8 +19,9 @@ exports.load = function(cmsConfigFilePath,  // full path to config file includin
                         ){
     //Preparation: parse config.yml of NetlifyCMS to get collection's schema information and init loader
     var parser = new SchemaParser(cmsConfigFilePath);
-    if(parser.initialized){
+    if(parser.initialized){		
         var loader = new ContentLoader(parser.parseCollections(), contentRootPath, api);
+		parser.generateFullGraphQueries();
         loader.load();
 	}
 };
@@ -41,6 +42,14 @@ class SchemaCollection{
 	
 	addField(fieldName, fieldNode){
 		this.fields.set(fieldName, fieldNode);
+	}
+	
+	getFullGraphQuery(){
+		var query = this.name + "(id: <ID>){";
+		for (var field of this.fields.values()) {		
+			query += " \n" + field.getQuery("\t");
+		}
+		return query + " \n}";
 	}
 }
 
@@ -70,6 +79,18 @@ class SchemaNode{
 	addField(fieldName, fieldNode){
 		this.fields.set(fieldName, fieldNode);
 	}	
+	
+	getQuery(indent){
+		var query = indent + this.name;
+		if(this.fields.size > 0){
+			query += "{";
+			for (var field of this.fields.values()) {		
+				query += " \n" + field.getQuery(indent + "\t");
+			}
+			query += " \n" + indent + "}";
+		}
+		return query;
+	}
 }
 
 class SchemaParser{
@@ -146,6 +167,18 @@ class SchemaParser{
 			}		
 			i++;
 		}
+	}
+	
+	generateFullGraphQueries(){
+		var queryFile = "";
+		for (const collection of this.collections.values()) {			
+			queryFile += "=== Query for " + collection.label + " === \n" + collection.getFullGraphQuery() + " \n" ;			
+		}
+		
+		fs.writeFile('FullExampleQueries.txt',queryFile, function (err) {
+			if (err) console.log("ERROR when saving Query: " + err.toString());
+			console.log("Saved queries in file");
+		});
 	}
 	
 	log(text){
