@@ -1,6 +1,16 @@
 {
   "id": "a6b2be75-63d6-4fe9-923b-2c3bbc75523c",
-  "title": "Mobility",
+  "name": "Mobility",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Mobilität"
+    },
+    {
+      "language": "EN",
+      "title": "Mobility"
+    }
+  ],
   "image": "/images/uploads/flat-icon-mobility.svg",
   "descriptions": [
     {
