@@ -22,7 +22,8 @@ exports.load = function(cmsConfigFilePath,  // full path to config file includin
     var parser = new SchemaParser(cmsConfigFilePath);
     if(parser.initialized){		
         var loader = new ContentLoader(parser.parseCollections(), contentRootPath, api);
-		parser.generateFullGraphQueries();
+		parser.generateGraphQueries(true, "FullExampleQueries.txt");
+		parser.generateGraphQueries(false, "TrimmedExampleQueries.txt");
         loader.load();
 	}
 };
@@ -45,17 +46,21 @@ class SchemaCollection{
 		this.fields.set(fieldName, fieldNode);
 	}
 	
-	getFullGraphQuery(){
-		return "query{\n" + INDENT + this.name + '(id: "<ID>"){\n' + this.getFieldQuery(INDENT + INDENT) + " \n" + INDENT + "}\n}";
+	getGraphQuery(fullExpand){
+		return "query{\n" + INDENT + this.name + '(id: "<ID>"){\n' + this.getFieldQuery(INDENT + INDENT, fullExpand) + " \n" + INDENT + "}\n}";
 	}
 	
-	getFieldQuery(indent){
+	getFieldQuery(indent, fullExpand){
 		var query = "";
 		for (var field of this.fields.values()) {	
 			if(query !== "") query += " \n";
-			query += field.getQuery(indent, this.fields.size);
+			query += field.getQuery(indent, this.fields.size, fullExpand);
 		}
 		return query;
+	}
+	
+	getIdField(){
+		return this.fields.get(this.idFieldName);
 	}
 }
 
@@ -86,24 +91,28 @@ class SchemaNode{
 		this.fields.set(fieldName, fieldNode);
 	}	
 	
-	getQuery(indent, parentListSize){
+	getQuery(indent, parentListSize, fullExpand){
 		var query = "";
 		if(this.relation.collection !== ''){ //relation case
+			var relCollection = this.collections.get(this.relation.collection);
 			if(parentListSize > 1) {
-				query = indent + this.name + "{\n" + this.collections.get(this.relation.collection).getFieldQuery(indent + INDENT) + " \n" + indent + "}";
+				query = indent + this.name + "{ # " + this.label + " \n";
+				query += fullExpand ? relCollection.getFieldQuery(indent + INDENT) : relCollection.getIdField().getQuery(indent + INDENT, parentListSize, fullExpand) + " - further fields see " + relCollection.label;
+				query += " \n" + indent + "}";
 			}else{
-				query = this.collections.get(this.relation.collection).getFieldQuery(indent);
+				query = fullExpand ? relCollection.getFieldQuery(indent) : relCollection.getIdField().getQuery(indent, parentListSize, fullExpand) + " - further fields see " + relCollection.label;				
 			}
 		}else{
 			query = indent + this.name;
 			if(this.fields.size > 0){ //list case
-				query += "{";
+				query += "{ # " + this.label;
 				for (var field of this.fields.values()) {		
-					query += " \n" + field.getQuery(indent + INDENT, this.fields.size);
+					query += " \n" + field.getQuery(indent + INDENT, this.fields.size, fullExpand);
 				}
 				query += " \n" + indent + "}";				
+			}else{
+				query += " # " + this.label;
 			}
-			query += " # " + this.label;
 		}		
 		return query;
 	}
@@ -186,13 +195,13 @@ class SchemaParser{
 		}
 	}
 	
-	generateFullGraphQueries(){
+	generateGraphQueries(fullExpand, fileName){
 		var queryFile = "";
 		for (const collection of this.collections.values()) {			
-			queryFile += "=== Query for " + collection.label + " === \n" + collection.getFullGraphQuery() + " \n" ;			
+			queryFile += "=== Query for " + collection.label + " === \n" + collection.getGraphQuery(fullExpand) + " \n" ;			
 		}
 		
-		fs.writeFile('FullExampleQueries.txt',queryFile, function (err) {
+		fs.writeFile(fileName, queryFile, function (err) {
 			if (err) console.log("ERROR when saving Query: " + err.toString());
 			console.log("Saved queries in file");
 		});

@@ -1,0 +1,246 @@
+=== Query for Hackathon === 
+query{
+	hackathon(id: "<ID>"){
+		id # ID 
+		urlName # URL Name 
+		title # Title 
+		default # Default 
+		active # Active 
+		from # From 
+		to # To 
+		duration # Duration 
+		eventPageActive # Event Page active 
+		contactEmail # Contact EMail 
+		twitter # Twitter Handle 
+		hashtag # Hashtag 
+		linkTicketshop{ # Ticketshop Link 
+			id # ID - further fields see Link 
+		} 
+		linkCommunity{ # Community Link 
+			id # ID - further fields see Link 
+		} 
+		thumbnail # Thumbnail 
+		descriptions{ # Meta Descriptions 
+			language # Language 
+			description # Description 
+		} 
+		awards{ # Awards 
+			id # ID - further fields see Award 
+		} 
+		faqs{ # FAQs 
+			id # ID - further fields see FAQs 
+		} 
+	}
+} 
+=== Query for Challenge === 
+query{
+	challenge(id: "<ID>"){
+		id # ID 
+		name # Name 
+		titles{ # Titles 
+			language # Language 
+			title # Title 
+		} 
+		hackathon{ # Hackathon 
+			id # ID - further fields see Hackathon 
+		} 
+		image # Image 
+		descriptions{ # Descriptions 
+			language # Language 
+			description # Description 
+		} 
+		award{ # Award 
+			id # ID - further fields see Award 
+		} 
+		type{ # Type 
+			id # ID - further fields see Challenge Type 
+		} 
+		category{ # Category 
+			id # ID - further fields see Category 
+		} 
+		author{ # Author 
+			language # Language 
+			author # author 
+		} 
+	}
+} 
+=== Query for Link === 
+query{
+	link(id: "<ID>"){
+		id # ID 
+		name # Name 
+		url # URL 
+		titles{ # Titles 
+			language # Language 
+			title # Title 
+		} 
+	}
+} 
+=== Query for Challenge Type === 
+query{
+	type(id: "<ID>"){
+		id # ID 
+		title # Title 
+		descriptions{ # Descriptions 
+			language # Language 
+			description # Description 
+		} 
+	}
+} 
+=== Query for Category === 
+query{
+	category(id: "<ID>"){
+		id # ID 
+		name # Name 
+		titles{ # Titles 
+			language # Language 
+			title # Title 
+		} 
+		image # Image 
+		award{ # Award 
+			id # ID - further fields see Award 
+		} 
+		descriptions{ # Descriptions 
+			language # Language 
+			description # Description 
+		} 
+	}
+} 
+=== Query for Award === 
+query{
+	award(id: "<ID>"){
+		id # ID 
+		name # Name 
+		image # Image 
+		titles{ # Titles 
+			language # Language 
+			title # Title 
+			subtitle # Subtitle 
+		} 
+		prize{ # Prize 
+			language # Language 
+			prize # Prize 
+		} 
+		descriptions{ # Descriptions 
+			language # Language 
+			description # Description 
+		} 
+		criteria{ # Criteria 
+			language # Language 
+			criteria # Criteria 
+		} 
+	}
+} 
+=== Query for Person === 
+query{
+	person(id: "<ID>"){
+		id # ID 
+		name # Name 
+		salutation # Salutation 
+		image # Image 
+		roles{ # Roles 
+			title # Title 
+			hackathon{ # Hackathon 
+				id # ID - further fields see Hackathon 
+			} 
+			challenge{ # Challenge 
+				id # ID - further fields see Challenge 
+			} 
+			role{ # Role 
+				id # ID - further fields see Role 
+			} 
+			professions{ # Professions 
+				language # Language 
+				profession # Profession 
+			} 
+			talkTitles{ # Talk Titles 
+				language # Language 
+				talkTitle # Talk Title 
+			} 
+			timeslots{ # Timeslots 
+				from # From 
+				to # To 
+			} 
+			descriptions{ # Descriptions 
+				language # Language 
+				description # Description 
+			} 
+		} 
+	}
+} 
+=== Query for Role === 
+query{
+	role(id: "<ID>"){
+		id # ID 
+		title # Title 
+	}
+} 
+=== Query for Partner === 
+query{
+	partner(id: "<ID>"){
+		id # ID 
+		nameInternal # (internal) Name 
+		names{ # Names 
+			language # Language 
+			name # Name 
+		} 
+		logo # Logo 
+		roles{ # Roles 
+			hackathon{ # Hackathon 
+				id # ID - further fields see Hackathon 
+			} 
+			challenge{ # Challenge 
+				id # ID - further fields see Challenge 
+			} 
+			isSponsor # Sponsor 
+			subtitles{ # Subtitles 
+				language # Language 
+				subtitle # subtitle 
+			} 
+		} 
+	}
+} 
+=== Query for Timetable === 
+query{
+	timetable(id: "<ID>"){
+		id # ID 
+		title # Title 
+		hackathon{ # Hackathon 
+			id # ID - further fields see Hackathon 
+		} 
+		date # Date 
+		slots{ # Slots 
+			titles{ # Titles 
+				language # Language 
+				title # Title 
+			} 
+			from # From 
+			image # Image 
+			linkExternal{ # External Link 
+				id # ID - further fields see Link 
+			} 
+			speaker{ # Speaker 
+				id # ID - further fields see Person 
+			} 
+			descriptions{ # Descriptions 
+				language # Language 
+				description # Description 
+			} 
+		} 
+	}
+} 
+=== Query for FAQs === 
+query{
+	faq(id: "<ID>"){
+		id # ID 
+		name # Name 
+		question{ # Question 
+			language # Language 
+			question # Question 
+		} 
+		answer{ # Answer 
+			language # Language 
+			answer # Answer 
+		} 
+	}
+} 
