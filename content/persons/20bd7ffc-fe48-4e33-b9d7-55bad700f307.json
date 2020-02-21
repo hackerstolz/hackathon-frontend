@@ -25,6 +25,31 @@
           "to": "1605290400"
         }
       ]
+    },
+    {
+      "title": "Organizer 2020",
+      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+      "role": "76174be1-a179-4d26-abf1-08ff97d7c5a8",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Hackerstolz e.V."
+        },
+        {
+          "language": "EN",
+          "profession": "Hackerstolz e.V."
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Er behält den Überblick und vor allem die Ruhe. Erfahren im Partner Management."
+        },
+        {
+          "language": "EN",
+          "description": "He keeps an overview and above all calm. Experienced in partner management."
+        }
+      ]
     }
   ]
 }
