@@ -97,10 +97,10 @@ class SchemaNode{
 			var relCollection = this.collections.get(this.relation.collection);
 			if(parentListSize > 1) {
 				query = indent + this.name + "{ # " + this.label + " \n";
-				query += fullExpand ? relCollection.getFieldQuery(indent + INDENT) : relCollection.getIdField().getQuery(indent + INDENT, parentListSize, fullExpand) + " - further fields see " + relCollection.label;
+				query += fullExpand ? relCollection.getFieldQuery(indent + INDENT, fullExpand) : relCollection.getIdField().getQuery(indent + INDENT, parentListSize, fullExpand) + " - further fields see " + relCollection.label;
 				query += " \n" + indent + "}";
 			}else{
-				query = fullExpand ? relCollection.getFieldQuery(indent) : relCollection.getIdField().getQuery(indent, parentListSize, fullExpand) + " - further fields see " + relCollection.label;				
+				query = fullExpand ? relCollection.getFieldQuery(indent, fullExpand) : relCollection.getIdField().getQuery(indent, parentListSize, fullExpand) + " - further fields see " + relCollection.label;				
 			}
 		}else{
 			query = indent + this.name;

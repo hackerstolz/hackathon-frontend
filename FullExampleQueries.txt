@@ -95,10 +95,22 @@ query{
 			twitter # Twitter Handle 
 			hashtag # Hashtag 
 			linkTicketshop{ # Ticketshop Link 
-				id # ID - further fields see Link 
+				id # ID 
+				name # Name 
+				url # URL 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+				} 
 			} 
 			linkCommunity{ # Community Link 
-				id # ID - further fields see Link 
+				id # ID 
+				name # Name 
+				url # URL 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+				} 
 			} 
 			thumbnail # Thumbnail 
 			descriptions{ # Meta Descriptions 
@@ -106,10 +118,38 @@ query{
 				description # Description 
 			} 
 			awards{ # Awards 
-				id # ID - further fields see Award 
+				id # ID 
+				name # Name 
+				image # Image 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+					subtitle # Subtitle 
+				} 
+				prize{ # Prize 
+					language # Language 
+					prize # Prize 
+				} 
+				descriptions{ # Descriptions 
+					language # Language 
+					description # Description 
+				} 
+				criteria{ # Criteria 
+					language # Language 
+					criteria # Criteria 
+				} 
 			} 
 			faqs{ # FAQs 
-				id # ID - further fields see FAQs 
+				id # ID 
+				name # Name 
+				question{ # Question 
+					language # Language 
+					question # Question 
+				} 
+				answer{ # Answer 
+					language # Language 
+					answer # Answer 
+				} 
 			} 
 		} 
 		image # Image 
@@ -156,7 +196,26 @@ query{
 			} 
 			image # Image 
 			award{ # Award 
-				id # ID - further fields see Award 
+				id # ID 
+				name # Name 
+				image # Image 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+					subtitle # Subtitle 
+				} 
+				prize{ # Prize 
+					language # Language 
+					prize # Prize 
+				} 
+				descriptions{ # Descriptions 
+					language # Language 
+					description # Description 
+				} 
+				criteria{ # Criteria 
+					language # Language 
+					criteria # Criteria 
+				} 
 			} 
 			descriptions{ # Descriptions 
 				language # Language 
@@ -278,10 +337,22 @@ query{
 				twitter # Twitter Handle 
 				hashtag # Hashtag 
 				linkTicketshop{ # Ticketshop Link 
-					id # ID - further fields see Link 
+					id # ID 
+					name # Name 
+					url # URL 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+					} 
 				} 
 				linkCommunity{ # Community Link 
-					id # ID - further fields see Link 
+					id # ID 
+					name # Name 
+					url # URL 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+					} 
 				} 
 				thumbnail # Thumbnail 
 				descriptions{ # Meta Descriptions 
@@ -289,10 +360,38 @@ query{
 					description # Description 
 				} 
 				awards{ # Awards 
-					id # ID - further fields see Award 
+					id # ID 
+					name # Name 
+					image # Image 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+						subtitle # Subtitle 
+					} 
+					prize{ # Prize 
+						language # Language 
+						prize # Prize 
+					} 
+					descriptions{ # Descriptions 
+						language # Language 
+						description # Description 
+					} 
+					criteria{ # Criteria 
+						language # Language 
+						criteria # Criteria 
+					} 
 				} 
 				faqs{ # FAQs 
-					id # ID - further fields see FAQs 
+					id # ID 
+					name # Name 
+					question{ # Question 
+						language # Language 
+						question # Question 
+					} 
+					answer{ # Answer 
+						language # Language 
+						answer # Answer 
+					} 
 				} 
 			} 
 			challenge{ # Challenge 
@@ -303,7 +402,75 @@ query{
 					title # Title 
 				} 
 				hackathon{ # Hackathon 
-					id # ID - further fields see Hackathon 
+					id # ID 
+					urlName # URL Name 
+					title # Title 
+					default # Default 
+					active # Active 
+					from # From 
+					to # To 
+					duration # Duration 
+					eventPageActive # Event Page active 
+					contactEmail # Contact EMail 
+					twitter # Twitter Handle 
+					hashtag # Hashtag 
+					linkTicketshop{ # Ticketshop Link 
+						id # ID 
+						name # Name 
+						url # URL 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+						} 
+					} 
+					linkCommunity{ # Community Link 
+						id # ID 
+						name # Name 
+						url # URL 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+						} 
+					} 
+					thumbnail # Thumbnail 
+					descriptions{ # Meta Descriptions 
+						language # Language 
+						description # Description 
+					} 
+					awards{ # Awards 
+						id # ID 
+						name # Name 
+						image # Image 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+							subtitle # Subtitle 
+						} 
+						prize{ # Prize 
+							language # Language 
+							prize # Prize 
+						} 
+						descriptions{ # Descriptions 
+							language # Language 
+							description # Description 
+						} 
+						criteria{ # Criteria 
+							language # Language 
+							criteria # Criteria 
+						} 
+					} 
+					faqs{ # FAQs 
+						id # ID 
+						name # Name 
+						question{ # Question 
+							language # Language 
+							question # Question 
+						} 
+						answer{ # Answer 
+							language # Language 
+							answer # Answer 
+						} 
+					} 
 				} 
 				image # Image 
 				descriptions{ # Descriptions 
@@ -311,13 +478,69 @@ query{
 					description # Description 
 				} 
 				award{ # Award 
-					id # ID - further fields see Award 
+					id # ID 
+					name # Name 
+					image # Image 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+						subtitle # Subtitle 
+					} 
+					prize{ # Prize 
+						language # Language 
+						prize # Prize 
+					} 
+					descriptions{ # Descriptions 
+						language # Language 
+						description # Description 
+					} 
+					criteria{ # Criteria 
+						language # Language 
+						criteria # Criteria 
+					} 
 				} 
 				type{ # Type 
-					id # ID - further fields see Challenge Type 
+					id # ID 
+					title # Title 
+					descriptions{ # Descriptions 
+						language # Language 
+						description # Description 
+					} 
 				} 
 				category{ # Category 
-					id # ID - further fields see Category 
+					id # ID 
+					name # Name 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+					} 
+					image # Image 
+					award{ # Award 
+						id # ID 
+						name # Name 
+						image # Image 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+							subtitle # Subtitle 
+						} 
+						prize{ # Prize 
+							language # Language 
+							prize # Prize 
+						} 
+						descriptions{ # Descriptions 
+							language # Language 
+							description # Description 
+						} 
+						criteria{ # Criteria 
+							language # Language 
+							criteria # Criteria 
+						} 
+					} 
+					descriptions{ # Descriptions 
+						language # Language 
+						description # Description 
+					} 
 				} 
 				author{ # Author 
 					language # Language 
@@ -379,10 +602,22 @@ query{
 				twitter # Twitter Handle 
 				hashtag # Hashtag 
 				linkTicketshop{ # Ticketshop Link 
-					id # ID - further fields see Link 
+					id # ID 
+					name # Name 
+					url # URL 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+					} 
 				} 
 				linkCommunity{ # Community Link 
-					id # ID - further fields see Link 
+					id # ID 
+					name # Name 
+					url # URL 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+					} 
 				} 
 				thumbnail # Thumbnail 
 				descriptions{ # Meta Descriptions 
@@ -390,10 +625,38 @@ query{
 					description # Description 
 				} 
 				awards{ # Awards 
-					id # ID - further fields see Award 
+					id # ID 
+					name # Name 
+					image # Image 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+						subtitle # Subtitle 
+					} 
+					prize{ # Prize 
+						language # Language 
+						prize # Prize 
+					} 
+					descriptions{ # Descriptions 
+						language # Language 
+						description # Description 
+					} 
+					criteria{ # Criteria 
+						language # Language 
+						criteria # Criteria 
+					} 
 				} 
 				faqs{ # FAQs 
-					id # ID - further fields see FAQs 
+					id # ID 
+					name # Name 
+					question{ # Question 
+						language # Language 
+						question # Question 
+					} 
+					answer{ # Answer 
+						language # Language 
+						answer # Answer 
+					} 
 				} 
 			} 
 			challenge{ # Challenge 
@@ -404,7 +667,75 @@ query{
 					title # Title 
 				} 
 				hackathon{ # Hackathon 
-					id # ID - further fields see Hackathon 
+					id # ID 
+					urlName # URL Name 
+					title # Title 
+					default # Default 
+					active # Active 
+					from # From 
+					to # To 
+					duration # Duration 
+					eventPageActive # Event Page active 
+					contactEmail # Contact EMail 
+					twitter # Twitter Handle 
+					hashtag # Hashtag 
+					linkTicketshop{ # Ticketshop Link 
+						id # ID 
+						name # Name 
+						url # URL 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+						} 
+					} 
+					linkCommunity{ # Community Link 
+						id # ID 
+						name # Name 
+						url # URL 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+						} 
+					} 
+					thumbnail # Thumbnail 
+					descriptions{ # Meta Descriptions 
+						language # Language 
+						description # Description 
+					} 
+					awards{ # Awards 
+						id # ID 
+						name # Name 
+						image # Image 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+							subtitle # Subtitle 
+						} 
+						prize{ # Prize 
+							language # Language 
+							prize # Prize 
+						} 
+						descriptions{ # Descriptions 
+							language # Language 
+							description # Description 
+						} 
+						criteria{ # Criteria 
+							language # Language 
+							criteria # Criteria 
+						} 
+					} 
+					faqs{ # FAQs 
+						id # ID 
+						name # Name 
+						question{ # Question 
+							language # Language 
+							question # Question 
+						} 
+						answer{ # Answer 
+							language # Language 
+							answer # Answer 
+						} 
+					} 
 				} 
 				image # Image 
 				descriptions{ # Descriptions 
@@ -412,13 +743,69 @@ query{
 					description # Description 
 				} 
 				award{ # Award 
-					id # ID - further fields see Award 
+					id # ID 
+					name # Name 
+					image # Image 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+						subtitle # Subtitle 
+					} 
+					prize{ # Prize 
+						language # Language 
+						prize # Prize 
+					} 
+					descriptions{ # Descriptions 
+						language # Language 
+						description # Description 
+					} 
+					criteria{ # Criteria 
+						language # Language 
+						criteria # Criteria 
+					} 
 				} 
 				type{ # Type 
-					id # ID - further fields see Challenge Type 
+					id # ID 
+					title # Title 
+					descriptions{ # Descriptions 
+						language # Language 
+						description # Description 
+					} 
 				} 
 				category{ # Category 
-					id # ID - further fields see Category 
+					id # ID 
+					name # Name 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+					} 
+					image # Image 
+					award{ # Award 
+						id # ID 
+						name # Name 
+						image # Image 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+							subtitle # Subtitle 
+						} 
+						prize{ # Prize 
+							language # Language 
+							prize # Prize 
+						} 
+						descriptions{ # Descriptions 
+							language # Language 
+							description # Description 
+						} 
+						criteria{ # Criteria 
+							language # Language 
+							criteria # Criteria 
+						} 
+					} 
+					descriptions{ # Descriptions 
+						language # Language 
+						description # Description 
+					} 
 				} 
 				author{ # Author 
 					language # Language 
@@ -452,10 +839,22 @@ query{
 			twitter # Twitter Handle 
 			hashtag # Hashtag 
 			linkTicketshop{ # Ticketshop Link 
-				id # ID - further fields see Link 
+				id # ID 
+				name # Name 
+				url # URL 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+				} 
 			} 
 			linkCommunity{ # Community Link 
-				id # ID - further fields see Link 
+				id # ID 
+				name # Name 
+				url # URL 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+				} 
 			} 
 			thumbnail # Thumbnail 
 			descriptions{ # Meta Descriptions 
@@ -463,10 +862,38 @@ query{
 				description # Description 
 			} 
 			awards{ # Awards 
-				id # ID - further fields see Award 
+				id # ID 
+				name # Name 
+				image # Image 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+					subtitle # Subtitle 
+				} 
+				prize{ # Prize 
+					language # Language 
+					prize # Prize 
+				} 
+				descriptions{ # Descriptions 
+					language # Language 
+					description # Description 
+				} 
+				criteria{ # Criteria 
+					language # Language 
+					criteria # Criteria 
+				} 
 			} 
 			faqs{ # FAQs 
-				id # ID - further fields see FAQs 
+				id # ID 
+				name # Name 
+				question{ # Question 
+					language # Language 
+					question # Question 
+				} 
+				answer{ # Answer 
+					language # Language 
+					answer # Answer 
+				} 
 			} 
 		} 
 		date # Date 
@@ -494,13 +921,232 @@ query{
 				roles{ # Roles 
 					title # Title 
 					hackathon{ # Hackathon 
-						id # ID - further fields see Hackathon 
+						id # ID 
+						urlName # URL Name 
+						title # Title 
+						default # Default 
+						active # Active 
+						from # From 
+						to # To 
+						duration # Duration 
+						eventPageActive # Event Page active 
+						contactEmail # Contact EMail 
+						twitter # Twitter Handle 
+						hashtag # Hashtag 
+						linkTicketshop{ # Ticketshop Link 
+							id # ID 
+							name # Name 
+							url # URL 
+							titles{ # Titles 
+								language # Language 
+								title # Title 
+							} 
+						} 
+						linkCommunity{ # Community Link 
+							id # ID 
+							name # Name 
+							url # URL 
+							titles{ # Titles 
+								language # Language 
+								title # Title 
+							} 
+						} 
+						thumbnail # Thumbnail 
+						descriptions{ # Meta Descriptions 
+							language # Language 
+							description # Description 
+						} 
+						awards{ # Awards 
+							id # ID 
+							name # Name 
+							image # Image 
+							titles{ # Titles 
+								language # Language 
+								title # Title 
+								subtitle # Subtitle 
+							} 
+							prize{ # Prize 
+								language # Language 
+								prize # Prize 
+							} 
+							descriptions{ # Descriptions 
+								language # Language 
+								description # Description 
+							} 
+							criteria{ # Criteria 
+								language # Language 
+								criteria # Criteria 
+							} 
+						} 
+						faqs{ # FAQs 
+							id # ID 
+							name # Name 
+							question{ # Question 
+								language # Language 
+								question # Question 
+							} 
+							answer{ # Answer 
+								language # Language 
+								answer # Answer 
+							} 
+						} 
 					} 
 					challenge{ # Challenge 
-						id # ID - further fields see Challenge 
+						id # ID 
+						name # Name 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+						} 
+						hackathon{ # Hackathon 
+							id # ID 
+							urlName # URL Name 
+							title # Title 
+							default # Default 
+							active # Active 
+							from # From 
+							to # To 
+							duration # Duration 
+							eventPageActive # Event Page active 
+							contactEmail # Contact EMail 
+							twitter # Twitter Handle 
+							hashtag # Hashtag 
+							linkTicketshop{ # Ticketshop Link 
+								id # ID 
+								name # Name 
+								url # URL 
+								titles{ # Titles 
+									language # Language 
+									title # Title 
+								} 
+							} 
+							linkCommunity{ # Community Link 
+								id # ID 
+								name # Name 
+								url # URL 
+								titles{ # Titles 
+									language # Language 
+									title # Title 
+								} 
+							} 
+							thumbnail # Thumbnail 
+							descriptions{ # Meta Descriptions 
+								language # Language 
+								description # Description 
+							} 
+							awards{ # Awards 
+								id # ID 
+								name # Name 
+								image # Image 
+								titles{ # Titles 
+									language # Language 
+									title # Title 
+									subtitle # Subtitle 
+								} 
+								prize{ # Prize 
+									language # Language 
+									prize # Prize 
+								} 
+								descriptions{ # Descriptions 
+									language # Language 
+									description # Description 
+								} 
+								criteria{ # Criteria 
+									language # Language 
+									criteria # Criteria 
+								} 
+							} 
+							faqs{ # FAQs 
+								id # ID 
+								name # Name 
+								question{ # Question 
+									language # Language 
+									question # Question 
+								} 
+								answer{ # Answer 
+									language # Language 
+									answer # Answer 
+								} 
+							} 
+						} 
+						image # Image 
+						descriptions{ # Descriptions 
+							language # Language 
+							description # Description 
+						} 
+						award{ # Award 
+							id # ID 
+							name # Name 
+							image # Image 
+							titles{ # Titles 
+								language # Language 
+								title # Title 
+								subtitle # Subtitle 
+							} 
+							prize{ # Prize 
+								language # Language 
+								prize # Prize 
+							} 
+							descriptions{ # Descriptions 
+								language # Language 
+								description # Description 
+							} 
+							criteria{ # Criteria 
+								language # Language 
+								criteria # Criteria 
+							} 
+						} 
+						type{ # Type 
+							id # ID 
+							title # Title 
+							descriptions{ # Descriptions 
+								language # Language 
+								description # Description 
+							} 
+						} 
+						category{ # Category 
+							id # ID 
+							name # Name 
+							titles{ # Titles 
+								language # Language 
+								title # Title 
+							} 
+							image # Image 
+							award{ # Award 
+								id # ID 
+								name # Name 
+								image # Image 
+								titles{ # Titles 
+									language # Language 
+									title # Title 
+									subtitle # Subtitle 
+								} 
+								prize{ # Prize 
+									language # Language 
+									prize # Prize 
+								} 
+								descriptions{ # Descriptions 
+									language # Language 
+									description # Description 
+								} 
+								criteria{ # Criteria 
+									language # Language 
+									criteria # Criteria 
+								} 
+							} 
+							descriptions{ # Descriptions 
+								language # Language 
+								description # Description 
+							} 
+						} 
+						author{ # Author 
+							language # Language 
+							author # author 
+						} 
 					} 
 					role{ # Role 
-						id # ID - further fields see Role 
+						id # ID 
+						title # Title 
 					} 
 					professions{ # Professions 
 						language # Language 
