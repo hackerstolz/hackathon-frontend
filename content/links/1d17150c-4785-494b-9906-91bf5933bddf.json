@@ -1,0 +1,15 @@
+{
+  "id": "1d17150c-4785-494b-9906-91bf5933bddf",
+  "name": "2020Climathon_Ticketshop",
+  "url": "http://community.hackerstolz.de/",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Ticket bestellen"
+    },
+    {
+      "language": "EN",
+      "title": "Buy ticket"
+    }
+  ]
+}
