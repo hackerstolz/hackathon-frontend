@@ -28,5 +28,10 @@
   "id": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
   "to": "1605481140",
   "contactEmail": "climathon@hackertsolz.de",
-  "linkTicketshop": "1d17150c-4785-494b-9906-91bf5933bddf"
+  "linkTicketshop": "1d17150c-4785-494b-9906-91bf5933bddf",
+  "faqs": [
+    {
+      "faw": "fbc0135e-09e0-4284-9a7e-03e1d473f47d"
+    }
+  ]
 }
