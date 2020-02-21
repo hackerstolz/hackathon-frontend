@@ -80,8 +80,12 @@ class SchemaParser{
 		try{
             var file = fs.readFileSync(cmsConfigFile, 'utf8');
             this.doc = yaml.parseDocument(file);
-
-            this.log("Schema Parser initialized with " + cmsConfigFile);
+			if(this.doc.contents === undefined){
+				this.log("ERROR: Reading schema from file " + cmsConfigFile + " failed!");
+				this.initialized = false;
+			}else{
+				this.log("Schema Parser initialized with " + cmsConfigFile);
+			}
          }catch(err){
              this.log("Error: " + err);
              this.initialized = false;

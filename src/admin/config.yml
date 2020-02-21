@@ -19,20 +19,48 @@ collections:
     summary: "{{title}} ({{id}})"
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
+      - {label: "URL Name", name: "urlName", widget: "string", pattern: ['[a-zA-Z0-9_-]*', "URL safe: only characters and numbers"], hint: "A unique(!) URL safe string used in the URL to navigate to this Hackathon"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Active", name: "active", widget: "boolean", default: false}
-      - {label: "Default", name: "default", widget: "boolean", default: false}
-      - {label: "Twitter Handle", name: "twitter", widget: "string"}
-      - {label: "Hashtag", name: "hashtag", widget: "string"}
-      - label: "Thumbnail"
-        name: "thumbnail"
-        widget: "image"
-        media_library:
-          config:
-            max_file_size: 250000 # 250kb
+      - {label: "Default", name: "default", widget: "boolean", default: false, hint: "Hackathon shown if none specified in URL"}
+      - {label: "Active", name: "active", widget: "boolean", default: false, hint: "Visible on website"}
       - {label: "From", name: "from", widget: "datetime", format: "X"}
       - {label: "To", name: "to", widget: "datetime", format: "X"}
       - {label: "Duration", name: "duration", widget: "number", valueType: "int", hint: "Hackduration in Hours"}
+      - {label: "Event Page active", name: "eventPageActive", widget: "boolean", default: false, required: false, hint: "Event Page accessible"}
+      - {label: "Contact EMail", name: "contactEmail", widget: "string", pattern: ['.*@.*\.', "Please provide a valid Email-Address"]}
+      - {label: "Twitter Handle", name: "twitter", widget: "string"}
+      - {label: "Hashtag", name: "hashtag", widget: "string"}
+      - label: Ticketshop Link
+        name: linkTicketshop
+        widget: "relation"
+        collection: "link"
+        required: false
+        searchFields: ["id", "name"]
+        valueField: "id"
+        displayFields: ["name"]
+      - label: Community Link
+        name: linkCommunity
+        widget: "relation"
+        collection: "link"
+        required: false
+        searchFields: ["id", "name"]
+        valueField: "id"
+        displayFields: ["name"]
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Preview image, e.g. shown in browser"
+        media_library:
+          config:
+            max_file_size: 250000 # 250kb       
+      - label: Meta Descriptions
+        name: descriptions
+        widget: list
+        required: false
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Description, name: description, widget: text}
       - label: Awards
         name: awards
         widget: list
@@ -118,6 +146,24 @@ collections:
             searchFields: ["id", "title"]
             valueField: "id"
             displayFields: ["title"]
+  - name: "link"
+    label: "Link"
+    folder: "content/links"
+    create: true
+    format: json
+    slug: "{{slug}}"
+    identifier_field: id
+    summary: "{{name}} ({{id}})"
+    fields:
+      - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: URL, name: url, widget: string}  
+      - label: Titles
+        name: titles
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Title, name: title, widget: string}            
   - name: "type"
     label: "Challenge Type"
     folder: "content/types"
