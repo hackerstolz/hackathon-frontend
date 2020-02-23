@@ -1,0 +1,15 @@
+{
+  "id": "2d4d652a-d5e1-43a1-8b5c-71c8b878cd57",
+  "name": "Imprint Hackerstolz",
+  "url": "https://www.hackerstolz.de/impressum/",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Impressum & Datenschutzerklärung"
+    },
+    {
+      "language": "EN",
+      "title": "Imprint & Privacy Policy"
+    }
+  ]
+}
