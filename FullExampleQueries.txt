@@ -31,6 +31,15 @@ query{
 				title # Title 
 			} 
 		} 
+		linkImprint{ # Imprint Link 
+			id # ID 
+			name # Name 
+			url # URL 
+			titles{ # Titles 
+				language # Language 
+				title # Title 
+			} 
+		} 
 		thumbnail # Thumbnail 
 		descriptions{ # Meta Descriptions 
 			language # Language 
@@ -104,6 +113,15 @@ query{
 				} 
 			} 
 			linkCommunity{ # Community Link 
+				id # ID 
+				name # Name 
+				url # URL 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+				} 
+			} 
+			linkImprint{ # Imprint Link 
 				id # ID 
 				name # Name 
 				url # URL 
@@ -354,6 +372,15 @@ query{
 						title # Title 
 					} 
 				} 
+				linkImprint{ # Imprint Link 
+					id # ID 
+					name # Name 
+					url # URL 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+					} 
+				} 
 				thumbnail # Thumbnail 
 				descriptions{ # Meta Descriptions 
 					language # Language 
@@ -424,6 +451,15 @@ query{
 						} 
 					} 
 					linkCommunity{ # Community Link 
+						id # ID 
+						name # Name 
+						url # URL 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+						} 
+					} 
+					linkImprint{ # Imprint Link 
 						id # ID 
 						name # Name 
 						url # URL 
@@ -619,6 +655,15 @@ query{
 						title # Title 
 					} 
 				} 
+				linkImprint{ # Imprint Link 
+					id # ID 
+					name # Name 
+					url # URL 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+					} 
+				} 
 				thumbnail # Thumbnail 
 				descriptions{ # Meta Descriptions 
 					language # Language 
@@ -689,6 +734,15 @@ query{
 						} 
 					} 
 					linkCommunity{ # Community Link 
+						id # ID 
+						name # Name 
+						url # URL 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+						} 
+					} 
+					linkImprint{ # Imprint Link 
 						id # ID 
 						name # Name 
 						url # URL 
@@ -856,6 +910,15 @@ query{
 					title # Title 
 				} 
 			} 
+			linkImprint{ # Imprint Link 
+				id # ID 
+				name # Name 
+				url # URL 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+				} 
+			} 
 			thumbnail # Thumbnail 
 			descriptions{ # Meta Descriptions 
 				language # Language 
@@ -951,6 +1014,15 @@ query{
 								title # Title 
 							} 
 						} 
+						linkImprint{ # Imprint Link 
+							id # ID 
+							name # Name 
+							url # URL 
+							titles{ # Titles 
+								language # Language 
+								title # Title 
+							} 
+						} 
 						thumbnail # Thumbnail 
 						descriptions{ # Meta Descriptions 
 							language # Language 
@@ -1021,6 +1093,15 @@ query{
 								} 
 							} 
 							linkCommunity{ # Community Link 
+								id # ID 
+								name # Name 
+								url # URL 
+								titles{ # Titles 
+									language # Language 
+									title # Title 
+								} 
+							} 
+							linkImprint{ # Imprint Link 
 								id # ID 
 								name # Name 
 								url # URL 

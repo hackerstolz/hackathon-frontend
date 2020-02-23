@@ -19,6 +19,9 @@ query{
 		linkCommunity{ # Community Link 
 			id # ID - further fields see Link 
 		} 
+		linkImprint{ # Imprint Link 
+			id # ID - further fields see Link 
+		} 
 		thumbnail # Thumbnail 
 		descriptions{ # Meta Descriptions 
 			language # Language 

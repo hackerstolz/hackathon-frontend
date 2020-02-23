@@ -46,6 +46,14 @@ collections:
         searchFields: ["id", "name"]
         valueField: "id"
         displayFields: ["name"]
+      - label: Imprint Link
+        name: linkImprint
+        widget: "relation"
+        collection: "link"
+        required: false
+        searchFields: ["id", "name"]
+        valueField: "id"
+        displayFields: ["name"]
       - label: "Thumbnail"
         name: "thumbnail"
         widget: "image"
