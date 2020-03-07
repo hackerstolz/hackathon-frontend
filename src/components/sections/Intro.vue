@@ -134,23 +134,6 @@
   </section>
 </template>
 
-<static-query>
-query {
-  allHackathon(filter: {default: {eq: true}}) {
-    edges {
-      node {
-        id
-        title
-        descriptions { language description }
-        from
-        to
-        duration
-      }
-    }
-  }
-}
-</static-query>
-
 <script>
 import Countdown from '../Countdown'
 

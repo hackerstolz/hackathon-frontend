@@ -1,6 +1,10 @@
 <template>
   <Layout>
-    <Intro id="intro" :hackathon="$page ? $page.hackathon : defaultHackathon" />
+    <Intro
+      v-if="$page && $page.hackathon"
+      id="intro"
+      :hackathon="$page.hackathon"
+    />
     <About id="about" themeColor="primary" :isMobile="isMobile" />
     <Challenges id="challenges" themeColor="secondary" :isMobile="isMobile" />
     <Awards id="awards" themeColor="primary" :isMobile="isMobile" />
@@ -19,12 +23,38 @@
 <page-query>
 query ($id: ID!) {
   hackathon(id: $id) {
-    id
-    title
-    descriptions { language description }
-    from
-    to
-    duration
+    id # ID 
+		urlName # URL Name 
+		title # Title 
+		default # Default 
+		active # Active 
+		from # From 
+		to # To 
+		duration # Duration 
+		eventPageActive # Event Page active 
+		contactEmail # Contact EMail 
+		twitter # Twitter Handle 
+		hashtag # Hashtag 
+		linkTicketshop{ # Ticketshop Link 
+			id # ID - further fields see Link 
+		} 
+		linkCommunity{ # Community Link 
+			id # ID - further fields see Link 
+		} 
+		linkImprint{ # Imprint Link 
+			id # ID - further fields see Link 
+		} 
+		thumbnail # Thumbnail 
+		descriptions{ # Meta Descriptions 
+			language # Language 
+			description # Description 
+		} 
+		awards{ # Awards 
+			id # ID - further fields see Award 
+		} 
+		faqs{ # FAQs 
+			id # ID - further fields see FAQs 
+		} 
   }
   allChallenge(filter: {hackathon: {eq:$id}}) {
     edges {
@@ -42,11 +72,6 @@ query {
     edges {
       node {
         id
-        title
-        descriptions { language description }
-        from
-        to
-        duration
       }
     }
   }
@@ -61,41 +86,49 @@ const sectionsContext = require.context(
 )
 
 export default {
-  metaInfo: {
-    title: 'Climathon'
-  },
   name: 'Overview',
-  // TODO: replace by query information
-  metaInfo: {
-    title: 'Climathon 2019 • Mannheim',
-    meta: [
-      // OPEN GRAPH (e.g. Facebook)
-      { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://climathon.hackerstolz.de' },
-      { property: 'og:site_name', content: 'Climathon 2019 • Mannheim' },
-      { property: 'og:title', content: 'Climathon 2019 • Mannheim' },
-      {
-        property: 'og:description',
-        content:
-          '🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!'
-      },
-      { property: 'og:image', content: require('../../static/meta-thumb.jpg') },
+  metaInfo() {
+    return {
+      title: this.$page.hackathon.title,
+      meta: [
+        // OPEN GRAPH (e.g. Facebook)
+        { property: 'og:type', content: 'website' },
+        {
+          property: 'og:url',
+          content: `https://climathon.hackerstolz.de/${this.$page.hackathon.id}`
+        },
+        { property: 'og:site_name', content: this.$page.hackathon.title },
+        { property: 'og:title', content: this.$page.hackathon.title },
+        {
+          property: 'og:description',
+          content: this.getI18nNode(
+            this.$page.hackathon.descriptions,
+            this.$i18n.locale
+          ).description
+        },
+        {
+          property: 'og:image',
+          content: this.$page.hackathon.thumbnail
+        },
 
-      // TWITTER
-      { name: 'twitter:title', content: 'Climathon 2019 • Mannheim' },
-      {
-        name: 'twitter:description',
-        content:
-          '🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!'
-      },
-      {
-        name: 'twitter:image',
-        content: require('../../static/meta-thumb.jpg')
-      },
-      { name: 'twitter:image:alt', content: 'Climathon 2019 • Mannheim' },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '@hackerstolz' }
-    ]
+        // TWITTER
+        { name: 'twitter:title', content: this.$page.hackathon.title },
+        {
+          name: 'twitter:description',
+          content: this.getI18nNode(
+            this.$page.hackathon.descriptions,
+            this.$i18n.locale
+          ).description
+        },
+        {
+          name: 'twitter:image',
+          content: this.$page.hackathon.thumbnail
+        },
+        { name: 'twitter:image:alt', content: this.$page.hackathon.title },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: this.$page.hackathon.twitter }
+      ]
+    }
   },
   components: {
     ...sectionsContext.keys().reduce(
@@ -108,6 +141,16 @@ export default {
   },
   props: {
     isMobile: Boolean
+  },
+  methods: {
+    getI18nNode(i18nNodes = [], lang) {
+      const locale = lang.toUpperCase()
+      const [i18nNode] = i18nNodes.filter(
+        n => n.language === locale || n.language === locale.split('-'[0])
+      ) || [{}]
+
+      return i18nNode
+    }
   },
   computed: {
     defaultHackathon() {
@@ -124,11 +167,6 @@ export default {
     if (!this.$route.params.id && this.defaultHackathon.id) {
       this.$router.push(`/${this.defaultHackathon.id}`)
     }
-
-    console.log(this.$route)
-    console.log('$static', this.$static)
-    console.log('$page', this.$page)
-    console.log('$props', this.$props.hackathon)
   }
 }
 </script>

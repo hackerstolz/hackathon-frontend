@@ -1,32 +1,18 @@
 <template>
   <Layout>
     <EventHeader id="header" :isMobile="isMobile" themeColor="secondary" />
-    <EventInfo id="info" :isMobile="isMobile" themeColor="secondary" />
+    <EventInfo
+      id="info"
+      v-if="$page && $page.hackathon"
+      :isMobile="isMobile"
+      :hackathon="$page.hackathon"
+      themeColor="secondary"
+    />
     <EventLocation id="location" :isMobile="isMobile" themeColor="primary" />
     <EventBag id="bag" :isMobile="isMobile" themeColor="secondary" />
     <Footer id="footer" themeColor="primary" />
   </Layout>
 </template>
-
-<page-query>
-query ($id: ID!) {
-  hackathon(id: $id) {
-    id
-    title
-    descriptions { language description }
-    from
-    to
-    duration
-  }
-  allChallenge(filter: {hackathon: {eq:$id}}) {
-    edges {
-      node {
-        id
-      }
-    }
-  }
-}
-</page-query>
 
 <static-query>
 query {
@@ -34,16 +20,28 @@ query {
     edges {
       node {
         id
-        title
-        descriptions { language description }
-        from
-        to
-        duration
       }
     }
   }
 }
 </static-query>
+
+<page-query>
+query ($id: ID!) {
+  hackathon(id: $id) {
+    id
+    title # Title 
+    eventPageActive # Event Page active 
+    twitter # Twitter Handle 
+    thumbnail # Thumbnail 
+		eventPageActive # Event Page active 
+    descriptions { # Meta Descriptions 
+      language # Language 
+      description # Description 
+    } 
+  }
+}
+</page-query>
 
 <script>
 import Footer from '../components/sections/Footer.vue'
@@ -54,41 +52,49 @@ const sectionsContext = require.context(
 )
 
 export default {
-  metaInfo: {
-    title: 'Event Infos'
-  },
   name: 'Event',
-  // TODO: replace by query information
-  metaInfo: {
-    title: 'Climathon 2019 • Mannheim',
-    meta: [
-      // OPEN GRAPH (e.g. Facebook)
-      { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://climathon.hackerstolz.de' },
-      { property: 'og:site_name', content: 'Climathon 2019 • Mannheim' },
-      { property: 'og:title', content: 'Climathon 2019 • Mannheim' },
-      {
-        property: 'og:description',
-        content:
-          '🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!'
-      },
-      { property: 'og:image', content: require('../../static/meta-thumb.jpg') },
+  metaInfo() {
+    return {
+      title: this.$page.hackathon.title,
+      meta: [
+        // OPEN GRAPH (e.g. Facebook)
+        { property: 'og:type', content: 'website' },
+        {
+          property: 'og:url',
+          content: `https://climathon.hackerstolz.de/${this.$page.hackathon.id}`
+        },
+        { property: 'og:site_name', content: this.$page.hackathon.title },
+        { property: 'og:title', content: this.$page.hackathon.title },
+        {
+          property: 'og:description',
+          content: this.getI18nNode(
+            this.$page.hackathon.descriptions,
+            this.$i18n.locale
+          ).description
+        },
+        {
+          property: 'og:image',
+          content: this.$page.hackathon.thumbnail
+        },
 
-      // TWITTER
-      { name: 'twitter:title', content: 'Climathon 2019 • Mannheim' },
-      {
-        name: 'twitter:description',
-        content:
-          '🌍☀️🌈 100+ Teilnehmer*innen • 10+ Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!'
-      },
-      {
-        name: 'twitter:image',
-        content: require('../../static/meta-thumb.jpg')
-      },
-      { name: 'twitter:image:alt', content: 'Climathon 2019 • Mannheim' },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '@hackerstolz' }
-    ]
+        // TWITTER
+        { name: 'twitter:title', content: this.$page.hackathon.title },
+        {
+          name: 'twitter:description',
+          content: this.getI18nNode(
+            this.$page.hackathon.descriptions,
+            this.$i18n.locale
+          ).description
+        },
+        {
+          name: 'twitter:image',
+          content: this.$page.hackathon.thumbnail
+        },
+        { name: 'twitter:image:alt', content: this.$page.hackathon.title },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: this.$page.hackathon.twitter }
+      ]
+    }
   },
   components: {
     ...sectionsContext.keys().reduce(
@@ -106,6 +112,16 @@ export default {
   data() {
     return {}
   },
+  methods: {
+    getI18nNode(i18nNodes = [], lang) {
+      const locale = lang.toUpperCase()
+      const [i18nNode] = i18nNodes.filter(
+        n => n.language === locale || n.language === locale.split('-'[0])
+      ) || [{}]
+
+      return i18nNode
+    }
+  },
   computed: {
     defaultHackathon() {
       const defaultHackathons = this.$static.allHackathon.edges || [
@@ -122,10 +138,14 @@ export default {
       this.$router.push(`/event/${this.defaultHackathon.id}`)
     }
 
-    console.log(this.$route)
-    console.log('$static', this.$static)
-    console.log('$page', this.$page)
-    console.log('$props', this.$props.hackathon)
+    // nav to main page if event site is not active, yet
+    if (
+      this.$page &&
+      this.$page.hackathon &&
+      this.$page.eventPageActive === false
+    ) {
+      this.$router.push(`/${this.defaultHackathon.id}`)
+    }
   }
 }
 </script>

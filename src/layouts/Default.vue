@@ -28,7 +28,6 @@
             <v-icon>close</v-icon>
           </v-btn>
         </v-layout>
-        <!-- TODO: add nav to event -->
         <v-layout column class="ma-0" justify-center>
           <v-menu bottom>
             <template v-slot:activator="{ on }">
@@ -57,19 +56,21 @@
             class="hashtag mb-4"
             outlined
             ripple
-            v-clipboard:copy="'#climathonMA'"
+            v-clipboard:copy="climathonHashtag"
             v-clipboard:success="
               () => copySuccess($t('label.hashtagCopySuccess'))
             "
             @click="() => {}"
           >
-            #climathonMA
+            {{ climathonHashtag }}
             <v-icon right x-small>filter_none</v-icon>
           </v-btn>
           <v-btn
             class="app-btn-contact mb-4"
             color="info"
-            href="mailto:climathon@hackerstolz.de?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc."
+            :href="
+              `mailto:${selectedHackathon.contactEmail}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.`
+            "
             outlined
           >
             {{ $t('button.contactus') }}
@@ -82,6 +83,7 @@
             "
           >
             <v-btn
+              v-if="selectedHackathon.eventPageActive === true"
               class="mb-4"
               color="success"
               width="100%"
@@ -227,10 +229,11 @@ query {
       node {
         id
         title
-        descriptions { language description }
-        from
-        to
-        duration
+        from # From 
+        to # To 
+        contactEmail # Contact EMail 
+        hashtag # Hashtag 
+        eventPageActive
       }
     }
   }
@@ -255,7 +258,6 @@ export default {
   data() {
     return {
       isMobile: false,
-      postEvent: false,
       langs: ['en', 'de'],
       darkMode: true,
       drawer: false,
@@ -328,6 +330,28 @@ export default {
       if (query.lang && query.lang !== this.$root.$i18n.locale) {
         this.setNewLocale(query.lang)
       }
+    }
+  },
+  computed: {
+    selectedHackathon() {
+      const selectedHackathonNodes =
+        (this.$static.allHackathon.edges || []).filter(
+          ({ node }) => node.id === this.$route.params.id
+        ) || []
+      const [firstNode] = selectedHackathonNodes
+      const { node: selectedHackathon } = firstNode || { node: {} }
+
+      return selectedHackathon || {}
+    },
+    climathonHashtag() {
+      const hashtag = this.selectedHackathon.hashtag || ''
+      return hashtag.startsWith('#') ? hashtag : `#${hashtag}`
+    },
+    postEvent() {
+      const endTime = new Date(parseInt(this.selectedHackathon.to, 10) * 1000)
+      const isTimeInPast = new Date() - endTime >= 0
+
+      return isTimeInPast
     }
   },
   watch: {
