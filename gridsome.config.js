@@ -20,6 +20,7 @@ module.exports = {
   templates: {
     hackathon: [
       {
+        name: 'hackathon',
         path: '/:id',
         component: './src/pages/Index.vue'
       },

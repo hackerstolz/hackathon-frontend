@@ -5,11 +5,20 @@
         <v-layout row class="ma-0 mb-4">
           <v-menu bottom>
             <template v-slot:activator="{ on }">
-              <v-btn outlined v-on="on">{{ $t(`button.${$i18n.locale}`) }}</v-btn>
+              <v-btn :small="isMobile" v-on="on" outlined
+                >{{
+                  isMobile
+                    ? $i18n.locale.toUpperCase()
+                    : $t(`button.${$i18n.locale}`)
+                }}<v-icon right>arrow_drop_down</v-icon></v-btn
+              >
             </template>
-
             <v-list class="language-list">
-              <v-list-item v-for="(lang, i) in langs" :key="i" @click="setNewLocale(lang)">
+              <v-list-item
+                v-for="(lang, i) in langs"
+                :key="i"
+                @click="setNewLocale(lang)"
+              >
                 <v-list-item-title>{{ $t(`label.${lang}`) }}</v-list-item-title>
               </v-list-item>
             </v-list>
@@ -19,47 +28,102 @@
             <v-icon>close</v-icon>
           </v-btn>
         </v-layout>
+        <!-- TODO: add nav to event -->
         <v-layout column class="ma-0" justify-center>
+          <v-menu bottom>
+            <template v-slot:activator="{ on }">
+              <v-btn class="mb-4" :small="isMobile" v-on="on" outlined
+                >{{ $t('button.navToArchivedHackathon')
+                }}<v-icon right>arrow_drop_down</v-icon></v-btn
+              >
+            </template>
+            <v-list class="menu-list">
+              <g-link
+                v-for="({ node }, i) in $static.allHackathon.edges"
+                :key="i"
+                :to="
+                  $route.path.startsWith('/event')
+                    ? `/event/${node.id}`
+                    : `/${node.id}`
+                "
+              >
+                <v-list-item>
+                  <v-list-item-title>{{ node.title }}</v-list-item-title>
+                </v-list-item>
+              </g-link>
+            </v-list>
+          </v-menu>
           <v-btn
-            class="mb-4"
+            class="hashtag mb-4"
+            outlined
+            ripple
+            v-clipboard:copy="'#climathonMA'"
+            v-clipboard:success="
+              () => copySuccess($t('label.hashtagCopySuccess'))
+            "
+            @click="() => {}"
+          >
+            #climathonMA
+            <v-icon right x-small>filter_none</v-icon>
+          </v-btn>
+          <v-btn
+            class="app-btn-contact mb-4"
             color="info"
             href="mailto:climathon@hackerstolz.de?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc."
-            text
-          >{{ $t('button.contactus') }}</v-btn>
-          <g-link :to="$route.path !== '/event' ? '/event' : '/'">
-            <v-btn class="mb-4" color="success" width="100%" raised @click="() => {}">
+            outlined
+          >
+            {{ $t('button.contactus') }}
+          </v-btn>
+          <g-link
+            :to="
+              $route.path.startsWith('/event')
+                ? `/${$route.params.id}`
+                : `/event/${$route.params.id}`
+            "
+          >
+            <v-btn
+              class="mb-4"
+              color="success"
+              width="100%"
+              raised
+              @click="() => {}"
+            >
               {{
-              $route.path !== '/event'
-              ? $t('button.toEvent')
-              : $t('button.toOverview')
+                $route.path.startsWith('/event')
+                  ? $t('button.toOverview')
+                  : $t('button.toEvent')
               }}
               <v-icon right>
-                {{
-                $route.path !== '/event' ? 'room' : 'public'
-                }}
+                {{ $route.path.startsWith('/event') ? 'public' : 'room' }}
               </v-icon>
             </v-btn>
           </g-link>
         </v-layout>
-        <v-list v-if="$route.path !== '/event'">
+        <v-list v-if="!$route.path.startsWith('/event')">
           <template v-for="(item, i) in menu">
-            <v-list-item v-scroll-to="`#${item}`" :key="item" ripple @click="() => {}">
+            <v-list-item
+              v-scroll-to="`#${item}`"
+              :key="item"
+              ripple
+              @click="() => {}"
+            >
               <v-list-item-title class="menu-item">
-                {{
-                $t(`label.${item}`)
-                }}
+                {{ $t(`label.${item}`) }}
               </v-list-item-title>
             </v-list-item>
             <v-divider v-if="i < menu.length - 1" :key="i" />
           </template>
         </v-list>
-        <v-list v-if="$route.path === '/event'">
+        <v-list v-if="$route.path.startsWith('/event')">
           <template v-for="(item, i) in menuEvent">
-            <v-list-item v-scroll-to="`#${item}`" :key="item" ripple @click="() => {}">
+            <v-list-item
+              v-scroll-to="`#${item}`"
+              :key="item"
+              ripple
+              @click="() => {}"
+            >
               <v-list-item-title class="menu-item">
-                {{
-                $t(`label.eventMenu.${item}`)
-                }}
+                {{ $t(`label.eventMenu.${item}`) }}
               </v-list-item-title>
             </v-list-item>
             <v-divider v-if="i < menu.length - 1" :key="i" />
@@ -67,43 +131,48 @@
         </v-list>
       </v-navigation-drawer>
 
-      <v-app-bar class="toolbar" app color="transparent" flat :hide-on-scroll="isMobile">
+      <v-app-bar
+        class="toolbar"
+        app
+        color="transparent"
+        flat
+        :hide-on-scroll="isMobile"
+      >
         <v-app-bar-nav-icon @click.stop="drawer = !drawer">
           <v-icon>menu</v-icon>
         </v-app-bar-nav-icon>
-        <v-btn
-          class="hashtag mx-2"
-          text
-          outlined
-          ripple
-          small
-          v-clipboard:copy="'#climathonMA'"
-          v-clipboard:success="
-            () => copySuccess($t('label.hashtagCopySuccess'))
-          "
-          @click="() => {}"
-        >
-          #climathonMA
-          <v-icon right x-small>filter_none</v-icon>
-        </v-btn>
         <v-spacer></v-spacer>
         <v-btn
-          :class="{ 'app-btn-register': true, large: !isMobile }"
-          color="info"
-          href="mailto:climathon@hackerstolz.de?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc."
-          text
-          :icon="isMobile"
-        >
-          {{ isMobile ? null : $t('button.contactus') }}
-          <v-icon v-if="isMobile">email</v-icon>
-        </v-btn>
-        <v-btn
-          v-if="$route.path !== '/event' && !postEvent"
-          :class="{ 'app-btn-register': true, large: !isMobile }"
-          color="success"
+          v-if="!$route.path.startsWith('/event') && !postEvent"
+          :class="{ 'app-btn-register': true, 'mx-2': true, large: !isMobile }"
           :small="isMobile"
+          color="success"
           v-scroll-to="'#registration'"
-        >{{ isMobile ? $t('button.registerShort') : $t('button.register') }}</v-btn>
+          >{{
+            isMobile ? $t('button.registerShort') : $t('button.register')
+          }}</v-btn
+        >
+        <v-menu bottom>
+          <template v-slot:activator="{ on }">
+            <v-btn class="ml-2" :small="isMobile" v-on="on" outlined
+              >{{
+                isMobile
+                  ? $i18n.locale.toUpperCase()
+                  : $t(`button.${$i18n.locale}`)
+              }}<v-icon right>arrow_drop_down</v-icon></v-btn
+            >
+          </template>
+
+          <v-list class="menu-list">
+            <v-list-item
+              v-for="(lang, i) in langs"
+              :key="i"
+              @click="setNewLocale(lang)"
+            >
+              <v-list-item-title>{{ $t(`label.${lang}`) }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </v-app-bar>
 
       <v-content class="pa-0">
@@ -126,7 +195,8 @@
           dark
           text
           @click="notification.show = false"
-        >{{ $t('label.snackbarClose') }}</v-btn>
+          >{{ $t('label.snackbarClose') }}</v-btn
+        >
       </v-snackbar>
       <v-snackbar
         class="snackbar"
@@ -143,109 +213,132 @@
           dark
           text
           @click="snackbar.show = false"
-        >{{ $t('label.snackbarConfirm') }}</v-btn>
+          >{{ $t('label.snackbarConfirm') }}</v-btn
+        >
       </v-snackbar>
     </v-app>
   </div>
 </template>
 
+<static-query>
+query {
+  allHackathon(filter: {default: {eq: true}, active: {eq: true}}) {
+    edges {
+      node {
+        id
+        title
+        descriptions { language description }
+        from
+        to
+        duration
+      }
+    }
+  }
+}
+</static-query>
+
 <script>
-import { getUrlHashQuery as getQuery } from "../i18n";
-import { setTimeout } from "timers";
+import { getUrlHashQuery as getQuery } from '../i18n'
+import { setTimeout } from 'timers'
 
 export default {
-  name: "DefaultLayout",
-  props: {
-    isMobile: Boolean
-  },
+  name: 'DefaultLayout',
+  // FIXME: check why props is not provided via v-route prop
+  // props: {
+  //   isMobile: Boolean
+  // },
   metaInfo() {
     htmlAttrs: {
-      lang: this.$root.$i18n.locale;
+      lang: this.$root.$i18n.locale
     }
   },
   data() {
     return {
-      postEvent: true,
-      langs: ["en", "de"],
+      isMobile: false,
+      postEvent: false,
+      langs: ['en', 'de'],
       darkMode: true,
       drawer: false,
       snackbar: {
         show: false,
-        color: "success",
+        color: 'success',
         timeout: 10000
       },
       notification: {
         show: false,
-        color: "success",
+        color: 'success',
         timeout: 3000,
-        text: ""
+        text: ''
       },
       menu: [
-        "intro",
-        "about",
-        "challenges",
-        "awards",
-        "teams",
-        "location",
-        "schedule",
-        "registration",
-        "staff",
-        "faq",
-        "parties",
-        "team",
-        "footer"
+        'intro',
+        'about',
+        'challenges',
+        'awards',
+        'teams',
+        'location',
+        'schedule',
+        'registration',
+        'staff',
+        'faq',
+        'parties',
+        'team',
+        'footer'
       ],
-      menuEvent: ["info", "location", "bag", "footer"]
-    };
+      menuEvent: ['info', 'location', 'bag', 'footer']
+    }
   },
   mounted() {
     setTimeout(() => {
       // show snackbar with delay
-      this.snackbar.show = true;
-    }, 500);
+      this.snackbar.show = true
+    }, 500)
 
     setTimeout(() => {
       // nav to section initially
       if (this.$route) {
-        this.routeUpdate();
+        this.routeUpdate()
       }
-    }, 1500);
+    }, 1500)
   },
   methods: {
     copySuccess(text) {
-      this.notification.text = text;
-      this.notification.show = true;
+      this.notification.text = text
+      this.notification.show = true
     },
     setNewLocale(lang) {
       // switch locale
-      this.$root.$i18n.locale = lang;
+      this.$root.$i18n.locale = lang
 
       // switch vuetify locale
-      this.$vuetify.lang.current = lang;
+      this.$vuetify.lang.current = lang
 
       // a11y: ensures the lang attribute of the <html> element has a valid value
-      document.querySelector("html").setAttribute("lang", lang);
+      document.querySelector('html').setAttribute('lang', lang)
     },
     routeUpdate() {
-      const query = getQuery() || {};
+      const query = getQuery() || {}
 
       // scroll to section if defined
       if (query.section && document.getElementById(query.section)) {
-        this.$scrollTo(`#${query.section}`);
+        this.$scrollTo(`#${query.section}`)
       }
 
       // switch language
       if (query.lang && query.lang !== this.$root.$i18n.locale) {
-        this.setNewLocale(query.lang);
+        this.setNewLocale(query.lang)
       }
     }
   },
   watch: {
     $route() {
-      this.routeUpdate();
+      this.routeUpdate()
+    },
+    '$parent.isMobile'(b) {
+      this.isMobile = b
     }
   }
-};
+}
 </script>
 
 <i18n>
@@ -286,7 +379,8 @@ export default {
       "contactus": "Contact us",
       "donate": "Donate",
       "toEvent": "On-Event App",
-      "toOverview": "Climathon Overview"
+      "toOverview": "Climathon Overview",
+      "navToArchivedHackathon": "Past Events"
     }
   },
   "de": {
@@ -325,7 +419,8 @@ export default {
       "contactus": "Kontaktiere uns",
       "donate": "Spenden",
       "toEvent": "On-Event App",
-      "toOverview": "Climathon Übersicht"
+      "toOverview": "Climathon Übersicht",
+      "navToArchivedHackathon": "Ehemalige Events"
     }
   }
 }
@@ -335,33 +430,33 @@ export default {
 #default-layout {
   .toolbar {
     z-index: 5;
+  }
 
-    .hashtag {
-      font-family: Roboto Condensed, sans-serif;
-      font-weight: 600;
-      text-transform: none;
+  .hashtag {
+    font-family: Roboto Condensed, sans-serif;
+    font-weight: 600;
+    text-transform: none;
+  }
+
+  .app-btn-register {
+    font-family: Gagalin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1.5px;
+
+    &.large {
+      font-size: 22px;
     }
+  }
 
-    .app-btn-contact {
-      font-family: Gagalin, sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: 1.5px;
+  .app-btn-contact {
+    font-family: Gagalin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1.5px;
 
-      &.large {
-        font-size: 22px;
-      }
-    }
-
-    .app-btn-register {
-      font-family: Gagalin, sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: 1.5px;
-
-      &.large {
-        font-size: 22px;
-      }
+    &.large {
+      font-size: 22px;
     }
   }
 
@@ -378,7 +473,7 @@ export default {
     }
   }
 
-  .language-list {
+  .menu-list {
     background-color: #182445;
   }
 
