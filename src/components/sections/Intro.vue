@@ -44,6 +44,8 @@
           color="error"
         ></v-switch>
         <h1>
+          <!-- TODO: title lines, should be replaced by title in future -->
+          <!-- {{ hackathon.title }} -->
           <div>
             {{
               simulate2050
