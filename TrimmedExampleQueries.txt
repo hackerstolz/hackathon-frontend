@@ -13,6 +13,9 @@ query{
 		contactEmail # Contact EMail 
 		twitter # Twitter Handle 
 		hashtag # Hashtag 
+		hashtags{ # Hashtags 
+			hashtag # Hashtag 
+		} 
 		linkTicketshop{ # Ticketshop Link 
 			id # ID - further fields see Link 
 		} 

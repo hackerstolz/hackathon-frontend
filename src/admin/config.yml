@@ -29,7 +29,13 @@ collections:
       - {label: "Event Page active", name: "eventPageActive", widget: "boolean", default: false, required: false, hint: "Event Page accessible"}
       - {label: "Contact EMail", name: "contactEmail", widget: "string", pattern: ['.*@.*\.', "Please provide a valid Email-Address"]}
       - {label: "Twitter Handle", name: "twitter", widget: "string"}
-      - {label: "Hashtag", name: "hashtag", widget: "string"}
+      - {label: "Hashtag", name: "hashtag", widget: "string", hint: "OBSOLETE"}
+      - label: Hashtags
+        name: hashtags
+        widget: list
+        required: false
+        fields:
+          - {label: "Hashtag", name: "hashtag", widget: "string"}
       - label: Ticketshop Link
         name: linkTicketshop
         widget: "relation"
