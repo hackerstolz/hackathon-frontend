@@ -1,6 +1,14 @@
 {
   "default": true,
   "active": true,
+  "hashtags": [
+    {
+      "hashtag": "#climathonMA"
+    },
+    {
+      "hashtag": "#Climathon"
+    }
+  ],
   "from": "1605254400",
   "thumbnail": "/images/uploads/meta-thumb.jpg",
   "hashtag": "#climathonMA",
