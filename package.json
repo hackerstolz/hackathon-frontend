@@ -13,6 +13,7 @@
     "lodash": "^4.17.15",
     "netlify-cms": "^2.10.13",
     "parse-md": "^2.0.4",
+    "showdown": "^1.9.1",
     "uuid": "^3.4.0",
     "vue-clipboard2": "^0.3.1",
     "vue-i18n": "^8.15.3",
