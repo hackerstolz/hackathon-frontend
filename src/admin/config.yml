@@ -199,6 +199,9 @@ collections:
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
       - {label: "Title", name: "title", widget: "string"} 
+      - label: Color
+        name: color
+        widget: color
       - label: Descriptions
         name: descriptions
         widget: list

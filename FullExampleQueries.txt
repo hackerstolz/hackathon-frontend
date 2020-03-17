@@ -207,6 +207,7 @@ query{
 		type{ # Type 
 			id # ID 
 			title # Title 
+			color # Color 
 			descriptions{ # Descriptions 
 				language # Language 
 				description # Description 
@@ -271,6 +272,7 @@ query{
 	type(id: "<ID>"){
 		id # ID 
 		title # Title 
+		color # Color 
 		descriptions{ # Descriptions 
 			language # Language 
 			description # Description 
@@ -554,6 +556,7 @@ query{
 				type{ # Type 
 					id # ID 
 					title # Title 
+					color # Color 
 					descriptions{ # Descriptions 
 						language # Language 
 						description # Description 
@@ -845,6 +848,7 @@ query{
 				type{ # Type 
 					id # ID 
 					title # Title 
+					color # Color 
 					descriptions{ # Descriptions 
 						language # Language 
 						description # Description 
@@ -1215,6 +1219,7 @@ query{
 						type{ # Type 
 							id # ID 
 							title # Title 
+							color # Color 
 							descriptions{ # Descriptions 
 								language # Language 
 								description # Description 
