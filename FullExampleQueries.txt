@@ -177,6 +177,7 @@ query{
 			} 
 		} 
 		image # Image 
+		color # Color 
 		descriptions{ # Descriptions 
 			language # Language 
 			description # Description 
@@ -219,6 +220,7 @@ query{
 				title # Title 
 			} 
 			image # Image 
+			color # Color 
 			award{ # Award 
 				id # ID 
 				name # Name 
@@ -285,6 +287,7 @@ query{
 			title # Title 
 		} 
 		image # Image 
+		color # Color 
 		award{ # Award 
 			id # ID 
 			name # Name 
@@ -521,6 +524,7 @@ query{
 					} 
 				} 
 				image # Image 
+				color # Color 
 				descriptions{ # Descriptions 
 					language # Language 
 					description # Description 
@@ -563,6 +567,7 @@ query{
 						title # Title 
 					} 
 					image # Image 
+					color # Color 
 					award{ # Award 
 						id # ID 
 						name # Name 
@@ -810,6 +815,7 @@ query{
 					} 
 				} 
 				image # Image 
+				color # Color 
 				descriptions{ # Descriptions 
 					language # Language 
 					description # Description 
@@ -852,6 +858,7 @@ query{
 						title # Title 
 					} 
 					image # Image 
+					color # Color 
 					award{ # Award 
 						id # ID 
 						name # Name 
@@ -1178,6 +1185,7 @@ query{
 							} 
 						} 
 						image # Image 
+						color # Color 
 						descriptions{ # Descriptions 
 							language # Language 
 							description # Description 
@@ -1220,6 +1228,7 @@ query{
 								title # Title 
 							} 
 							image # Image 
+							color # Color 
 							award{ # Award 
 								id # ID 
 								name # Name 

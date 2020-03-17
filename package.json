@@ -7,11 +7,13 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@pake/react-color": "^3.0.0",
     "core-js": "2.6.11",
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "lodash": "^4.17.15",
     "netlify-cms": "^2.10.13",
+    "netlify-cms-widget-color": "^3.0.1",
     "parse-md": "^2.0.4",
     "showdown": "^1.9.1",
     "uuid": "^3.4.0",

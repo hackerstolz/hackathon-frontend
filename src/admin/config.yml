@@ -130,6 +130,9 @@ collections:
         media_library:
           config:
             max_file_size: 512000 # 500kb
+      - label: Color
+        name: color
+        widget: color
       - label: Descriptions
         name: descriptions
         widget: list
@@ -226,6 +229,9 @@ collections:
         media_library:
           config:
             max_file_size: 256000 # 250kb
+      - label: Color
+        name: color
+        widget: color
       - label: Award
         name: award
         widget: "relation"

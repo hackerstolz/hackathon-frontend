@@ -1,5 +1,6 @@
-import CMS from "netlify-cms"
+import CMS from "netlify-cms";
 import uuid from 'uuid/v4';
+import * as ColorWidget from "netlify-cms-widget-color";
 
 /**
  * Create the control widget, this will add a form element to the cms UI
@@ -39,3 +40,4 @@ const IdPreview = window.createClass({
 
 // Register the widget. This lets NetlifyCMS know about our custom widget
 CMS.registerWidget('uuid', IdControl, IdPreview);
+CMS.registerWidget("color", ColorWidget.Control);
