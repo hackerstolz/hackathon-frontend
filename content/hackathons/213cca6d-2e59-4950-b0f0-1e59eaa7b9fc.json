@@ -6,6 +6,11 @@
   "eventPageActive": false,
   "twitter": "@climathonMA",
   "duration": 40,
+  "awards": [
+    {
+      "award": "null"
+    }
+  ],
   "descriptions": [
     {
       "language": "DE",
