@@ -306,42 +306,46 @@ class ContentLoader{
 	
     // Parse Entry for given node and return representation to be added to GraphQL
 	processEntry(schemaNode, value){
-		if(value === undefined) return ""; //Return empty if undefined (so attribute is present, but empty)
+		//if(value === undefined && !schemaNode.isRelation()) return ""; //Return empty if undefined (so attribute is present, but empty) - Empty Relation handled later
+        var returnValue = ( value === undefined ) ? "" : value;
 		
 		if (schemaNode.isArray()){
 		    //this is a list within a node - add ech content line in array
              var gsArray = [];
 			//value is an array -> process list entries recursive
-			for (let contentListEntry of value){
-                //Per array entry provide the sub-node structure like for other nodes as well
-                let gsArrayEntry = {};
-				for(let schemaSubNode of schemaNode.fields.values()){
-					//Recursion - process sub node                       
-					if(schemaSubNode.isRelation() && schemaNode.fields.size == 1){
-						//For a list of only one relation (without other fields in list entry) it is just an array of references (created in next recursion step) avoiding a parent node per reference
-						gsArrayEntry = this.processEntry(schemaSubNode, contentListEntry[schemaSubNode.name]);
-					}else{
-						gsArrayEntry[schemaSubNode.name] = this.processEntry(schemaSubNode, contentListEntry[schemaSubNode.name]);
-					}
-				}
-                //One Array Entry processed -> add it to Array representing list
-                gsArray.push(gsArrayEntry);
-			}
+            if(value !== undefined){
+                for (let contentListEntry of value){
+                    //Per array entry provide the sub-node structure like for other nodes as well
+                    let gsArrayEntry = {};
+                    for(let schemaSubNode of schemaNode.fields.values()){
+                        //Recursion - process sub node                       
+                        if(schemaSubNode.isRelation() && schemaNode.fields.size == 1){
+                            //For a list of only one relation (without other fields in list entry) it is just an array of references (created in next recursion step) avoiding a parent node per reference
+                            gsArrayEntry = this.processEntry(schemaSubNode, contentListEntry[schemaSubNode.name]);
+                        }else{
+                            gsArrayEntry[schemaSubNode.name] = this.processEntry(schemaSubNode, contentListEntry[schemaSubNode.name]);
+                        }
+                    }
+                    //One Array Entry processed -> add it to Array representing list
+                    gsArray.push(gsArrayEntry);
+                }
+            }        
 			//after processing all entries, return array to be added in parent node
 			return gsArray; //this.api.store.createReference(....);
 		}else if (schemaNode.isRelation()){
 			//A reference to another node - value is the ID of referenced node
 			//this.log(value + " in " + schemaNode.parent.name + "." + schemaNode.name + " references to " + schemaNode.relation.collection + "." + schemaNode.relation.idFieldName);
+            
             if(!this.schemaCollections.has(schemaNode.relation.collection) || this.schemaCollections.get(schemaNode.relation.collection).isBlocked){
                 this.log("Reference Skipped: Collection " + schemaNode.relation.collection + " not loaded");
-                return value;
+                return returnValue;
             }else{
-                return this.api.store.createReference(schemaNode.relation.collection, value);                
+                return this.api.store.createReference(schemaNode.relation.collection, returnValue);                
             }
 		}else{
 			//standard field having just a value
 			//this.log(value + " in " + schemaNode.parent.name + "." + schemaNode.name);
-			return value;
+			return returnValue;
 		}
 	}
 	
