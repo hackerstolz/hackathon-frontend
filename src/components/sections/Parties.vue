@@ -2,20 +2,12 @@
   <section :style="{ backgroundColor: sectionColor }">
     <v-container>
       <h2>{{ $t('sponsorsTitle') }}</h2>
-      <p v-if="!postEvent" class="intro-sponsors mt-5 mb-4" v-html="$t('introSponsors')"></p>
-      <!-- <v-btn
-        class="mb-5"
-        color="info"
-        target="_blank"
-        href="https://betterplace.org/p71036"
-        text
-        outlined
-      >
-        {{ $t("button.donate") }}
-        <v-icon right>card_giftcard</v-icon>
-      </v-btn>-->
+      <p
+        class="intro-sponsors mt-5 mb-4"
+        v-html="$t('introSponsors', { mailto: $props.hackathon.contactEmail })"
+      ></p>
       <v-img
-        v-if="sponsors.length === 0"
+        v-if="$props.sponsors.length === 0"
         class="icon-large mt-4"
         :src="require('../../assets/icons/flat-icon-money-large.svg')"
         max-height="245px"
@@ -24,9 +16,16 @@
         width="245px"
         contain
       ></v-img>
-      <v-layout v-if="sponsors.length > 0" class="my-4" row wrap align-center justify-center>
+      <v-layout
+        v-if="$props.sponsors.length > 0"
+        class="my-4"
+        row
+        wrap
+        align-center
+        justify-center
+      >
         <v-flex
-          v-for="(sponsor, i) in sponsors"
+          v-for="(sponsor, i) in $props.sponsors"
           :key="i"
           :class="{
             'stack-grid-item': true,
@@ -37,9 +36,9 @@
           }"
         >
           <v-img
-            v-if="sponsor.challenge"
+            v-if="sponsor.role.challenge"
             class="batch"
-            :src="require('../../assets/challenge-sponsor.svg')"
+            :src="require('../../assets/challenge-technology.svg')"
             max-height="96px"
             max-width="96px"
             height="96px"
@@ -49,7 +48,7 @@
           <v-img
             class="mx-4 my-2"
             :lazy-src="require('../../../static/placeholder.svg')"
-            :src="sponsor.icon || require('../../../static/placeholder.svg')"
+            :src="sponsor.logo || require('../../../static/placeholder.svg')"
             max-height="160px"
             max-width="160px"
             height="160px"
@@ -59,30 +58,26 @@
           <p
             :class="{
               'sponsor-title': true,
-              challenge: sponsor.challenge,
+              challenge: sponsor.role.challenge,
               'my-1': true
             }"
-          >{{ sponsor.name }}</p>
+          >
+            {{ getI18nNode(sponsor.names, $i18n.locale).name }}
+          </p>
           <v-btn
-            v-if="
-              sponsor.challenge &&
-                sponsor.challengeID !== null
-            "
+            v-if="sponsor.role.challenge"
             class="mt-2"
             width="auto"
             color="info"
             outlined
             text
             small
-            @click="() => ($scrollTo(`#challenge-${sponsor.challengeID}`))"
-          >{{ $t('button.showChallenge') }}</v-btn>
-          <div
-            v-if="
-              !sponsor.challenge ||
-                sponsor.challengeID === null
-            "
-            style="height: 42px"
-          >&nbsp;</div>
+            @click="() => $scrollTo(`#challenge-${sponsor.role.challenge.id}`)"
+            >{{ $t('button.showChallenge') }}</v-btn
+          >
+          <div v-if="!sponsor.role.challenge" style="height: 42px">
+            &nbsp;
+          </div>
         </v-flex>
       </v-layout>
       <p class="outro-sponsors my-5">{{ $t('outroSponsors') }}</p>
@@ -123,9 +118,12 @@
       </v-layout>
 
       <h2>{{ $t('partnersTitle') }}</h2>
-      <p class="intro-partners my-5" v-html="$t('introPartners')"></p>
+      <p
+        class="intro-partners my-5"
+        v-html="$t('introPartners', { mailto: $props.hackathon.contactEmail })"
+      ></p>
       <v-img
-        v-if="partners.length === 0"
+        v-if="$props.partners.length === 0"
         class="icon-large mt-4"
         :src="require('../../assets/icons/flat-icon-heart-large.svg')"
         max-height="245px"
@@ -134,9 +132,16 @@
         width="245px"
         contain
       ></v-img>
-      <v-layout v-if="partners.length > 0" class="my-4" row wrap align-center justify-center>
+      <v-layout
+        v-if="$props.partners.length > 0"
+        class="my-4"
+        row
+        wrap
+        align-center
+        justify-center
+      >
         <v-flex
-          v-for="(partner, i) in partners"
+          v-for="(partner, i) in $props.partners"
           :key="i"
           :class="{
             'stack-grid-item': true,
@@ -149,24 +154,23 @@
           <v-img
             class="mx-4 my-2"
             :lazy-src="require('../../../static/placeholder.svg')"
-            :src="partner.icon || require('../../../static/placeholder.svg')"
+            :src="partner.logo || require('../../../static/placeholder.svg')"
             max-height="160px"
             max-width="160px"
             height="160px"
             width="160px"
             contain
           ></v-img>
-          <p class="partner-title my-1">{{ partner.name }}</p>
+          <p class="partner-title my-1">
+            {{ getI18nNode(partner.names, $i18n.locale).name }}
+          </p>
           <p
             :class="{
               'partner-subtitle': true,
-              'my-1': true,
-              important: partner.important
+              'my-1': true
             }"
           >
-            {{
-            $i18n.locale === 'en' ? partner.purpose[0] : partner.purpose[1]
-            }}
+            {{ getI18nNode(partner.role.subtitles, $i18n.locale).subtitle }}
           </p>
         </v-flex>
       </v-layout>
@@ -176,13 +180,26 @@
 
 <script>
 export default {
-  name: "Parties",
+  name: 'Parties',
   props: {
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     },
-    isMobile: Boolean
+    isMobile: Boolean,
+    hackathon: Object,
+    sponsors: Array,
+    partners: Array
+  },
+  methods: {
+    getI18nNode(i18nNodes = [], lang) {
+      const locale = lang.toUpperCase()
+      const [i18nNode = {}] = i18nNodes.filter(
+        n => n.language === locale || n.language === locale.split('-'[0])
+      ) || [{}]
+
+      return i18nNode
+    }
   },
   computed: {
     sectionColor: function() {
@@ -190,119 +207,20 @@ export default {
         this.themeColor
       ) !== -1
         ? this.$vuetify.theme.themes.dark[this.themeColor]
-        : this.$vuetify.theme.themes.dark.primary;
+        : this.$vuetify.theme.themes.dark.primary
     }
-  },
-  data() {
-    return {
-      postEvent: true,
-      sponsors: [
-        {
-          icon: "", // require('../../assets/sponsor/sponsor-op.svg'),
-          name: "objective partner",
-          challenge: true,
-          challengeID: 7
-        },
-        {
-          icon: "", // require('../../assets/sponsor/sponsor-rnv.svg'),
-          name: "Rhein-Neckar-Verkehr GmbH",
-          challenge: true,
-          challengeID: 1
-        },
-        {
-          icon: "", // require('../../assets/sponsor/sponsor-gbg.svg'),
-          name: "GBG Mannheim",
-          challenge: true,
-          challengeID: 0
-        },
-        {
-          icon: "", // require('../../assets/sponsor/sponsor-mvv.jpg'),
-          name: "MVV Energie AG",
-          challenge: true,
-          challengeID: 0
-        },
-        {
-          icon: "", // require('../../assets/sponsor/sponsor-camelot.jpg'),
-          name: "CAMELOT Management Consultants AG",
-          challenge: true,
-          challengeID: null
-        },
-        {
-          icon: "", // require('../../assets/sponsor/sponsor-valantic.jpg'),
-          name: "valantic",
-          challenge: false,
-          challengeID: null
-        },
-        {
-          icon: "", // require('../../assets/sponsor/sponsor-basf.svg'),
-          name: "BASF SE",
-          challenge: false,
-          challengeID: null
-        },
-        {
-          icon: "", // require('../../assets/sponsor/sponsor-ueberbit.svg'),
-          name: "UEBERBIT GmbH",
-          challenge: false,
-          challengeID: null
-        },
-        {
-          icon: "", // require('../../assets/sponsor/sponsor-onwerk.jpeg'),
-          name: "Onwerk GmbH",
-          challenge: false,
-          challengeID: null
-        }
-      ],
-      partners: [
-        {
-          icon: "", // require('../../assets/partner/partner-startup-ma.svg'),
-          name: "STARTUP MANNHEIM",
-          important: true,
-          purpose: ["Location Partner", "Location Partner"]
-        },
-        {
-          icon: "", // require('../../assets/partner/partner-ksa.svg'),
-          name: "Klimaschutzagentur Mannheim",
-          important: true,
-          purpose: ["Sustainability Partner", "Sustainability Partner"]
-        },
-        {
-          icon: "", // require('../../assets/partner/partner-shub.png'),
-          name: "S-HUB Accelerator",
-          important: true,
-          purpose: ["Award Partner", "Award Partner"]
-        },
-        {
-          icon: "", // require('../../assets/partner/partner-projecttogether.png'),
-          name: "ProjectTogether",
-          important: true,
-          purpose: ["Award Partner", "Award Partner"]
-        },
-        {
-          icon: "", // require('../../assets/partner/partner-kompass.jpg'),
-          name: "Hochschule Mannheim • Kompass",
-          important: false,
-          purpose: ["Network Partner", "Netzwerk Partner"]
-        },
-        {
-          icon: "", // require('../../assets/partner/partner-stocard.jpg'),
-          name: "Stocard GmbH",
-          important: false,
-          purpose: ["Hydration Mate", "Hydration Mate"]
-        }
-      ]
-    };
   }
-};
+}
 </script>
 
 <i18n>
 {
   "en": {
     "sponsorsTitle": "Sponsors",
-    "introSponsors": "Make a difference, with your sponsoring you support promising projects or even startups which aim to save our planet – what else could you wish for? Not enough, as you wish, here some more arguments for you: You are mentioned at the event and on social media. Establish your company as a relevant and sustainable tech player in the dynamic coding community. And beside that you can provide your own challenge and prize depending on the sponsoring package of your choice. Benefit from the inventiveness of the teams working on your challenge. Act now and <a class='link' href='mailto:climathon@hackerstolz.de?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>contact us</a>!",
+    "introSponsors": "Make a difference, with your sponsoring you support promising projects or even startups which aim to save our planet – what else could you wish for? Not enough, as you wish, here some more arguments for you: You are mentioned at the event and on social media. Establish your company as a relevant and sustainable tech player in the dynamic coding community. And beside that you can provide your own challenge and prize depending on the sponsoring package of your choice. Benefit from the inventiveness of the teams working on your challenge. Act now and <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>contact us</a>!",
     "outroSponsors": "It is difficult to establish a clear and quantifiable criterion as to which sustainability criteria a sponsor must meet. Therefore, we will review different sources to get an idea of how sustainable a sponsor is. These criteria include: The last sustainability report, ISO-50001 certification, published climate indicators such as the X-Degree-Compatibility (XDC), rating in the CDP Climate Scoring etc., are all relevant criteria. If we have the impression that a sponsor does not meet our sustainability expectations, we can reject the sponsor.",
     "partnersTitle": "Partners",
-    "introPartners": "You can’t support us financially? No problem, help us to promote  the event, become a network and media partner or support us with an immaterial contribution like mentors for the teams, etc. <a class='link' href='mailto:climathon@hackerstolz.de?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>Contact us</a>!",
+    "introPartners": "You can’t support us financially? No problem, help us to promote  the event, become a network and media partner or support us with an immaterial contribution like mentors for the teams, etc. <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>Contact us</a>!",
     "button": {
       "link2Iso500001": "ISO-500001",
       "link2XDC": "XDC",
@@ -313,10 +231,10 @@ export default {
   },
   "de": {
     "sponsorsTitle": "Sponsoren",
-    "introSponsors": "Macht den Unterschied, mit eurem Sponsoring unterstützt ihr vielversprechende Projekte oder gar Start-ups, die darauf abzielen, unseren Planeten zu retten - was wollt ihr euch mehr wünschen? Nicht genug? Wie ihr wünscht, hier noch ein paar weitere Argumente für euch: Ihr werdet auf der Veranstaltung und in Social Media erwähnt. Etabliert euer Unternehmen als relevanten und nachhaltigen Technologiepartner in der dynamischen Programmiergemeinschaft. Und außerdem könnt ihr je nach Sponsoring-Paket eurer Wahl eure eigene Herausforderung und euren eigenen Preis anbieten. Profitiert vom Ideenreichtum der Teams, die an eurer Herausforderung arbeiten. Handelt jetzt und <a class='link' href='mailto:climathon@hackerstolz.de?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>kontaktiert uns</a>!",
+    "introSponsors": "Macht den Unterschied, mit eurem Sponsoring unterstützt ihr vielversprechende Projekte oder gar Start-ups, die darauf abzielen, unseren Planeten zu retten - was wollt ihr euch mehr wünschen? Nicht genug? Wie ihr wünscht, hier noch ein paar weitere Argumente für euch: Ihr werdet auf der Veranstaltung und in Social Media erwähnt. Etabliert euer Unternehmen als relevanten und nachhaltigen Technologiepartner in der dynamischen Programmiergemeinschaft. Und außerdem könnt ihr je nach Sponsoring-Paket eurer Wahl eure eigene Herausforderung und euren eigenen Preis anbieten. Profitiert vom Ideenreichtum der Teams, die an eurer Herausforderung arbeiten. Handelt jetzt und <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>kontaktiert uns</a>!",
     "outroSponsors": "Es ist schwierig, ein klares und quantifizierbares Kriterium festzulegen, welche Nachhaltigkeitskriterien ein Sponsor erfüllen muss. Daher werden wir verschiedene Quellen überprüfen, um eine Vorstellung davon zu bekommen, wie nachhaltig ein Sponsor ist. Zu diesen Kriterien gehören: Der letzte Nachhaltigkeitsbericht, die ISO-50001-Zertifizierung, veröffentlichte Klimaindikatoren wie die X-Degree-Compatibility (XDC), die Bewertung im CDP Climate Scoring etc. sind alle relevante Kriterien. Wenn wir den Eindruck haben, dass ein Sponsor unsere Nachhaltigkeitserwartungen nicht erfüllt, können wir den Sponsor ablehnen.",
     "partnersTitle": "Partner",
-    "introPartners": "Du kannst uns nicht finanziell unterstützen? Kein Problem, helft uns, die Veranstaltung zu bewerben, werdet Netzwerk- und Medienpartner oder unterstützt uns mit einem immateriellen Beitrag wie Mentoren für die Teams, etc. <a class='link' href='mailto:climathon@hackerstolz.de?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>Kontaktiert uns</a>!",
+    "introPartners": "Du kannst uns nicht finanziell unterstützen? Kein Problem, helft uns, die Veranstaltung zu bewerben, werdet Netzwerk- und Medienpartner oder unterstützt uns mit einem immateriellen Beitrag wie Mentoren für die Teams, etc. <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>Kontaktiert uns</a>!",
     "button": {
       "link2Iso500001": "ISO-500001",
       "link2XDC": "XDC",

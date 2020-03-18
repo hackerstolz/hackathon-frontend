@@ -222,24 +222,6 @@
   </div>
 </template>
 
-<static-query>
-query {
-  allHackathon(filter: {default: {eq: true}, active: {eq: true}}) {
-    edges {
-      node {
-        id
-        title
-        from # From 
-        to # To 
-        contactEmail # Contact EMail 
-        hashtag # Hashtag 
-        eventPageActive
-      }
-    }
-  }
-}
-</static-query>
-
 <script>
 import { getUrlHashQuery as getQuery } from '../i18n'
 import { setTimeout } from 'timers'
@@ -555,3 +537,21 @@ export default {
   }
 }
 </style>
+
+<static-query>
+query {
+  allHackathon(filter: {default: {eq: true}, active: {eq: true}}) {
+    edges {
+      node {
+        id
+        title
+        from # From 
+        to # To 
+        contactEmail # Contact EMail 
+        hashtag # Hashtag 
+        eventPageActive
+      }
+    }
+  }
+}
+</static-query>

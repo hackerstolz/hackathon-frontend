@@ -14,37 +14,6 @@
   </Layout>
 </template>
 
-<static-query>
-query {
-  allHackathon(filter: {default: {eq: true}, active: {eq: true}}) {
-    edges {
-      node {
-        id
-      }
-    }
-  }
-}
-</static-query>
-
-<page-query>
-query ($id: ID!) {
-  hackathon(id: $id) {
-    id
-    title # Title 
-    twitter # Twitter Handle 
-    thumbnail # Thumbnail 
-    eventPageActive # Event Page active 
-    descriptions { # Meta Descriptions 
-      language # Language 
-      description # Description 
-    }
-    hashtags { # Hashtags 
-      hashtag # Hashtag 
-    } 
-  }
-}
-</page-query>
-
 <script>
 import Footer from '../components/sections/Footer.vue'
 const sectionsContext = require.context(
@@ -157,3 +126,34 @@ export default {
 </i18n>
 
 <style scoped lang="stylus"></style>
+
+<static-query>
+query {
+  allHackathon(filter: {default: {eq: true}, active: {eq: true}}) {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+}
+</static-query>
+
+<page-query>
+query ($id: ID!) {
+  hackathon(id: $id) {
+    id
+    title # Title 
+    twitter # Twitter Handle 
+    thumbnail # Thumbnail 
+    eventPageActive # Event Page active 
+    descriptions { # Meta Descriptions 
+      language # Language 
+      description # Description 
+    }
+    hashtags { # Hashtags 
+      hashtag # Hashtag 
+    } 
+  }
+}
+</page-query>

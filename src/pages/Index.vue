@@ -59,11 +59,222 @@
       themeColor="primary"
       :faqs="$page.hackathon.faqs || []"
     />
-    <Parties id="parties" themeColor="secondary" :isMobile="isMobile" />
+    <Parties
+      v-if="$page && $page.allPartner && $page.hackathon"
+      id="parties"
+      themeColor="secondary"
+      :isMobile="isMobile"
+      :hackathon="$page.hackathon"
+      :sponsors="allSponsors"
+      :partners="allPartners"
+    />
     <Organizer id="team" themeColor="primary" :isMobile="isMobile" />
     <Footer id="footer" themeColor="primary" :isMobile="isMobile" />
   </Layout>
 </template>
+
+<script>
+const sectionsContext = require.context(
+  '../components/sections/',
+  false,
+  /.*\.vue$/
+)
+
+export default {
+  name: 'Overview',
+  metaInfo() {
+    return {
+      title: this.$page.hackathon.title,
+      meta: [
+        // OPEN GRAPH (e.g. Facebook)
+        { property: 'og:type', content: 'website' },
+        {
+          property: 'og:url',
+          content: `https://climathon.hackerstolz.de/${this.$page.hackathon.id}`
+        },
+        { property: 'og:site_name', content: this.$page.hackathon.title },
+        { property: 'og:title', content: this.$page.hackathon.title },
+        {
+          property: 'og:description',
+          content: this.getI18nNode(
+            this.$page.hackathon.descriptions,
+            this.$i18n.locale
+          ).description
+        },
+        {
+          property: 'og:image',
+          content: this.$page.hackathon.thumbnail
+        },
+
+        // TWITTER
+        { name: 'twitter:title', content: this.$page.hackathon.title },
+        {
+          name: 'twitter:description',
+          content: this.getI18nNode(
+            this.$page.hackathon.descriptions,
+            this.$i18n.locale
+          ).description
+        },
+        {
+          name: 'twitter:image',
+          content: this.$page.hackathon.thumbnail
+        },
+        { name: 'twitter:image:alt', content: this.$page.hackathon.title },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: this.$page.hackathon.twitter }
+      ]
+    }
+  },
+  components: {
+    ...sectionsContext.keys().reduce(
+      (map, key) => ({
+        ...map,
+        [sectionsContext(key).default.name]: sectionsContext(key).default
+      }),
+      {}
+    )
+  },
+  props: {
+    isMobile: Boolean
+  },
+  methods: {
+    getI18nNode(i18nNodes = [], lang) {
+      const locale = lang.toUpperCase()
+      const [i18nNode = {}] = i18nNodes.filter(
+        n => n.language === locale || n.language === locale.split('-'[0])
+      ) || [{}]
+
+      return i18nNode
+    }
+  },
+  computed: {
+    defaultHackathon() {
+      const defaultHackathons = this.$static.allHackathon.edges || [
+        { node: {} }
+      ]
+      const [{ node: defaultHackathon }] = defaultHackathons
+
+      return defaultHackathon || {}
+    },
+    isEventOver() {
+      const endTime = new Date(parseInt(this.$page.hackathon.to, 10) * 1000)
+      const isTimeInPast = new Date() - endTime >= 0
+
+      return isTimeInPast
+    },
+    allSpeakers() {
+      return this.$page && this.$page.allPerson
+        ? this.$page.allPerson.edges
+            .filter(({ node }) =>
+              node.roles.some(({ role }) => role.title === 'Speaker')
+            )
+            .map(({ node }) => node)
+        : []
+    },
+    allMentors() {
+      const allMentors =
+        this.$page && this.$page.allPerson
+          ? this.$page.allPerson.edges
+              .filter(({ node }) =>
+                node.roles.some(({ role }) =>
+                  [
+                    'Technology Mentor',
+                    'Challenge Mentor',
+                    'Pitch Trainer'
+                  ].includes(role.title)
+                )
+              )
+              .map(({ node }) => node)
+          : []
+      let allMentorRoles = []
+
+      for (const mentor of allMentors) {
+        for (const role of mentor.roles) {
+          if (
+            ['Technology Mentor', 'Challenge Mentor', 'Pitch Trainer'].includes(
+              role.role.title
+            )
+          ) {
+            allMentorRoles.push({
+              ...mentor,
+              roles: [role]
+            })
+          }
+        }
+      }
+
+      return allMentorRoles
+    },
+    allJudges() {
+      return this.$page && this.$page.allPerson
+        ? this.$page.allPerson.edges
+            .filter(({ node }) =>
+              node.roles.some(({ role }) => role.title === 'Judge')
+            )
+            .map(({ node }) => node)
+        : []
+    },
+    allPartners() {
+      const allPartners =
+        this.$page && this.$page.allPartner
+          ? this.$page.allPartner.edges
+              .filter(({ node }) =>
+                node.roles.some(role => role.isSponsor === false)
+              )
+              .map(({ node }) => node)
+          : []
+      let allPartnerRoles = []
+
+      for (const partner of allPartners) {
+        for (const role of partner.roles) {
+          if (role.isSponsor === false) {
+            allPartnerRoles.push({
+              ...partner,
+              role: role
+            })
+          }
+        }
+      }
+
+      return allPartnerRoles
+    },
+    allSponsors() {
+      const allSponsors =
+        this.$page && this.$page.allPartner
+          ? this.$page.allPartner.edges
+              .filter(({ node }) => node.roles.some(role => role.isSponsor))
+              .map(({ node }) => node)
+          : []
+      let allSponsorRoles = []
+
+      for (const sponsor of allSponsors) {
+        for (const role of sponsor.roles) {
+          if (role.isSponsor) {
+            allSponsorRoles.push({
+              ...sponsor,
+              role: role
+            })
+          }
+        }
+      }
+
+      return allSponsorRoles
+    }
+  },
+  mounted() {
+    // forward to default hackathon if no ID was provided
+    if (!this.$route.params.id && this.defaultHackathon.id) {
+      this.$router.push(`/${this.defaultHackathon.id}`)
+    }
+  }
+}
+</script>
+
+<i18n>
+{}
+</i18n>
+
+<style scoped lang="stylus"></style>
 
 <page-query>
 query ($id: ID!) {
@@ -285,6 +496,29 @@ query ($id: ID!) {
       }
     }
   }
+  allPartner(filter: { roles: { hackathon: { eq: $id } } }) {
+    edges {
+      node {
+      id # ID 
+      nameInternal # (internal) Name 
+      names{ # Names 
+        language # Language 
+        name # Name 
+      } 
+      logo # Logo 
+      roles{ # Roles 
+        challenge{ # Challenge 
+          id # ID 
+        } 
+        isSponsor # Sponsor 
+        subtitles{ # Subtitles 
+          language # Language 
+          subtitle # subtitle 
+        } 
+      } 
+      }
+    }
+  }
 }
 </page-query>
 
@@ -299,160 +533,3 @@ query {
   }
 }
 </static-query>
-
-<script>
-const sectionsContext = require.context(
-  '../components/sections/',
-  false,
-  /.*\.vue$/
-)
-
-export default {
-  name: 'Overview',
-  metaInfo() {
-    return {
-      title: this.$page.hackathon.title,
-      meta: [
-        // OPEN GRAPH (e.g. Facebook)
-        { property: 'og:type', content: 'website' },
-        {
-          property: 'og:url',
-          content: `https://climathon.hackerstolz.de/${this.$page.hackathon.id}`
-        },
-        { property: 'og:site_name', content: this.$page.hackathon.title },
-        { property: 'og:title', content: this.$page.hackathon.title },
-        {
-          property: 'og:description',
-          content: this.getI18nNode(
-            this.$page.hackathon.descriptions,
-            this.$i18n.locale
-          ).description
-        },
-        {
-          property: 'og:image',
-          content: this.$page.hackathon.thumbnail
-        },
-
-        // TWITTER
-        { name: 'twitter:title', content: this.$page.hackathon.title },
-        {
-          name: 'twitter:description',
-          content: this.getI18nNode(
-            this.$page.hackathon.descriptions,
-            this.$i18n.locale
-          ).description
-        },
-        {
-          name: 'twitter:image',
-          content: this.$page.hackathon.thumbnail
-        },
-        { name: 'twitter:image:alt', content: this.$page.hackathon.title },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:site', content: this.$page.hackathon.twitter }
-      ]
-    }
-  },
-  components: {
-    ...sectionsContext.keys().reduce(
-      (map, key) => ({
-        ...map,
-        [sectionsContext(key).default.name]: sectionsContext(key).default
-      }),
-      {}
-    )
-  },
-  props: {
-    isMobile: Boolean
-  },
-  methods: {
-    getI18nNode(i18nNodes = [], lang) {
-      const locale = lang.toUpperCase()
-      const [i18nNode = {}] = i18nNodes.filter(
-        n => n.language === locale || n.language === locale.split('-'[0])
-      ) || [{}]
-
-      return i18nNode
-    }
-  },
-  computed: {
-    defaultHackathon() {
-      const defaultHackathons = this.$static.allHackathon.edges || [
-        { node: {} }
-      ]
-      const [{ node: defaultHackathon }] = defaultHackathons
-
-      return defaultHackathon || {}
-    },
-    isEventOver() {
-      const endTime = new Date(parseInt(this.$page.hackathon.to, 10) * 1000)
-      const isTimeInPast = new Date() - endTime >= 0
-
-      return isTimeInPast
-    },
-    allSpeakers() {
-      return this.$page && this.$page.allPerson
-        ? this.$page.allPerson.edges
-            .filter(({ node }) =>
-              node.roles.some(({ role }) => role.title === 'Speaker')
-            )
-            .map(({ node }) => node)
-        : []
-    },
-    allMentors() {
-      const allMentors =
-        this.$page && this.$page.allPerson
-          ? this.$page.allPerson.edges
-              .filter(({ node }) =>
-                node.roles.some(({ role }) =>
-                  [
-                    'Technology Mentor',
-                    'Challenge Mentor',
-                    'Pitch Trainer'
-                  ].includes(role.title)
-                )
-              )
-              .map(({ node }) => node)
-          : []
-      let allMentorRoles = []
-
-      for (const mentor of allMentors) {
-        for (const role of mentor.roles) {
-          if (
-            ['Technology Mentor', 'Challenge Mentor', 'Pitch Trainer'].includes(
-              role.role.title
-            )
-          ) {
-            allMentorRoles.push({
-              ...mentor,
-              roles: [role]
-            })
-          }
-        }
-      }
-
-      return allMentorRoles
-    },
-    allJudges() {
-      return this.$page && this.$page.allPerson
-        ? this.$page.allPerson.edges
-            .filter(({ node }) =>
-              node.roles.some(({ role }) => role.title === 'Judge')
-            )
-            .map(({ node }) => node)
-        : []
-    }
-  },
-  mounted() {
-    // forward to default hackathon if no ID was provided
-    if (!this.$route.params.id && this.defaultHackathon.id) {
-      this.$router.push(`/${this.defaultHackathon.id}`)
-    }
-  }
-}
-</script>
-
-<i18n>
-{}
-</i18n>
-
-<style scoped lang="stylus"></style>
