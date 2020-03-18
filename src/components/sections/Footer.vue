@@ -10,7 +10,13 @@
           class="mx-3"
           icon
         >
-          <v-img :src="link.icon" height="24" width="24" position="center" contain></v-img>
+          <v-img
+            :src="link.icon"
+            height="24"
+            width="24"
+            position="center"
+            contain
+          ></v-img>
         </v-btn>
       </v-card-text>
 
@@ -72,7 +78,7 @@
         <v-spacer></v-spacer>
         <v-btn
           class="mb-4"
-          href="https://www.hackerstolz.de/impressum/"
+          :href="$props.hackathon.linkImprint.url"
           target="_blank"
           outlined
           small
@@ -88,13 +94,14 @@
 
 <script>
 export default {
-  name: "Footer",
+  name: 'Footer',
   props: {
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     },
-    isMobile: Boolean
+    isMobile: Boolean,
+    hackathon: Object
   },
   computed: {
     sectionColor: function() {
@@ -102,34 +109,34 @@ export default {
         this.themeColor
       ) !== -1
         ? this.$vuetify.theme.themes.dark[this.themeColor]
-        : this.$vuetify.theme.themes.dark.primary;
+        : this.$vuetify.theme.themes.dark.primary
     }
   },
   data: () => ({
     links: [
       {
-        icon: require("../../assets/icons/icon-twitter.svg"),
-        href: "https://twitter.com/hackerstolz"
+        icon: require('../../assets/icons/icon-twitter.svg'),
+        href: 'https://twitter.com/hackerstolz'
       },
       {
-        icon: require("../../assets/icons/icon-meetup.svg"),
-        href: "https://www.meetup.com/de-DE/Hackschool-Rhein-Neckar/"
+        icon: require('../../assets/icons/icon-meetup.svg'),
+        href: 'https://www.meetup.com/de-DE/Hackschool-Rhein-Neckar/'
       },
       {
-        icon: require("../../assets/icons/icon-facebook.svg"),
-        href: "https://www.facebook.com/hackerstolz/"
+        icon: require('../../assets/icons/icon-facebook.svg'),
+        href: 'https://www.facebook.com/hackerstolz/'
       },
       {
-        icon: require("../../assets/icons/icon-igr.svg"),
-        href: "https://www.instagram.com/hackerstolz/"
+        icon: require('../../assets/icons/icon-igr.svg'),
+        href: 'https://www.instagram.com/hackerstolz/'
       },
       {
-        icon: require("../../assets/icons/icon-hackerstolz.svg"),
-        href: "https://www.hackerstolz.de/"
+        icon: require('../../assets/icons/icon-hackerstolz.svg'),
+        href: 'https://www.hackerstolz.de/'
       }
     ]
   })
-};
+}
 </script>
 
 <i18n>

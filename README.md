@@ -52,7 +52,6 @@ https://climathon.hackerstolz.de/#?challenge=aft3-jehg-28hb-nnmj7
 
 ### TODO
 
-[ ] Replace static json data with queryies  
 [ ] Add aftermovie to intro section (and other missing attributes in schema)
 [ ] Update route when navigating to challenge from sponsor or price section
 [ ] Replace URL IDs with URL names
@@ -60,5 +59,5 @@ https://climathon.hackerstolz.de/#?challenge=aft3-jehg-28hb-nnmj7
 [ ] Migrate post-event sections (team & price overview)
 [ ] Enhance schema to maintain custom location
 [ ] Enhance schema to maintain registration & info links to roles
-[ ] Add mentor category/description to mentor section
+[ ] Fine-tune mentor category/description in mentor section
 [ ] Disable menu items (e.g. team overview or registration) if sections are not being displayed

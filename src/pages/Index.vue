@@ -76,7 +76,13 @@
       :hackathon="$page.hackathon"
       :organizers="allOrganizers"
     />
-    <Footer id="footer" themeColor="primary" :isMobile="isMobile" />
+    <Footer
+      v-if="$page && $page.hackathon"
+      id="footer"
+      themeColor="primary"
+      :isMobile="isMobile"
+      :hackathon="$page.hackathon"
+    />
   </Layout>
 </template>
 
