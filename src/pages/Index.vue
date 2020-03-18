@@ -53,7 +53,12 @@
       :mentors="allMentors"
       :judges="allJudges"
     />
-    <FAQ id="faq" themeColor="primary" />
+    <FAQ
+      v-if="$page && $page.hackathon"
+      id="faq"
+      themeColor="primary"
+      :faqs="$page.hackathon.faqs || []"
+    />
     <Parties id="parties" themeColor="secondary" :isMobile="isMobile" />
     <Organizer id="team" themeColor="primary" :isMobile="isMobile" />
     <Footer id="footer" themeColor="primary" :isMobile="isMobile" />
