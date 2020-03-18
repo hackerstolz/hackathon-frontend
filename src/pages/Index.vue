@@ -68,7 +68,14 @@
       :sponsors="allSponsors"
       :partners="allPartners"
     />
-    <Organizer id="team" themeColor="primary" :isMobile="isMobile" />
+    <Organizer
+      v-if="$page && $page.allPartner && $page.hackathon"
+      id="team"
+      themeColor="primary"
+      :isMobile="isMobile"
+      :hackathon="$page.hackathon"
+      :organizers="allOrganizers"
+    />
     <Footer id="footer" themeColor="primary" :isMobile="isMobile" />
   </Layout>
 </template>
@@ -210,6 +217,15 @@ export default {
         ? this.$page.allPerson.edges
             .filter(({ node }) =>
               node.roles.some(({ role }) => role.title === 'Judge')
+            )
+            .map(({ node }) => node)
+        : []
+    },
+    allOrganizers() {
+      return this.$page && this.$page.allPerson
+        ? this.$page.allPerson.edges
+            .filter(({ node }) =>
+              node.roles.some(({ role }) => role.title === 'Organizer')
             )
             .map(({ node }) => node)
         : []
