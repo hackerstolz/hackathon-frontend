@@ -36,7 +36,13 @@
       :isMobile="isMobile"
       :timetable="$page.allTimetable.edges"
     />
-    <Registration id="registration" themeColor="primary" :isMobile="isMobile" />
+    <Registration
+      v-if="!isEventOver && $page && $page.hackathon"
+      id="registration"
+      themeColor="primary"
+      :isMobile="isMobile"
+      :hackathon="$page.hackathon"
+    />
     <Staff id="staff" themeColor="secondary" :isMobile="isMobile" />
     <FAQ id="faq" themeColor="primary" />
     <Parties id="parties" themeColor="secondary" :isMobile="isMobile" />
@@ -61,13 +67,19 @@ query ($id: ID!) {
     twitter # Twitter Handle 
     hashtag # Hashtag 
     linkTicketshop { # Ticketshop Link 
-      id # ID - further fields see Link 
+      id # ID - further fields see Link  
+			name # Name 
+			url # URL 
     } 
     linkCommunity { # Community Link 
-      id # ID - further fields see Link 
+      id # ID - further fields see Link  
+			name # Name 
+			url # URL 
     } 
     linkImprint { # Imprint Link 
-      id # ID - further fields see Link 
+      id # ID - further fields see Link  
+			name # Name 
+			url # URL 
     } 
     thumbnail # Thumbnail 
     descriptions { # Meta Descriptions 
