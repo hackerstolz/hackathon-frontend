@@ -139,6 +139,9 @@ export const i18nOptions = {
       weekday: {
         weekday: 'long'
       },
+      weekdayShort: {
+        weekday: 'short'
+      },
       time: {
         minute: '2-digit',
         second: '2-digit'
@@ -152,6 +155,9 @@ export const i18nOptions = {
       },
       weekday: {
         weekday: 'long'
+      },
+      weekdayShort: {
+        weekday: 'short'
       },
       time: {
         minute: '2-digit',

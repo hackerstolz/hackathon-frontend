@@ -28,12 +28,14 @@
           <p
             :style="{ color: member.orgColor }"
             class="member-organisation my-1"
-          >{{ member.organisation }}</p>
+          >
+            {{ member.organisation }}
+          </p>
           <p class="member-description my-1">
             {{
-            $i18n.locale === 'en'
-            ? member.i18nDescription[0]
-            : member.i18nDescription[1]
+              $i18n.locale === 'en'
+                ? member.i18nDescription[0]
+                : member.i18nDescription[1]
             }}
           </p>
         </v-flex>
@@ -44,11 +46,11 @@
 
 <script>
 export default {
-  name: "Team",
+  name: 'Organizer',
   props: {
     themeColor: {
       type: String,
-      default: "primary"
+      default: 'primary'
     },
     isMobile: Boolean
   },
@@ -58,76 +60,76 @@ export default {
         this.themeColor
       ) !== -1
         ? this.$vuetify.theme.themes.dark[this.themeColor]
-        : this.$vuetify.theme.themes.dark.primary;
+        : this.$vuetify.theme.themes.dark.primary
     }
   },
   data() {
     return {
       members: [
         {
-          avatar: "", // require("../../assets/team/img-sascha-ulbrich.jpg"),
-          name: "Sascha Ulbrich",
-          organisation: "Hackerstolz e.V.",
-          orgColor: "#70B4DF",
+          avatar: '', // require("../../assets/team/img-sascha-ulbrich.jpg"),
+          name: 'Sascha Ulbrich',
+          organisation: 'Hackerstolz e.V.',
+          orgColor: '#70B4DF',
           i18nDescription: [
-            "He is king of organizing, making the plans and providing structural progress.",
-            "Er ist der König der Organisation, der Planung und des strukturellen Fortschritts."
+            'He is king of organizing, making the plans and providing structural progress.',
+            'Er ist der König der Organisation, der Planung und des strukturellen Fortschritts.'
           ]
         },
         {
-          avatar: "", // require("../../assets/team/img-jascha-quintern.jpg"),
-          name: "Jascha A. Quintern",
-          organisation: "Hackerstolz e.V.",
-          orgColor: "#70B4DF",
+          avatar: '', // require("../../assets/team/img-jascha-quintern.jpg"),
+          name: 'Jascha A. Quintern',
+          organisation: 'Hackerstolz e.V.',
+          orgColor: '#70B4DF',
           i18nDescription: [
-            "Beside organizing he creates the event experience, pushes the location concepts and creates the hackathon identity.",
-            "Neben der Organisation gestaltet er das Veranstaltungserlebnis, treibt die Location-Konzepte voran und schafft die Hackathon-Identität."
+            'Beside organizing he creates the event experience, pushes the location concepts and creates the hackathon identity.',
+            'Neben der Organisation gestaltet er das Veranstaltungserlebnis, treibt die Location-Konzepte voran und schafft die Hackathon-Identität.'
           ]
         },
         {
-          avatar: "", // require("../../assets/team/img-iris-broese.jpg"),
-          name: "Iris Bröse",
-          organisation: "Hackerstolz e.V.",
-          orgColor: "#70B4DF",
+          avatar: '', // require("../../assets/team/img-iris-broese.jpg"),
+          name: 'Iris Bröse',
+          organisation: 'Hackerstolz e.V.',
+          orgColor: '#70B4DF',
           i18nDescription: [
-            "She is well experienced in organizing hackathons and a real sustainability professional.",
-            "Sie hat viel Erfahrung in der Organisation von Hackathons und ist eine echte Nachhaltigkeitsprofis."
+            'She is well experienced in organizing hackathons and a real sustainability professional.',
+            'Sie hat viel Erfahrung in der Organisation von Hackathons und ist eine echte Nachhaltigkeitsprofis.'
           ]
         },
         {
-          avatar: "", // require("../../assets/team/img-michael-bahr.jpg"),
-          name: "Michael Bahr",
-          organisation: "Hackerstolz e.V.",
-          orgColor: "#70B4DF",
+          avatar: '', // require("../../assets/team/img-michael-bahr.jpg"),
+          name: 'Michael Bahr',
+          organisation: 'Hackerstolz e.V.',
+          orgColor: '#70B4DF',
           i18nDescription: [
-            "The hidden power in the background. Whenever it got tight, he was on the spot and provided the missing strength.",
-            "Die versteckte Macht im Hintergrund. Wann immer es eng wurde, war er vor Ort und sorgte für die fehlende Kraft."
+            'The hidden power in the background. Whenever it got tight, he was on the spot and provided the missing strength.',
+            'Die versteckte Macht im Hintergrund. Wann immer es eng wurde, war er vor Ort und sorgte für die fehlende Kraft.'
           ]
         },
         {
-          avatar: "", // require("../../assets/team/img-georg-pins.jpg"),
-          name: "Georg Pins",
-          organisation: "City of Mannheim",
-          orgColor: "#DD543B",
+          avatar: '', // require("../../assets/team/img-georg-pins.jpg"),
+          name: 'Georg Pins',
+          organisation: 'City of Mannheim',
+          orgColor: '#DD543B',
           i18nDescription: [
-            "Our backbone of the city with the tasks of networking the most important parties and ensuring the necessary support of the city for the entire project.",
-            "Unser Rückgrat der Stadt mit der Aufgabe, die wichtigsten Parteien zu vernetzen und die notwendige Unterstützung der Stadt für das gesamte Projekt sicherzustellen."
+            'Our backbone of the city with the tasks of networking the most important parties and ensuring the necessary support of the city for the entire project.',
+            'Unser Rückgrat der Stadt mit der Aufgabe, die wichtigsten Parteien zu vernetzen und die notwendige Unterstützung der Stadt für das gesamte Projekt sicherzustellen.'
           ]
         },
         {
-          avatar: "", // require("../../assets/team/img-nicolas-vierling.jpg"),
-          name: "Nicolas Vierling",
-          organisation: "City of Mannheim",
-          orgColor: "#DD543B",
+          avatar: '', // require("../../assets/team/img-nicolas-vierling.jpg"),
+          name: 'Nicolas Vierling',
+          organisation: 'City of Mannheim',
+          orgColor: '#DD543B',
           i18nDescription: [
-            "The mouthpiece between city, KIC and project team. He gets stuff done and is the city’s manpower plant.",
-            "Das Sprachrohr zwischen Stadt, KIC und Projektteam. Er kümmert sich um alles und ist das Arbeitskraftwerk der Stadt."
+            'The mouthpiece between city, KIC and project team. He gets stuff done and is the city’s manpower plant.',
+            'Das Sprachrohr zwischen Stadt, KIC und Projektteam. Er kümmert sich um alles und ist das Arbeitskraftwerk der Stadt.'
           ]
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <i18n>

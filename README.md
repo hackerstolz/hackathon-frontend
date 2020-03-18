@@ -59,4 +59,6 @@ https://climathon.hackerstolz.de/#?challenge=aft3-jehg-28hb-nnmj7
 [ ] Auto-formatted markdown misses `target="_blank"` attribute for links (e.g. in challenge description or award text)
 [ ] Migrate post-event sections (team & price overview)
 [ ] Enhance schema to maintain custom location
-[ ] Disable menu items if sections are not being displayed
+[ ] Enhance schema to maintain registration & info links to roles
+[ ] Add mentor category/description to mentor section
+[ ] Disable menu items (e.g. team overview or registration) if sections are not being displayed

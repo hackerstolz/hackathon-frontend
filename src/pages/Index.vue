@@ -43,10 +43,19 @@
       :isMobile="isMobile"
       :hackathon="$page.hackathon"
     />
-    <Staff id="staff" themeColor="secondary" :isMobile="isMobile" />
+    <Staff
+      v-if="$page && $page.allPerson && $page.hackathon"
+      id="staff"
+      themeColor="secondary"
+      :isMobile="isMobile"
+      :hackathon="$page.hackathon"
+      :speakers="allSpeakers"
+      :mentors="allMentors"
+      :judges="allJudges"
+    />
     <FAQ id="faq" themeColor="primary" />
     <Parties id="parties" themeColor="secondary" :isMobile="isMobile" />
-    <Team id="team" themeColor="primary" :isMobile="isMobile" />
+    <Organizer id="team" themeColor="primary" :isMobile="isMobile" />
     <Footer id="footer" themeColor="primary" :isMobile="isMobile" />
   </Layout>
 </template>
@@ -110,6 +119,15 @@ query ($id: ID!) {
     } 
     faqs { # FAQs 
       id # ID - further fields see FAQs 
+      name # Name 
+      question{ # Question 
+        language # Language 
+        question # Question 
+      } 
+      answer{ # Answer 
+        language # Language 
+        answer # Answer 
+      } 
     } 
   }
   allChallenge(filter: { hackathon: { eq: $id } }) {
@@ -210,6 +228,55 @@ query ($id: ID!) {
             }
           }
         }
+      }
+    }
+  }
+  allPerson(filter: { roles: { hackathon: { eq: $id } } }) {
+    edges {
+      node {
+        id # ID 
+        name # Name 
+        salutation # Salutation 
+        image # Image 
+        roles { # Roles 
+          title # Title 
+          challenge { # Challenge 
+            id # ID 
+            type { # Type 
+              id # ID 
+              title # Title 
+              color # Color 
+              descriptions{ # Descriptions 
+                language # Language 
+                description # Description 
+              } 
+            }
+            author { # Author 
+              language # Language 
+              author # author 
+            } 
+          } 
+          role { # Role 
+            id # ID 
+            title # Title 
+          } 
+          professions { # Professions 
+            language # Language 
+            profession # Profession 
+          } 
+          talkTitles { # Talk Titles 
+            language # Language 
+            talkTitle # Talk Title 
+          } 
+          timeslots { # Timeslots 
+            from # From 
+            to # To 
+          } 
+          descriptions { # Descriptions 
+            language # Language 
+            description # Description 
+          } 
+        } 
       }
     }
   }
@@ -316,6 +383,58 @@ export default {
       const isTimeInPast = new Date() - endTime >= 0
 
       return isTimeInPast
+    },
+    allSpeakers() {
+      return this.$page && this.$page.allPerson
+        ? this.$page.allPerson.edges
+            .filter(({ node }) =>
+              node.roles.some(({ role }) => role.title === 'Speaker')
+            )
+            .map(({ node }) => node)
+        : []
+    },
+    allMentors() {
+      const allMentors =
+        this.$page && this.$page.allPerson
+          ? this.$page.allPerson.edges
+              .filter(({ node }) =>
+                node.roles.some(({ role }) =>
+                  [
+                    'Technology Mentor',
+                    'Challenge Mentor',
+                    'Pitch Trainer'
+                  ].includes(role.title)
+                )
+              )
+              .map(({ node }) => node)
+          : []
+      let allMentorRoles = []
+
+      for (const mentor of allMentors) {
+        for (const role of mentor.roles) {
+          if (
+            ['Technology Mentor', 'Challenge Mentor', 'Pitch Trainer'].includes(
+              role.role.title
+            )
+          ) {
+            allMentorRoles.push({
+              ...mentor,
+              roles: [role]
+            })
+          }
+        }
+      }
+
+      return allMentorRoles
+    },
+    allJudges() {
+      return this.$page && this.$page.allPerson
+        ? this.$page.allPerson.edges
+            .filter(({ node }) =>
+              node.roles.some(({ role }) => role.title === 'Judge')
+            )
+            .map(({ node }) => node)
+        : []
     }
   },
   mounted() {

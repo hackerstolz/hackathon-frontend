@@ -75,10 +75,12 @@
             <p class="item-title my-1">
               {{
                 slot.speaker
-                  ? getI18nNode(
-                      getSpeakerRole(slot.speaker).talkTitles,
-                      $i18n.locale
-                    ).talkTitle
+                  ? `"${
+                      getI18nNode(
+                        getSpeakerRole(slot.speaker).talkTitles,
+                        $i18n.locale
+                      ).talkTitle
+                    }"`
                   : getI18nNode(slot.titles, $i18n.locale).title
               }}
             </p>
@@ -146,7 +148,7 @@ export default {
     },
     getSpeakerRole(speaker) {
       const { roles = [] } = speaker || {}
-      const [firstSpeakerRole] =
+      const [firstSpeakerRole = {}] =
         roles.filter(({ role }) => role.title === 'Speaker') || {}
 
       return firstSpeakerRole

@@ -35,7 +35,7 @@
         </v-flex>
       </v-layout>
       <p class="highlightText my-3">{{ $t('highlightText') }}</p>
-      <p v-if="!postEvent" class="outroText my-5">{{ $t('outroText') }}</p>
+      <p class="outroText my-5">{{ $t('outroText') }}</p>
       <v-card
         class="my-5"
         v-scroll-to="'#faq'"
