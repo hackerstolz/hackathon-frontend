@@ -57,3 +57,5 @@ https://climathon.hackerstolz.de/#?challenge=aft3-jehg-28hb-nnmj7
 [ ] Update route when navigating to challenge from sponsor or price section
 [ ] Replace URL IDs with URL names
 [ ] Auto-formatted markdown misses `target="_blank"` attribute for links (e.g. in challenge description or award text)
+[ ] Migrate post-event sections (team & price overview)
+[ ] Enhance schema to maintain custom location

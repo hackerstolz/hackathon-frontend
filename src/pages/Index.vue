@@ -21,9 +21,21 @@
       :hackathon="$page.hackathon"
       :challenges="$page.allChallenge.edges"
     />
-    <TeamOverview id="teams" themeColor="primary" :isMobile="isMobile" />
+    <!-- TODO: complete team overview -->
+    <TeamOverview
+      v-if="isEventOver"
+      id="teams"
+      themeColor="primary"
+      :isMobile="isMobile"
+    />
     <Location id="location" themeColor="secondary" />
-    <Schedule id="schedule" themeColor="secondary" :isMobile="isMobile" />
+    <Schedule
+      v-if="$page && $page.allTimetable"
+      id="schedule"
+      themeColor="secondary"
+      :isMobile="isMobile"
+      :timetable="$page.allTimetable.edges"
+    />
     <Registration id="registration" themeColor="primary" :isMobile="isMobile" />
     <Staff id="staff" themeColor="secondary" :isMobile="isMobile" />
     <FAQ id="faq" themeColor="primary" />
@@ -37,56 +49,56 @@
 query ($id: ID!) {
   hackathon(id: $id) {
     id # ID 
-		urlName # URL Name 
-		title # Title 
-		default # Default 
-		active # Active 
-		from # From 
-		to # To 
-		duration # Duration 
-		eventPageActive # Event Page active 
-		contactEmail # Contact EMail 
-		twitter # Twitter Handle 
-		hashtag # Hashtag 
-		linkTicketshop { # Ticketshop Link 
-			id # ID - further fields see Link 
-		} 
-		linkCommunity { # Community Link 
-			id # ID - further fields see Link 
-		} 
-		linkImprint { # Imprint Link 
-			id # ID - further fields see Link 
-		} 
-		thumbnail # Thumbnail 
-		descriptions { # Meta Descriptions 
-			language # Language 
-			description # Description 
-		} 
-		awards { # Awards 
-			id # ID 
-			name # Name 
-			image # Image 
-			titles { # Titles 
-				language # Language 
-				title # Title 
-				subtitle # Subtitle 
-			} 
-			prize { # Prize 
-				language # Language 
-				prize # Prize 
-			} 
-			descriptions { # Descriptions 
-				language # Language 
-				description # Description 
-			} 
-			criteria { # Criteria 
-				language # Language 
-				criteria # Criteria 
-			}
-		} 
-		faqs{ # FAQs 
-			id # ID - further fields see FAQs 
-		} 
+    urlName # URL Name 
+    title # Title 
+    default # Default 
+    active # Active 
+    from # From 
+    to # To 
+    duration # Duration 
+    eventPageActive # Event Page active 
+    contactEmail # Contact EMail 
+    twitter # Twitter Handle 
+    hashtag # Hashtag 
+    linkTicketshop { # Ticketshop Link 
+      id # ID - further fields see Link 
+    } 
+    linkCommunity { # Community Link 
+      id # ID - further fields see Link 
+    } 
+    linkImprint { # Imprint Link 
+      id # ID - further fields see Link 
+    } 
+    thumbnail # Thumbnail 
+    descriptions { # Meta Descriptions 
+      language # Language 
+      description # Description 
+    } 
+    awards { # Awards 
+      id # ID 
+      name # Name 
+      image # Image 
+      titles { # Titles 
+        language # Language 
+        title # Title 
+        subtitle # Subtitle 
+      } 
+      prize { # Prize 
+        language # Language 
+        prize # Prize 
+      } 
+      descriptions { # Descriptions 
+        language # Language 
+        description # Description 
+      } 
+      criteria { # Criteria 
+        language # Language 
+        criteria # Criteria 
+      }
+    } 
+    faqs { # FAQs 
+      id # ID - further fields see FAQs 
+    } 
   }
   allChallenge(filter: { hackathon: { eq: $id } }) {
     edges {
@@ -142,12 +154,59 @@ query ($id: ID!) {
       }
     }
   }
+  allTimetable(filter: { hackathon: { eq: $id } }) {
+    edges {
+      node {
+        id # ID 
+        title # Title 
+        date # Date 
+        slots { # Slots 
+          titles{ # Titles 
+            language # Language 
+            title # Title 
+          }  
+          descriptions { # Descriptions 
+            language # Language 
+            description # Description 
+          } 
+          from # From 
+          image # Image 
+          linkExternal { # External Link 
+            id # ID 
+            name # Name 
+            url # URL 
+            titles { # Titles 
+              language # Language 
+              title # Title 
+            } 
+          }
+          speaker { # Speaker 
+            id # ID 
+            name # Name 
+            salutation # Salutation 
+            image # Image 
+            roles { # Roles 
+              title # Title 
+              role { # Role 
+                id # ID 
+                title # Title 
+              } 
+              talkTitles { # Talk Titles 
+                language # Language 
+                talkTitle # Talk Title 
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 </page-query>
 
 <static-query>
 query {
-  allHackathon(filter: {default: {eq: true}, active: {eq: true}}) {
+  allHackathon(filter: { default: { eq: true }, active: { eq: true } }) {
     edges {
       node {
         id
@@ -224,7 +283,7 @@ export default {
   methods: {
     getI18nNode(i18nNodes = [], lang) {
       const locale = lang.toUpperCase()
-      const [i18nNode] = i18nNodes.filter(
+      const [i18nNode = {}] = i18nNodes.filter(
         n => n.language === locale || n.language === locale.split('-'[0])
       ) || [{}]
 
@@ -239,6 +298,12 @@ export default {
       const [{ node: defaultHackathon }] = defaultHackathons
 
       return defaultHackathon || {}
+    },
+    isEventOver() {
+      const endTime = new Date(parseInt(this.$page.hackathon.to, 10) * 1000)
+      const isTimeInPast = new Date() - endTime >= 0
+
+      return isTimeInPast
     }
   },
   mounted() {

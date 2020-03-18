@@ -1,7 +1,9 @@
 <template>
-  <section :class="{
+  <section
+    :class="{
       'simulated-2050': simulate2050
-    }">
+    }"
+  >
     <div
       :class="{
         'simulation-blend': true,
@@ -45,22 +47,24 @@
           <!-- TODO: title lines, should be replaced by title {{ hackathon.title }} in future -->
           <div>
             {{
-            simulate2050
-            ? $t('simulation.titleLine1')
-            : $t('titleLine1', {
-            year: new Date(
-            parseInt(hackathon.from, 10) * 1000
-            ).getFullYear()
-            })
+              simulate2050
+                ? $t('simulation.titleLine1')
+                : $t('titleLine1', {
+                    year: new Date(
+                      parseInt(hackathon.from, 10) * 1000
+                    ).getFullYear()
+                  })
             }}
           </div>
-          <div>{{ simulate2050 ? $t('simulation.titleLine2') : $t('titleLine2') }}</div>
+          <div>
+            {{ simulate2050 ? $t('simulation.titleLine2') : $t('titleLine2') }}
+          </div>
         </h1>
         <h2>{{ simulate2050 ? $t('simulation.subtitle') : $t('subtitle') }}</h2>
         <h3>
           {{
-          /* TODO: add custom formatter */
-          $d(new Date(parseInt(hackathon.from, 10) * 1000), 'short')
+            /* TODO: add custom formatter */
+            $d(new Date(parseInt(hackathon.from, 10) * 1000), 'short')
           }}&nbsp;•&nbsp;{{ $t('event', { duration: hackathon.duration }) }}
         </h3>
       </div>
@@ -132,39 +136,39 @@
 </template>
 
 <script>
-import Countdown from "../Countdown";
+import Countdown from '../Countdown'
 
 export default {
-  name: "Intro",
+  name: 'Intro',
   components: { Countdown },
   props: { hackathon: Object },
   data() {
     return {
       simulate2050: null // null it indicates, that it was not used, yet, else a boolean
-    };
+    }
   },
   methods: {
     getI18nNode(i18nNodes = [], lang) {
-      const locale = lang.toUpperCase();
-      const [i18nNode] = i18nNodes.filter(
-        n => n.language === locale || n.language === locale.split("-"[0])
-      ) || [{}];
+      const locale = lang.toUpperCase()
+      const [i18nNode = {}] = i18nNodes.filter(
+        n => n.language === locale || n.language === locale.split('-'[0])
+      ) || [{}]
 
-      return i18nNode;
+      return i18nNode
     }
   },
   watch: {
     simulate2050(simulation) {
       // toggle theme colors
       this.$vuetify.theme.themes.dark.primary = simulation
-        ? "#140807"
-        : "#10182F";
+        ? '#140807'
+        : '#10182F'
       this.$vuetify.theme.themes.dark.secondary = simulation
-        ? "#270F0D"
-        : "#182445";
+        ? '#270F0D'
+        : '#182445'
     }
   }
-};
+}
 </script>
 
 <i18n lang="json5">

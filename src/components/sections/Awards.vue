@@ -191,9 +191,6 @@ export default {
     hackathon: Object,
     challenges: Array
   },
-  mounted() {
-    console.log(this.$props.challenges)
-  },
   computed: {
     sectionColor() {
       return Object.keys(this.$vuetify.theme.themes.dark).indexOf(
@@ -214,7 +211,7 @@ export default {
     },
     getI18nNode(i18nNodes = [], lang) {
       const locale = lang.toUpperCase()
-      const [i18nNode] = i18nNodes.filter(
+      const [i18nNode = {}] = i18nNodes.filter(
         n => n.language === locale || n.language === locale.split('-'[0])
       ) || [{}]
 

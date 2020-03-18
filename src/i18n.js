@@ -135,6 +135,13 @@ export const i18nOptions = {
         year: 'numeric',
         month: 'short',
         day: 'numeric'
+      },
+      weekday: {
+        weekday: 'long'
+      },
+      time: {
+        minute: '2-digit',
+        second: '2-digit'
       }
     },
     de: {
@@ -142,6 +149,13 @@ export const i18nOptions = {
         year: 'numeric',
         month: 'short',
         day: 'numeric'
+      },
+      weekday: {
+        weekday: 'long'
+      },
+      time: {
+        minute: '2-digit',
+        second: '2-digit'
       }
     }
   }

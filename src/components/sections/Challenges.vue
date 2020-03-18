@@ -146,7 +146,7 @@ export default {
     },
     getI18nNode(i18nNodes = [], lang) {
       const locale = lang.toUpperCase()
-      const [i18nNode] = i18nNodes.filter(
+      const [i18nNode = {}] = i18nNodes.filter(
         n => n.language === locale || n.language === locale.split('-'[0])
       ) || [{}]
 

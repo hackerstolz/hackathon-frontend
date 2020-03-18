@@ -145,7 +145,7 @@
         </v-app-bar-nav-icon>
         <v-spacer></v-spacer>
         <v-btn
-          v-if="!$route.path.startsWith('/event') && !postEvent"
+          v-if="!$route.path.startsWith('/event') && !isEventOver"
           :class="{ 'app-btn-register': true, 'mx-2': true, large: !isMobile }"
           :small="isMobile"
           color="success"
@@ -347,7 +347,7 @@ export default {
       const hashtag = this.selectedHackathon.hashtag || ''
       return hashtag.startsWith('#') ? hashtag : `#${hashtag}`
     },
-    postEvent() {
+    isEventOver() {
       const endTime = new Date(parseInt(this.selectedHackathon.to, 10) * 1000)
       const isTimeInPast = new Date() - endTime >= 0
 
