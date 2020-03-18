@@ -19,6 +19,7 @@
       themeColor="primary"
       :isMobile="isMobile"
       :hackathon="$page.hackathon"
+      :challenges="$page.allChallenge.edges"
     />
     <TeamOverview id="teams" themeColor="primary" :isMobile="isMobile" />
     <Location id="location" themeColor="secondary" />
@@ -116,7 +117,28 @@ query ($id: ID!) {
           id # ID 
           name # Name 
         }
-        award # FIXME: check how to get this work
+        award { # Awards 
+          id # ID 
+          name # Name 
+          image # Image 
+          titles { # Titles 
+            language # Language 
+            title # Title 
+            subtitle # Subtitle 
+          } 
+          prize { # Prize 
+            language # Language 
+            prize # Prize 
+          } 
+          descriptions { # Descriptions 
+            language # Language 
+            description # Description 
+          } 
+          criteria { # Criteria 
+            language # Language 
+            criteria # Criteria 
+          } 
+        }
       }
     }
   }
