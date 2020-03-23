@@ -235,7 +235,7 @@
               class="mb-4 avatar"
               :lazy-src="require('../../../static/placeholder.svg')"
               :src="
-                dialog.judge.node.icon ||
+                dialog.judge.node.image ||
                   require('../../../static/placeholder.svg')
               "
               max-height="128px"

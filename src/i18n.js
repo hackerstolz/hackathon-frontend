@@ -144,7 +144,7 @@ export const i18nOptions = {
       },
       time: {
         minute: '2-digit',
-        second: '2-digit'
+        hour: '2-digit'
       }
     },
     de: {
@@ -161,7 +161,7 @@ export const i18nOptions = {
       },
       time: {
         minute: '2-digit',
-        second: '2-digit'
+        hour: '2-digit'
       }
     }
   }

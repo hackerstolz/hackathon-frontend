@@ -170,8 +170,10 @@ export default {
       return defaultHackathon || {}
     },
     isEventOver() {
-      const endTime = new Date(parseInt(this.$page.hackathon.to, 10) * 1000)
-      const isTimeInPast = new Date() - endTime >= 0
+      const endTime = this.$page
+        ? new Date(parseInt(this.$page.hackathon.to, 10) * 1000).getTime()
+        : 0
+      const isTimeInPast = new Date().getTime() - endTime >= 0
 
       return isTimeInPast
     },
@@ -286,7 +288,10 @@ export default {
   mounted() {
     // forward to default hackathon if no ID was provided
     if (!this.$route.params.id && this.defaultHackathon.id) {
-      this.$router.push(`/${this.defaultHackathon.id}`)
+      // FIXME: check if we can prevent a browser refresh
+      this.$router
+        .replace(`/${this.defaultHackathon.id}`)
+        .then(() => this.$router.go(0))
     }
   }
 }
