@@ -3,10 +3,12 @@
   "active": true,
   "hashtags": [
     {
-      "hashtag": "#climathonMA"
+      "hashtag": "#climathonMA",
+      "isMain": true
     },
     {
-      "hashtag": "#Climathon"
+      "hashtag": "#Climathon",
+      "isMain": false
     }
   ],
   "from": "1605254400",
