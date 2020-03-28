@@ -36,6 +36,7 @@ collections:
         required: false
         fields:
           - {label: "Hashtag", name: "hashtag", widget: "string"}
+          - {label: "isMain", name: "isMain", widget: "boolean", default: false}
       - label: Ticketshop Link
         name: linkTicketshop
         widget: "relation"
