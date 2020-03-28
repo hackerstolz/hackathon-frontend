@@ -1,8 +1,14 @@
 {
   "default": false,
   "active": false,
+  "hashtags": [
+    {
+      "hashtag": "#climathonMA",
+      "isMain": true
+    }
+  ],
   "from": "1613715300",
-  "hashtag": "#climathonMA",
+  "hashtag": "#obsolete",
   "eventPageActive": false,
   "twitter": "@climathonMA",
   "duration": 40,
