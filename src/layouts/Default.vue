@@ -5,20 +5,17 @@
         <v-layout row class="ma-0 mb-4">
           <v-menu bottom>
             <template v-slot:activator="{ on }">
-              <v-btn :small="isMobile" v-on="on" outlined
-                >{{
-                  isMobile
-                    ? $i18n.locale.toUpperCase()
-                    : $t(`button.${$i18n.locale}`)
-                }}<v-icon right>arrow_drop_down</v-icon></v-btn
-              >
+              <v-btn :small="isMobile" v-on="on" outlined>
+                {{
+                isMobile
+                ? $i18n.locale.toUpperCase()
+                : $t(`button.${$i18n.locale}`)
+                }}
+                <v-icon right>arrow_drop_down</v-icon>
+              </v-btn>
             </template>
             <v-list class="language-list">
-              <v-list-item
-                v-for="(lang, i) in langs"
-                :key="i"
-                @click="setNewLocale(lang)"
-              >
+              <v-list-item v-for="(lang, i) in langs" :key="i" @click="setNewLocale(lang)">
                 <v-list-item-title>{{ $t(`label.${lang}`) }}</v-list-item-title>
               </v-list-item>
             </v-list>
@@ -31,10 +28,11 @@
         <v-layout column class="ma-0" justify-center>
           <v-menu bottom>
             <template v-slot:activator="{ on }">
-              <v-btn class="mb-4" :small="isMobile" v-on="on" outlined
-                >{{ $t('button.navToArchivedHackathon')
-                }}<v-icon right>arrow_drop_down</v-icon></v-btn
-              >
+              <v-btn class="mb-4" :small="isMobile" v-on="on" outlined>
+                {{ $t('button.navToArchivedHackathon')
+                }}
+                <v-icon right>arrow_drop_down</v-icon>
+              </v-btn>
             </template>
             <v-list class="menu-list">
               <g-link
@@ -72,9 +70,7 @@
               `mailto:${selectedHackathon.contactEmail}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.`
             "
             outlined
-          >
-            {{ $t('button.contactus') }}
-          </v-btn>
+          >{{ $t('button.contactus') }}</v-btn>
           <g-link
             :to="
               $route.path.startsWith('/event')
@@ -91,55 +87,33 @@
               @click="() => {}"
             >
               {{
-                $route.path.startsWith('/event')
-                  ? $t('button.toOverview')
-                  : $t('button.toEvent')
+              $route.path.startsWith('/event')
+              ? $t('button.toOverview')
+              : $t('button.toEvent')
               }}
-              <v-icon right>
-                {{ $route.path.startsWith('/event') ? 'public' : 'room' }}
-              </v-icon>
+              <v-icon right>{{ $route.path.startsWith('/event') ? 'public' : 'room' }}</v-icon>
             </v-btn>
           </g-link>
         </v-layout>
         <v-list v-if="!$route.path.startsWith('/event')">
           <template v-for="(item, i) in menu">
-            <v-list-item
-              v-scroll-to="`#${item}`"
-              :key="item"
-              ripple
-              @click="() => {}"
-            >
-              <v-list-item-title class="menu-item">
-                {{ $t(`label.${item}`) }}
-              </v-list-item-title>
+            <v-list-item v-scroll-to="`#${item}`" :key="item" ripple @click="() => {}">
+              <v-list-item-title class="menu-item">{{ $t(`label.${item}`) }}</v-list-item-title>
             </v-list-item>
             <v-divider v-if="i < menu.length - 1" :key="i" />
           </template>
         </v-list>
         <v-list v-if="$route.path.startsWith('/event')">
           <template v-for="(item, i) in menuEvent">
-            <v-list-item
-              v-scroll-to="`#${item}`"
-              :key="item"
-              ripple
-              @click="() => {}"
-            >
-              <v-list-item-title class="menu-item">
-                {{ $t(`label.eventMenu.${item}`) }}
-              </v-list-item-title>
+            <v-list-item v-scroll-to="`#${item}`" :key="item" ripple @click="() => {}">
+              <v-list-item-title class="menu-item">{{ $t(`label.eventMenu.${item}`) }}</v-list-item-title>
             </v-list-item>
             <v-divider v-if="i < menu.length - 1" :key="i" />
           </template>
         </v-list>
       </v-navigation-drawer>
 
-      <v-app-bar
-        class="toolbar"
-        app
-        color="transparent"
-        flat
-        :hide-on-scroll="isMobile"
-      >
+      <v-app-bar class="toolbar" app color="transparent" flat :hide-on-scroll="isMobile">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer">
           <v-icon>menu</v-icon>
         </v-app-bar-nav-icon>
@@ -150,27 +124,25 @@
           :small="isMobile"
           color="success"
           v-scroll-to="'#registration'"
-          >{{
-            isMobile ? $t('button.registerShort') : $t('button.register')
-          }}</v-btn
         >
+          {{
+          isMobile ? $t('button.registerShort') : $t('button.register')
+          }}
+        </v-btn>
         <v-menu bottom>
           <template v-slot:activator="{ on }">
-            <v-btn class="ml-2" :small="isMobile" v-on="on" outlined
-              >{{
-                isMobile
-                  ? $i18n.locale.toUpperCase()
-                  : $t(`button.${$i18n.locale}`)
-              }}<v-icon right>arrow_drop_down</v-icon></v-btn
-            >
+            <v-btn class="ml-2" :small="isMobile" v-on="on" outlined>
+              {{
+              isMobile
+              ? $i18n.locale.toUpperCase()
+              : $t(`button.${$i18n.locale}`)
+              }}
+              <v-icon right>arrow_drop_down</v-icon>
+            </v-btn>
           </template>
 
           <v-list class="menu-list">
-            <v-list-item
-              v-for="(lang, i) in langs"
-              :key="i"
-              @click="setNewLocale(lang)"
-            >
+            <v-list-item v-for="(lang, i) in langs" :key="i" @click="setNewLocale(lang)">
               <v-list-item-title>{{ $t(`label.${lang}`) }}</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -197,8 +169,7 @@
           dark
           text
           @click="notification.show = false"
-          >{{ $t('label.snackbarClose') }}</v-btn
-        >
+        >{{ $t('label.snackbarClose') }}</v-btn>
       </v-snackbar>
       <v-snackbar
         class="snackbar"
@@ -215,102 +186,101 @@
           dark
           text
           @click="snackbar.show = false"
-          >{{ $t('label.snackbarConfirm') }}</v-btn
-        >
+        >{{ $t('label.snackbarConfirm') }}</v-btn>
       </v-snackbar>
     </v-app>
   </div>
 </template>
 
 <script>
-import { getUrlHashQuery as getQuery } from '../i18n'
-import { setTimeout } from 'timers'
+import { getUrlHashQuery as getQuery } from "../i18n";
+import { setTimeout } from "timers";
 
 export default {
-  name: 'DefaultLayout',
+  name: "DefaultLayout",
   // FIXME: check why props is not provided via v-route prop
   // props: {
   //   isMobile: Boolean
   // },
   metaInfo() {
     htmlAttrs: {
-      lang: this.$root.$i18n.locale
+      lang: this.$root.$i18n.locale;
     }
   },
   data() {
     return {
       isMobile: false,
-      langs: ['en', 'de'],
+      langs: ["en", "de"],
       darkMode: true,
       drawer: false,
       snackbar: {
         show: false,
-        color: 'success',
+        color: "success",
         timeout: 10000
       },
       notification: {
         show: false,
-        color: 'success',
+        color: "success",
         timeout: 3000,
-        text: ''
+        text: ""
       },
       menu: [
-        'intro',
-        'about',
-        'challenges',
-        'awards',
-        'teams',
-        'location',
-        'schedule',
-        'registration',
-        'staff',
-        'faq',
-        'parties',
-        'team',
-        'footer'
+        "intro",
+        "about",
+        "challenges",
+        "awards",
+        "teams",
+        "location",
+        "schedule",
+        "registration",
+        "staff",
+        "faq",
+        "parties",
+        "team",
+        "footer"
       ],
-      menuEvent: ['info', 'location', 'bag', 'footer']
-    }
+      menuEvent: ["info", "location", "bag", "footer"]
+    };
   },
   mounted() {
     setTimeout(() => {
       // show snackbar with delay
-      this.snackbar.show = true
-    }, 500)
+      this.snackbar.show = true;
+    }, 500);
 
     setTimeout(() => {
       // nav to section initially
       if (this.$route) {
-        this.routeUpdate()
+        this.routeUpdate();
       }
-    }, 1500)
+    }, 1500);
   },
   methods: {
     copySuccess(text) {
-      this.notification.text = text
-      this.notification.show = true
+      this.notification.text = text;
+      this.notification.show = true;
     },
     setNewLocale(lang) {
       // switch locale
-      this.$root.$i18n.locale = lang
+      this.$root.$i18n.locale = lang;
 
       // switch vuetify locale
-      this.$vuetify.lang.current = lang
+      this.$vuetify.lang.current = lang;
 
       // a11y: ensures the lang attribute of the <html> element has a valid value
-      document.querySelector('html').setAttribute('lang', lang)
+      document.querySelector("html").setAttribute("lang", lang);
     },
     routeUpdate() {
-      const query = getQuery() || {}
+      const query = getQuery() || {};
 
       // scroll to section if defined
       if (query.section && document.getElementById(query.section)) {
-        this.$scrollTo(`#${query.section}`)
+        this.$scrollTo(`#${query.section}`);
       }
 
       // switch language
       if (query.lang && query.lang !== this.$root.$i18n.locale) {
-        this.setNewLocale(query.lang)
+        this.setNewLocale(query.lang);
       }
     }
   },
@@ -319,32 +289,35 @@ export default {
       const selectedHackathonNodes =
         (this.$static.allHackathon.edges || []).filter(
           ({ node }) => node.id === this.$route.params.id
-        ) || []
-      const [firstNode] = selectedHackathonNodes
-      const { node: selectedHackathon } = firstNode || { node: {} }
+        ) || [];
+      const [firstNode] = selectedHackathonNodes;
+      const { node: selectedHackathon } = firstNode || { node: {} };
 
-      return selectedHackathon || {}
+      return selectedHackathon || {};
     },
     climathonHashtag() {
-      const hashtag = this.selectedHackathon.hashtag || ''
-      return hashtag.startsWith('#') ? hashtag : `#${hashtag}`
+      const [mainHashtag] = (this.selectedHackathon.hashtags || []).filter(
+        t => t.isMain
+      );
+      const hashtag = mainHashtag || "";
+      return hashtag.startsWith("#") ? hashtag : `#${hashtag}`;
     },
     isEventOver() {
-      const endTime = new Date(parseInt(this.selectedHackathon.to, 10) * 1000)
-      const isTimeInPast = new Date() - endTime >= 0
+      const endTime = new Date(parseInt(this.selectedHackathon.to, 10) * 1000);
+      const isTimeInPast = new Date() - endTime >= 0;
 
-      return isTimeInPast
+      return isTimeInPast;
     }
   },
   watch: {
     $route() {
-      this.routeUpdate()
+      this.routeUpdate();
     },
-    '$parent.isMobile'(b) {
-      this.isMobile = b
+    "$parent.isMobile"(b) {
+      this.isMobile = b;
     }
   }
-}
+};
 </script>
 
 <i18n>
@@ -548,7 +521,10 @@ query {
         from # From 
         to # To 
         contactEmail # Contact EMail 
-        hashtag # Hashtag 
+        hashtags { # Hashtags 
+          hashtag # Hashtag 
+          isMain # isMain
+        } 
         eventPageActive
       }
     }
