@@ -294,8 +294,9 @@ export default {
 
 <style scoped lang="stylus"></style>
 
+
 <page-query>
-query ($id: ID!) {
+query (this.$id: ID!) {
   hackathon(id: $id) {
     id # ID 
     urlName # URL Name 

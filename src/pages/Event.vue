@@ -133,21 +133,11 @@ export default {
 
 <style scoped lang="stylus"></style>
 
-<static-query>
-query {
-  allHackathon(filter: {default: {eq: true}, active: {eq: true}}) {
-    edges {
-      node {
-        id
-      }
-    }
-  }
-}
-</static-query>
 
 <page-query>
-query ($id: ID!) {
+query (this.$id: ID!) {
   hackathon(id: $id) {
+    path(to:"event")
     id
     title # Title 
     twitter # Twitter Handle 
@@ -163,3 +153,15 @@ query ($id: ID!) {
   }
 }
 </page-query>
+
+<static-query>
+query {
+  allHackathon(filter: {default: {eq: true}, active: {eq: true}}) {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+}
+</static-query>
