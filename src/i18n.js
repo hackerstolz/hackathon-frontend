@@ -75,7 +75,7 @@ const getUserAcceptLocales = () => {
   // for Android language contained in the user agent string
   const clientLocaleLanguage =
     (function androidNavigatorLanguage() {
-      if (navigator.userAgent.match(/Android/) !== null) {
+      if (navigator && navigator.userAgent.match(/Android/) !== null) {
         // on Android, navigator.language is hardcoded to 'en', so check UserAgent string instead
         const match = navigator.userAgent.match(/\s([a-z]{2}-[a-z]{2})[;)]/i)
         return match ? match[1] : null
