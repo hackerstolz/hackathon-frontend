@@ -38,7 +38,7 @@ const stringifyQuery = query =>
 // get query object from URL
 export const getUrlHashQuery = () => {
   // parse existing hash query
-  const hash = location.hash || '#'
+  const hash = process.isClient ? location.hash || '#' : '#'
   const hashSearchIndex = hash.indexOf('?')
   const hashHasNoSearch = hashSearchIndex < 0
   const hashSearch = hashHasNoSearch ? '' : hash.substring(hashSearchIndex)
@@ -47,7 +47,7 @@ export const getUrlHashQuery = () => {
 
   // because we use the hash router, we must merge all URL/search query parameters to our hash query parameters
   // e.g. update host.de/xyz/?lang=en#?b=2 to host.de/xyz/#?lang=en&b=2
-  if (location.search) {
+  if (process.isClient && location.search) {
     // parse search
     const searchQuery = parseSearch(location.search)
 
@@ -73,9 +73,21 @@ export const getUrlHashQuery = () => {
 // determine user's locale languages
 const getUserAcceptLocales = () => {
   // for Android language contained in the user agent string
+  const navigator =
+    process.isClient && window
+      ? window.navigator
+      : {
+          languages: ['en'],
+          userLanguage: 'en',
+          browserLanguage: 'en'
+        }
   const clientLocaleLanguage =
     (function androidNavigatorLanguage() {
-      if (navigator && navigator.userAgent.match(/Android/) !== null) {
+      if (
+        navigator &&
+        navigator.userAgent &&
+        navigator.userAgent.match(/Android/) !== null
+      ) {
         // on Android, navigator.language is hardcoded to 'en', so check UserAgent string instead
         const match = navigator.userAgent.match(/\s([a-z]{2}-[a-z]{2})[;)]/i)
         return match ? match[1] : null
