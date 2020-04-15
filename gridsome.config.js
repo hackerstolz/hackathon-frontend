@@ -13,22 +13,25 @@ module.exports = {
         publicPath: '/admin/',
         modulePath: 'src/admin/index.js',
         configPath: 'src/admin/config.yml',
-        htmlPath: 'src/admin/index.html'
-      }
-    }
+        htmlPath: 'src/admin/index.html',
+      },
+    },
   ],
   templates: {
     hackathon: [
       {
         name: 'hackathon',
         path: '/:id',
-        component: './src/pages/Index.vue'
+        component: './src/pages/Index.vue',
       },
       {
         name: 'event',
         path: '/event/:id',
-        component: './src/pages/Event.vue'
-      }
-    ]
-  }
+        component: './src/pages/Event.vue',
+      },
+    ],
+  },
+  configureWebpack: {
+    // merged with the internal config
+  },
 }

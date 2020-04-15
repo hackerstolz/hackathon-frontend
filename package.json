@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@pake/react-color": "^3.0.0",
-    "core-js": "2.6.11",
+    "core-js": "3.6.5",
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "lodash": "^4.17.15",
@@ -16,7 +16,7 @@
     "netlify-cms-widget-color": "^3.0.1",
     "parse-md": "^2.0.4",
     "showdown": "^1.9.1",
-    "uuid": "^3.4.0",
+    "uuid": "^7.0.3",
     "vue-clipboard2": "^0.3.1",
     "vue-i18n": "^8.15.3",
     "vue-scrollto": "^2.17.1",

@@ -1,6 +1,10 @@
 <template>
   <Layout>
-    <Intro v-if="$page && $page.hackathon" id="intro" :hackathon="$page.hackathon" />
+    <Intro
+      v-if="$page && $page.hackathon"
+      id="intro"
+      :hackathon="$page.hackathon"
+    />
     <About id="about" themeColor="primary" :isMobile="isMobile" />
     <Challenges
       v-if="$page && $page.allChallenge"
@@ -18,7 +22,12 @@
       :challenges="$page.allChallenge.edges"
     />
     <!-- TODO: complete team overview -->
-    <TeamOverview v-if="isEventOver" id="teams" themeColor="primary" :isMobile="isMobile" />
+    <TeamOverview
+      v-if="isEventOver"
+      id="teams"
+      themeColor="primary"
+      :isMobile="isMobile"
+    />
     <Location id="location" themeColor="secondary" />
     <Schedule
       v-if="$page && $page.allTimetable"
@@ -79,103 +88,105 @@
 
 <script>
 const sectionsContext = require.context(
-  "../components/sections/",
+  '../components/sections/',
   false,
   /.*\.vue$/
-);
+)
 
 export default {
-  name: "Overview",
+  name: 'Overview',
   metaInfo() {
     return {
       title: this.$page.hackathon.title,
       meta: [
         // OPEN GRAPH (e.g. Facebook)
-        { property: "og:type", content: "website" },
+        { property: 'og:type', content: 'website' },
         {
-          property: "og:url",
-          content: `https://climathon.hackerstolz.de/${this.$page.hackathon.id}`
+          property: 'og:url',
+          content: `https://climathon.hackerstolz.de/${
+            this.$page.hackathon.id
+          }`,
         },
-        { property: "og:site_name", content: this.$page.hackathon.title },
-        { property: "og:title", content: this.$page.hackathon.title },
+        { property: 'og:site_name', content: this.$page.hackathon.title },
+        { property: 'og:title', content: this.$page.hackathon.title },
         {
-          property: "og:description",
+          property: 'og:description',
           content: this.getI18nNode(
             this.$page.hackathon.descriptions,
             this.$i18n.locale
-          ).description
+          ).description,
         },
         {
-          property: "og:image",
-          content: this.$page.hackathon.thumbnail
+          property: 'og:image',
+          content: this.$page.hackathon.thumbnail,
         },
 
         // TWITTER
-        { name: "twitter:title", content: this.$page.hackathon.title },
+        { name: 'twitter:title', content: this.$page.hackathon.title },
         {
-          name: "twitter:description",
+          name: 'twitter:description',
           content: this.getI18nNode(
             this.$page.hackathon.descriptions,
             this.$i18n.locale
-          ).description
+          ).description,
         },
         {
-          name: "twitter:image",
-          content: this.$page.hackathon.thumbnail
+          name: 'twitter:image',
+          content: this.$page.hackathon.thumbnail,
         },
-        { name: "twitter:image:alt", content: this.$page.hackathon.title },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:site", content: this.$page.hackathon.twitter }
-      ]
-    };
+        { name: 'twitter:image:alt', content: this.$page.hackathon.title },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: this.$page.hackathon.twitter },
+      ],
+    }
   },
   components: {
     ...sectionsContext.keys().reduce(
       (map, key) => ({
         ...map,
-        [sectionsContext(key).default.name]: sectionsContext(key).default
+        [sectionsContext(key).default.name]: sectionsContext(key).default,
       }),
       {}
-    )
+    ),
   },
   props: {
-    isMobile: Boolean
+    isMobile: Boolean,
   },
   methods: {
     getI18nNode(i18nNodes = [], lang) {
-      const locale = lang.toUpperCase();
+      const locale = lang.toUpperCase()
       const [i18nNode = {}] = i18nNodes.filter(
-        n => n.language === locale || n.language === locale.split("-"[0])
-      ) || [{}];
+        (n) => n.language === locale || n.language === locale.split('-'[0])
+      ) || [{}]
 
-      return i18nNode;
-    }
+      return i18nNode
+    },
   },
   computed: {
     defaultHackathon() {
       const defaultHackathons = this.$static.allHackathon.edges || [
-        { node: {} }
-      ];
-      const [{ node: defaultHackathon }] = defaultHackathons;
+        { node: {} },
+      ]
+      const [{ node: defaultHackathon }] = defaultHackathons
 
-      return defaultHackathon || {};
+      return defaultHackathon || {}
     },
     isEventOver() {
       const endTime = this.$page
         ? new Date(parseInt(this.$page.hackathon.to, 10) * 1000).getTime()
-        : 0;
-      const isTimeInPast = new Date().getTime() - endTime >= 0;
+        : 0
+      const isTimeInPast = new Date().getTime() - endTime >= 0
 
-      return isTimeInPast;
+      return isTimeInPast
     },
     allSpeakers() {
       return this.$page && this.$page.allPerson
         ? this.$page.allPerson.edges
             .filter(({ node }) =>
-              node.roles.some(({ role }) => role.title === "Speaker")
+              node.roles.some(({ role }) => role.title === 'Speaker')
             )
             .map(({ node }) => node)
-        : [];
+        : []
     },
     allMentors() {
       const allMentors =
@@ -184,97 +195,97 @@ export default {
               .filter(({ node }) =>
                 node.roles.some(({ role }) =>
                   [
-                    "Technology Mentor",
-                    "Challenge Mentor",
-                    "Pitch Trainer"
+                    'Technology Mentor',
+                    'Challenge Mentor',
+                    'Pitch Trainer',
                   ].includes(role.title)
                 )
               )
               .map(({ node }) => node)
-          : [];
-      let allMentorRoles = [];
+          : []
+      let allMentorRoles = []
 
       for (const mentor of allMentors) {
         for (const role of mentor.roles) {
           if (
-            ["Technology Mentor", "Challenge Mentor", "Pitch Trainer"].includes(
+            ['Technology Mentor', 'Challenge Mentor', 'Pitch Trainer'].includes(
               role.role.title
             )
           ) {
             allMentorRoles.push({
               ...mentor,
-              roles: [role]
-            });
+              roles: [role],
+            })
           }
         }
       }
 
-      return allMentorRoles;
+      return allMentorRoles
     },
     allJudges() {
       return this.$page && this.$page.allPerson
         ? this.$page.allPerson.edges
             .filter(({ node }) =>
-              node.roles.some(({ role }) => role.title === "Judge")
+              node.roles.some(({ role }) => role.title === 'Judge')
             )
             .map(({ node }) => node)
-        : [];
+        : []
     },
     allOrganizers() {
       return this.$page && this.$page.allPerson
         ? this.$page.allPerson.edges
             .filter(({ node }) =>
-              node.roles.some(({ role }) => role.title === "Organizer")
+              node.roles.some(({ role }) => role.title === 'Organizer')
             )
             .map(({ node }) => node)
-        : [];
+        : []
     },
     allPartners() {
       const allPartners =
         this.$page && this.$page.allPartner
           ? this.$page.allPartner.edges
               .filter(({ node }) =>
-                node.roles.some(role => role.isSponsor === false)
+                node.roles.some((role) => role.isSponsor === false)
               )
               .map(({ node }) => node)
-          : [];
-      let allPartnerRoles = [];
+          : []
+      let allPartnerRoles = []
 
       for (const partner of allPartners) {
         for (const role of partner.roles) {
           if (role.isSponsor === false) {
             allPartnerRoles.push({
               ...partner,
-              role: role
-            });
+              role: role,
+            })
           }
         }
       }
 
-      return allPartnerRoles;
+      return allPartnerRoles
     },
     allSponsors() {
       const allSponsors =
         this.$page && this.$page.allPartner
           ? this.$page.allPartner.edges
-              .filter(({ node }) => node.roles.some(role => role.isSponsor))
+              .filter(({ node }) => node.roles.some((role) => role.isSponsor))
               .map(({ node }) => node)
-          : [];
-      let allSponsorRoles = [];
+          : []
+      let allSponsorRoles = []
 
       for (const sponsor of allSponsors) {
         for (const role of sponsor.roles) {
           if (role.isSponsor) {
             allSponsorRoles.push({
               ...sponsor,
-              role: role
-            });
+              role: role,
+            })
           }
         }
       }
 
-      return allSponsorRoles;
-    }
+      return allSponsorRoles
+    },
   },
   mounted() {
     // forward to default hackathon if no ID was provided
@@ -282,10 +293,10 @@ export default {
       // FIXME: check if we can prevent a browser refresh
       this.$router
         .replace(`/${this.defaultHackathon.id}`)
-        .then(() => this.$router.go(0));
+        .then(() => this.$router.go(0))
     }
-  }
-};
+  },
+}
 </script>
 
 <i18n>
@@ -293,7 +304,6 @@ export default {
 </i18n>
 
 <style scoped lang="stylus"></style>
-
 
 <page-query>
 query (this.$id: ID!) {
