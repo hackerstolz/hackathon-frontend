@@ -51,7 +51,7 @@
               color="info"
               v-for="(node, i) in $props.hackathon.hashtags"
               :key="i"
-              v-clipboard:copy="climathonHashtag"
+              v-clipboard:copy="node.hashtag"
               v-clipboard:success="
                 () =>
                   onCopySuccess(
