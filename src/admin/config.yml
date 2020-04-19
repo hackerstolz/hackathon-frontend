@@ -19,7 +19,7 @@ collections:
     summary: "{{title}} ({{id}})"
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
-      - {label: "URL Name", name: "urlName", widget: "string", pattern: ['[a-zA-Z0-9_-]*', "URL safe: only characters and numbers"], hint: "A unique(!) URL safe string used in the URL to navigate to this Hackathon"}
+      - {label: "URL Name", name: "urlName", widget: "string", pattern: ['^[a-z0-9-]*$', "only lowercase characters and numbers"], hint: "A unique(!) URL safe string used in the URL to navigate to this Hackathon"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Default", name: "default", widget: "boolean", default: false, hint: "Hackathon shown if none specified in URL"}
       - {label: "Active", name: "active", widget: "boolean", default: false, hint: "Visible on website"}

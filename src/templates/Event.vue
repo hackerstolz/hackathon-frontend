@@ -107,12 +107,12 @@ export default {
   },
   mounted() {
     // forward to default hackathon if no ID was provided
-    if (!this.$route.params.id && this.defaultHackathon.id) {
+    //if (!this.$route.params.id && this.defaultHackathon.urlName) {
       // FIXME: check if we can prevent a browser refresh
-      this.$router
-        .replace(`/event/${this.defaultHackathon.id}`)
-        .then(() => this.$router.go(0))
-    }
+    //  this.$router
+    //    .replace(`/event/${this.defaultHackathon.urlName}`)
+    //    .then(() => this.$router.go(0))
+    //}
 
     // nav to main page if event site is not active, yet
     if (
@@ -122,7 +122,7 @@ export default {
     ) {
       // FIXME: check if we can prevent a browser refresh
       this.$router
-        .replace(`/${this.defaultHackathon.id}`)
+        .replace(`/${this.defaultHackathon.urlName}`)
         .then(() => this.$router.go(0))
     }
   },

@@ -104,7 +104,7 @@ export default {
         {
           property: 'og:url',
           content: `https://climathon.hackerstolz.de/${
-            this.$page.hackathon.id
+            this.$page.hackathon.urlName
           }`,
         },
         { property: 'og:site_name', content: this.$page.hackathon.title },
@@ -287,15 +287,15 @@ export default {
       return allSponsorRoles
     },
   },
-  mounted() {
+  //mounted() {
     // forward to default hackathon if no ID was provided
-    if (!this.$route.params.id && this.defaultHackathon.id) {
+    //if (!this.$route.params.id && this.defaultHackathon.id) {
       // FIXME: check if we can prevent a browser refresh
-      this.$router
-        .replace(`/${this.defaultHackathon.id}`)
-        .then(() => this.$router.go(0))
-    }
-  },
+      //this.$router
+        //.replace(`/${this.defaultHackathon.id}`)
+        //.then(() => this.$router.go(0))
+    //}
+ // },
 }
 </script>
 
