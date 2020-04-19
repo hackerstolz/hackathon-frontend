@@ -71,11 +71,11 @@ export default {
     ...sectionsContext.keys().reduce(
       (map, key) => ({
         ...map,
-        [sectionsContext(key).default.name]: sectionsContext(key).default
+        [sectionsContext(key).default.name]: sectionsContext(key).default,
       }),
       {}
     ),
-    Footer
+    Footer,
   },
   props: {
     isMobile: Boolean
@@ -128,11 +128,9 @@ query ($id: ID!) {
     hashtags { # Hashtags 
       hashtag # Hashtag 
     }
-    linkImprint { # Imprint Link 
-      id # ID - further fields see Link  
-			name # Name 
-			url # URL 
-    } 
+    linkImprint{
+      url
+    }
   }
 }
 </page-query>
