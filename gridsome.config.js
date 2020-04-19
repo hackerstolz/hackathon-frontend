@@ -21,15 +21,17 @@ module.exports = {
     hackathon: [
       {
         name: 'hackathon',
+        //path: '/:urlName',
         path: '/:id',
-        component: './src/pages/Index.vue',
+        component: './src/templates/Index.vue'
       },
       {
         name: 'event',
+        //path: '/event/:urlName',
         path: '/event/:id',
-        component: './src/pages/Event.vue',
-      },
-    ],
+        component: './src/templates/Event.vue'
+      }
+    ]
   },
   configureWebpack: {
     // merged with the internal config

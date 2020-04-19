@@ -4,6 +4,15 @@
   </div>
 </template>
 
+<static-query>
+query {
+  metadata {
+    siteName
+    siteDescription
+  }
+}
+</static-query>
+
 <script>
 export default {
   name: 'App',
@@ -20,6 +29,18 @@ export default {
     onResize() {
       this.$data.isMobile = window.innerWidth <= 600
     }
+  },
+  metaInfo() {
+   return {
+     title: this.$static.metadata.siteName,
+     meta: [
+       {
+         key: 'description',
+         name: 'description',
+         content: this.$static.metadata.siteDescription
+       }
+     ]
+   }
   }
 }
 </script>

@@ -136,7 +136,7 @@ export default {
 <style scoped lang="stylus"></style>
 
 <page-query>
-query (this.$id: ID!) {
+query ($id: ID!) {
   hackathon(id: $id) {
     path(to:"event")
     id
