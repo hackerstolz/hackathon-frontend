@@ -1,7 +1,8 @@
 backend:
   name: github
   branch: master # Branch to update (optional; defaults to master)
-  repo: saschatu/Netlify_Test_Content
+  repo: hackerstolz/hackathon-frontend
+  #repo: saschatu/Netlify_Test_Content
   site_domain: objective-bose-48f7bf.netlify.app
 
 # media_folder: "" # Media files will be stored in the repo under images/uploads
