@@ -11,7 +11,7 @@
             'stack-grid-item': true,
             'pa-2': true,
             xs4: !isMobile,
-            xs12: isMobile
+            xs12: isMobile,
           }"
         >
           <v-img
@@ -50,8 +50,8 @@
         <v-btn
           class="mt-2 mr-2"
           width="auto"
-          :href="$props.hackathon.linkTicketshop.url"
-          :disabled="!$props.hackathon.linkTicketshop.url"
+          :href="ticketShopURL"
+          :disabled="!ticketShopURL"
           target="_blank"
           color="info"
           outlined
@@ -63,8 +63,8 @@
         <v-btn
           class="mt-2 mr-2"
           width="auto"
-          :href="$props.hackathon.linkCommunity.url"
-          :disabled="!$props.hackathon.linkCommunity.url"
+          :href="communityURL"
+          :disabled="!communityURL"
           target="_blank"
           color="warning"
           outlined
@@ -77,8 +77,8 @@
       <v-btn
         class="buy-tickets mt-4 white--text"
         width="auto"
-        :href="$props.hackathon.linkTicketshop.url"
-        :disabled="!$props.hackathon.linkTicketshop.url"
+        :href="ticketShopURL"
+        :disabled="!ticketShopURL"
         target="_blank"
         color="success"
         large
@@ -94,19 +94,29 @@ export default {
   props: {
     themeColor: {
       type: String,
-      default: 'primary'
+      default: 'primary',
     },
     isMobile: Boolean,
-    hackathon: Object
+    hackathon: Object,
   },
   computed: {
-    sectionColor: function() {
+    communityURL() {
+      return this.$props.hackathon.linkCommunity
+        ? this.$props.hackathon.linkCommunity.url
+        : ''
+    },
+    ticketShopURL() {
+      return this.$props.hackathon.linkTicketshop
+        ? this.$props.hackathon.linkTicketshop.url
+        : ''
+    },
+    sectionColor() {
       return Object.keys(this.$vuetify.theme.themes.dark).indexOf(
         this.themeColor
       ) !== -1
         ? this.$vuetify.theme.themes.dark[this.themeColor]
         : this.$vuetify.theme.themes.dark.primary
-    }
+    },
   },
   data() {
     return {
@@ -116,60 +126,60 @@ export default {
           i18nTitle: ['Developer', 'Entwickler*in'],
           i18nDescription: [
             'Programmers who turn thoughts into code. Only the input speed of your keyboard sets you limits.',
-            'Programmierer, die Gedanken in Code verwandeln. Nur die Eingabegeschwindigkeit deiner Tastatur setzt dir Grenzen.'
-          ]
+            'Programmierer, die Gedanken in Code verwandeln. Nur die Eingabegeschwindigkeit deiner Tastatur setzt dir Grenzen.',
+          ],
         },
         {
           icon: require('../../assets/icons/flat-icon-stack.svg'),
           i18nTitle: ['Engineer', 'Techniker*in'],
           i18nDescription: [
             'With a deep scientific background you build the complex engine room of any technical project.',
-            'Mit einem tiefen wissenschaftlichen Hintergrund baust du den komplexen Maschinenraum eines jeden technischen Projekts.'
-          ]
+            'Mit einem tiefen wissenschaftlichen Hintergrund baust du den komplexen Maschinenraum eines jeden technischen Projekts.',
+          ],
         },
         {
           icon: require('../../assets/icons/flat-icon-network.svg'),
           i18nTitle: ['Data Scientist', 'Datenwissenschaftler*in'],
           i18nDescription: [
             'You and data, it’s a long story. A mixture of data magic and a touch of AI.',
-            'Du und Daten, es ist eine lange Geschichte. Eine Mischung aus Datenmagie und einem Hauch von KI.'
-          ]
+            'Du und Daten, es ist eine lange Geschichte. Eine Mischung aus Datenmagie und einem Hauch von KI.',
+          ],
         },
         {
           icon: require('../../assets/icons/flat-icon-tools.svg'),
           i18nTitle: ['Maker', 'Macher*in'],
           i18nDescription: [
             'Loves tinkering around with hardware and IoT. Your hands start to itch when you hear a great idea.',
-            'Liebt es, an Hardware und IoT herumzubasteln. Deine Hände fangen an zu jucken, wenn du eine tolle Idee hörst.'
-          ]
+            'Liebt es, an Hardware und IoT herumzubasteln. Deine Hände fangen an zu jucken, wenn du eine tolle Idee hörst.',
+          ],
         },
         {
           icon: require('../../assets/icons/flat-icon-bulp.svg'),
           i18nTitle: ['Idea Generator', 'Ideengenerator*in'],
           i18nDescription: [
             'You spark creation with your original ideas and understand the problem at hand.',
-            'Du inspirierst die Kreation mit deinen originellen Ideen und verstehst das anstehende Problem.'
-          ]
+            'Du inspirierst die Kreation mit deinen originellen Ideen und verstehst das anstehende Problem.',
+          ],
         },
         {
           icon: require('../../assets/icons/flat-icon-astronaut.svg'),
           i18nTitle: ['Superpower', 'Superkraft'],
           i18nDescription: [
             'Not techie or a designer, but your magic touch will bring projects to life.',
-            'Nicht Techniker oder Designer, aber deine magische Note wird Projekte zum Leben erwecken.'
-          ]
+            'Nicht Techniker oder Designer, aber deine magische Note wird Projekte zum Leben erwecken.',
+          ],
         },
         {
           icon: require('../../assets/icons/flat-icon-colors.svg'),
           i18nTitle: ['Designer', 'Designer*in'],
           i18nDescription: [
             'In your skillful hands, dashboards and applications gain clarity and style.',
-            'In deinen geschickten Händen gewinnen Dashboards und Anwendungen an Klarheit und Stil.'
-          ]
-        }
-      ]
+            'In deinen geschickten Händen gewinnen Dashboards und Anwendungen an Klarheit und Stil.',
+          ],
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

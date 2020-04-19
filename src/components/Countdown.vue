@@ -3,30 +3,30 @@
     <div class="items">
       <div class="item year">
         <div class="number">{{ years }}</div>
-        <div class="label">{{ $t("years") }}</div>
+        <div class="label">{{ $t('years') }}</div>
       </div>
       <div class="item day">
         <div class="number">{{ days }}</div>
-        <div class="label">{{ $t("days") }}</div>
+        <div class="label">{{ $t('days') }}</div>
       </div>
       <div class="item hour">
         <div class="number">{{ hours }}</div>
-        <div class="label">{{ $t("hours") }}</div>
+        <div class="label">{{ $t('hours') }}</div>
       </div>
       <div class="item minute">
         <div class="number">{{ minutes }}</div>
-        <div class="label">{{ $t("minutes") }}</div>
+        <div class="label">{{ $t('minutes') }}</div>
       </div>
       <div class="item second">
         <div class="number">{{ seconds }}</div>
-        <div class="label">{{ $t("seconds") }}</div>
+        <div class="label">{{ $t('seconds') }}</div>
       </div>
     </div>
     <div
       class="title-text"
       v-if="title && title.length > 0"
       :style="{
-        width: width + 32 + 'px'
+        width: width + 32 + 'px',
       }"
     >
       {{ title }}
@@ -35,15 +35,15 @@
 </template>
 
 <script>
-const MILLISECONDS_SECOND = 1000;
-const MILLISECONDS_MINUTE = 60 * MILLISECONDS_SECOND;
-const MILLISECONDS_HOUR = 60 * MILLISECONDS_MINUTE;
-const MILLISECONDS_DAY = 24 * MILLISECONDS_HOUR;
-const MILLISECONDS_YEAR = 365 * MILLISECONDS_DAY;
-const EVENT_VISIBILITY_CHANGE = "visibilitychange";
+const MILLISECONDS_SECOND = 1000
+const MILLISECONDS_MINUTE = 60 * MILLISECONDS_SECOND
+const MILLISECONDS_HOUR = 60 * MILLISECONDS_MINUTE
+const MILLISECONDS_DAY = 24 * MILLISECONDS_HOUR
+const MILLISECONDS_YEAR = 365 * MILLISECONDS_DAY
+const EVENT_VISIBILITY_CHANGE = 'visibilitychange'
 
 export default {
-  name: "Countdown",
+  name: 'Countdown',
 
   data() {
     return {
@@ -69,8 +69,8 @@ export default {
        * Width of title container.
        * @type {number}
        */
-      width: 200
-    };
+      width: 200,
+    }
   },
 
   props: {
@@ -79,7 +79,7 @@ export default {
      */
     title: {
       type: String,
-      default: ""
+      default: '',
     },
 
     /**
@@ -87,7 +87,7 @@ export default {
      */
     autoStart: {
       type: Boolean,
-      default: true
+      default: true,
     },
 
     /**
@@ -95,7 +95,7 @@ export default {
      */
     emitEvents: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     /**
@@ -104,7 +104,7 @@ export default {
     interval: {
       type: Number,
       default: 1000,
-      validator: value => value >= 0
+      validator: (value) => value >= 0,
     },
 
     /**
@@ -112,7 +112,7 @@ export default {
      */
     now: {
       type: Function,
-      default: () => Date.now()
+      default: () => Date.now(),
     },
 
     /**
@@ -121,7 +121,7 @@ export default {
     time: {
       type: Number,
       default: 0,
-      validator: value => value >= 0
+      validator: (value) => value >= 0,
     },
 
     /**
@@ -129,8 +129,8 @@ export default {
      */
     transform: {
       type: Function,
-      default: props => props
-    }
+      default: (props) => props,
+    },
   },
 
   computed: {
@@ -139,7 +139,7 @@ export default {
      * @returns {number} The computed value.
      */
     years() {
-      return Math.floor(this.totalMilliseconds / MILLISECONDS_YEAR);
+      return Math.floor(this.totalMilliseconds / MILLISECONDS_YEAR)
     },
 
     /**
@@ -149,7 +149,7 @@ export default {
     days() {
       return Math.floor(
         (this.totalMilliseconds % MILLISECONDS_YEAR) / MILLISECONDS_DAY
-      );
+      )
     },
 
     /**
@@ -159,7 +159,7 @@ export default {
     hours() {
       return Math.floor(
         (this.totalMilliseconds % MILLISECONDS_DAY) / MILLISECONDS_HOUR
-      );
+      )
     },
 
     /**
@@ -169,7 +169,7 @@ export default {
     minutes() {
       return Math.floor(
         (this.totalMilliseconds % MILLISECONDS_HOUR) / MILLISECONDS_MINUTE
-      );
+      )
     },
 
     /**
@@ -179,7 +179,7 @@ export default {
     seconds() {
       return Math.floor(
         (this.totalMilliseconds % MILLISECONDS_MINUTE) / MILLISECONDS_SECOND
-      );
+      )
     },
 
     /**
@@ -187,7 +187,7 @@ export default {
      * @returns {number} The computed value.
      */
     milliseconds() {
-      return Math.floor(this.totalMilliseconds % MILLISECONDS_SECOND);
+      return Math.floor(this.totalMilliseconds % MILLISECONDS_SECOND)
     },
 
     /**
@@ -195,7 +195,7 @@ export default {
      * @returns {number} The computed value.
      */
     totalYears() {
-      return this.years;
+      return this.years
     },
 
     /**
@@ -203,7 +203,7 @@ export default {
      * @returns {number} The computed value.
      */
     totalDays() {
-      return Math.floor(this.totalMilliseconds / MILLISECONDS_DAY);
+      return Math.floor(this.totalMilliseconds / MILLISECONDS_DAY)
     },
 
     /**
@@ -211,7 +211,7 @@ export default {
      * @returns {number} The computed value.
      */
     totalHours() {
-      return Math.floor(this.totalMilliseconds / MILLISECONDS_HOUR);
+      return Math.floor(this.totalMilliseconds / MILLISECONDS_HOUR)
     },
 
     /**
@@ -219,7 +219,7 @@ export default {
      * @returns {number} The computed value.
      */
     totalMinutes() {
-      return Math.floor(this.totalMilliseconds / MILLISECONDS_MINUTE);
+      return Math.floor(this.totalMilliseconds / MILLISECONDS_MINUTE)
     },
 
     /**
@@ -227,8 +227,8 @@ export default {
      * @returns {number} The computed value.
      */
     totalSeconds() {
-      return Math.floor(this.totalMilliseconds / MILLISECONDS_SECOND);
-    }
+      return Math.floor(this.totalMilliseconds / MILLISECONDS_SECOND)
+    },
   },
 
   watch: {
@@ -240,14 +240,14 @@ export default {
        * Update the countdown when props changed.
        */
       handler() {
-        this.totalMilliseconds = this.time;
-        this.endTime = this.now() + this.time;
+        this.totalMilliseconds = this.time
+        this.endTime = this.now() + this.time
 
         if (this.autoStart) {
-          this.start();
+          this.start()
         }
-      }
-    }
+      },
+    },
   },
 
   methods: {
@@ -258,20 +258,20 @@ export default {
      */
     start() {
       if (this.counting) {
-        return;
+        return
       }
 
-      this.counting = true;
+      this.counting = true
 
       if (this.emitEvents) {
         /**
          * Countdown start event.
          * @event Countdown#start
          */
-        this.$emit("start");
+        this.$emit('start')
       }
 
-      this.continue();
+      this.continue()
     },
 
     /**
@@ -280,34 +280,34 @@ export default {
      */
     continue() {
       if (!this.counting) {
-        return;
+        return
       }
 
-      const delay = Math.min(this.totalMilliseconds, this.interval);
+      const delay = Math.min(this.totalMilliseconds, this.interval)
 
       if (delay > 0) {
-        if (window.requestAnimationFrame) {
-          let start;
-          const step = timestamp => {
+        if (process.isClient && window.requestAnimationFrame) {
+          let start
+          const step = (timestamp) => {
             if (!start) {
-              start = timestamp;
+              start = timestamp
             }
 
             if (timestamp - start < delay) {
-              this.requestId = requestAnimationFrame(step);
+              this.requestId = requestAnimationFrame(step)
             } else {
-              this.progress();
+              this.progress()
             }
-          };
+          }
 
-          this.requestId = requestAnimationFrame(step);
+          this.requestId = requestAnimationFrame(step)
         } else {
           this.timeoutId = setTimeout(() => {
-            this.progress();
-          }, delay);
+            this.progress()
+          }, delay)
         }
       } else {
-        this.end();
+        this.end()
       }
     },
 
@@ -316,10 +316,10 @@ export default {
      * @private
      */
     pause() {
-      if (window.requestAnimationFrame) {
-        cancelAnimationFrame(this.requestId);
+      if (process.isClient && window.requestAnimationFrame) {
+        cancelAnimationFrame(this.requestId)
       } else {
-        clearTimeout(this.timeoutId);
+        clearTimeout(this.timeoutId)
       }
     },
 
@@ -330,17 +330,17 @@ export default {
      */
     progress() {
       if (!this.counting) {
-        return;
+        return
       }
 
-      this.totalMilliseconds -= this.interval;
+      this.totalMilliseconds -= this.interval
 
       if (this.emitEvents && this.totalMilliseconds > 0) {
         /**
          * Countdown progress event.
          * @event Countdown#progress
          */
-        this.$emit("progress", {
+        this.$emit('progress', {
           years: this.years,
           days: this.days,
           hours: this.hours,
@@ -353,11 +353,11 @@ export default {
           totalHours: this.totalHours,
           totalMinutes: this.totalMinutes,
           totalSeconds: this.totalSeconds,
-          totalMilliseconds: this.totalMilliseconds
-        });
+          totalMilliseconds: this.totalMilliseconds,
+        })
       }
 
-      this.continue();
+      this.continue()
     },
 
     /**
@@ -367,18 +367,18 @@ export default {
      */
     abort() {
       if (!this.counting) {
-        return;
+        return
       }
 
-      this.pause();
-      this.counting = false;
+      this.pause()
+      this.counting = false
 
       if (this.emitEvents) {
         /**
          * Countdown abort event.
          * @event Countdown#abort
          */
-        this.$emit("abort");
+        this.$emit('abort')
       }
     },
 
@@ -389,19 +389,19 @@ export default {
      */
     end() {
       if (!this.counting) {
-        return;
+        return
       }
 
-      this.pause();
-      this.totalMilliseconds = 0;
-      this.counting = false;
+      this.pause()
+      this.totalMilliseconds = 0
+      this.counting = false
 
       if (this.emitEvents) {
         /**
          * Countdown end event.
          * @event Countdown#end
          */
-        this.$emit("end");
+        this.$emit('end')
       }
     },
 
@@ -411,7 +411,7 @@ export default {
      */
     update() {
       if (this.counting) {
-        this.totalMilliseconds = Math.max(0, this.endTime - this.now());
+        this.totalMilliseconds = Math.max(0, this.endTime - this.now())
       }
     },
 
@@ -421,14 +421,14 @@ export default {
      */
     handleVisibilityChange() {
       switch (document.visibilityState) {
-        case "visible":
-          this.update();
-          this.continue();
-          break;
+        case 'visible':
+          this.update()
+          this.continue()
+          break
 
-        case "hidden":
-          this.pause();
-          break;
+        case 'hidden':
+          this.pause()
+          break
 
         default:
       }
@@ -439,26 +439,26 @@ export default {
      * @private
      */
     calcWidth() {
-      this.width = this.$el.querySelector(".items").clientWidth;
-    }
+      this.width = this.$el.querySelector('.items').clientWidth
+    },
   },
 
   mounted() {
     document.addEventListener(
       EVENT_VISIBILITY_CHANGE,
       this.handleVisibilityChange
-    );
-    this.calcWidth();
+    )
+    this.calcWidth()
   },
 
   beforeDestroy() {
     document.removeEventListener(
       EVENT_VISIBILITY_CHANGE,
       this.handleVisibilityChange
-    );
-    this.pause();
-  }
-};
+    )
+    this.pause()
+  },
+}
 </script>
 
 <i18n>

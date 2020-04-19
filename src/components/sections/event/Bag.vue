@@ -3,97 +3,143 @@
     <v-container>
       <h2>{{ $t('title') }}</h2>
       <p class="intro my-5" v-html="$t('intro')"></p>
-      <stack
-        ref="stack"
-        :column-min-width="320"
-        :gutter-width="24"
-        :gutter-height="24"
-        monitor-images-loaded
-      >
-        <!-- Bleib deinem Becher Treu Becher -->
-        <stack-item class="stack-grid-item">
-          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
-            <h3 class="mb-3">{{ $t('cup') }}</h3>
-            <div class="icon">{{ '☕️' }}</div>
-            <p class="mb-3" v-html="$t('cupDescription')"></p>
-          </v-card>
-        </stack-item>
+      <ClientOnly>
+        <stack
+          ref="stack"
+          :column-min-width="320"
+          :gutter-width="24"
+          :gutter-height="24"
+          monitor-images-loaded
+        >
+          <!-- Bleib deinem Becher Treu Becher -->
+          <stack-item class="stack-grid-item">
+            <v-card
+              class="card pa-3"
+              width="100%"
+              color="rgba(255,255,255,0.1)"
+              flat
+            >
+              <h3 class="mb-3">{{ $t('cup') }}</h3>
+              <div class="icon">{{ '☕️' }}</div>
+              <p class="mb-3" v-html="$t('cupDescription')"></p>
+            </v-card>
+          </stack-item>
 
-        <!-- Bügelflasche -->
-        <stack-item class="stack-grid-item">
-          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
-            <h3 class="mb-3">{{ $t('bottle') }}</h3>
-            <div class="icon">{{ '🚰' }}</div>
-            <p class="mb-3" v-html="$t('bottleDescription')"></p>
-          </v-card>
-        </stack-item>
+          <!-- Bügelflasche -->
+          <stack-item class="stack-grid-item">
+            <v-card
+              class="card pa-3"
+              width="100%"
+              color="rgba(255,255,255,0.1)"
+              flat
+            >
+              <h3 class="mb-3">{{ $t('bottle') }}</h3>
+              <div class="icon">{{ '🚰' }}</div>
+              <p class="mb-3" v-html="$t('bottleDescription')"></p>
+            </v-card>
+          </stack-item>
 
-        <!-- Stoffbeutel -->
-        <stack-item class="stack-grid-item">
-          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
-            <h3 class="mb-3">{{ $t('smallBag') }}</h3>
-            <div class="icon">{{ '👝' }}</div>
-            <p class="mb-3">{{ $t('smallBagDescription') }}</p>
-          </v-card>
-        </stack-item>
+          <!-- Stoffbeutel -->
+          <stack-item class="stack-grid-item">
+            <v-card
+              class="card pa-3"
+              width="100%"
+              color="rgba(255,255,255,0.1)"
+              flat
+            >
+              <h3 class="mb-3">{{ $t('smallBag') }}</h3>
+              <div class="icon">{{ '👝' }}</div>
+              <p class="mb-3">{{ $t('smallBagDescription') }}</p>
+            </v-card>
+          </stack-item>
 
-        <!-- Post-Its -->
-        <stack-item class="stack-grid-item">
-          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
-            <h3 class="mb-3">{{ $t('postItsBag') }}</h3>
-            <div class="icon">{{ '📝' }}</div>
-            <p class="mb-3">{{ $t('postItsBagDescription') }}</p>
-          </v-card>
-        </stack-item>
+          <!-- Post-Its -->
+          <stack-item class="stack-grid-item">
+            <v-card
+              class="card pa-3"
+              width="100%"
+              color="rgba(255,255,255,0.1)"
+              flat
+            >
+              <h3 class="mb-3">{{ $t('postItsBag') }}</h3>
+              <div class="icon">{{ '📝' }}</div>
+              <p class="mb-3">{{ $t('postItsBagDescription') }}</p>
+            </v-card>
+          </stack-item>
 
-        <!-- Sattelschutz -->
-        <stack-item class="stack-grid-item">
-          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
-            <h3 class="mb-3">{{ $t('saddleProtectionBag') }}</h3>
-            <div class="icon">{{ '🚲' }}</div>
-            <p class="mb-3">{{ $t('saddleProtectionBagDescription') }}</p>
-          </v-card>
-        </stack-item>
+          <!-- Sattelschutz -->
+          <stack-item class="stack-grid-item">
+            <v-card
+              class="card pa-3"
+              width="100%"
+              color="rgba(255,255,255,0.1)"
+              flat
+            >
+              <h3 class="mb-3">{{ $t('saddleProtectionBag') }}</h3>
+              <div class="icon">{{ '🚲' }}</div>
+              <p class="mb-3">{{ $t('saddleProtectionBagDescription') }}</p>
+            </v-card>
+          </stack-item>
 
-        <!-- Seedbomb -->
-        <stack-item class="stack-grid-item">
-          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
-            <h3 class="mb-3">{{ $t('seedbomb') }}</h3>
-            <div class="icon">{{ '🌺' }}</div>
-            <p class="mb-3">{{ $t('seedbombDescription') }}</p>
-          </v-card>
-        </stack-item>
+          <!-- Seedbomb -->
+          <stack-item class="stack-grid-item">
+            <v-card
+              class="card pa-3"
+              width="100%"
+              color="rgba(255,255,255,0.1)"
+              flat
+            >
+              <h3 class="mb-3">{{ $t('seedbomb') }}</h3>
+              <div class="icon">{{ '🌺' }}</div>
+              <p class="mb-3">{{ $t('seedbombDescription') }}</p>
+            </v-card>
+          </stack-item>
 
-        <!-- Sticker -->
-        <stack-item class="stack-grid-item">
-          <v-card class="card pa-3" width="100%" color="rgba(255,255,255,0.1)" flat>
-            <h3 class="mb-3">{{ $t('sticker') }}</h3>
-            <div class="icon">{{ '🌍' }}</div>
-            <p class="mb-3">{{ $t('stickerDescription') }}</p>
-          </v-card>
-        </stack-item>
-      </stack>
+          <!-- Sticker -->
+          <stack-item class="stack-grid-item">
+            <v-card
+              class="card pa-3"
+              width="100%"
+              color="rgba(255,255,255,0.1)"
+              flat
+            >
+              <h3 class="mb-3">{{ $t('sticker') }}</h3>
+              <div class="icon">{{ '🌍' }}</div>
+              <p class="mb-3">{{ $t('stickerDescription') }}</p>
+            </v-card>
+          </stack-item>
+        </stack>
+      </ClientOnly>
     </v-container>
   </section>
 </template>
 
 <script>
-import debounce from "lodash/debounce";
-import { Stack, StackItem } from "vue-stack-grid";
+import debounce from 'lodash/debounce'
+// import { Stack, StackItem } from "vue-stack-grid";
 
 export default {
-  name: "EventBag",
-  components: { Stack, StackItem },
+  name: 'EventBag',
+  components: {
+    Stack: () =>
+      import('vue-stack-grid')
+        .then((m) => m.Stack)
+        .catch(),
+    StackItem: () =>
+      import('vue-stack-grid')
+        .then((m) => m.StackItem)
+        .catch(),
+  },
   props: {
     themeColor: {
       type: String,
-      default: "primary"
-    }
+      default: 'primary',
+    },
   },
   methods: {
     reflow: debounce(function() {
-      this.$refs.stack.reflow();
-    }, 100)
+      this.$refs.stack.reflow()
+    }, 100),
   },
   computed: {
     sectionColor: function() {
@@ -101,10 +147,10 @@ export default {
         this.themeColor
       ) !== -1
         ? this.$vuetify.theme.themes.dark[this.themeColor]
-        : this.$vuetify.theme.themes.dark.primary;
-    }
-  }
-};
+        : this.$vuetify.theme.themes.dark.primary
+    },
+  },
+}
 </script>
 
 <i18n>

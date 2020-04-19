@@ -1,15 +1,15 @@
 <template>
   <Layout>
     <EventHeader id="header" :isMobile="isMobile" themeColor="secondary" />
-    <EventInfo
+    <!-- <EventInfo
       id="info"
       v-if="$page && $page.hackathon"
       :isMobile="isMobile"
       :hackathon="$page.hackathon"
       themeColor="secondary"
-    />
+    />-->
     <EventLocation id="location" :isMobile="isMobile" themeColor="primary" />
-    <EventBag id="bag" :isMobile="isMobile" themeColor="secondary" />
+    <!-- <EventBag id="bag" :isMobile="isMobile" themeColor="secondary" /> -->
     <Footer id="footer" themeColor="primary" :hackathon="$page.hackathon" />
   </Layout>
 </template>

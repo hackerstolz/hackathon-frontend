@@ -48,82 +48,85 @@
       </v-card>
 
       <!-- TODO: use challenge awards -->
-      <stack
-        ref="stack"
-        :column-min-width="320"
-        :gutter-width="24"
-        :gutter-height="24"
-        monitor-images-loaded
-      >
-        <stack-item
-          v-for="(award, i) in challengeAwards"
-          :key="i"
-          class="stack-grid-item"
+      <ClientOnly>
+        <stack
+          ref="stack"
+          :column-min-width="320"
+          :gutter-width="24"
+          :gutter-height="24"
+          monitor-images-loaded
         >
-          <v-card
-            class="card pa-3"
-            width="100%"
-            color="rgba(255,255,255,0.1)"
-            flat
+          <stack-item
+            v-for="(award, i) in challengeAwards"
+            :key="i"
+            class="stack-grid-item"
           >
-            <h3 class="mb-1">
-              {{ getI18nNode(award.titles, $i18n.locale).title }}
-            </h3>
-            <h4 class="mb-3">
-              {{ getI18nNode(award.titles, $i18n.locale).subtitle }}
-            </h4>
-            <v-img
-              :src="award.image"
-              max-height="128px"
-              height="128px"
-              contain
-              @load="reflow"
-            ></v-img>
-            <div
-              :style="{ color: $vuetify.theme.themes.dark.error }"
-              class="prize my-3"
+            <v-card
+              class="card pa-3"
+              width="100%"
+              color="rgba(255,255,255,0.1)"
+              flat
             >
-              {{ getI18nNode(award.prize, $i18n.locale).prize }}
-            </div>
-            <p
-              class="description"
-              v-html="
-                formatMarkdown(
-                  getI18nNode(award.descriptions, $i18n.locale).description
-                )
-              "
-            ></p>
-            <v-btn
-              v-if="award.criteria.length > 0"
-              class="mt-2 mr-2"
-              width="auto"
-              :color="$vuetify.theme.themes.dark.error"
-              outlined
-              text
-              small
-              @click="
-                ;(criteria = getI18nNode(award.criteria, $i18n.locale)
-                  .criteria),
-                  (criteriaShow = true)
-              "
-              >{{ $t('button.showCriteria') }}</v-btn
-            >
-            <v-btn
-              v-if="
-                award.$challengeID !== null && award.$challengeID !== undefined
-              "
-              class="mt-2"
-              width="auto"
-              :color="award.color"
-              outlined
-              text
-              small
-              @click="() => $scrollTo(`#challenge-${award.$challengeID}`)"
-              >{{ $t('button.showChallenge') }}</v-btn
-            >
-          </v-card>
-        </stack-item>
-      </stack>
+              <h3 class="mb-1">
+                {{ getI18nNode(award.titles, $i18n.locale).title }}
+              </h3>
+              <h4 class="mb-3">
+                {{ getI18nNode(award.titles, $i18n.locale).subtitle }}
+              </h4>
+              <v-img
+                :src="award.image"
+                max-height="128px"
+                height="128px"
+                contain
+                @load="reflow"
+              ></v-img>
+              <div
+                :style="{ color: $vuetify.theme.themes.dark.error }"
+                class="prize my-3"
+              >
+                {{ getI18nNode(award.prize, $i18n.locale).prize }}
+              </div>
+              <p
+                class="description"
+                v-html="
+                  formatMarkdown(
+                    getI18nNode(award.descriptions, $i18n.locale).description
+                  )
+                "
+              ></p>
+              <v-btn
+                v-if="award.criteria.length > 0"
+                class="mt-2 mr-2"
+                width="auto"
+                :color="$vuetify.theme.themes.dark.error"
+                outlined
+                text
+                small
+                @click="
+                  ;(criteria = getI18nNode(award.criteria, $i18n.locale)
+                    .criteria),
+                    (criteriaShow = true)
+                "
+                >{{ $t('button.showCriteria') }}</v-btn
+              >
+              <v-btn
+                v-if="
+                  award.$challengeID !== null &&
+                    award.$challengeID !== undefined
+                "
+                class="mt-2"
+                width="auto"
+                :color="award.color"
+                outlined
+                text
+                small
+                @click="() => $scrollTo(`#challenge-${award.$challengeID}`)"
+                >{{ $t('button.showChallenge') }}</v-btn
+              >
+            </v-card>
+          </stack-item>
+        </stack>
+      </ClientOnly>
 
       <div class="infoArea mt-5">
         <p
@@ -162,9 +165,9 @@
           </div>
           <v-card-actions class="dialog-card-footer">
             <v-spacer />
-            <v-btn color="accent" text @click="criteriaShow = false">
-              {{ $t('button.close') }}
-            </v-btn>
+            <v-btn color="accent" text @click="criteriaShow = false">{{
+              $t('button.close')
+            }}</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -175,21 +178,30 @@
 <script>
 import debounce from 'lodash/debounce'
 import showdown from 'showdown'
-import { Stack, StackItem } from 'vue-stack-grid'
+// import { Stack, StackItem } from "vue-stack-grid";
 
 const converter = new showdown.Converter()
 
 export default {
   name: 'Awards',
-  components: { Stack, StackItem },
+  components: {
+    Stack: () =>
+      import('vue-stack-grid')
+        .then((m) => m.Stack)
+        .catch(),
+    StackItem: () =>
+      import('vue-stack-grid')
+        .then((m) => m.StackItem)
+        .catch(),
+  },
   props: {
     themeColor: {
       type: String,
-      default: 'primary'
+      default: 'primary',
     },
     isMobile: Boolean,
     hackathon: Object,
-    challenges: Array
+    challenges: Array,
   },
   computed: {
     sectionColor() {
@@ -203,7 +215,7 @@ export default {
       return this.$props.challenges
         .filter(({ node }) => !!node.award)
         .map(({ node }) => ({ ...node.award, $challengeID: node.id }))
-    }
+    },
   },
   methods: {
     formatMarkdown(text) {
@@ -212,21 +224,21 @@ export default {
     getI18nNode(i18nNodes = [], lang) {
       const locale = lang.toUpperCase()
       const [i18nNode = {}] = i18nNodes.filter(
-        n => n.language === locale || n.language === locale.split('-'[0])
+        (n) => n.language === locale || n.language === locale.split('-'[0])
       ) || [{}]
 
       return i18nNode
     },
     reflow: debounce(function() {
       this.$refs.stack.reflow()
-    }, 100)
+    }, 100),
   },
   data() {
     return {
       criteriaShow: false,
-      criteria: ''
+      criteria: '',
     }
-  }
+  },
 }
 </script>
 

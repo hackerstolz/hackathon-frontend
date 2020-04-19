@@ -3,73 +3,81 @@
     <v-container>
       <h2>{{ $t('title') }}</h2>
     </v-container>
-    <video-bg
-      ref="videobg"
-      class="video-container"
-      :sources="[
-        require('!file-loader!../../assets/video/mafinex-footage.webm'),
-        require('!file-loader!../../assets/video/mafinex-footage.ogv'),
-        require('!file-loader!../../assets/video/mafinex-footage.mp4')
-      ]"
-      :img="require('../../assets/video/mafinex-footage.jpg')"
-    >
-      <div
-        class="shade-top"
-        :style="{
-          'background-image': `linear-gradient(to top, rgba(16, 24, 47, 0), ${sectionColor})`
-        }"
-      ></div>
-      <v-layout class="video-content flex align-center py-5" fill-height column>
-        <h3 class="align-left">{{ $t('locationSlogan') }}</h3>
-        <!-- <v-flex xs12 align-end> -->
-        <v-spacer />
-        <v-icon class="pa-1" color="rgba(255, 255, 255, 0.38)" x-large>place</v-icon>
-        <p class="location-text pa-1">
-          MAFINEX-Technologiezentrum
-          <br />Julius-Hatry-Str. 1
-          <br />68163 Mannheim
-        </p>
-        <v-btn
-          class="my-2"
-          width="auto"
-          href="https://www.google.com/maps/place/mg:+mannheimer+gr%C3%BCndungszentren+gmbh/@49.4732698,8.4747424,15z/data=!4m5!3m4!1s0x0:0x9a435721e6fc738d!8m2!3d49.4732698!4d8.4747424"
-          target="_blank"
-          color="rgba(255, 255, 255, 0.8)"
-          outlined
-          text
+    <ClientOnly>
+      <video-bg
+        ref="videobg"
+        class="video-container"
+        :sources="[
+          require('!file-loader!../../assets/video/mafinex-footage.webm'),
+          require('!file-loader!../../assets/video/mafinex-footage.ogv'),
+          require('!file-loader!../../assets/video/mafinex-footage.mp4'),
+        ]"
+        :img="require('../../assets/video/mafinex-footage.jpg')"
+      >
+        <div
+          class="shade-top"
+          :style="{
+            'background-image': `linear-gradient(to top, rgba(16, 24, 47, 0), ${sectionColor})`,
+          }"
+        ></div>
+        <v-layout
+          class="video-content flex align-center py-5"
+          fill-height
+          column
         >
-          {{ $t('button.link2Maps') }}
-          <v-icon dark right>open_in_new</v-icon>
-        </v-btn>
-        <!-- </v-flex> -->
-      </v-layout>
-      <div
-        class="shade-bottom"
-        :style="{
-          'background-image': `linear-gradient(to bottom, rgba(24, 36, 69, 0), ${sectionColor})`
-        }"
-      ></div>
-    </video-bg>
+          <h3 class="align-left">{{ $t('locationSlogan') }}</h3>
+          <!-- <v-flex xs12 align-end> -->
+          <v-spacer />
+          <v-icon class="pa-1" color="rgba(255, 255, 255, 0.38)" x-large
+            >place</v-icon
+          >
+          <p class="location-text pa-1">
+            MAFINEX-Technologiezentrum
+            <br />Julius-Hatry-Str. 1 <br />68163 Mannheim
+          </p>
+          <v-btn
+            class="my-2"
+            width="auto"
+            href="https://www.google.com/maps/place/mg:+mannheimer+gr%C3%BCndungszentren+gmbh/@49.4732698,8.4747424,15z/data=!4m5!3m4!1s0x0:0x9a435721e6fc738d!8m2!3d49.4732698!4d8.4747424"
+            target="_blank"
+            color="rgba(255, 255, 255, 0.8)"
+            outlined
+            text
+          >
+            {{ $t('button.link2Maps') }}
+            <v-icon dark right>open_in_new</v-icon>
+          </v-btn>
+          <!-- </v-flex> -->
+        </v-layout>
+        <div
+          class="shade-bottom"
+          :style="{
+            'background-image': `linear-gradient(to bottom, rgba(24, 36, 69, 0), ${sectionColor})`,
+          }"
+        ></div>
+      </video-bg>
+    </ClientOnly>
   </section>
 </template>
 
 <script>
-import VideoBg from "vue-videobg";
-
 export default {
-  name: "Location",
+  name: 'Location',
   components: {
-    VideoBg
+    VideoBg: () =>
+      import('vue-videobg')
+        .then((m) => m)
+        .catch(),
   },
   props: {
     themeColor: {
       type: String,
-      default: "primary"
-    }
+      default: 'primary',
+    },
   },
   mounted() {
     // set video to play in slow motion
-    this.$refs.videobg.$refs.video.playbackRate = 1; // 0.5;
+    this.$refs.videobg.$refs.video.playbackRate = 1 // 0.5;
   },
   computed: {
     sectionColor: function() {
@@ -77,10 +85,10 @@ export default {
         this.themeColor
       ) !== -1
         ? this.$vuetify.theme.themes.dark[this.themeColor]
-        : this.$vuetify.theme.themes.dark.primary;
-    }
-  }
-};
+        : this.$vuetify.theme.themes.dark.primary
+    },
+  },
+}
 </script>
 
 <i18n>

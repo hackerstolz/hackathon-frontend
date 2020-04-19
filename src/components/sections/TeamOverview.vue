@@ -2,136 +2,150 @@
   <section :style="{ backgroundColor: sectionColor }">
     <v-container>
       <h2>{{ $t('prices') }}</h2>
-      <stack
-        class="mb-5"
-        ref="stack"
-        :column-min-width="320"
-        :gutter-width="24"
-        :gutter-height="24"
-        monitor-images-loaded
-      >
-        <stack-item
-          v-for="(price, i) in prices"
-          :key="i"
-          class="stack-grid-item"
+      <ClientOnly>
+        <stack
+          class="mb-5"
+          ref="stack"
+          :column-min-width="320"
+          :gutter-width="24"
+          :gutter-height="24"
+          monitor-images-loaded
         >
-          <v-card
-            class="card pb-2"
-            width="100%"
-            color="rgba(255,255,255,0.1)"
-            flat
+          <stack-item
+            v-for="(price, i) in prices"
+            :key="i"
+            class="stack-grid-item"
           >
-            <v-img
-              class="white--text align-end mb-4"
-              :lazy-src="require('../../../static/placeholder.svg')"
-              :src="price.img || require('../../../static/placeholder.svg')"
-              :height="isMobile ? '200px' : '250px'"
-              :min-height="isMobile ? '200px' : '250px'"
-              @load="reflow"
+            <v-card
+              class="card pb-2"
+              width="100%"
+              color="rgba(255,255,255,0.1)"
+              flat
             >
-              <v-card-title>
-                <h3 class="mb-1">{{ $t(price.text) }}</h3>
-              </v-card-title>
-            </v-img>
-            <v-chip
-              :class="{
-                'mr-1': true,
-                'mb-1': true,
-                tags: true,
-                winner: price.winner
-              }"
-              :color="price.color"
-              :small="isMobile"
-              text-color="black"
-            >
-              <v-icon v-if="price.winner" light left>emoji_events</v-icon>
-              {{ price.text }}
-            </v-chip>
-            <p class="description px-2 my-4" v-html="$t(price.description)"></p>
-          </v-card>
-        </stack-item>
-      </stack>
+              <v-img
+                class="white--text align-end mb-4"
+                :lazy-src="require('../../../static/placeholder.svg')"
+                :src="price.img || require('../../../static/placeholder.svg')"
+                :height="isMobile ? '200px' : '250px'"
+                :min-height="isMobile ? '200px' : '250px'"
+                @load="reflow"
+              >
+                <v-card-title>
+                  <h3 class="mb-1">{{ $t(price.text) }}</h3>
+                </v-card-title>
+              </v-img>
+              <v-chip
+                :class="{
+                  'mr-1': true,
+                  'mb-1': true,
+                  tags: true,
+                  winner: price.winner,
+                }"
+                :color="price.color"
+                :small="isMobile"
+                text-color="black"
+              >
+                <v-icon v-if="price.winner" light left>emoji_events</v-icon>
+                {{ price.text }}
+              </v-chip>
+              <p
+                class="description px-2 my-4"
+                v-html="$t(price.description)"
+              ></p>
+            </v-card>
+          </stack-item>
+        </stack>
 
-      <h2>{{ $t('title') }}</h2>
-      <stack
-        ref="stack"
-        :column-min-width="320"
-        :gutter-width="24"
-        :gutter-height="24"
-        monitor-images-loaded
-      >
-        <stack-item
-          v-for="(winner, i) in winners"
-          :key="i"
-          class="stack-grid-item"
+        <h2>{{ $t('title') }}</h2>
+        <stack
+          ref="stack"
+          :column-min-width="320"
+          :gutter-width="24"
+          :gutter-height="24"
+          monitor-images-loaded
         >
-          <v-card
-            class="card pa-3"
-            width="100%"
-            color="rgba(255,255,255,0.1)"
-            flat
+          <stack-item
+            v-for="(winner, i) in winners"
+            :key="i"
+            class="stack-grid-item"
           >
-            <h3 class="mb-1">{{ winner.title }}</h3>
-            <v-img
-              :lazy-src="require('../../../static/placeholder.svg')"
-              :src="winner.img || require('../../../static/placeholder.svg')"
-              max-height="128px"
-              height="128px"
-              contain
-              @load="reflow"
-            ></v-img>
-            <p
-              class="description mb-4"
-              v-html="winner.descriptionI18n[$i18n.locale]"
-            ></p>
-            <v-chip
-              v-for="(award, i) in winner.awards"
-              :key="i"
-              :class="{
-                'mr-1': true,
-                'mb-1': true,
-                tags: true,
-                winner: award.winner
-              }"
-              :color="award.color"
-              :small="isMobile"
-              text-color="black"
+            <v-card
+              class="card pa-3"
+              width="100%"
+              color="rgba(255,255,255,0.1)"
+              flat
             >
-              <v-icon v-if="award.winner" light left>emoji_events</v-icon>
-              {{ award.text }}
-            </v-chip>
-            <br />
-            <v-btn
-              class="mt-4"
-              width="auto"
-              color="white"
-              :href="winner.sulutionURL"
-              target="_blank"
-              outlined
-              text
-              :small="isMobile"
-              >{{ $t('btnShowSolution') }}</v-btn
-            >
-          </v-card>
-        </stack-item>
-      </stack>
+              <h3 class="mb-1">{{ winner.title }}</h3>
+              <v-img
+                :lazy-src="require('../../../static/placeholder.svg')"
+                :src="winner.img || require('../../../static/placeholder.svg')"
+                max-height="128px"
+                height="128px"
+                contain
+                @load="reflow"
+              ></v-img>
+              <p
+                class="description mb-4"
+                v-html="winner.descriptionI18n[$i18n.locale]"
+              ></p>
+              <v-chip
+                v-for="(award, i) in winner.awards"
+                :key="i"
+                :class="{
+                  'mr-1': true,
+                  'mb-1': true,
+                  tags: true,
+                  winner: award.winner,
+                }"
+                :color="award.color"
+                :small="isMobile"
+                text-color="black"
+              >
+                <v-icon v-if="award.winner" light left>emoji_events</v-icon>
+                {{ award.text }}
+              </v-chip>
+              <br />
+              <v-btn
+                class="mt-4"
+                width="auto"
+                color="white"
+                :href="winner.sulutionURL"
+                target="_blank"
+                outlined
+                text
+                :small="isMobile"
+                >{{ $t('btnShowSolution') }}</v-btn
+              >
+            </v-card>
+          </stack-item>
+        </stack>
+      </ClientOnly>
     </v-container>
   </section>
 </template>
 
 <script>
 import debounce from 'lodash/debounce'
-import { Stack, StackItem } from 'vue-stack-grid'
+// import { Stack, StackItem } from "vue-stack-grid";
 
 export default {
   name: 'TeamOverview',
-  components: { Stack, StackItem },
+  components: {
+    Stack: () =>
+      import('vue-stack-grid')
+        .then((m) => m.Stack)
+        .catch(),
+    StackItem: () =>
+      import('vue-stack-grid')
+        .then((m) => m.StackItem)
+        .catch(),
+  },
   props: {
     themeColor: {
       type: String,
-      default: 'primary'
+      default: 'primary',
     },
-    isMobile: Boolean
+    isMobile: Boolean,
   },
   computed: {
     sectionColor: function() {
@@ -140,12 +154,12 @@ export default {
       ) !== -1
         ? this.$vuetify.theme.themes.dark[this.themeColor]
         : this.$vuetify.theme.themes.dark.primary
-    }
+    },
   },
   methods: {
     reflow: debounce(function() {
       this.$refs.stack.reflow()
-    }, 100)
+    }, 100),
   },
   data() {
     return {
@@ -155,15 +169,15 @@ export default {
           description: 'Bike Drop, 1&ONLY, LoRaWahn',
           color: this.$vuetify.theme.themes.dark.warning,
           winner: true,
-          img: require('../../assets/awards/award-global.png')
+          img: require('../../assets/awards/award-global.png'),
         },
         {
           text: 'S-HUB Award',
           description: '1&ONLY, Zero2',
           color: this.$vuetify.theme.themes.dark.warning,
           winner: true,
-          img: require('../../assets/awards/award-red.svg')
-        }
+          img: require('../../assets/awards/award-red.svg'),
+        },
         // {
         //   text: 'ProjectTogether Award',
         //   description:
@@ -217,25 +231,25 @@ export default {
             {
               text: 'Climate Grant Award',
               color: this.$vuetify.theme.themes.dark.warning,
-              winner: true
+              winner: true,
             },
             {
               text: 'City Challenge',
               color: this.$vuetify.theme.themes.dark.error,
-              winner: false
+              winner: false,
             },
             {
               text: 'RNV Challenge',
               color: this.$vuetify.theme.themes.dark.info,
-              winner: false
-            }
+              winner: false,
+            },
           ],
           descriptionI18n: {
             de: 'Der Fahrradbaum - eine Design-Bike-Station.',
-            en: 'The Bike Tree – a design bike station.'
+            en: 'The Bike Tree – a design bike station.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/biketree-final'
+            'https://climathon.climate-kic.org/en/solutions/biketree-final',
         },
         {
           title: '1&ONLY',
@@ -244,26 +258,26 @@ export default {
             {
               text: 'Climate Grant Award',
               color: this.$vuetify.theme.themes.dark.warning,
-              winner: true
+              winner: true,
             },
             {
               text: 'S-HUB Award',
               color: this.$vuetify.theme.themes.dark.warning,
-              winner: true
+              winner: true,
             },
             {
               text: 'CAMELOT Challenge Winner',
               color: this.$vuetify.theme.themes.dark.info,
-              winner: true
-            }
+              winner: true,
+            },
           ],
           descriptionI18n: {
             de:
               'BendiT - Eine Plattform zur Beschleunigung der industriellen Symbiose.',
-            en: 'BendiT - A platform to accelerate Industrial symbiosis.'
+            en: 'BendiT - A platform to accelerate Industrial symbiosis.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/benit-the-industrial-symbiosis-accelerator'
+            'https://climathon.climate-kic.org/en/solutions/benit-the-industrial-symbiosis-accelerator',
         },
         {
           title: 'LoRaWahn',
@@ -272,21 +286,21 @@ export default {
             {
               text: 'Climate Grant Award',
               color: this.$vuetify.theme.themes.dark.warning,
-              winner: true
+              winner: true,
             },
             {
               text: 'MVV Challenge Winner',
               color: this.$vuetify.theme.themes.dark.info,
-              winner: true
-            }
+              winner: true,
+            },
           ],
           descriptionI18n: {
             de:
               'Zeigen Sie dem Anwender mit LoRaWan-Sensoren, wie viel CO2 er sparen kann.',
-            en: 'Show the user with LoRaWan sensors how much co2 he can save.'
+            en: 'Show the user with LoRaWan sensors how much co2 he can save.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/consider-your-consequences'
+            'https://climathon.climate-kic.org/en/solutions/consider-your-consequences',
         },
         {
           title: 'Zero2',
@@ -295,25 +309,25 @@ export default {
             {
               text: 'S-HUB Award',
               color: this.$vuetify.theme.themes.dark.warning,
-              winner: true
+              winner: true,
             },
             {
               text: 'CAMELOT Challenge Winner',
               color: this.$vuetify.theme.themes.dark.info,
-              winner: true
+              winner: true,
             },
             {
               text: 'City Challenge',
               color: this.$vuetify.theme.themes.dark.error,
-              winner: false
-            }
+              winner: false,
+            },
           ],
           descriptionI18n: {
             de: 'FoodAbdruck- eine umweltfreundliche Einkaufsliste.',
-            en: 'FoodAbdruck- an environmental friendly shopping list.'
+            en: 'FoodAbdruck- an environmental friendly shopping list.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/foodabdruck'
+            'https://climathon.climate-kic.org/en/solutions/foodabdruck',
         },
         {
           title: 'op',
@@ -322,16 +336,16 @@ export default {
             {
               text: 'RNV Challenge',
               color: this.$vuetify.theme.themes.dark.info,
-              winner: false
-            }
+              winner: false,
+            },
           ],
           descriptionI18n: {
             de:
               'Informationen zum öffentlichen Nahverkehr für Menschen mit Behinderungen.',
-            en: 'Public transportation information for handicapped people.'
+            en: 'Public transportation information for handicapped people.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/public-transportation-information-for-handicapped-people'
+            'https://climathon.climate-kic.org/en/solutions/public-transportation-information-for-handicapped-people',
         },
         {
           title: 'Team Awesome',
@@ -340,14 +354,14 @@ export default {
             {
               text: 'RNV Challenge',
               color: this.$vuetify.theme.themes.dark.info,
-              winner: false
-            }
+              winner: false,
+            },
           ],
           descriptionI18n: {
             de: 'tram! Wieder auf Kurs kommen.',
-            en: 'tramn! Getting back on track.'
+            en: 'tramn! Getting back on track.',
           },
-          sulutionURL: 'https://climathon.climate-kic.org/en/solutions/tramn'
+          sulutionURL: 'https://climathon.climate-kic.org/en/solutions/tramn',
         },
         {
           title: 'Intel Inside',
@@ -356,17 +370,17 @@ export default {
             {
               text: 'Objective Partner Challenge Winner',
               color: this.$vuetify.theme.themes.dark.info,
-              winner: true
-            }
+              winner: true,
+            },
           ],
           descriptionI18n: {
             de:
               'Bereitstellung eines tragbaren Sensorpakets und einer App für eine Heatmap für die Bewässerung.',
             en:
-              'Providing portable Sensor pack and App for an irrigation Heatmap.'
+              'Providing portable Sensor pack and App for an irrigation Heatmap.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/helping-low-income-farmers-with-intelligent-water-management-systems'
+            'https://climathon.climate-kic.org/en/solutions/helping-low-income-farmers-with-intelligent-water-management-systems',
         },
         {
           title: 'Escape Apocalypse',
@@ -375,22 +389,22 @@ export default {
             {
               text: 'ProjectTogether Award',
               color: this.$vuetify.theme.themes.dark.warning,
-              winner: true
+              winner: true,
             },
             {
               text: 'City Challenge',
               color: this.$vuetify.theme.themes.dark.error,
-              winner: false
-            }
+              winner: false,
+            },
           ],
           descriptionI18n: {
             de:
               'App, die Informationen vermittelt und spielerisch umweltbewusstes Handeln in den Alltag integriert.',
             en:
-              'App that conveys information and integrates environmentally conscious actions into everyday life in a playful way.'
+              'App that conveys information and integrates environmentally conscious actions into everyday life in a playful way.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/escape-apocalypse'
+            'https://climathon.climate-kic.org/en/solutions/escape-apocalypse',
         },
         {
           title: 'Extremwetter',
@@ -399,20 +413,20 @@ export default {
             {
               text: 'City Challenge',
               color: this.$vuetify.theme.themes.dark.error,
-              winner: false
+              winner: false,
             },
             {
               text: 'GBG Challenge',
               color: this.$vuetify.theme.themes.dark.info,
-              winner: false
-            }
+              winner: false,
+            },
           ],
           descriptionI18n: {
             de: 'Heute auf das Extremwetter von morgen vorbereiten.',
-            en: 'Preparing Today for Extreme Weather Tomorrow.'
+            en: 'Preparing Today for Extreme Weather Tomorrow.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/extreme-weather'
+            'https://climathon.climate-kic.org/en/solutions/extreme-weather',
         },
         {
           title: 'MaGreenLife',
@@ -421,22 +435,22 @@ export default {
             {
               text: 'City Challenge',
               color: this.$vuetify.theme.themes.dark.error,
-              winner: false
+              winner: false,
             },
             {
               text: 'RNV Challenge',
               color: this.$vuetify.theme.themes.dark.info,
-              winner: false
-            }
+              winner: false,
+            },
           ],
           descriptionI18n: {
             de:
               'MaGreenLife belohnt den Nutzer für sein klimafreundliches Verhalten und gibt der Stadt oder den öffentlichen Verkehrsunternehmen die Möglichkeit, Daten und Ideen von ihren Mitnutzern zu sammeln.',
             en:
-              'MaGreenLife rewards the user for climate-friendly behavior and gives the city or public transport organisation a possibility to gather data and ideas from their fellow users.'
+              'MaGreenLife rewards the user for climate-friendly behavior and gives the city or public transport organisation a possibility to gather data and ideas from their fellow users.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/magreenlife'
+            'https://climathon.climate-kic.org/en/solutions/magreenlife',
         },
         {
           title: 'Localot',
@@ -445,21 +459,21 @@ export default {
             {
               text: 'ProjectTogether Award',
               color: this.$vuetify.theme.themes.dark.warning,
-              winner: true
+              winner: true,
             },
             {
               text: 'City Challenge',
               color: this.$vuetify.theme.themes.dark.error,
-              winner: false
-            }
+              winner: false,
+            },
           ],
           descriptionI18n: {
             de:
               'Localot ist DIE Plattform, um lokale Einzelhändler mit ihren Kunden durch einen nachhaltigen und abfallfreien Lieferservice zu verbinden.',
             en:
-              'Localot is THE platform to connect local retailers with their customers through a sustainable and zero-waste delivery service.'
+              'Localot is THE platform to connect local retailers with their customers through a sustainable and zero-waste delivery service.',
           },
-          sulutionURL: 'https://climathon.climate-kic.org/en/solutions/localot'
+          sulutionURL: 'https://climathon.climate-kic.org/en/solutions/localot',
         },
         {
           title: 'Mvua Nzuri',
@@ -468,17 +482,17 @@ export default {
             {
               text: 'ProjectTogether Award',
               color: this.$vuetify.theme.themes.dark.warning,
-              winner: true
-            }
+              winner: true,
+            },
           ],
           descriptionI18n: {
             de:
               'Über ein in sich geschlossenes und selbstorganisierendes Bewässerungssystem, das sogar bessere Bewässerungsstrategien vorschlagen kann.',
             en:
-              'About a self-contained and self-organizing irrigation system that can even suggest better farming strategies.'
+              'About a self-contained and self-organizing irrigation system that can even suggest better farming strategies.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/make-irrigation-great-again'
+            'https://climathon.climate-kic.org/en/solutions/make-irrigation-great-again',
         },
         {
           title: 'MeetMe',
@@ -487,27 +501,27 @@ export default {
             {
               text: 'ProjectTogether Award',
               color: this.$vuetify.theme.themes.dark.warning,
-              winner: true
+              winner: true,
             },
             {
               text: 'City Challenge',
               color: this.$vuetify.theme.themes.dark.error,
-              winner: false
+              winner: false,
             },
             {
               text: 'RNV Challenge',
               color: this.$vuetify.theme.themes.dark.info,
-              winner: false
-            }
+              winner: false,
+            },
           ],
           descriptionI18n: {
             de:
               'Unsere App MeetMe hilft Menschen, während ihrer Reise mit öffentlichen Verkehrsmitteln echte soziale Kontakte zu knüpfen, die nicht nur helfen, Probleme der sozialen Isolation zu bewältigen, sondern auch dazu beitragen, dass öffentliche Verkehrsmittel eine völlig neue Erfahrung werden.',
             en:
-              'Our app MeetMe helps people to get genuine social contacts during their journey on public transportation which not only helps to face against problems of social isolation but helps public transportation to be a totally new experience.'
+              'Our app MeetMe helps people to get genuine social contacts during their journey on public transportation which not only helps to face against problems of social isolation but helps public transportation to be a totally new experience.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/mobile-application-to-make-public-transport-more-attractive-by-facing-against-social-isolation'
+            'https://climathon.climate-kic.org/en/solutions/mobile-application-to-make-public-transport-more-attractive-by-facing-against-social-isolation',
         },
         {
           title: 'Tender',
@@ -516,20 +530,20 @@ export default {
             {
               text: 'ProjectTogether Award',
               color: this.$vuetify.theme.themes.dark.warning,
-              winner: true
+              winner: true,
             },
             {
               text: 'City Challenge',
               color: this.$vuetify.theme.themes.dark.error,
-              winner: false
-            }
+              winner: false,
+            },
           ],
           descriptionI18n: {
             de: 'Garten-App, die soziale Kontakte und Bildung ermöglicht.',
-            en: 'Gardening app facilitating social connections and education.'
+            en: 'Gardening app facilitating social connections and education.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/community-gardening-app'
+            'https://climathon.climate-kic.org/en/solutions/community-gardening-app',
         },
         {
           title: 'Plantzilla',
@@ -538,16 +552,16 @@ export default {
             {
               text: 'City Challenge',
               color: this.$vuetify.theme.themes.dark.error,
-              winner: false
-            }
+              winner: false,
+            },
           ],
           descriptionI18n: {
             de:
               'Eine Anwendung zur Überwachung, Steuerung und Interaktion mit Anlagen.',
-            en: 'An application to monitor, control, and interact with plants.'
+            en: 'An application to monitor, control, and interact with plants.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/plantopia'
+            'https://climathon.climate-kic.org/en/solutions/plantopia',
         },
         {
           title: 'Videoclip Crashtest',
@@ -556,21 +570,21 @@ export default {
             {
               text: 'ProjectTogether Award',
               color: this.$vuetify.theme.themes.dark.warning,
-              winner: true
-            }
+              winner: true,
+            },
           ],
           descriptionI18n: {
             de:
               'Fossil Free Karlsruhe will die Bewohner mit FAKTOR2 mit Fragen herausfordern: "Wie schnell kann die Stromerzeugung durch Dachsolarzellen verdoppelt werden?" Deshalb will Fossil Free Karlsruhe eine Werbung schalten, um die Menschen bundesweit für FAKTOR2 zu begeistern.',
             en:
-              'Fossil Free Karlsruhe wants to challenge residents with FAKTOR2 by asking: "How quickly can power generation by rooftop solar panels be doubled?" Therefore, Fossil Free Karlsruhe wants to create an advertisement to fire up people nationwide in support for FAKTOR2.'
+              'Fossil Free Karlsruhe wants to challenge residents with FAKTOR2 by asking: "How quickly can power generation by rooftop solar panels be doubled?" Therefore, Fossil Free Karlsruhe wants to create an advertisement to fire up people nationwide in support for FAKTOR2.',
           },
           sulutionURL:
-            'https://climathon.climate-kic.org/en/solutions/videoclip-crashtest-with-two-animated-dummies-on-their-way-to-death'
-        }
-      ]
+            'https://climathon.climate-kic.org/en/solutions/videoclip-crashtest-with-two-animated-dummies-on-their-way-to-death',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 
