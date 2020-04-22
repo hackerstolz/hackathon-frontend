@@ -34,17 +34,9 @@
               </v-btn>
             </template>
             <v-list class="menu-list">
-              <g-link
-                v-for="({ node }, i) in $static.allHackathon.edges"
-                :key="i"
-                :to="
-                  $route.path.startsWith('/event')
-                    ? `/event/${node.urlName}`
-                    : `/${node.urlName}`
-                "
-              >
+              <g-link v-for="(hackathon, i) in hackathonArchive" :key="i" :to="hackathon.url">
                 <v-list-item>
-                  <v-list-item-title>{{ node.title }}</v-list-item-title>
+                  <v-list-item-title>{{ hackathon.title }}</v-list-item-title>
                 </v-list-item>
               </g-link>
             </v-list>
@@ -316,6 +308,24 @@ export default {
       const isTimeInPast = new Date() - endTime >= 0;
 
       return isTimeInPast;
+    },
+    hackathonArchive() {
+      const firstStaticHackathon = {
+        url: this.$route.path.startsWith("/event")
+          ? "https://climathon.hackerstolz.de/#/event"
+          : "https://climathon.hackerstolz.de",
+        title: "Climathon 2019 Mannheim"
+      };
+      const hackathons = (this.$static.allHackathon.edges || []).map(
+        ({ node }) => ({
+          url: this.$route.path.startsWith("/event")
+            ? `/event/${node.urlName}`
+            : `/${node.urlName}`,
+          title: node.title
+        })
+      );
+
+      return [firstStaticHackathon].concat(hackathons);
     }
   },
   watch: {
