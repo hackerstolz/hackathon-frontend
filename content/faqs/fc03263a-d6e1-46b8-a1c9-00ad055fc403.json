@@ -1,0 +1,24 @@
+{
+  "id": "fc03263a-d6e1-46b8-a1c9-00ad055fc403",
+  "name": "What we did to make this event sustainable?",
+  "question": [
+    {
+      "language": "EN",
+      "question": "What we did to make this event sustainable?"
+    },
+    {
+      "language": "DE",
+      "question": "Was haben wir getan, um diese Veranstaltung nachhaltig zu gestalten?"
+    }
+  ],
+  "answer": [
+    {
+      "language": "EN",
+      "answer": "We strive to organize a climate-neutral hackathon. We have received amazing support and information material from the Mannheim Climate Protection Agency, with whom we are confident to implement many new ideas and concepts. We primarily follow three important principles with regard to our CO2 event balance: 1. avoidance, 2. reduction, 3. compensation. We are still in the middle of planning and want to share our challenges and experiences with you in the next months via blog posts. Keep your fingers crossed that we will reach our goal."
+    },
+    {
+      "language": "DE",
+      "answer": "Wir sind bestrebt, einen klimaneutralen Hackathon zu organisieren. Von der Mannheimer Klimaschutzbehörde, mit der wir zuversichtlich sind, viele neue Ideen und Konzepte umzusetzen, haben wir erstaunliches Unterstützungs- und Informationsmaterial erhalten. Für unsere CO2-Ereignisbilanz folgen wir im Wesentlichen drei wichtigen Prinzipien: 1. Vermeidung, 2. Reduzierung, 3. Kompensation. Wir sind noch mitten in der Planung und wollen unsere Herausforderungen und Erfahrungen in den nächsten Monaten über Blog-Posts mit dir teilen. Drück die Daumen, damit wir unser Ziel erreichen."
+    }
+  ]
+}
