@@ -6,7 +6,7 @@
 
 module.exports = {
   siteName: 'Hackathon',
-/*  plugins: [
+  plugins: [
     {
       use: 'gridsome-plugin-netlify-cms',
       options: {
@@ -16,7 +16,7 @@ module.exports = {
         htmlPath: 'src/admin/index.html',
       },
     },
-  ],*/
+  ],
   templates: {
     hackathon: [
       {
