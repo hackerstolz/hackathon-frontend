@@ -1,7 +1,7 @@
 backend:
   name: github
-  branch: master # Branch to update (optional; defaults to master)
-  repo: saschatu/Netlify_Test_Content
+  branch: content # Branch to update (optional; defaults to master)
+  repo: hackerstolz/hackathon-frontend
   base_url: https://climathon-beta.hackerstolz.de
   auth_endpoint: /api/begin
   #site_domain: hackerstolz.de
