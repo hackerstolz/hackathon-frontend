@@ -12,6 +12,7 @@ const INDENT = "\t";
 
 const SUPPORTED_FORMATS = ['json','frontmatter'];
 const PRINT_LOG = true;
+const USE_FILENAME_AS_ID = false; //Use if Slug (=Filename) is used as reference in relations (all relation must have valueField: "{{slug}}") else the identifier_field property must be set or title provided!
 
 
 exports.load = function(cmsConfigFilePath,  // full path to config file including name 
@@ -170,7 +171,12 @@ class SchemaParser{
         //Parse each field and gets its metadata
 		while(configNode.hasIn([NC_FIELDS,i])){            
 			let configNodeField = configNode.getIn([NC_FIELDS,i]);
-			let name = configNodeField.get('name');
+			//Get and check name of field
+            let name = configNodeField.get('name');
+            if (name == "id" && ( name != schemaNode.idFieldName || USE_FILENAME_AS_ID )){                
+                console.log(`WARNING field "id" in ${schemaNode.name} will be overwritten with actual ID.`);
+            }
+            
             //Create Schema Node
 			let schemaField = new SchemaNode(
 											name,
@@ -255,7 +261,7 @@ class ContentLoader{
                             case 'json':
                                 if(dirFile.name.includes('.json')){
                                     let content = JSON.parse(file);
-                                    this.processContent(collection, content);
+                                    this.processContent(collection, content, dirFile.name);
                                 }else{
                                     this.log("Skipped " + dirFile.name + ": Filename extension does not match specified format for collection (" + collection.format + ")");
                                 }
@@ -267,7 +273,7 @@ class ContentLoader{
                                        //adding the "content" part as body to the rest of the attributes
                                        metadata.body = content;  
                                     }
-                                    this.processContent(collection, metadata);
+                                    this.processContent(collection, metadata, dirFile.name);
                                 }else{
                                     this.log("Skipped " + dirFile.name + ": Filename extension does not match specified format for collection (" + collection.format + ")");
                                 }
@@ -287,18 +293,28 @@ class ContentLoader{
 	}
     
     // Parse Content/File for given collection and add as node to this collection
-	processContent(collection, content){ 
-        //Ensure that ID is provided
-		if(content[collection.idFieldName] === undefined){
-		    return this.log("Skipped " + path + ": ID field '" + collection.idFieldName + "' missing");
-		}
-		var gsNode = { id: content[collection.idFieldName]};
+	processContent(collection, content, fileName){
+        
+        var id = "";
+        //Identify ID
+        if(USE_FILENAME_AS_ID){            
+            id = fileName.split(".")[0];
+        }else{
+            if(content[collection.idFieldName] === undefined){
+                return this.log("Skipped " + path + ": ID field '" + collection.idFieldName + "' missing");
+            }
+            id = content[collection.idFieldName];
+        }
+        //new instance
+        var gsNode = { id: id};
+        
 		//loop over fields of node via schema definition (attributes not defined in schema will be ignored)
 		for (let schemaNode of collection.fields.values()){
-			if(schemaNode.name != collection.idFieldName){
+			//if(schemaNode.name != collection.idFieldName){
+            if(schemaNode.name != "id"){ //id is reserved field
 				//this.log(schemaNode.name + ": " + content[schemaNode.name]);
                 gsNode[schemaNode.name] = this.processEntry(schemaNode, content[schemaNode.name]);
-			}			
+			}		
 		}
 		//all fields collected for Node -> add to Collection
         collection.gsCollection.addNode(gsNode);
