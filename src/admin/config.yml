@@ -2,9 +2,9 @@ backend:
   name: github
   branch: master # Branch to update (optional; defaults to master)
   repo: saschatu/Netlify_Test_Content
-  base_url: http://climathon-beta.hackerstolz.de
-  auth_endpoint: api/begin
-  site_domain: hackerstolz.de
+  base_url: https://climathon-beta.hackerstolz.de
+  auth_endpoint: /api/begin
+  #site_domain: hackerstolz.de
 
 # media_folder: "" # Media files will be stored in the repo under images/uploads
 media_folder: "static/images/uploads"
