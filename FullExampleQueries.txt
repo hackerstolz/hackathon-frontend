@@ -1,7 +1,6 @@
 === Query for Hackathon === 
 query{
 	hackathon(id: "<ID>"){
-		id # ID 
 		urlName # URL Name 
 		title # Title 
 		default # Default 
@@ -12,13 +11,11 @@ query{
 		eventPageActive # Event Page active 
 		contactEmail # Contact EMail 
 		twitter # Twitter Handle 
-		hashtag # Hashtag 
 		hashtags{ # Hashtags 
 			hashtag # Hashtag 
 			isMain # isMain 
 		} 
 		linkTicketshop{ # Ticketshop Link 
-			id # ID 
 			name # Name 
 			url # URL 
 			titles{ # Titles 
@@ -27,7 +24,6 @@ query{
 			} 
 		} 
 		linkCommunity{ # Community Link 
-			id # ID 
 			name # Name 
 			url # URL 
 			titles{ # Titles 
@@ -36,7 +32,6 @@ query{
 			} 
 		} 
 		linkImprint{ # Imprint Link 
-			id # ID 
 			name # Name 
 			url # URL 
 			titles{ # Titles 
@@ -50,7 +45,6 @@ query{
 			description # Description 
 		} 
 		awards{ # Awards 
-			id # ID 
 			name # Name 
 			image # Image 
 			titles{ # Titles 
@@ -72,7 +66,6 @@ query{
 			} 
 		} 
 		faqs{ # FAQs 
-			id # ID 
 			name # Name 
 			question{ # Question 
 				language # Language 
@@ -88,14 +81,12 @@ query{
 === Query for Challenge === 
 query{
 	challenge(id: "<ID>"){
-		id # ID 
 		name # Name 
 		titles{ # Titles 
 			language # Language 
 			title # Title 
 		} 
 		hackathon{ # Hackathon 
-			id # ID 
 			urlName # URL Name 
 			title # Title 
 			default # Default 
@@ -106,13 +97,11 @@ query{
 			eventPageActive # Event Page active 
 			contactEmail # Contact EMail 
 			twitter # Twitter Handle 
-			hashtag # Hashtag 
 			hashtags{ # Hashtags 
 				hashtag # Hashtag 
 				isMain # isMain 
 			} 
 			linkTicketshop{ # Ticketshop Link 
-				id # ID 
 				name # Name 
 				url # URL 
 				titles{ # Titles 
@@ -121,7 +110,6 @@ query{
 				} 
 			} 
 			linkCommunity{ # Community Link 
-				id # ID 
 				name # Name 
 				url # URL 
 				titles{ # Titles 
@@ -130,7 +118,6 @@ query{
 				} 
 			} 
 			linkImprint{ # Imprint Link 
-				id # ID 
 				name # Name 
 				url # URL 
 				titles{ # Titles 
@@ -144,7 +131,6 @@ query{
 				description # Description 
 			} 
 			awards{ # Awards 
-				id # ID 
 				name # Name 
 				image # Image 
 				titles{ # Titles 
@@ -166,7 +152,6 @@ query{
 				} 
 			} 
 			faqs{ # FAQs 
-				id # ID 
 				name # Name 
 				question{ # Question 
 					language # Language 
@@ -185,7 +170,6 @@ query{
 			description # Description 
 		} 
 		award{ # Award 
-			id # ID 
 			name # Name 
 			image # Image 
 			titles{ # Titles 
@@ -207,7 +191,6 @@ query{
 			} 
 		} 
 		type{ # Type 
-			id # ID 
 			title # Title 
 			color # Color 
 			descriptions{ # Descriptions 
@@ -216,7 +199,6 @@ query{
 			} 
 		} 
 		category{ # Category 
-			id # ID 
 			name # Name 
 			titles{ # Titles 
 				language # Language 
@@ -225,7 +207,6 @@ query{
 			image # Image 
 			color # Color 
 			award{ # Award 
-				id # ID 
 				name # Name 
 				image # Image 
 				titles{ # Titles 
@@ -260,7 +241,6 @@ query{
 === Query for Link === 
 query{
 	link(id: "<ID>"){
-		id # ID 
 		name # Name 
 		url # URL 
 		titles{ # Titles 
@@ -272,7 +252,6 @@ query{
 === Query for Challenge Type === 
 query{
 	type(id: "<ID>"){
-		id # ID 
 		title # Title 
 		color # Color 
 		descriptions{ # Descriptions 
@@ -284,7 +263,6 @@ query{
 === Query for Category === 
 query{
 	category(id: "<ID>"){
-		id # ID 
 		name # Name 
 		titles{ # Titles 
 			language # Language 
@@ -293,7 +271,6 @@ query{
 		image # Image 
 		color # Color 
 		award{ # Award 
-			id # ID 
 			name # Name 
 			image # Image 
 			titles{ # Titles 
@@ -323,7 +300,6 @@ query{
 === Query for Award === 
 query{
 	award(id: "<ID>"){
-		id # ID 
 		name # Name 
 		image # Image 
 		titles{ # Titles 
@@ -348,14 +324,12 @@ query{
 === Query for Person === 
 query{
 	person(id: "<ID>"){
-		id # ID 
 		name # Name 
 		salutation # Salutation 
 		image # Image 
 		roles{ # Roles 
 			title # Title 
 			hackathon{ # Hackathon 
-				id # ID 
 				urlName # URL Name 
 				title # Title 
 				default # Default 
@@ -366,13 +340,11 @@ query{
 				eventPageActive # Event Page active 
 				contactEmail # Contact EMail 
 				twitter # Twitter Handle 
-				hashtag # Hashtag 
 				hashtags{ # Hashtags 
 					hashtag # Hashtag 
 					isMain # isMain 
 				} 
 				linkTicketshop{ # Ticketshop Link 
-					id # ID 
 					name # Name 
 					url # URL 
 					titles{ # Titles 
@@ -381,7 +353,6 @@ query{
 					} 
 				} 
 				linkCommunity{ # Community Link 
-					id # ID 
 					name # Name 
 					url # URL 
 					titles{ # Titles 
@@ -390,7 +361,6 @@ query{
 					} 
 				} 
 				linkImprint{ # Imprint Link 
-					id # ID 
 					name # Name 
 					url # URL 
 					titles{ # Titles 
@@ -404,7 +374,6 @@ query{
 					description # Description 
 				} 
 				awards{ # Awards 
-					id # ID 
 					name # Name 
 					image # Image 
 					titles{ # Titles 
@@ -426,7 +395,6 @@ query{
 					} 
 				} 
 				faqs{ # FAQs 
-					id # ID 
 					name # Name 
 					question{ # Question 
 						language # Language 
@@ -439,14 +407,12 @@ query{
 				} 
 			} 
 			challenge{ # Challenge 
-				id # ID 
 				name # Name 
 				titles{ # Titles 
 					language # Language 
 					title # Title 
 				} 
 				hackathon{ # Hackathon 
-					id # ID 
 					urlName # URL Name 
 					title # Title 
 					default # Default 
@@ -457,13 +423,11 @@ query{
 					eventPageActive # Event Page active 
 					contactEmail # Contact EMail 
 					twitter # Twitter Handle 
-					hashtag # Hashtag 
 					hashtags{ # Hashtags 
 						hashtag # Hashtag 
 						isMain # isMain 
 					} 
 					linkTicketshop{ # Ticketshop Link 
-						id # ID 
 						name # Name 
 						url # URL 
 						titles{ # Titles 
@@ -472,7 +436,6 @@ query{
 						} 
 					} 
 					linkCommunity{ # Community Link 
-						id # ID 
 						name # Name 
 						url # URL 
 						titles{ # Titles 
@@ -481,7 +444,6 @@ query{
 						} 
 					} 
 					linkImprint{ # Imprint Link 
-						id # ID 
 						name # Name 
 						url # URL 
 						titles{ # Titles 
@@ -495,7 +457,6 @@ query{
 						description # Description 
 					} 
 					awards{ # Awards 
-						id # ID 
 						name # Name 
 						image # Image 
 						titles{ # Titles 
@@ -517,7 +478,6 @@ query{
 						} 
 					} 
 					faqs{ # FAQs 
-						id # ID 
 						name # Name 
 						question{ # Question 
 							language # Language 
@@ -536,7 +496,6 @@ query{
 					description # Description 
 				} 
 				award{ # Award 
-					id # ID 
 					name # Name 
 					image # Image 
 					titles{ # Titles 
@@ -558,7 +517,6 @@ query{
 					} 
 				} 
 				type{ # Type 
-					id # ID 
 					title # Title 
 					color # Color 
 					descriptions{ # Descriptions 
@@ -567,7 +525,6 @@ query{
 					} 
 				} 
 				category{ # Category 
-					id # ID 
 					name # Name 
 					titles{ # Titles 
 						language # Language 
@@ -576,7 +533,6 @@ query{
 					image # Image 
 					color # Color 
 					award{ # Award 
-						id # ID 
 						name # Name 
 						image # Image 
 						titles{ # Titles 
@@ -608,7 +564,6 @@ query{
 				} 
 			} 
 			role{ # Role 
-				id # ID 
 				title # Title 
 			} 
 			professions{ # Professions 
@@ -633,14 +588,12 @@ query{
 === Query for Role === 
 query{
 	role(id: "<ID>"){
-		id # ID 
 		title # Title 
 	}
 } 
 === Query for Partner === 
 query{
 	partner(id: "<ID>"){
-		id # ID 
 		nameInternal # (internal) Name 
 		names{ # Names 
 			language # Language 
@@ -649,7 +602,6 @@ query{
 		logo # Logo 
 		roles{ # Roles 
 			hackathon{ # Hackathon 
-				id # ID 
 				urlName # URL Name 
 				title # Title 
 				default # Default 
@@ -660,13 +612,11 @@ query{
 				eventPageActive # Event Page active 
 				contactEmail # Contact EMail 
 				twitter # Twitter Handle 
-				hashtag # Hashtag 
 				hashtags{ # Hashtags 
 					hashtag # Hashtag 
 					isMain # isMain 
 				} 
 				linkTicketshop{ # Ticketshop Link 
-					id # ID 
 					name # Name 
 					url # URL 
 					titles{ # Titles 
@@ -675,7 +625,6 @@ query{
 					} 
 				} 
 				linkCommunity{ # Community Link 
-					id # ID 
 					name # Name 
 					url # URL 
 					titles{ # Titles 
@@ -684,7 +633,6 @@ query{
 					} 
 				} 
 				linkImprint{ # Imprint Link 
-					id # ID 
 					name # Name 
 					url # URL 
 					titles{ # Titles 
@@ -698,7 +646,6 @@ query{
 					description # Description 
 				} 
 				awards{ # Awards 
-					id # ID 
 					name # Name 
 					image # Image 
 					titles{ # Titles 
@@ -720,7 +667,6 @@ query{
 					} 
 				} 
 				faqs{ # FAQs 
-					id # ID 
 					name # Name 
 					question{ # Question 
 						language # Language 
@@ -733,14 +679,12 @@ query{
 				} 
 			} 
 			challenge{ # Challenge 
-				id # ID 
 				name # Name 
 				titles{ # Titles 
 					language # Language 
 					title # Title 
 				} 
 				hackathon{ # Hackathon 
-					id # ID 
 					urlName # URL Name 
 					title # Title 
 					default # Default 
@@ -751,13 +695,11 @@ query{
 					eventPageActive # Event Page active 
 					contactEmail # Contact EMail 
 					twitter # Twitter Handle 
-					hashtag # Hashtag 
 					hashtags{ # Hashtags 
 						hashtag # Hashtag 
 						isMain # isMain 
 					} 
 					linkTicketshop{ # Ticketshop Link 
-						id # ID 
 						name # Name 
 						url # URL 
 						titles{ # Titles 
@@ -766,7 +708,6 @@ query{
 						} 
 					} 
 					linkCommunity{ # Community Link 
-						id # ID 
 						name # Name 
 						url # URL 
 						titles{ # Titles 
@@ -775,7 +716,6 @@ query{
 						} 
 					} 
 					linkImprint{ # Imprint Link 
-						id # ID 
 						name # Name 
 						url # URL 
 						titles{ # Titles 
@@ -789,7 +729,6 @@ query{
 						description # Description 
 					} 
 					awards{ # Awards 
-						id # ID 
 						name # Name 
 						image # Image 
 						titles{ # Titles 
@@ -811,7 +750,6 @@ query{
 						} 
 					} 
 					faqs{ # FAQs 
-						id # ID 
 						name # Name 
 						question{ # Question 
 							language # Language 
@@ -830,7 +768,6 @@ query{
 					description # Description 
 				} 
 				award{ # Award 
-					id # ID 
 					name # Name 
 					image # Image 
 					titles{ # Titles 
@@ -852,7 +789,6 @@ query{
 					} 
 				} 
 				type{ # Type 
-					id # ID 
 					title # Title 
 					color # Color 
 					descriptions{ # Descriptions 
@@ -861,7 +797,6 @@ query{
 					} 
 				} 
 				category{ # Category 
-					id # ID 
 					name # Name 
 					titles{ # Titles 
 						language # Language 
@@ -870,7 +805,6 @@ query{
 					image # Image 
 					color # Color 
 					award{ # Award 
-						id # ID 
 						name # Name 
 						image # Image 
 						titles{ # Titles 
@@ -912,10 +846,8 @@ query{
 === Query for Timetable === 
 query{
 	timetable(id: "<ID>"){
-		id # ID 
 		title # Title 
 		hackathon{ # Hackathon 
-			id # ID 
 			urlName # URL Name 
 			title # Title 
 			default # Default 
@@ -926,13 +858,11 @@ query{
 			eventPageActive # Event Page active 
 			contactEmail # Contact EMail 
 			twitter # Twitter Handle 
-			hashtag # Hashtag 
 			hashtags{ # Hashtags 
 				hashtag # Hashtag 
 				isMain # isMain 
 			} 
 			linkTicketshop{ # Ticketshop Link 
-				id # ID 
 				name # Name 
 				url # URL 
 				titles{ # Titles 
@@ -941,7 +871,6 @@ query{
 				} 
 			} 
 			linkCommunity{ # Community Link 
-				id # ID 
 				name # Name 
 				url # URL 
 				titles{ # Titles 
@@ -950,7 +879,6 @@ query{
 				} 
 			} 
 			linkImprint{ # Imprint Link 
-				id # ID 
 				name # Name 
 				url # URL 
 				titles{ # Titles 
@@ -964,7 +892,6 @@ query{
 				description # Description 
 			} 
 			awards{ # Awards 
-				id # ID 
 				name # Name 
 				image # Image 
 				titles{ # Titles 
@@ -986,7 +913,6 @@ query{
 				} 
 			} 
 			faqs{ # FAQs 
-				id # ID 
 				name # Name 
 				question{ # Question 
 					language # Language 
@@ -1007,7 +933,6 @@ query{
 			from # From 
 			image # Image 
 			linkExternal{ # External Link 
-				id # ID 
 				name # Name 
 				url # URL 
 				titles{ # Titles 
@@ -1016,14 +941,12 @@ query{
 				} 
 			} 
 			speaker{ # Speaker 
-				id # ID 
 				name # Name 
 				salutation # Salutation 
 				image # Image 
 				roles{ # Roles 
 					title # Title 
 					hackathon{ # Hackathon 
-						id # ID 
 						urlName # URL Name 
 						title # Title 
 						default # Default 
@@ -1034,13 +957,11 @@ query{
 						eventPageActive # Event Page active 
 						contactEmail # Contact EMail 
 						twitter # Twitter Handle 
-						hashtag # Hashtag 
 						hashtags{ # Hashtags 
 							hashtag # Hashtag 
 							isMain # isMain 
 						} 
 						linkTicketshop{ # Ticketshop Link 
-							id # ID 
 							name # Name 
 							url # URL 
 							titles{ # Titles 
@@ -1049,7 +970,6 @@ query{
 							} 
 						} 
 						linkCommunity{ # Community Link 
-							id # ID 
 							name # Name 
 							url # URL 
 							titles{ # Titles 
@@ -1058,7 +978,6 @@ query{
 							} 
 						} 
 						linkImprint{ # Imprint Link 
-							id # ID 
 							name # Name 
 							url # URL 
 							titles{ # Titles 
@@ -1072,7 +991,6 @@ query{
 							description # Description 
 						} 
 						awards{ # Awards 
-							id # ID 
 							name # Name 
 							image # Image 
 							titles{ # Titles 
@@ -1094,7 +1012,6 @@ query{
 							} 
 						} 
 						faqs{ # FAQs 
-							id # ID 
 							name # Name 
 							question{ # Question 
 								language # Language 
@@ -1107,14 +1024,12 @@ query{
 						} 
 					} 
 					challenge{ # Challenge 
-						id # ID 
 						name # Name 
 						titles{ # Titles 
 							language # Language 
 							title # Title 
 						} 
 						hackathon{ # Hackathon 
-							id # ID 
 							urlName # URL Name 
 							title # Title 
 							default # Default 
@@ -1125,13 +1040,11 @@ query{
 							eventPageActive # Event Page active 
 							contactEmail # Contact EMail 
 							twitter # Twitter Handle 
-							hashtag # Hashtag 
 							hashtags{ # Hashtags 
 								hashtag # Hashtag 
 								isMain # isMain 
 							} 
 							linkTicketshop{ # Ticketshop Link 
-								id # ID 
 								name # Name 
 								url # URL 
 								titles{ # Titles 
@@ -1140,7 +1053,6 @@ query{
 								} 
 							} 
 							linkCommunity{ # Community Link 
-								id # ID 
 								name # Name 
 								url # URL 
 								titles{ # Titles 
@@ -1149,7 +1061,6 @@ query{
 								} 
 							} 
 							linkImprint{ # Imprint Link 
-								id # ID 
 								name # Name 
 								url # URL 
 								titles{ # Titles 
@@ -1163,7 +1074,6 @@ query{
 								description # Description 
 							} 
 							awards{ # Awards 
-								id # ID 
 								name # Name 
 								image # Image 
 								titles{ # Titles 
@@ -1185,7 +1095,6 @@ query{
 								} 
 							} 
 							faqs{ # FAQs 
-								id # ID 
 								name # Name 
 								question{ # Question 
 									language # Language 
@@ -1204,7 +1113,6 @@ query{
 							description # Description 
 						} 
 						award{ # Award 
-							id # ID 
 							name # Name 
 							image # Image 
 							titles{ # Titles 
@@ -1226,7 +1134,6 @@ query{
 							} 
 						} 
 						type{ # Type 
-							id # ID 
 							title # Title 
 							color # Color 
 							descriptions{ # Descriptions 
@@ -1235,7 +1142,6 @@ query{
 							} 
 						} 
 						category{ # Category 
-							id # ID 
 							name # Name 
 							titles{ # Titles 
 								language # Language 
@@ -1244,7 +1150,6 @@ query{
 							image # Image 
 							color # Color 
 							award{ # Award 
-								id # ID 
 								name # Name 
 								image # Image 
 								titles{ # Titles 
@@ -1276,7 +1181,6 @@ query{
 						} 
 					} 
 					role{ # Role 
-						id # ID 
 						title # Title 
 					} 
 					professions{ # Professions 
@@ -1307,7 +1211,6 @@ query{
 === Query for FAQs === 
 query{
 	faq(id: "<ID>"){
-		id # ID 
 		name # Name 
 		question{ # Question 
 			language # Language 

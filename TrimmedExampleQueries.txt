@@ -1,7 +1,6 @@
 === Query for Hackathon === 
 query{
 	hackathon(id: "<ID>"){
-		id # ID 
 		urlName # URL Name 
 		title # Title 
 		default # Default 
@@ -12,19 +11,18 @@ query{
 		eventPageActive # Event Page active 
 		contactEmail # Contact EMail 
 		twitter # Twitter Handle 
-		hashtag # Hashtag 
 		hashtags{ # Hashtags 
 			hashtag # Hashtag 
 			isMain # isMain 
 		} 
 		linkTicketshop{ # Ticketshop Link 
-			id # ID - further fields see Link 
+			name # Name - further fields see Link 
 		} 
 		linkCommunity{ # Community Link 
-			id # ID - further fields see Link 
+			name # Name - further fields see Link 
 		} 
 		linkImprint{ # Imprint Link 
-			id # ID - further fields see Link 
+			name # Name - further fields see Link 
 		} 
 		thumbnail # Thumbnail 
 		descriptions{ # Meta Descriptions 
@@ -32,24 +30,23 @@ query{
 			description # Description 
 		} 
 		awards{ # Awards 
-			id # ID - further fields see Award 
+			name # Name - further fields see Award 
 		} 
 		faqs{ # FAQs 
-			id # ID - further fields see FAQs 
+			name # Name - further fields see FAQs 
 		} 
 	}
 } 
 === Query for Challenge === 
 query{
 	challenge(id: "<ID>"){
-		id # ID 
 		name # Name 
 		titles{ # Titles 
 			language # Language 
 			title # Title 
 		} 
 		hackathon{ # Hackathon 
-			id # ID - further fields see Hackathon 
+			title # Title - further fields see Hackathon 
 		} 
 		image # Image 
 		color # Color 
@@ -58,13 +55,13 @@ query{
 			description # Description 
 		} 
 		award{ # Award 
-			id # ID - further fields see Award 
+			name # Name - further fields see Award 
 		} 
 		type{ # Type 
-			id # ID - further fields see Challenge Type 
+			title # Title - further fields see Challenge Type 
 		} 
 		category{ # Category 
-			id # ID - further fields see Category 
+			name # Name - further fields see Category 
 		} 
 		author{ # Author 
 			language # Language 
@@ -75,7 +72,6 @@ query{
 === Query for Link === 
 query{
 	link(id: "<ID>"){
-		id # ID 
 		name # Name 
 		url # URL 
 		titles{ # Titles 
@@ -87,7 +83,6 @@ query{
 === Query for Challenge Type === 
 query{
 	type(id: "<ID>"){
-		id # ID 
 		title # Title 
 		color # Color 
 		descriptions{ # Descriptions 
@@ -99,7 +94,6 @@ query{
 === Query for Category === 
 query{
 	category(id: "<ID>"){
-		id # ID 
 		name # Name 
 		titles{ # Titles 
 			language # Language 
@@ -108,7 +102,7 @@ query{
 		image # Image 
 		color # Color 
 		award{ # Award 
-			id # ID - further fields see Award 
+			name # Name - further fields see Award 
 		} 
 		descriptions{ # Descriptions 
 			language # Language 
@@ -119,7 +113,6 @@ query{
 === Query for Award === 
 query{
 	award(id: "<ID>"){
-		id # ID 
 		name # Name 
 		image # Image 
 		titles{ # Titles 
@@ -144,20 +137,19 @@ query{
 === Query for Person === 
 query{
 	person(id: "<ID>"){
-		id # ID 
 		name # Name 
 		salutation # Salutation 
 		image # Image 
 		roles{ # Roles 
 			title # Title 
 			hackathon{ # Hackathon 
-				id # ID - further fields see Hackathon 
+				title # Title - further fields see Hackathon 
 			} 
 			challenge{ # Challenge 
-				id # ID - further fields see Challenge 
+				name # Name - further fields see Challenge 
 			} 
 			role{ # Role 
-				id # ID - further fields see Role 
+				title # Title - further fields see Role 
 			} 
 			professions{ # Professions 
 				language # Language 
@@ -181,14 +173,12 @@ query{
 === Query for Role === 
 query{
 	role(id: "<ID>"){
-		id # ID 
 		title # Title 
 	}
 } 
 === Query for Partner === 
 query{
 	partner(id: "<ID>"){
-		id # ID 
 		nameInternal # (internal) Name 
 		names{ # Names 
 			language # Language 
@@ -197,10 +187,10 @@ query{
 		logo # Logo 
 		roles{ # Roles 
 			hackathon{ # Hackathon 
-				id # ID - further fields see Hackathon 
+				title # Title - further fields see Hackathon 
 			} 
 			challenge{ # Challenge 
-				id # ID - further fields see Challenge 
+				name # Name - further fields see Challenge 
 			} 
 			isSponsor # Sponsor 
 			subtitles{ # Subtitles 
@@ -213,10 +203,9 @@ query{
 === Query for Timetable === 
 query{
 	timetable(id: "<ID>"){
-		id # ID 
 		title # Title 
 		hackathon{ # Hackathon 
-			id # ID - further fields see Hackathon 
+			title # Title - further fields see Hackathon 
 		} 
 		date # Date 
 		slots{ # Slots 
@@ -227,10 +216,10 @@ query{
 			from # From 
 			image # Image 
 			linkExternal{ # External Link 
-				id # ID - further fields see Link 
+				name # Name - further fields see Link 
 			} 
 			speaker{ # Speaker 
-				id # ID - further fields see Person 
+				name # Name - further fields see Person 
 			} 
 			descriptions{ # Descriptions 
 				language # Language 
@@ -242,7 +231,6 @@ query{
 === Query for FAQs === 
 query{
 	faq(id: "<ID>"){
-		id # ID 
 		name # Name 
 		question{ # Question 
 			language # Language 

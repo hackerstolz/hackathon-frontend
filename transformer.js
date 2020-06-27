@@ -12,7 +12,7 @@ const INDENT = "\t";
 
 const SUPPORTED_FORMATS = ['json','frontmatter'];
 const PRINT_LOG = true;
-const USE_FILENAME_AS_ID = false; //Use if Slug (=Filename) is used as reference in relations (all relation must have valueField: "{{slug}}") else the identifier_field property must be set or title provided!
+const USE_FILENAME_AS_ID = true; //Use if Slug (=Filename) is used as reference in relations (all relation must have valueField: "{{slug}}") else the identifier_field property must be set or title provided!
 
 
 exports.load = function(cmsConfigFilePath,  // full path to config file including name 
