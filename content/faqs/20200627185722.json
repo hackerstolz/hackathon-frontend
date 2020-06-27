@@ -1,0 +1,23 @@
+{
+  "name": "Was ist ein Hackathon?",
+  "question": [
+    {
+      "language": "DE",
+      "question": "Was ist ein Hackathon?"
+    },
+    {
+      "language": "EN",
+      "question": "What is a hackathon?"
+    }
+  ],
+  "answer": [
+    {
+      "answer": "A hackathon is any event of any duration where people come together to solve problems with digital means and present them to each other. That’s it, really simple. In most cases a hackathon is on two days and you get 24-48 hours time for the hacking. In our case 40 (+1; thanks to the time change, we get one hour for free) hours. Hacking is meant in the sense of exploratory programming, not referenced to any computer crime.",
+      "language": "EN"
+    },
+    {
+      "language": "DE",
+      "answer": "Ein Hackathon ist eine Veranstaltung beliebiger Dauer, bei der Menschen zusammenkommen, um Probleme mit digitalen Mitteln zu lösen und diese gegenseitig zu präsentieren. Das ist es, ganz einfach. In den meisten Fällen ist ein Hackathon an zwei Tagen und du hast 24-48 Stunden Zeit für das Hacking. In unserem Fall 40 (+1; dank der Zeitumstellung bekommen wir eine Stunde gratis) Stunden. Hacking ist im Sinne von explorativer Programmierung gemeint bzw. wird als kreativer Umgang mit Technologie verstanden, ohne Bezugnahme auf Computerkriminalität."
+    }
+  ]
+}

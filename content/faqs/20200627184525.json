@@ -1,0 +1,23 @@
+{
+  "name": "Wie kann ich mich auf den Climathon vorbereiten?",
+  "question": [
+    {
+      "question": "Wie kann ich mich auf den Climathon vorbereiten?",
+      "language": "DE"
+    },
+    {
+      "language": "EN",
+      "question": "How can I prepare for the Climathon?"
+    }
+  ],
+  "answer": [
+    {
+      "language": "DE",
+      "answer": "Du musst dich nicht auf den Climathon vorbereiten. Egal ob die Entscheidung für eine Challenge, die Findung von Teammitgliedern oder die Entwicklung einer Idee, alles kann erst am Eröffnungstag des Climathons entstehen. Und unsere Mentoren begleiten und unterstützen dich dabei! Wenn du dich aber vorberieten möchtest beginnst da am besten damit, dir die verfügbaren Challenges in Ruhe durchzulesen. Des Weiteren empfehlen wir dir folgende Lektüre als Inspiration:\n\n* Das [Karlskrona Manifesto](https://www.sustainabilitydesign.org/karlskrona-manifesto/) zu allen Dimensionen der Nachhaltigkeit.\n* Das [Vienna Manifesto](https://www.informatik.tuwien.ac.at/dighum/wp-content/uploads/2019/05/manifesto.pdf) zum sozialen Impact der Digitalisierung."
+    },
+    {
+      "language": "EN",
+      "answer": "You don't have to prepare for the climathon. Whether the decision for a challenge, the finding of team members or the development of an idea, everything can only arise on the opening day of the Climathon. And our mentors will accompany and support you! But if you want to get some advice, it's best to start by reading through the available challenges at your leisure. Furthermore, we recommend the following reading as inspiration:\n\n* The [Karlskrona Manifesto](https://www.sustainabilitydesign.org/karlskrona-manifesto/) on all dimensions of sustainability.\n* The [Vienna Manifesto](https://www.informatik.tuwien.ac.at/dighum/wp-content/uploads/2019/05/manifesto.pdf) on the social impact of digitisation."
+    }
+  ]
+}
