@@ -1,0 +1,23 @@
+{
+  "name": "Was ist die Eventsprache?",
+  "question": [
+    {
+      "language": "DE",
+      "question": "Was ist die Eventsprache?"
+    },
+    {
+      "question": "What is the event language?",
+      "language": "EN"
+    }
+  ],
+  "answer": [
+    {
+      "language": "DE",
+      "answer": "Die Eventsprache ist Deutsch. Das bedeutet die Vorträge (soweit nicht anders gekennzeichnet) und die Moderation sind auf Deutsch. Wir heißen jedoch alle Nationalitäten, Sprachen und Dialekte willkommen. Wenn ihr Fragen habt oder etwas nicht verstanden habt, hilft euch das gesamte Orga-Team auf Englisch gerne weiter. Darüber hinaus habt ihr auch die Freiheit zu entscheiden ob ihr auf Englisch oder Deutsch pitchen wollt."
+    },
+    {
+      "language": "EN",
+      "answer": "The event language is German. This means the talks (unless otherwise marked) and the moderation are in German. However, we welcome all nationalities, languages and dialects. If you have any questions or don't understand something, the whole organizing team will be happy to help you in English. You also have the freedom to decide if you want to pitch in English or German."
+    }
+  ]
+}
