@@ -2,7 +2,10 @@ backend:
   name: github
   branch: content # Branch to update (optional; defaults to master)
   repo: hackerstolz/hackathon-frontend
- # site_domain: objective-bose-48f7bf.netlify.app
+  base_url: https://climathon-beta.hackerstolz.de
+  #base_url: localhost:8080
+  auth_endpoint: /api/begin
+  #site_domain: hackerstolz.de
 
 # media_folder: "" # Media files will be stored in the repo under images/uploads
 media_folder: "static/images/uploads"
@@ -75,28 +78,22 @@ collections:
           - {label: Description, name: description, widget: text}
       - label: Awards
         name: awards
-        widget: list
         required: false
-        fields:
-          - label: Award
-            name: award
-            widget: "relation"
-            collection: "award"
-            searchFields: ["name"]
-            valueField: "{{slug}}"
-            displayFields: ["name"]
+        widget: "relation"
+        collection: "award"
+        searchFields: ["name"]
+        valueField: "{{slug}}"
+        displayFields: ["name"]
+        multiple: true
       - label: FAQs
         name: faqs
-        widget: list
         required: false
-        fields:
-          - label: FAQ
-            name: faq
-            widget: "relation"
-            collection: "faq"
-            searchFields: ["name"]
-            valueField: "{{slug}}"
-            displayFields: ["name"]
+        widget: "relation"
+        collection: "faq"
+        searchFields: ["name"]
+        valueField: "{{slug}}"
+        displayFields: ["name"]
+        multiple: true
   - name: "challenge"
     label: "Challenge"
     folder: "content/challenges"
@@ -110,6 +107,7 @@ collections:
       - label: Titles
         name: titles
         widget: list
+        summary: '{{fields.language}}: {{fields.title}}'
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: Title, name: title, widget: string}
