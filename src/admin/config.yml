@@ -2,8 +2,8 @@ backend:
   name: github
   branch: content # Branch to update (optional; defaults to master)
   repo: hackerstolz/hackathon-frontend
-  base_url: https://climathon-beta.hackerstolz.de
-  #base_url: localhost:8080
+  #base_url: https://climathon-beta.hackerstolz.de
+  base_url: localhost:8080
   auth_endpoint: /api/begin
   #site_domain: hackerstolz.de
 
@@ -33,7 +33,7 @@ collections:
       - {label: "Twitter Handle", name: "twitter", widget: "string"}
       - label: Hashtags
         name: hashtags
-        widget: list
+        widget: "list"
         required: false
         fields:
           - {label: "Hashtag", name: "hashtag", widget: "string"}
@@ -162,6 +162,7 @@ collections:
         name: author
         widget: list
         hint: "Name the author or provider of the challenge"
+        summary: '{{fields.language}}: {{fields.author}}'
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: author, name: author, widget: string}
@@ -179,6 +180,7 @@ collections:
       - label: Titles
         name: titles
         widget: list
+        summary: '{{fields.language}}: {{fields.title}}'
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: Title, name: title, widget: string}            
@@ -214,6 +216,7 @@ collections:
       - label: Titles
         name: titles
         widget: list
+        summary: '{{fields.language}}: {{fields.title}}'
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: Title, name: title, widget: string}  
@@ -261,6 +264,7 @@ collections:
       - label: Titles
         name: titles
         widget: list
+        summary: '{{fields.language}}: {{fields.title}}'
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: Title, name: title, widget: string}
@@ -268,6 +272,7 @@ collections:
       - label: Prize
         name: prize
         widget: list
+        summary: '{{fields.language}}: {{fields.prize}}'
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: Prize, name: prize, widget: string}
@@ -334,6 +339,7 @@ collections:
             widget: list
             required: false  
             hint: "Professional background in context of this role"
+            summary: '{{fields.language}}: {{fields.profession}}'
             fields:
               - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
               - {label: Profession, name: profession, widget: string}  
@@ -342,6 +348,7 @@ collections:
             widget: list
             required: false  
             hint: "If a speaker: What is the title of the Talk?"
+            summary: '{{fields.language}}: {{fields.talkTitle}}'
             fields:
               - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
               - {label: Talk Title, name: talkTitle, widget: string}  
@@ -350,6 +357,7 @@ collections:
             widget: list
             required: false  
             hint: "Time of availability at Hackathon"
+            summary: '{{fields.from}} - {{fields.to}}'
             fields:                
                 - {label: "From", name: "from", widget: "datetime", format: "X", required: false}
                 - {label: "To", name: "to", widget: "datetime", format: "X", required: false}
@@ -384,6 +392,7 @@ collections:
       - label: Names
         name: names
         widget: list
+        summary: '{{fields.language}}: {{fields.name}}'
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: Name, name: name, widget: string}  
@@ -397,6 +406,7 @@ collections:
       - label: Roles
         name: roles
         widget: list
+        summary: '{{fields.subtitles[0].subtitle}}'
         fields:                  
           - label: Hackathon
             name: hackathon
@@ -441,11 +451,13 @@ collections:
       - label: Slots
         name: slots
         widget: list
+        summary: '{{fields.titles[0].title}}'
         fields:          
           - label: Titles
             name: titles
             widget: list
             hint: "Optional, is overwritten if Speaker is selected"
+            summary: '{{fields.language}}: {{fields.title}}'
             fields:
               - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
               - {label: Title, name: title, widget: string}              
@@ -492,6 +504,7 @@ collections:
       - label: Question
         name: question
         widget: list
+        summary: '{{fields.language}}: {{fields.question}}'
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: Question, name: question, widget: string}
