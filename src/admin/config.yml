@@ -2,8 +2,8 @@ backend:
   name: github
   branch: content # Branch to update (optional; defaults to master)
   repo: hackerstolz/hackathon-frontend
-  #base_url: https://climathon-beta.hackerstolz.de
-  base_url: localhost:8080
+  base_url: https://climathon-beta.hackerstolz.de
+  #base_url: localhost:8080
   auth_endpoint: /api/begin
   #site_domain: hackerstolz.de
 
