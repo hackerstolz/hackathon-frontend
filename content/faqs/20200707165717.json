@@ -1,0 +1,23 @@
+{
+  "question": [
+    {
+      "language": "DE",
+      "question": "Wer ist Hackerstolz?"
+    },
+    {
+      "language": "EN",
+      "question": "Who is Hackerstolz?"
+    }
+  ],
+  "answer": [
+    {
+      "language": "DE",
+      "answer": "Wir sind ein gemeinnütziger Verein, der zu einer aktiven IT-Community in Deutschland beitragen, die digitale Kultur unterstützen und die Integration von mehr Frauen und anderen Minderheiten in der IT fördern will. In den letzten 4 Jahren haben wir mehrere Hackathons zu Themen wie Bildung, Ernährung und Mobilität sowie den ersten deutschen Geflüchteten-Hackathon organisiert. Zusätzlich zu Hackathons organisieren wir auch Tech-Konferenzen für Frauen und Programmier-Workshops namens Hackschool."
+    },
+    {
+      "language": "EN",
+      "answer": "An organization to rule them all, no just kidding. We are a non-profit association that wants to contribute to an active IT community in Germany, support digital culture and promote the integration of more women and other minorities into IT. In the last 4 years we have organized several hackathons on topics such as education, food and mobility as well as the first German refugee hackathon. In addition to the hackathon, we also organize female tech conferences and programming workshops called Hackschool."
+    }
+  ],
+  "name": "Wer ist Hackerstolz?"
+}
