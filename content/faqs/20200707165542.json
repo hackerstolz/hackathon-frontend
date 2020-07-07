@@ -1,0 +1,23 @@
+{
+  "name": "Gibt es Reisekostenerstattungen?",
+  "question": [
+    {
+      "language": "DE",
+      "question": "Gibt es Reisekostenerstattungen?"
+    },
+    {
+      "language": "EN",
+      "question": "Are there travel cost reimbursements?"
+    }
+  ],
+  "answer": [
+    {
+      "language": "DE",
+      "answer": "Wenn wir über genügend Budget verfügen, können wir Reisekostenerstattungen leisten. Wenn wir diesen Status erreichen, werden wir dich informieren."
+    },
+    {
+      "language": "EN",
+      "answer": "If we have enough budget, we will be able to give travel cost reimbursements. If we reach this status, we will inform you."
+    }
+  ]
+}
