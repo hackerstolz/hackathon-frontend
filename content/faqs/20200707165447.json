@@ -1,0 +1,23 @@
+{
+  "name": "Wo kann ich schlafen?",
+  "question": [
+    {
+      "language": "EN",
+      "question": "Where can I sleep?"
+    },
+    {
+      "language": "DE",
+      "question": "Wo kann ich schlafen?"
+    }
+  ],
+  "answer": [
+    {
+      "language": "EN",
+      "answer": "We will have some areas where you can nap for a couple of hours. However, if you plan to have a relaxing good nights sleep, you should book a Bed in a Hostel. Do you travel from far away? You will have to stay at a hostel or AirBnB or friend over night. We are currently looking for partnerships with nearby hotels, if something is happening here, you will hear about it directly."
+    },
+    {
+      "language": "DE",
+      "answer": "Wir werden einige Bereiche haben, in denen du für ein paar Stunden schlafen kannst. Wenn du jedoch eine erholsame Nacht verbringen möchtest, solltest du ein Bett in einem Hotel buchen. Reist du von weit her an? Dann musst du über Nacht in einem Hotel, AirBnB oder bei einem Freund übernachten. Wir sind auf der Suche nach Partnerschaften mit nahegelegenen Hotels, wenn hier etwas passiert, wirst du direkt davon erfahren."
+    }
+  ]
+}
