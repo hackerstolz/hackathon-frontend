@@ -1,0 +1,32 @@
+{
+  "name": "Jascha A. Quintern",
+  "salutation": "M",
+  "image": "/images/uploads/img-jascha-quintern.jpg",
+  "roles": [
+    {
+      "title": "Orga 2020",
+      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+      "role": "76174be1-a179-4d26-abf1-08ff97d7c5a8",
+      "professions": [
+        {
+          "profession": "Hackerstolz e.V.",
+          "language": "DE"
+        },
+        {
+          "language": "EN",
+          "profession": "Hackerstolz e.V."
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Neben der Organisation gestaltet er das Veranstaltungserlebnis, treibt die Location-Konzepte voran und schafft die Hackathon-Identität."
+        },
+        {
+          "language": "EN",
+          "description": "Beside organizing he creates the event experience, pushes the location concepts and creates the hackathon identity."
+        }
+      ]
+    }
+  ]
+}
