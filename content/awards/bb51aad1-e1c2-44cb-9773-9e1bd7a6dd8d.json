@@ -1,29 +1,37 @@
 {
   "id": "bb51aad1-e1c2-44cb-9773-9e1bd7a6dd8d",
-  "name": "CLimathon_2020MVVAward",
+  "name": "Climathon_2020 City Award",
   "image": "/images/uploads/flat-icon-schedule-award.svg",
   "titles": [
     {
       "language": "DE",
-      "title": "MVV Award",
+      "title": "City Award",
       "subtitle": "Subtitle"
     }
   ],
   "prize": [
     {
       "language": "DE",
-      "prize": "MVV Prize"
+      "prize": "City Prize (?)"
     }
   ],
   "descriptions": [
     {
       "language": "DE",
-      "description": "Description"
+      "description": "Beschreibung"
+    },
+    {
+      "description": "Description",
+      "language": "EN"
     }
   ],
   "criteria": [
     {
       "language": "DE",
+      "criteria": "Kriterien"
+    },
+    {
+      "language": "EN",
       "criteria": "Criteria"
     }
   ]
