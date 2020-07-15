@@ -8,23 +8,23 @@
       "titles": [
         {
           "language": "DE",
-          "title": "Registrierung & Onboarding"
+          "title": "Vorort: Registrierung & Onboarding"
         },
         {
           "language": "EN",
-          "title": "Registration & Onboarding"
+          "title": "Onsite: Registration & Onboarding"
         }
       ],
-      "from": "1605252605",
+      "from": "1605268800",
       "image": "/images/uploads/flat-icon-schedule-batch.svg",
       "descriptions": [
         {
           "language": "DE",
-          "description": "Keine Sorge, für alle, die nicht zu den Vorträgen kommen, die Anmeldung ist bis 15:00 Uhr geöffnet."
+          "description": "Kommt gemütlich an, die Anmeldung ist bis 16:00 Uhr geöffnet."
         },
         {
           "language": "EN",
-          "description": "No worries, for all people not coming for the talks, registration will be open until 15:00."
+          "description": "Arrive comfortably, registration will be open until 4 pm."
         }
       ]
     }
