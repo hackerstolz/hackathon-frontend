@@ -1,0 +1,23 @@
+{
+  "name": "Wie groß sind die Teams?",
+  "question": [
+    {
+      "question": "Wie groß sind die Teams?",
+      "language": "DE"
+    },
+    {
+      "language": "EN",
+      "question": "How big are the teams?"
+    }
+  ],
+  "answer": [
+    {
+      "answer": "Hackathons machen mehr Spaß, wenn du mit anderen zusammenarbeitest, deshalb ermutigen wir die Leute, vorher Teams zu bilden oder Teams auf der Veranstaltung zu finden. Wir werden Teams von 3 bis 7 Personen zulassen.",
+      "language": "DE"
+    },
+    {
+      "language": "EN",
+      "answer": "Hackathons are more fun when you work with others, so we encourage people to form teams beforehand or find teams at the event. We will allow team of the size of 3 to 7 People."
+    }
+  ]
+}

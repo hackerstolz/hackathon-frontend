@@ -1,0 +1,23 @@
+{
+  "name": "Wird es Essen und Trinken geben?",
+  "question": [
+    {
+      "language": "DE",
+      "question": "Wird es Essen und Trinken geben?"
+    },
+    {
+      "language": "EN",
+      "question": "Will there be food and drinks?"
+    }
+  ],
+  "answer": [
+    {
+      "language": "DE",
+      "answer": "Du wirst bei diesem Event definitiv nicht verhungern - und natürlich ist es für alle Teilnehmer kostenlos. Und die Pizza - Spaghetti - Burger-Sache.... nein. Seid vorbereitet und wartet ab!"
+    },
+    {
+      "language": "EN",
+      "answer": "You will definitely not starve at this event – and of course it will be free for all participants. And the pizza - spaghetti - burger thing... nope. Be prepared!"
+    }
+  ]
+}

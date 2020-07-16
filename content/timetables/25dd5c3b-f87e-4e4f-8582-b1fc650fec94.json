@@ -8,42 +8,97 @@
       "titles": [
         {
           "language": "DE",
-          "title": "Registrierung & Onboarding"
+          "title": "Vorort: Registrierung & Onboarding"
         },
         {
           "language": "EN",
-          "title": "Registration & Onboarding"
+          "title": "Onsite: Registration & Onboarding"
         }
       ],
-      "from": "1605252605",
+      "from": "1605272400",
       "image": "/images/uploads/flat-icon-schedule-batch.svg",
       "descriptions": [
         {
           "language": "DE",
-          "description": "Keine Sorge, für alle, die nicht zu den Vorträgen kommen, die Anmeldung ist bis 15:00 Uhr geöffnet."
+          "description": "Kommt gemütlich an, die Anmeldung ist bis 16:00 Uhr geöffnet."
         },
         {
           "language": "EN",
-          "description": "No worries, for all people not coming for the talks, registration will be open until 15:00."
+          "description": "Arrive comfortably, registration will be open until 4 pm."
         }
       ]
     },
     {
+      "from": "1605276000",
       "titles": [
         {
           "language": "DE",
-          "title": "Sample from 2019"
+          "title": "Eröffnung"
+        },
+        {
+          "language": "EN",
+          "title": "Opening"
         }
       ],
-      "from": "1605265200",
-      "image": "/images/uploads/HannahHelmke.jpg",
-      "speaker": "103fbcee-620e-43a7-89a7-89fbf9e90ac6",
+      "image": "/images/uploads/flat-icon-schedule-mic.svg",
       "descriptions": [
         {
           "language": "DE",
-          "description": "Sollte nicht angezeigt werden weil Speaker"
+          "description": "Ein paar Begrüßungsworte zur Eröffnung des Climathon 2020 Mannheim."
+        },
+        {
+          "language": "EN",
+          "description": "A few words of welcome to the opening of the Climathon 2020 Mannheim."
         }
       ]
+    },
+    {
+      "from": "1605279600",
+      "titles": [
+        {
+          "language": "DE",
+          "title": "Challenge Pitch Zeit & Teambildung"
+        },
+        {
+          "language": "EN",
+          "title": "Challenge Pitch Time & Team Building"
+        }
+      ],
+      "descriptions": [
+        {
+          "description": "Alle Challenge-Anbieter stellen nun in knackigen 3 Minuten noch Mal ihre Challenge vor. Du hast bereits eine Idee für eine Challenge und suchst nun nach Unterstützung? Dann mach dich bereit, in 60 Sekunden zu pitchen, warum du denkst, dass andere Teilnehmer mit dir an deiner Idee arbeiten sollten.",
+          "language": "DE"
+        },
+        {
+          "language": "EN",
+          "description": "All Challenge providers now present their Challenge again in max. 3 minutes. You already have an idea for a challenge and are now looking for support? Then get ready to pitch in 60 seconds why you think other participants should work with you on your idea."
+        }
+      ],
+      "image": "/images/uploads/flat-icon-schedule-pitch.svg"
+    },
+    {
+      "from": "1605283200",
+      "titles": [
+        {
+          "language": "DE",
+          "title": "Beginn des Programmierens!"
+        },
+        {
+          "title": "Start coding!",
+          "language": "EN"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Die meisten Leute begannen wahrscheinlich um 16:30 Uhr, aber das ist kein Problem, es ist nur eine Zahl. Wichtiger ist, dass du ein Team gefunden hast und dein Team registriert ist."
+        },
+        {
+          "language": "EN",
+          "description": "Most people probably started at 16:30, but that’s no problem, its just a number. Much more important is that you found a team and you registered your team."
+        }
+      ],
+      "image": "/images/uploads/flat-icon-schedule-code.svg"
     }
   ]
 }

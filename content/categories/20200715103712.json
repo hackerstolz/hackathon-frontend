@@ -1,0 +1,26 @@
+{
+  "name": "Human Behavior",
+  "titles": [
+    {
+      "language": "EN",
+      "title": "Human Behavior"
+    },
+    {
+      "language": "DE",
+      "title": "Menschliches Verhalten"
+    }
+  ],
+  "image": "/images/uploads/flat-icon-behaviour.svg",
+  "color": "#18d52c",
+  "award": "",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "Das Verhalten der Bürger ist weitgehend für die aktuellen Trends des globalen Klimawandels verantwortlich. Die Veränderung nicht nachhaltiger Konsum- und Produktionsmuster erschließt daher ein entscheidendes Klimafolgenpotenzial."
+    },
+    {
+      "language": "EN",
+      "description": "Citizen behaviour is largely responsible for current trends in global climate change. Hence, changing unsustainable consumption and production patterns unlocks a crucial climate impact potential."
+    }
+  ]
+}

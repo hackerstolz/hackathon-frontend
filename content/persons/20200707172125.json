@@ -1,0 +1,32 @@
+{
+  "name": "Georg Pins",
+  "salutation": "M",
+  "image": "/images/uploads/img-georg-pins.jpg",
+  "roles": [
+    {
+      "title": "Orga 2020",
+      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+      "role": "76174be1-a179-4d26-abf1-08ff97d7c5a8",
+      "professions": [
+        {
+          "language": "EN",
+          "profession": "City of Mannheim"
+        },
+        {
+          "language": "DE",
+          "profession": "Stadt Mannheim"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Unser Rückgrat der Stadt mit der Aufgabe, die wichtigsten Parteien zu vernetzen und die notwendige Unterstützung der Stadt für das gesamte Projekt sicherzustellen."
+        },
+        {
+          "language": "EN",
+          "description": "Our backbone of the city with the tasks of networking the most important parties and ensuring the necessary support of the city for the entire project."
+        }
+      ]
+    }
+  ]
+}

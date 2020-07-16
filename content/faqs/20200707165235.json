@@ -1,0 +1,23 @@
+{
+  "name": "Wie viel Zeit haben wir, um unsere Idee fertigzustellen?",
+  "question": [
+    {
+      "language": "DE",
+      "question": "Wie viel Zeit haben wir, um unsere Idee fertigzustellen?"
+    },
+    {
+      "language": "EN",
+      "question": "How much time do we have to finish our idea?"
+    }
+  ],
+  "answer": [
+    {
+      "language": "DE",
+      "answer": "Der Hackathon beginnt am Freitagabend und endet am Sonntag morgen. Bis dahin ist die Location geöffnet und für alle Teilnehmer rund um die Uhr zugänglich. In unserem Fall hast du 40 Stunden."
+    },
+    {
+      "language": "EN",
+      "answer": "The Hackathon will start Friday evening and ends Sunday in the morning. Until then the location will be opened and accessible for all participants around the clock. In our case you will have 40 hours."
+    }
+  ]
+}

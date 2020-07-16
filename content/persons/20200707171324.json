@@ -1,0 +1,32 @@
+{
+  "name": "Agnes Schönfelder",
+  "salutation": "W",
+  "image": "/images/uploads/speaker-agnes.jpg",
+  "roles": [
+    {
+      "title": "Orga 2020",
+      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+      "role": "76174be1-a179-4d26-abf1-08ff97d7c5a8",
+      "professions": [
+        {
+          "language": "EN",
+          "profession": "City of Mannheim"
+        },
+        {
+          "language": "DE",
+          "profession": "Stadt Mannheim"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "... kennt keine Grenzen."
+        },
+        {
+          "language": "EN",
+          "description": "... knows no limits."
+        }
+      ]
+    }
+  ]
+}
