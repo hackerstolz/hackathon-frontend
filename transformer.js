@@ -117,6 +117,23 @@ class SchemaNode{
 		}		
 		return query;
 	}
+    
+    emptyValue(){
+        if(this.isArray()){ //dummy list structure
+            /*var arrayValue = "{";
+			for (var field of this.fields.values()) {		
+				arrayValue += " \n" + field.label;
+			}
+			arrayValue += " \n}";*/
+            var dummyArray = [];
+            for (var field of this.fields.values()) {		
+				dummyArray.push(field.name);
+			}
+            return dummyArray;
+        }else{
+            return "";
+        }
+    }
 }
 
 class SchemaParser{
@@ -323,14 +340,17 @@ class ContentLoader{
     // Parse Entry for given node and return representation to be added to GraphQL
 	processEntry(schemaNode, value){
 		//if(value === undefined && !schemaNode.isRelation()) return ""; //Return empty if undefined (so attribute is present, but empty) - Empty Relation handled later
-        var returnValue = ( value === undefined ) ? "" : value;
+        // var returnValue = ( value === undefined ) ? "" : value;
+        //handle not provided list -> empty dummy to ensure node is created in GaphQL
+        var returnValue = ( value === undefined ) ? schemaNode.emptyValue() : value;
 		
 		if (schemaNode.isArray()){
 		    //this is a list within a node - add ech content line in array
-             var gsArray = [];
+             var gsArray = [];             
+             
 			//value is an array -> process list entries recursive
-            if(value !== undefined){
-                for (let contentListEntry of value){
+            if(returnValue !== undefined){
+                for (let contentListEntry of returnValue){
                     //Per array entry provide the sub-node structure like for other nodes as well
                     let gsArrayEntry = {};
                     for(let schemaSubNode of schemaNode.fields.values()){
