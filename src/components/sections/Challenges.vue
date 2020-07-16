@@ -18,13 +18,10 @@
               ripple
             >
               <v-layout column>
-                <h3 class="mb-3">
-                  {{
-                    $t(
-                      `getI18nNode(challenge.category.titles, $i18n.locale).title`
-                    )
-                  }}
-                </h3>
+                <h3
+                  class="mb-3"
+                  v-html="getI18nNode(challenge.category.titles, $i18n.locale).title"
+                ></h3>
                 <v-img
                   :src="challenge.category.image || require('../../../static/placeholder.svg')"
                   max-height="128px"
