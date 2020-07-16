@@ -21,14 +21,12 @@
                 <h3 class="mb-3">
                   {{
                     $t(
-                      `categories.${getCategoryKey(
-                        challenge.category.name
-                      )}.title`
+                      `getI18nNode(challenge.category.titles, $i18n.locale).title`
                     )
                   }}
                 </h3>
                 <v-img
-                  :src="getCategoryImg(challenge.category.name)"
+                  :src="challenge.category.image || require('../../../static/placeholder.svg')"
                   max-height="128px"
                   contain
                 ></v-img>

@@ -381,7 +381,12 @@ query ($id: ID!) {
         } 
         category { # Category 
           id # ID 
-          name # Name 
+          name # Name
+          titles{ # Titles 
+            language # Language 
+            title # Title 
+          } 
+          image # Image
         }
         award { # Awards 
           id # ID 
@@ -408,7 +413,7 @@ query ($id: ID!) {
       }
     }
   }
-  allTimetable(filter: { hackathon: { eq: $id } }) {
+  allTimetable(filter: { hackathon: { eq: $id } }, sortBy: "date", order: ASC) {
     edges {
       node {
         id # ID 
