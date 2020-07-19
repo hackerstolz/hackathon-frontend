@@ -238,6 +238,369 @@ query{
 		} 
 	}
 } 
+=== Query for Technologie === 
+query{
+	technologie(id: "<ID>"){
+		name # Name 
+		titles{ # Titles 
+			language # Language 
+			title # Title 
+		} 
+		hackathon{ # Hackathon 
+			urlName # URL Name 
+			title # Title 
+			default # Default 
+			active # Active 
+			from # From 
+			to # To 
+			duration # Duration 
+			eventPageActive # Event Page active 
+			contactEmail # Contact EMail 
+			twitter # Twitter Handle 
+			hashtags{ # Hashtags 
+				hashtag # Hashtag 
+				isMain # isMain 
+			} 
+			linkTicketshop{ # Ticketshop Link 
+				name # Name 
+				url # URL 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+				} 
+			} 
+			linkCommunity{ # Community Link 
+				name # Name 
+				url # URL 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+				} 
+			} 
+			linkImprint{ # Imprint Link 
+				name # Name 
+				url # URL 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+				} 
+			} 
+			thumbnail # Thumbnail 
+			descriptions{ # Meta Descriptions 
+				language # Language 
+				description # Description 
+			} 
+			awards{ # Awards 
+				name # Name 
+				image # Image 
+				titles{ # Titles 
+					language # Language 
+					title # Title 
+					subtitle # Subtitle 
+				} 
+				prize{ # Prize 
+					language # Language 
+					prize # Prize 
+				} 
+				descriptions{ # Descriptions 
+					language # Language 
+					description # Description 
+				} 
+				criteria{ # Criteria 
+					language # Language 
+					criteria # Criteria 
+				} 
+			} 
+			faqs{ # FAQs 
+				name # Name 
+				question{ # Question 
+					language # Language 
+					question # Question 
+				} 
+				answer{ # Answer 
+					language # Language 
+					answer # Answer 
+				} 
+			} 
+		} 
+		image # Image 
+		color # Color 
+		descriptions{ # Descriptions 
+			language # Language 
+			description # Description 
+		} 
+		award{ # Award 
+			name # Name 
+			image # Image 
+			titles{ # Titles 
+				language # Language 
+				title # Title 
+				subtitle # Subtitle 
+			} 
+			prize{ # Prize 
+				language # Language 
+				prize # Prize 
+			} 
+			descriptions{ # Descriptions 
+				language # Language 
+				description # Description 
+			} 
+			criteria{ # Criteria 
+				language # Language 
+				criteria # Criteria 
+			} 
+		} 
+		provider{ # Provider 
+			nameInternal # (internal) Name 
+			names{ # Names 
+				language # Language 
+				name # Name 
+			} 
+			logo # Logo 
+			roles{ # Roles 
+				hackathon{ # Hackathon 
+					urlName # URL Name 
+					title # Title 
+					default # Default 
+					active # Active 
+					from # From 
+					to # To 
+					duration # Duration 
+					eventPageActive # Event Page active 
+					contactEmail # Contact EMail 
+					twitter # Twitter Handle 
+					hashtags{ # Hashtags 
+						hashtag # Hashtag 
+						isMain # isMain 
+					} 
+					linkTicketshop{ # Ticketshop Link 
+						name # Name 
+						url # URL 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+						} 
+					} 
+					linkCommunity{ # Community Link 
+						name # Name 
+						url # URL 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+						} 
+					} 
+					linkImprint{ # Imprint Link 
+						name # Name 
+						url # URL 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+						} 
+					} 
+					thumbnail # Thumbnail 
+					descriptions{ # Meta Descriptions 
+						language # Language 
+						description # Description 
+					} 
+					awards{ # Awards 
+						name # Name 
+						image # Image 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+							subtitle # Subtitle 
+						} 
+						prize{ # Prize 
+							language # Language 
+							prize # Prize 
+						} 
+						descriptions{ # Descriptions 
+							language # Language 
+							description # Description 
+						} 
+						criteria{ # Criteria 
+							language # Language 
+							criteria # Criteria 
+						} 
+					} 
+					faqs{ # FAQs 
+						name # Name 
+						question{ # Question 
+							language # Language 
+							question # Question 
+						} 
+						answer{ # Answer 
+							language # Language 
+							answer # Answer 
+						} 
+					} 
+				} 
+				challenge{ # Challenge 
+					name # Name 
+					titles{ # Titles 
+						language # Language 
+						title # Title 
+					} 
+					hackathon{ # Hackathon 
+						urlName # URL Name 
+						title # Title 
+						default # Default 
+						active # Active 
+						from # From 
+						to # To 
+						duration # Duration 
+						eventPageActive # Event Page active 
+						contactEmail # Contact EMail 
+						twitter # Twitter Handle 
+						hashtags{ # Hashtags 
+							hashtag # Hashtag 
+							isMain # isMain 
+						} 
+						linkTicketshop{ # Ticketshop Link 
+							name # Name 
+							url # URL 
+							titles{ # Titles 
+								language # Language 
+								title # Title 
+							} 
+						} 
+						linkCommunity{ # Community Link 
+							name # Name 
+							url # URL 
+							titles{ # Titles 
+								language # Language 
+								title # Title 
+							} 
+						} 
+						linkImprint{ # Imprint Link 
+							name # Name 
+							url # URL 
+							titles{ # Titles 
+								language # Language 
+								title # Title 
+							} 
+						} 
+						thumbnail # Thumbnail 
+						descriptions{ # Meta Descriptions 
+							language # Language 
+							description # Description 
+						} 
+						awards{ # Awards 
+							name # Name 
+							image # Image 
+							titles{ # Titles 
+								language # Language 
+								title # Title 
+								subtitle # Subtitle 
+							} 
+							prize{ # Prize 
+								language # Language 
+								prize # Prize 
+							} 
+							descriptions{ # Descriptions 
+								language # Language 
+								description # Description 
+							} 
+							criteria{ # Criteria 
+								language # Language 
+								criteria # Criteria 
+							} 
+						} 
+						faqs{ # FAQs 
+							name # Name 
+							question{ # Question 
+								language # Language 
+								question # Question 
+							} 
+							answer{ # Answer 
+								language # Language 
+								answer # Answer 
+							} 
+						} 
+					} 
+					image # Image 
+					color # Color 
+					descriptions{ # Descriptions 
+						language # Language 
+						description # Description 
+					} 
+					award{ # Award 
+						name # Name 
+						image # Image 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+							subtitle # Subtitle 
+						} 
+						prize{ # Prize 
+							language # Language 
+							prize # Prize 
+						} 
+						descriptions{ # Descriptions 
+							language # Language 
+							description # Description 
+						} 
+						criteria{ # Criteria 
+							language # Language 
+							criteria # Criteria 
+						} 
+					} 
+					type{ # Type 
+						title # Title 
+						color # Color 
+						descriptions{ # Descriptions 
+							language # Language 
+							description # Description 
+						} 
+					} 
+					category{ # Category 
+						name # Name 
+						titles{ # Titles 
+							language # Language 
+							title # Title 
+						} 
+						image # Image 
+						color # Color 
+						award{ # Award 
+							name # Name 
+							image # Image 
+							titles{ # Titles 
+								language # Language 
+								title # Title 
+								subtitle # Subtitle 
+							} 
+							prize{ # Prize 
+								language # Language 
+								prize # Prize 
+							} 
+							descriptions{ # Descriptions 
+								language # Language 
+								description # Description 
+							} 
+							criteria{ # Criteria 
+								language # Language 
+								criteria # Criteria 
+							} 
+						} 
+						descriptions{ # Descriptions 
+							language # Language 
+							description # Description 
+						} 
+					} 
+					author{ # Author 
+						language # Language 
+						author # author 
+					} 
+				} 
+				isSponsor # Sponsor 
+				subtitles{ # Subtitles 
+					language # Language 
+					subtitle # subtitle 
+				} 
+			} 
+		} 
+	}
+} 
 === Query for Link === 
 query{
 	link(id: "<ID>"){

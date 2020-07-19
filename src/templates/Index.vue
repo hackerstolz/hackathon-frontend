@@ -9,6 +9,13 @@
       :isMobile="isMobile"
       :challenges="$page.allChallenge.edges"
     />
+    <Technologies
+      v-if="$page && $page.allTechnologie"
+      id="technologies"
+      themeColor="secondary"
+      :isMobile="isMobile"
+      :technologies="$page.allTechnologie.edges"
+    />
     <!-- <Awards
       v-if="$page && $page.hackathon && $page.hackathon.awards.length > 0"
       id="awards"
@@ -410,6 +417,36 @@ query ($id: ID!) {
             criteria # Criteria 
           } 
         }
+      }
+    }
+  }  
+  allTechnologie(filter: { hackathon: { eq: $id } }){
+    edges{
+      node{
+        name # Name 
+        titles{ # Titles 
+          language # Language 
+          title # Title 
+        } 
+        hackathon{ # Hackathon 
+          title # Title - further fields see Hackathon 
+        } 
+        image # Image 
+        color # Color 
+        descriptions{ # Descriptions 
+          language # Language 
+          description # Description 
+        } 
+        award{ # Award 
+          name # Name - further fields see Award 
+        } 
+        provider{ # Provider 
+          names{ # Names 
+            language # Language 
+            name # Name 
+          } 
+          logo # Logo 
+        } 
       }
     }
   }

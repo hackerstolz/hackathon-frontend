@@ -103,7 +103,7 @@ collections:
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
     summary: "{{name}}"
     fields:
-      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Name", name: "name", widget: "string", hint: "Used in Admin UI only"}
       - label: Titles
         name: titles
         widget: list
@@ -166,6 +166,63 @@ collections:
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
           - {label: author, name: author, widget: string}
+  - name: "technologie"
+    label: "Technologie"
+    folder: "content/technologies"
+    create: true
+    format: json
+    identifier_field: name
+    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
+    summary: "{{name}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string", hint: "Used in Admin UI only"}
+      - label: Titles
+        name: titles
+        widget: list
+        summary: '{{fields.language}}: {{fields.title}}'
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Title, name: title, widget: string}
+      - label: Hackathon
+        name: hackathon
+        widget: "relation"
+        collection: "hackathon"
+        searchFields: ["title"]
+        valueField: "{{slug}}"
+        displayFields: ["title"]
+      - label: Image
+        name: image
+        widget: "image"
+        required: false
+        media_library:
+          config:
+            max_file_size: 512000 # 500kb
+      - label: Color
+        name: color
+        widget: color
+      - label: Descriptions
+        name: descriptions
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Description, name: description, widget: markdown}
+      - label: Award
+        name: award
+        widget: "relation"
+        required: false
+        collection: "award"
+        searchFields: ["name"]
+        valueField: "{{slug}}"
+        displayFields: ["name"]            
+      - label: Provider
+        name: provider
+        widget: "relation"
+        collection: "partner"
+        searchFields: ["nameInternal"]
+        valueField: "{{slug}}"
+        displayFields: ["nameInternal"]
+        required: false          
+        hint: "Name the partner who provides the technologie"
   - name: "link"
     label: "Link"
     folder: "content/links"

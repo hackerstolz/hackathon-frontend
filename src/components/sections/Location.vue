@@ -32,7 +32,7 @@
             >place</v-icon
           >
           <p class="location-text pa-1">
-            MAFINEX-Technologiezentrum
+            Online & MAFINEX-Technologiezentrum
             <br />Julius-Hatry-Str. 1 <br />68163 Mannheim
           </p>
           <v-btn
@@ -77,7 +77,7 @@ export default {
   },
   mounted() {
     // set video to play in slow motion
-    this.$refs.videobg.$refs.video.playbackRate = 1 // 0.5;
+    //this.$refs.videobg.$refs.video.playbackRate = 1 // 0.5;
   },
   computed: {
     sectionColor: function() {
@@ -95,14 +95,14 @@ export default {
 {
   "en": {
     "title": "Location",
-    "locationSlogan": "The greatest hacker location in Mannheim",
+    "locationSlogan": "Virtual & with limited number of participants at the greatest hacker location in Mannheim",
     "button": {
       "link2Maps": "Open in maps"
     }
   },
   "de": {
     "title": "Standort",
-    "locationSlogan": "Der großartigste Hackerstandort in Mannheim",
+    "locationSlogan": "Virtuell & mit begrenzter Teilnehmerzahl im großartigsten Hackerstandort in Mannheim",
     "button": {
       "link2Maps": "In Karten öffnen"
     }
