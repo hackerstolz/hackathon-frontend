@@ -69,6 +69,31 @@ query{
 		} 
 	}
 } 
+=== Query for Technologie === 
+query{
+	technologie(id: "<ID>"){
+		name # Name 
+		titles{ # Titles 
+			language # Language 
+			title # Title 
+		} 
+		hackathon{ # Hackathon 
+			title # Title - further fields see Hackathon 
+		} 
+		image # Image 
+		color # Color 
+		descriptions{ # Descriptions 
+			language # Language 
+			description # Description 
+		} 
+		award{ # Award 
+			name # Name - further fields see Award 
+		} 
+		provider{ # Provider 
+			nameInternal # (internal) Name - further fields see Partner 
+		} 
+	}
+} 
 === Query for Link === 
 query{
 	link(id: "<ID>"){
