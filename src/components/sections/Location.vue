@@ -32,7 +32,9 @@
             >place</v-icon
           >
           <p class="location-text pa-1">
-            Online & MAFINEX-Technologiezentrum
+            ONLINE
+            <br />&
+            <br />MAFINEX-Technologiezentrum
             <br />Julius-Hatry-Str. 1 <br />68163 Mannheim
           </p>
           <v-btn
