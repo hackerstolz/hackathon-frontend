@@ -1,0 +1,25 @@
+{
+  "name": "Sensorwürfel in Mannheim",
+  "titles": [
+    {
+      "language": "EN",
+      "title": "Environment related Sensore Data collected in Mannheim"
+    },
+    {
+      "title": "Umweltbezogene Sensordaten aus Mannheim",
+      "language": "DE"
+    }
+  ],
+  "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+  "color": "#f90000",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "TODO Georg"
+    },
+    {
+      "description": "TODO Georg",
+      "language": "EN"
+    }
+  ]
+}
