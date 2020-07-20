@@ -145,7 +145,7 @@ export default {
     "sloganBeforeHeart": "A hackathon made with",
     "sloganAfterHeart": "by",
     "creditsTitle": "Credits",
-    "credits": "font <a class='link' target='_blank' href='https://www.fontfabric.com/fonts/gagalin/'>„Gagalin“</a> by Iordanis Passas • icons by „Özden Gelgec“, <a class='link' target='_blank' href='http://www.iconarchive.com/show/small-n-flat-icons-by-paomedia.html'>„Arnaud“</a>, <a class='link' target='_blank' href='https://www.flaticon.com'>„Freepik“</a> and <a class='link' target='_blank' href='http://www.iconarchive.com/show/free-flat-sample-icons-by-thesquid.ink.html'>„Squid Ink“</a>, <a href="https://www.flaticon.com/de/autoren/linector" title="Linector">Linector</a>",
+    "credits": "font <a class='link' target='_blank' href='https://www.fontfabric.com/fonts/gagalin/'>„Gagalin“</a> by Iordanis Passas • icons by „Özden Gelgec“, <a class='link' target='_blank' href='http://www.iconarchive.com/show/small-n-flat-icons-by-paomedia.html'>„Arnaud“</a>, <a class='link' target='_blank' href='https://www.flaticon.com'>„Freepik“</a> and <a class='link' target='_blank' href='http://www.iconarchive.com/show/free-flat-sample-icons-by-thesquid.ink.html'>„Squid Ink“</a>, <a href='https://www.flaticon.com/de/autoren/linector' title='Linector'>Linector</a>",
     "designedBy": "designed and coded by Jascha A. Quintern",
     "button": {
       "link2Legal": "Imprint & Privacy Policy"
@@ -155,7 +155,7 @@ export default {
     "sloganBeforeHeart": "Ein Hackathon gemacht mit",
     "sloganAfterHeart": "von",
     "creditsTitle": "Credits",
-    "credits": "Schriftart <a class='link' target='_blank' href='https://www.fontfabric.com/fonts/gagalin/'>\"Gagalin\"</a> von Iordanis Passas - Symbole von \"Özden Gelgec\", <a class='link' target='_blank' href='http://www.iconarchive.com/show/small-n-flat-icons-by-paomedia.html'>\"Arnaud\"</a>, <a class='link' target='_blank' href='https://www.flaticon.com'>\"Freepik\"</a> und <a class='link' target='_blank' href='http://www.iconarchive.com/show/free-flat-sample-icons-by-thesquid.ink.html'>\"Squid Ink\"</a>",
+    "credits": "Schriftart <a class='link' target='_blank' href='https://www.fontfabric.com/fonts/gagalin/'>\"Gagalin\"</a> von Iordanis Passas - Symbole von \"Özden Gelgec\", <a class='link' target='_blank' href='http://www.iconarchive.com/show/small-n-flat-icons-by-paomedia.html'>\"Arnaud\"</a>, <a class='link' target='_blank' href='https://www.flaticon.com'>\"Freepik\"</a> und <a class='link' target='_blank' href='http://www.iconarchive.com/show/free-flat-sample-icons-by-thesquid.ink.html'>\"Squid Ink\"</a>, <a href='https://www.flaticon.com/de/autoren/linector' title='Linector'>Linector</a>",
     "designedBy": "entworfen und entwickelt von Jascha A. Quintern",
     "button": {
       "link2Legal": "Impressum & Datenschutzerklärung"
