@@ -300,7 +300,7 @@ export default {
   },
   "de": {
     "title": "Herausforderungen",
-    "intro": "Hier findest du aufgelistet alle Challenges. Warum das wichtig ist? Auf dem Climathon musst du dich als Team für <strong>EINE CHALLENGE</strong> entscheiden an der du arbeiten möchtest und am Ende deine Lösung zu einreichst. Nur in wenigen Ausnahmen bei denen es Sinn macht, kann eine Lösung für <strong>zwei</strong> Challenges angeboten werden.",
+    "intro": "Hier findest du alle Challenges aufgelistet. Warum das wichtig ist? Auf dem Climathon musst du dich als Team für <strong>EINE CHALLENGE</strong> entscheiden an der du arbeiten möchtest und am Ende deine Lösung zu einreichst. Nur in wenigen Ausnahmen bei denen es Sinn macht, kann eine Lösung für <strong>zwei</strong> Challenges angeboten werden.",
     "titleSubmit": "Reichen Sie Ihre eigene Herausforderung ein",
     "submitText": "Ich wette, du kannst dir etwas so viel Innovativeres einfallen lassen als wir! Reiche deine eigene Herausforderung ein – wenn wir diese genehmigen, wird diese auch auf der Climathon Seite aufgeführt. Das bedeutet auch, dass andere Teams an Lösungen für deine Herausforderung arbeiten können, auch wenn du dich auf dem Event spontan für eine andere Herausforderung entscheiden solltest.",
     "submitDeadline": "Einsendeschluss ist Freitag, der 25. Okt 15:00",

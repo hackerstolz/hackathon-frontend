@@ -154,7 +154,7 @@ export default {
   },
   "de": {
     "title": "Technoligien & Daten",
-    "intro": "Hier findest du aufgelistet alle Technoligien und Daten bereitgestellt werden. Viel Spaß damit!"    
+    "intro": "Hier findest du alle Technoligien und Daten aufgelistet, die bereitgestellt werden. Viel Spaß damit!"    
   }
 }
 </i18n>
