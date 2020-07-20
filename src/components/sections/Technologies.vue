@@ -8,12 +8,12 @@
         <v-expansion-panels popout :value="challengeOpen">
           <v-expansion-panel
             :id="`tech-${technologie.id}`"
-            class="challenge"
+            class="technologie"
             v-for="({ node: technologie }, i) in $props.technologies"
             :key="i"
           >
             <v-expansion-panel-header
-              class="challenge-head"
+              class="technologie-head"
               color="rgba(255,255,255,0.1)"
               ripple
             >
@@ -24,6 +24,7 @@
                   contain
                 ></v-img>
                 <p
+                  v-if="!technologie.provider === ''"
                   :class="{
                     author: true,                    
                     'my-4': true
@@ -37,11 +38,12 @@
               </v-layout>
             </v-expansion-panel-header>
             <v-expansion-panel-content
-              class="challenge-content"
+              class="technologie-content"
               color="rgba(255,255,255,0.1)"
             >
-              <v-layout column>
+              <v-layout column>                
                 <v-img
+                  v-if="!technologie.provider === ''"
                   :class="{
                     batch: true,
                     'my-5': true
@@ -229,7 +231,7 @@ section {
     color: #A8E5A3;
   }
 
-  .challenge, .v-expansion-panel.challenge {
+  .technologie, .v-expansion-panel.technologie {
     background-color: transparent;
 
     h3 {
@@ -257,24 +259,14 @@ section {
       line-height: 1.4;
       letter-spacing: 1px;
       text-align: center;
-      color: rgba(255, 255, 255, 0.8);
-
-      &.author {
-        font-weight: 600;
-        &.city-challenge {
-          color: #DD543B;
-        }
-        &.technology {
-          color: #70B4DF;
-        }
-      }
+      color: rgba(255, 255, 255, 0.8);     
     }
 
     .batch {
       position: relative;
       :before {
         content: " ";
-        width: calc(50% - 100px);
+        width: calc(50% - 150px);
         height: 1px;
         background-color: rgba(255, 255, 255, 0.8);
         top: 50%;
@@ -284,30 +276,14 @@ section {
       }
       :after {
         content: " ";
-        width: calc(50% - 100px);
+        width: calc(50% - 150px);
         height: 1px;
         background-color: rgba(255, 255, 255, 0.8);
         top: 50%;
         right: 0px;
         position: absolute;
         display: block;
-      }
-      &.city-challenge {
-        :before {
-          background-color: #DD543B;
-        }
-        :after {
-          background-color: #DD543B;
-        }
-      }
-      &.technology {
-        :before {
-          background-color: #70B4DF;
-        }
-        :after {
-          background-color: #70B4DF;
-        }
-      }
+      }      
     }
   }
 }
