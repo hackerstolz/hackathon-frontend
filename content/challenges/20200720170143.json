@@ -1,0 +1,37 @@
+{
+  "name": "Bürgerpartizipation 2020",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Wie können wir ansprechende Formate zur Bürgerpartizipation entwickeln, um Ideen aus allen Teilen der Gesellschaft aufzunehmen?"
+    },
+    {
+      "language": "EN",
+      "title": "How can we develop appealing formats for citizen participation in order to absorb ideas from all parts of society?"
+    }
+  ],
+  "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+  "type": "f03fd5ed-dc66-4c9b-a480-4b8f114fefe2",
+  "category": "61b0dad7-08e4-4b7b-b8a6-66bb5268f1cf",
+  "author": [
+    {
+      "language": "DE",
+      "author": "Stadt Mannheim"
+    },
+    {
+      "language": "EN",
+      "author": "City of Mannheim"
+    }
+  ],
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "## ZUSAMMENFASSUNG\n\nInnovationen können grundsätzlich aus allen Teilen der Gesellschaft kommen. Das Einbeziehen von Ideen aus der Stadtgesellschaft stellt einen wichtigen Faktor für das Ausschöpfen des Nachhaltigkeitspotenzials Mannheims dar, jedoch gestaltet sich dies in der Praxis meist schwer.\n\nSeit mehreren Jahren entwickelt die Klimaschutzagentur Mannheim im Auftrag der Stadt Mannheim Beteiligungsformate für Bürger. Ziel ist es, die Ideen in die Aktivitäten rund um den Umweltschutz in Mannheim einfließen zu lassen und so auch mehr auf das Thema aufmerksam zu machen und die Motivation der Bürger zu erhöhen.\n\n## STATUS QUO & RESSOURCEN\n\nFür welche Themen das entwickelte Format (App, Plattform, Design Thinking, Tauschbörse etc.) anwendbar ist, ist im Grunde egal. Es kann eine universelle Lösung entwickelt werden oder eine für ein spezielles Themenfeld (nachhaltige Konsum, Abfallvermeidung, klimafreundliche Mobilität,…).\n\nFolgende Punkte sollten berücksichtigt werden:\n\n* Möglichst alle Mannheimer*innen sollten beteiligt werden können, es sind aber auch zielgruppenspezifische Formate möglich\n* Das Format sollte ansprechend sein und die Bürger für das Thema Nachhaltigkeit begeistern\n* Der Fokus sollte auf der lokalen Handlungsfähigkeit liegen\n\n## VISION & ERGEBNIS\n\nWir sind uns sicher, dass viele Ideen in den Mannheimer*innen schlummern, die bisher noch nicht entdeckt sind. Mit eurer Hilfe wollen wir diese sichtbar machen und alle Teile der Gesellschaft in unsere Aktivitäten einbinden."
+    },
+    {
+      "language": "EN",
+      "description": "## SUMMARY\n\nInnovations can basically come from all parts of society. The inclusion of ideas from the urban community is an important factor in exploiting Mannheim's sustainability potential, but in practice this is usually difficult to achieve.\n\nFor several years, the Mannheim Climate Protection Agency has been developing participation formats for citizens on behalf of the City of Mannheim. The aim is to incorporate the ideas into activities relating to environmental protection in Mannheim, thus raising awareness of the topic and increasing the motivation of the citizens.\n\n## STATUS QUO & RESOURCES\n\nFor which topics the developed format (app, platform, design thinking, file sharing, etc.) is applicable is basically irrelevant. A universal solution can be developed or one for a specific topic area (sustainable consumption, waste avoidance, climate-friendly mobility, ...)\n\nThe following points should be considered:\n\n* It should be possible to involve as many people from Mannheim as possible, but target group-specific formats are also possible\n* The format should be appealing and inspire citizens for the topic of sustainability\n* The focus should be on local capacity to act\n\n## VISION & RESULT\n\nWe are sure that there are many ideas slumbering in the Mannheim* residents that have not yet been discovered. With your help we want to make them visible and involve all parts of society in our activities."
+    }
+  ],
+  "color": "#0216fc"
+}
