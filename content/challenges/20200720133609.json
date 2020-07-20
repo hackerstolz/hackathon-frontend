@@ -1,0 +1,38 @@
+{
+  "color": "#ff0303",
+  "author": [
+    {
+      "language": "DE",
+      "author": "Stadt Mannheim"
+    },
+    {
+      "language": "EN",
+      "author": "City of Mannheim"
+    }
+  ],
+  "name": "Extremwetter 2020",
+  "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "## Zusammenfassung\n\nDer fortschreitende Klimawandel sorgt für eine Häufung von Extremwetterereignissen (z.B. Hitze, Überschwemmungen, Sturm, Dürre). Mit dem Klimafolgenanpassungskonzept und Sofortmaßnahmen tritt die Stadt Mannheim dieser Entwicklung entgegen. Die Potenziale durch intelligenten Einsatz von Sensorik und (Echtzeit-)Datenanalysen und –prognosen sind enorm. Was fehlt: Eine stabile, echtzeitfähige Datenbasis, auf deren Grundlage alle Menschen über Gefahren informiert werden und damit in die Lage gebracht werden, sich eigenverantwortlich zu schützen und gegenzusteuern. Insbesondere Kinder und Ältere, die häufig keinen Zugang zu Informationen über Apps verfügen, sind besonders gefährdet und zudem durchschnittlich am Schlechtesten technisch ausgestattet. Gesucht werden auch wirksame Maßnahmen zum konkreten und kurzfristig wirksamen Schutz vor Extremwetterereignissen (z.B. Wasserspender in der Innenstadt, Unterstände in Parks und Spielplätzen).\n\n## Status quo / Ressourcen\n\nDie Lösung kann sich entweder auf den Bereich Daten/Prognose, den Bereich Information oder auch konkretem, kurzfristig wirksamen Schutz bei Extremwetter fokussieren. Werden mehrere Bereiche kombiniert – noch besser.\n\nDu erhältst von uns einen Überblick über vorhandene Messstationen und zur Verfügung stehende Messdaten, Datensätze vom „Mannheim Cube“ und die Gelegenheit, alles zu erfragen bei den Fachleuten aus der Stadtverwaltung, was Euch weiterbringt.\n\nDie Bandbreite möglicher Ideen ist gigantisch – füllt das Universum der Ideen mit konkreten Lösungsansätzen. Wir brauchen Eure Ideen – alle!"
+    },
+    {
+      "language": "EN",
+      "description": "TODO"
+    }
+  ],
+  "type": "f03fd5ed-dc66-4c9b-a480-4b8f114fefe2",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Wie können sich alle Menschen eigenverantwortlich vor Gesundheitsgefährdungen aufgrund von Extremwetterereignissen schützen bzw. geschützt und gewarnt werden?"
+    },
+    {
+      "language": "EN",
+      "title": "TODO"
+    }
+  ],
+  "image": "/images/uploads/flat-icon-mobility.svg",
+  "category": "20200715103712"
+}
