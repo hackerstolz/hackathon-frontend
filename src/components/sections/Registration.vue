@@ -3,6 +3,47 @@
     <v-container>
       <h2>{{ $t('title') }}</h2>
       <p class="introText my-5" v-html="$t('introText')"></p>
+      <v-layout row align-center justify-center wrap>
+        <!-- <v-btn
+          class="mt-2 mr-2"
+          width="auto"
+          :href="ticketShopURL"
+          :disabled="!ticketShopURL"
+          target="_blank"
+          color="info"
+          outlined
+          text
+        >
+          {{ $t('button.link2Ticktes') }}
+          <v-icon dark right>open_in_new</v-icon>
+        </v-btn> -->
+        <v-btn
+          class="mt-2 mr-2"
+          width="auto"
+          :href="communityURL"
+          :disabled="!communityURL"
+          target="_blank"
+          color="warning"
+          outlined
+          text
+        >
+          {{ $t('button.link2Slack') }}
+          <v-icon dark right>open_in_new</v-icon>
+        </v-btn>
+      </v-layout>
+      <v-btn
+        class="buy-tickets mt-4 mb-8 white--text"
+        width="auto"
+        :href="ticketShopURL"
+        :disabled="!ticketShopURL"
+        target="_blank"
+        color="success"
+        large
+        >{{
+          getI18nNode($props.hackathon.linkTicketshop.titles, $i18n.locale)
+            .title
+        }}</v-btn
+      >
       <v-layout class="my-4" row wrap align-start justify-center>
         <v-flex
           v-for="(type, i) in types"
@@ -46,44 +87,6 @@
       >
         <p class="priceText my-5" v-html="$t('priceText')"></p>
       </v-card>
-      <v-layout row align-center justify-center wrap>
-        <v-btn
-          class="mt-2 mr-2"
-          width="auto"
-          :href="ticketShopURL"
-          :disabled="!ticketShopURL"
-          target="_blank"
-          color="info"
-          outlined
-          text
-        >
-          {{ $t('button.link2Ticktes') }}
-          <v-icon dark right>open_in_new</v-icon>
-        </v-btn>
-        <v-btn
-          class="mt-2 mr-2"
-          width="auto"
-          :href="communityURL"
-          :disabled="!communityURL"
-          target="_blank"
-          color="warning"
-          outlined
-          text
-        >
-          {{ $t('button.link2Slack') }}
-          <v-icon dark right>open_in_new</v-icon>
-        </v-btn>
-      </v-layout>
-      <v-btn
-        class="buy-tickets mt-4 white--text"
-        width="auto"
-        :href="ticketShopURL"
-        :disabled="!ticketShopURL"
-        target="_blank"
-        color="success"
-        large
-        >{{ $t('button.buyTickets') }}</v-btn
-      >
     </v-container>
   </section>
 </template>
@@ -99,12 +102,27 @@ export default {
     isMobile: Boolean,
     hackathon: Object,
   },
+  methods: {
+    getI18nNode(i18nNodes = [], lang) {
+      const locale = lang.toUpperCase()
+      const [i18nNode = {}] = i18nNodes.filter(
+        (n) => n.language === locale || n.language === locale.split('-'[0])
+      ) || [{}]
+
+      return i18nNode
+    },
+  },
   computed: {
     communityURL() {
       return this.$props.hackathon.linkCommunity
         ? this.$props.hackathon.linkCommunity.url
         : ''
     },
+    // ticketShopText() {
+    //   return this.$props.hackathon.linkTicketshop.titles
+    //     ? this.
+    //     : ''
+    // },
     ticketShopURL() {
       return this.$props.hackathon.linkTicketshop
         ? this.$props.hackathon.linkTicketshop.url
