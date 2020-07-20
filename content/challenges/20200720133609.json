@@ -1,5 +1,5 @@
 {
-  "color": "#ff0303",
+  "color": "#ffb603",
   "author": [
     {
       "language": "DE",
@@ -19,7 +19,7 @@
     },
     {
       "language": "EN",
-      "description": "TODO"
+      "description": "## Summary\n\nProgressive climate change is causing an accumulation of extreme weather events (e.g. heat, floods, storms, drought). The City of Mannheim is counteracting this development with the climate impact adaptation concept and immediate measures. The potential through intelligent use of sensor technology and (real-time) data analysis and forecasting is enormous. What is missing: a stable, real-time database on the basis of which all people are informed about dangers and are thus put in a position to protect and counteract themselves on their own responsibility. Children and older people in particular, who often have no access to information via apps, are particularly at risk and are also on average the worst technically equipped. Effective measures are also sought for concrete and short-term protection against extreme weather events (e.g. water dispensers in the city centre, shelters in parks and playgrounds).\n\n## Status quo / Resources\n\nThe solution can focus either on the area of data/forecast, the area of information or concrete, short-term effective protection in extreme weather. If several areas are combined - even better.\n\nYou get an overview of existing measuring stations and available measuring data, data sets from the \"Mannheim Cube\" and the opportunity to ask the experts from the city administration about everything that will help you.\n\nThe range of possible ideas is gigantic - fill the universe of ideas with concrete solutions. We need your ideas - all of them!"
     }
   ],
   "type": "f03fd5ed-dc66-4c9b-a480-4b8f114fefe2",
@@ -30,9 +30,9 @@
     },
     {
       "language": "EN",
-      "title": "TODO"
+      "title": "How can all people protect or be protected and warned of health hazards due to extreme weather events on their own responsibility?"
     }
   ],
   "image": "/images/uploads/sommer.svg",
-  "category": "20200715103712"
+  "category": "20200720163206"
 }
