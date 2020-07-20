@@ -93,7 +93,40 @@ query {
     edges {
       node {
         id
-        urlName
+        urlName # URL Name 
+        title # Title 
+        default # Default 
+        active # Active 
+        from # From 
+        to # To 
+        duration # Duration 
+        eventPageActive # Event Page active 
+        contactEmail # Contact EMail 
+        twitter # Twitter Handle 
+        hashtags{ # Hashtags 
+          hashtag # Hashtag 
+          isMain # isMain 
+        } 
+        linkTicketshop{ # Ticketshop Link 
+          name # Name - further fields see Link 
+        } 
+        linkCommunity{ # Community Link 
+          name # Name - further fields see Link 
+        } 
+        linkImprint{ # Imprint Link 
+          name # Name - further fields see Link 
+        } 
+        thumbnail # Thumbnail 
+        descriptions{ # Meta Descriptions 
+          language # Language 
+          description # Description 
+        } 
+        awards{ # Awards 
+          name # Name - further fields see Award 
+        } 
+        faqs{ # FAQs 
+          name # Name - further fields see FAQs 
+        } 
       }
     }
   }
