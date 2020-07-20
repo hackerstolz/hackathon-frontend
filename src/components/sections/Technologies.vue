@@ -24,6 +24,7 @@
                   contain
                 ></v-img>
                 <p
+                  v-if="!technologie.provider === ''"
                   :class="{
                     author: true,                    
                     'my-4': true
@@ -40,8 +41,9 @@
               class="technologie-content"
               color="rgba(255,255,255,0.1)"
             >
-              <v-layout column>
+              <v-layout column>                
                 <v-img
+                  v-if="!technologie.provider === ''"
                   :class="{
                     batch: true,
                     'my-5': true
