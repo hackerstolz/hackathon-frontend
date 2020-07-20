@@ -1,0 +1,15 @@
+{
+  "name": "Extremwetter",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Extremwetter"
+    },
+    {
+      "language": "EN",
+      "title": "Extreme Weather"
+    }
+  ],
+  "image": "/images/uploads/sommer.svg",
+  "color": "#ffbe00"
+}
