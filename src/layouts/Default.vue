@@ -230,7 +230,7 @@ export default {
         "about",
         "challenges",
         "technologies",
-        "awards",
+        // "awards",
        // "teams",
         "location",
         "schedule",
