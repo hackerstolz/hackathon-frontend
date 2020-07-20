@@ -380,7 +380,7 @@ export default {
       "donate": "Donate",
       "toEvent": "On-Event App",
       "toOverview": "Climathon Overview",
-      "navToArchivedHackathon": "Past Events"
+      "navToArchivedHackathon": "All Events"
     }
   },
   "de": {
@@ -421,7 +421,7 @@ export default {
       "donate": "Spenden",
       "toEvent": "On-Event App",
       "toOverview": "Climathon Übersicht",
-      "navToArchivedHackathon": "Ehemalige Events"
+      "navToArchivedHackathon": "Alle Events"
     }
   }
 }
