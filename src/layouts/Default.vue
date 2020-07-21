@@ -313,8 +313,8 @@ export default {
     hackathonArchive() {
       const firstStaticHackathon = {
         url: this.$route.path.startsWith("/event")
-          ? "https://climathon.hackerstolz.de/#/event"
-          : "https://climathon.hackerstolz.de",
+          ? "https://climathon-2019.hackerstolz.de/#/event"
+          : "https://climathon-2019.hackerstolz.de",
         title: "Climathon 2019 Mannheim"
       };
       const hackathons = (this.$static.allHackathon.edges || []).map(
