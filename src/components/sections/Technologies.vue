@@ -149,12 +149,12 @@ export default {
 <i18n>
 {
   "en": {
-    "title": "Technoligies & Data",
+    "title": "Technologies & Data",
     "intro": "Here you find a list of technologies and data sets which will be provide. Have fun!"    
   },
   "de": {
-    "title": "Technoligien & Daten",
-    "intro": "Hier findest du alle Technoligien und Daten aufgelistet, die bereitgestellt werden. Viel Spaß damit!"    
+    "title": "Technologien & Daten",
+    "intro": "Hier findest du alle Technologien und Daten aufgelistet, die bereitgestellt werden. Viel Spaß damit!"    
   }
 }
 </i18n>
