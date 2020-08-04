@@ -1,0 +1,38 @@
+{
+  "color": "#4a90e2",
+  "author": [
+    {
+      "language": "EN",
+      "author": "City of Mannheim"
+    },
+    {
+      "language": "DE",
+      "author": "Stadt Mannheim"
+    }
+  ],
+  "name": "Abfallwitschaft 2020",
+  "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "# *Mülltrennung, die Spaß macht*\n \n\n## ZUSAMMENFASSUNG\n\nAls kommunaler Entsorger kümmern wir uns um den Abfall, der in Mannheim anfällt. Wir sammeln Restmüll und verschiedene Wertstoffe bei den Haushalten und auf unseren Recyclinghöfen und wir sorgen dafür, dass all diese Abfälle anschließend ordnungsgemäß und sinnvoll verwertet bzw. beseitigt werden. Zu unseren Zielen gehört aber auch, Recycling und Kreislaufwirtschaft zu fördern und die Abfallvermeidung aktiv voranzutreiben. \n\n## STATUS QUO & RESSOURCEN\n\nZwei Drittel dessen, was in der Restmülltonne landet, gehört dort gar nicht hin: Bioabfälle, Kunststoffe und andere Wertstoffe gehen so für das Recycling verloren. Denn das  beste Recyclingverfahren bleibt wirkungslos und die neueste Hightech-Sortieranlage ist machtlos, wenn die Abfälle dort gar nicht ankommen, sondern im Restmüll und damit in der Verbrennungsanlage landen. Andererseits werden verpackte Lebensmittel in die Biotonne und Laptos in die Wertstofftonne geworfen und behindern oder verhindern so das Recycling der Wertstoffe. – Beispiele , die zeigen, dass im Zentrum einer funktionierenden Kreislaufwirtschaft die Verbraucher stehen. Sie sind deshalb unsere wichtigste „Zielgruppe“, sie wollen wir als Partner für eine nachhaltige Abfallwirtschaft gewinnen. \nWir geben euch Informationen über die neusten Untersuchungsergebnisse, häufige Fehlwürfe, und Hintergrundinformationen zum Beispiel zum Problem der kompostierbaren Plastiktüten in der Biotonne.\n\n## VISION & ERGEBNIS\n\nWie gelingt es uns, korrekte Mülltrennung als Grundvoraussetzung für funktionierendes Recycling in die Köpfe und den Alltag der Mannheimerinnen und Mannheimer zu bringen?  Wie erreichen wir Menschen in ganz unterschiedlichen Lebensumständen (Alter – Herkunft – Bildungsstand – sprachliche Fähigkeiten)?\nUm den Mannheimer Bürgern Kenntnisse und Spaß an der Mülltrennung zu vermitteln suchen wir innovative Ideen. Seid kreativ und entwerft eine App, ein Computerspiel oder was euch sonst einfällt, um das Thema Mülltrennung in die Köpfe und den Alltag der Mannheimer Bürger zu bringen. Sorgt dafür, dass jeder mit Freude lernt und gerne umsetzt welcher Müll in welchen Behälter gehört.\n\nSeid so kreativ wie möglich und vor allem habt Spaß dabei."
+    },
+    {
+      "language": "EN",
+      "description": "# *Waste separation that's fun*\n \n\n## SUMMARY\n\nAs a municipal waste management company, we take care of the waste that is generated in Mannheim. We collect residual waste and various recyclable materials from households and at our recycling yards and we ensure that all this waste is then properly and sensibly recycled or disposed of. However, our objectives also include promoting recycling and closed loop recycling management and actively promoting waste avoidance. \n\n## STATUS QUO & RESOURCES\n\nTwo thirds of what ends up in the residual waste bin does not belong there at all: Bio-waste, plastics and other recyclable materials are lost for recycling. Even the best recycling process is ineffective and the latest high-tech sorting plant is powerless if the waste does not get there at all, but ends up in the residual waste and thus in the incineration plant. On the other hand, packaged food is thrown into the organic waste bin and laptops are thrown into the recyclable waste bin, thus hindering or preventing the recycling of recyclable materials. - Examples that show that consumers are at the centre of a functioning recycling economy. They are therefore our most important \"target group\" and we want to win them as partners for sustainable waste management. \nWe will give you information about the latest research results, frequent mistakes, and background information, for example on the problem of compostable plastic bags in the organic waste bin.\n\n## VISION & RESULT\n\nHow do we succeed in bringing correct waste separation as a basic requirement for functioning recycling into the minds and everyday lives of the people of Mannheim?  How do we reach people in very different life circumstances (age - origin - level of education - linguistic skills)?\nWe are looking for innovative ideas to impart knowledge and fun to the citizens of Mannheim about waste separation. Be creative and design an app, a computer game or whatever else you can think of to bring the topic of waste separation into the minds and everyday life of the citizens of Mannheim. Make sure that everyone enjoys learning and is happy to implement which waste belongs in which container.\n\nBe as creative as possible and above all have fun doing it."
+    }
+  ],
+  "type": "f03fd5ed-dc66-4c9b-a480-4b8f114fefe2",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Wie befähigen und motivieren wir die Mannheimerinnen und Mannheimer, ihren privaten Konsum so auszurichten, dass Recycling eine Chance hat und eine echte Kreislaufwirtschaft möglich wird?"
+    },
+    {
+      "language": "EN",
+      "title": "How do we empower and motivate the people of Mannheim to orientate their private consumption in such a way that recycling has a chance and a true circular economy becomes possible?"
+    }
+  ],
+  "image": "/images/uploads/flat-icon-waste.svg",
+  "category": "20200804184938"
+}
