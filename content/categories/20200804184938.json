@@ -1,0 +1,24 @@
+{
+  "name": "Abfallwirtschaft",
+  "titles": [
+    {
+      "language": "EN",
+      "title": "Waste Management"
+    },
+    {
+      "language": "DE",
+      "title": "Abfallwirtschaft"
+    }
+  ],
+  "color": "#f8e71c",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "Auf dem Weg zu wirksamem Klimaschutz kommt den Bestrebungen zu einer echten Kreislaufwirtschaft eine Schlüsselrolle zu, und im Zentrum einer echten Kreislaufwirtschaft steht eine nachhaltige Abfallwirtschaft, die sämtliche Aspekte von der Abfallvermeidung über klassisches  Recycling bis zum Urban Mining im Blick hat. Einer der Dreh- und Angelpunkte ist dabei der private Konsum und der Umgang mit dem „was übrig bleibt“."
+    },
+    {
+      "description": "On the road to effective climate protection, the efforts to create a true recycling economy play a key role, and at the heart of a true recycling economy is sustainable waste management that takes in all aspects from waste avoidance to classic recycling and urban mining. One of the pivotal points here is private consumption and dealing with \"what is left over\". ",
+      "language": "EN"
+    }
+  ]
+}
