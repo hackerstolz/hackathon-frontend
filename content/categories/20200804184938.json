@@ -1,13 +1,13 @@
 {
-  "name": "Abfallwirtschaft",
+  "name": "Kreislaufwirtschaft",
   "titles": [
     {
       "language": "EN",
-      "title": "Waste Management"
+      "title": "Circular Economy"
     },
     {
       "language": "DE",
-      "title": "Abfallwirtschaft"
+      "title": "Kreislaufwirtschaft"
     }
   ],
   "color": "#f8e71c",
