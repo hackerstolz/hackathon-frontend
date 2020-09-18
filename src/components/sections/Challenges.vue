@@ -18,12 +18,34 @@
               ripple
             >
               <v-layout column>
-                <h3
-                  class="mb-3"
-                  v-html="getI18nNode(challenge.category.titles, $i18n.locale).title"
-                ></h3>
+                <v-flex row>
+                  <h3
+                    class="ml-3 mb-3"
+                    v-html="
+                      getI18nNode(challenge.category.titles, $i18n.locale).title
+                    "
+                  ></h3>
+                  <v-flex gorw="1" />
+                  <ClientOnly>
+                    <v-btn
+                      width="auto"
+                      min-width="2rem"
+                      text
+                      ripple
+                      v-clipboard:copy="
+                        `${localeURL}#?challenge=${challenge.id}`
+                      "
+                      @click="() => {}"
+                    >
+                      <v-icon x-small>filter_none</v-icon>
+                    </v-btn>
+                  </ClientOnly>
+                </v-flex>
                 <v-img
-                  :src="challenge.category.image || require('../../../static/placeholder.svg')"
+                  :src="
+                    challenge.category.image ||
+                      require('../../../static/placeholder.svg')
+                  "
                   max-height="128px"
                   contain
                 ></v-img>
@@ -31,7 +53,7 @@
                   :class="{
                     author: true,
                     [challenge.type.title.toLowerCase()]: true,
-                    'my-4': true
+                    'my-4': true,
                   }"
                   v-html="getI18nNode(challenge.author, $i18n.locale).author"
                 ></p>
@@ -50,7 +72,7 @@
                   :class="{
                     batch: true,
                     [challenge.type.title.toLowerCase()]: true,
-                    'my-5': true
+                    'my-5': true,
                   }"
                   :src="
                     require(`../../assets/challenge-${challenge.type.title.toLowerCase()}.svg`)
@@ -88,7 +110,7 @@ const converter = new showdown.Converter()
 const CHALLENGE_TYPE = {
   CITY: 'CITY',
   COMMUNITY: 'COMMUNITY',
-  SPONSOR: 'SPONSOR'
+  SPONSOR: 'SPONSOR',
 }
 
 export default {
@@ -96,13 +118,14 @@ export default {
   props: {
     themeColor: {
       type: String,
-      default: 'primary'
+      default: 'primary',
     },
     isMobile: Boolean,
-    challenges: Array
+    challenges: Array,
   },
   mounted() {
     this.routeUpdate(this.$route)
+    this.localeURL = document.location.href.replace(/#.*/, '')
   },
   computed: {
     categoriesSorted() {
@@ -116,7 +139,7 @@ export default {
       ) !== -1
         ? this.$vuetify.theme.themes.dark[this.themeColor]
         : this.$vuetify.theme.themes.dark.primary
-    }
+    },
   },
   methods: {
     formatMarkdown(text) {
@@ -135,14 +158,14 @@ export default {
     getCategory(categoryName) {
       return (
         find(this.categories, {
-          key: this.getCategoryKey(categoryName)
+          key: this.getCategoryKey(categoryName),
         }) || {}
       )
     },
     getI18nNode(i18nNodes = [], lang) {
       const locale = lang.toUpperCase()
       const [i18nNode = {}] = i18nNodes.filter(
-        n => n.language === locale || n.language === locale.split('-'[0])
+        (n) => n.language === locale || n.language === locale.split('-'[0])
       ) || [{}]
 
       return i18nNode
@@ -165,68 +188,70 @@ export default {
           ? ((c.expand = true), (this.challengeOpen = i))
           : (c.expand = false)
       )
-    }
+    },
   },
   watch: {
     $route: function(value) {
       this.routeUpdate(value)
-    }
+      this.localeURL = document.location.href.replace(/#.*/, '')
+    },
   },
   data() {
     return {
+      localeURL: '',
       challengeOpen: null,
       categories: [
         {
           key: 'smart-city',
-          img: require('../../assets/icons/flat-icon-smartCity.svg')
+          img: require('../../assets/icons/flat-icon-smartCity.svg'),
         },
         {
           key: 'mobility',
-          img: require('../../assets/icons/flat-icon-mobility.svg')
+          img: require('../../assets/icons/flat-icon-mobility.svg'),
         },
         {
           key: 'retrofitting',
-          img: require('../../assets/icons/flat-icon-retrofitting.svg')
+          img: require('../../assets/icons/flat-icon-retrofitting.svg'),
         },
         {
           key: 'circular-economy',
-          img: require('../../assets/icons/flat-icon-circularEconomy.svg')
+          img: require('../../assets/icons/flat-icon-circularEconomy.svg'),
         },
         {
           key: 'food',
-          img: require('../../assets/icons/flat-icon-food.svg')
+          img: require('../../assets/icons/flat-icon-food.svg'),
         },
         {
           key: 'finance',
-          img: require('../../assets/icons/flat-icon-finance.svg')
+          img: require('../../assets/icons/flat-icon-finance.svg'),
         },
         {
           key: 'behaviour',
-          img: require('../../assets/icons/flat-icon-behaviour.svg')
+          img: require('../../assets/icons/flat-icon-behaviour.svg'),
         },
         {
           key: 'water',
-          img: require('../../assets/icons/flat-icon-water.svg')
+          img: require('../../assets/icons/flat-icon-water.svg'),
         },
         {
           key: 'energy',
-          img: require('../../assets/icons/flat-icon-energy.svg')
+          img: require('../../assets/icons/flat-icon-energy.svg'),
         },
         {
           key: 'extreme-weather',
-          img: require('../../assets/icons/flat-icon-extremeWeather.svg')
+          img: require('../../assets/icons/flat-icon-extremeWeather.svg'),
         },
         {
           key: 'waste',
-          img: require('../../assets/icons/flat-icon-waste.svg')
+          img: require('../../assets/icons/flat-icon-waste.svg'),
         },
         {
           key: 'pollution',
-          img: require('../../assets/icons/flat-icon-pollution.svg')
-        }
-      ]
+          img: require('../../assets/icons/flat-icon-pollution.svg'),
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 
