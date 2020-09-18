@@ -184,7 +184,7 @@ export default {
     },
     expandChallenge(challengeID) {
       this.challenges.forEach((c, i) =>
-        c.ID.toString() === challengeID.toString()
+        c.node.id.toString() === challengeID.toString()
           ? ((c.expand = true), (this.challengeOpen = i))
           : (c.expand = false)
       )
