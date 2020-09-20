@@ -247,7 +247,7 @@ export default {
   "en": {
     "title": "Awards",
     "juryCriteriaTitle":"Bewertungskriterien der Jury",
-    "awardInfo": "The rules according to which the jury evaluates the teams are callable at the prizes which require an evaluation. The main jury is not responsible for the selection of the winners of a technology challenge (if advertised), but a jury representative of the technology sponsor. All requirements for your project and your team are listed in the FAQ section. If you still have questions <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>contact us</a> simply.",
+    "awardInfo": "The rules according to which the jury evaluates the teams are callable at the prizes which require an evaluation. The main jury is not responsible for the selection of the winners of a technology prize (if advertised), but a jury representative of the technology sponsor. All requirements for your project and your team are listed in the FAQ section. If you still have questions <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>contact us</a> simply.",
     "button": {
       "showFactSheet": "Show Fact-Sheet (DE)",
       "showChallenge": "Show Challenge",
@@ -258,7 +258,7 @@ export default {
   "de": {
     "title": "Auszeichnungen",
     "juryCriteriaTitle":"Bewertungskriterien der Jury",
-    "awardInfo": "Die Regeln, nach denen die Jury die Teams bewertet ist an den Preisen die eine Bewertung voraussetzen aufrufbar. Für die Auswahl der Sieger einer Technologie-Challenge  (sofern ausgeschrieben) ist nicht die Hauptjury, sondern ein Jury-Vertreter des Technologie-Sponsors zuständig. Alle Anforderungen an dein Projekt und dein Team sind im FAQ-Bereich untergebracht. Sofern du noch Fragen hast <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>kontaktiere uns</a> einfach.",
+    "awardInfo": "Die Regeln, nach denen die Jury die Teams bewertet ist an den Preisen die eine Bewertung voraussetzen aufrufbar. Für die Auswahl der Sieger eines Technologie-Preises (sofern ausgeschrieben) ist nicht die Hauptjury, sondern ein Jury-Vertreter des Technologie-Sponsors zuständig. Alle Anforderungen an dein Projekt und dein Team sind im FAQ-Bereich untergebracht. Sofern du noch Fragen hast <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>kontaktiere uns</a> einfach.",
     "button": {
       "showFactSheet": "Fact-Sheet anzeigen (DE)",
       "showChallenge": "Challenge anzeigen",
