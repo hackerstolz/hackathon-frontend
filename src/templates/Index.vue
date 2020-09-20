@@ -21,7 +21,7 @@
       :technologies="$page.allTechnologie.edges"
     />
     <!--<Awards
-      v-if="$page && $page.hackathon && $page.hackathon.awards.length > 0"
+      v-if="$page && $page.hackathon"
       id="awards"
       themeColor="primary"
       :isMobile="isMobile"
