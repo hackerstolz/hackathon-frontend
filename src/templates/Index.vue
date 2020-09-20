@@ -20,14 +20,14 @@
       :isMobile="isMobile"
       :technologies="$page.allTechnologie.edges"
     />
-    <Awards
+    <!-- <Awards
       v-if="$page && $page.hackathon && $page.hackathon.awards.length > 0"
       id="awards"
       themeColor="primary"
       :isMobile="isMobile"
       :hackathon="$page.hackathon"
       :challenges="$page.allChallenge.edges"
-    />
+    /> -->
     <!-- TODO: complete team overview -->
     <!-- <TeamOverview v-if="isEventOver" id="teams" themeColor="primary" :isMobile="isMobile" /> -->
     <Location id="location" themeColor="secondary" />
