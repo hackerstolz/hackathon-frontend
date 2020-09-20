@@ -3,6 +3,29 @@
     <v-container>
       <h2>{{ $t('title') }}</h2>
       <p class="introText my-5" v-html="$t('introText')"></p>
+      <v-card
+        class="my-5"
+        v-scroll-to="'#faq'"
+        color="transparent"
+        ripple
+        flat
+        @click="() => {}"
+      >
+        <p class="priceText my-5" v-html="$t('priceText')"></p>
+      </v-card>
+      <v-btn
+        class="buy-tickets mt-4 mb-8 white--text"
+        width="auto"
+        :href="ticketShopURL"
+        :disabled="!ticketShopURL"
+        target="_blank"
+        color="success"
+        large
+        >{{
+          getI18nNode($props.hackathon.linkTicketshop.titles, $i18n.locale)
+            .title
+        }}</v-btn
+      >
       <v-layout row align-center justify-center wrap>
         <!-- <v-btn
           class="mt-2 mr-2"
@@ -31,19 +54,7 @@
           <v-icon dark right>open_in_new</v-icon>
         </v-btn>
       </v-layout>
-      <v-btn
-        class="buy-tickets mt-4 mb-8 white--text"
-        width="auto"
-        :href="ticketShopURL"
-        :disabled="!ticketShopURL"
-        target="_blank"
-        color="success"
-        large
-        >{{
-          getI18nNode($props.hackathon.linkTicketshop.titles, $i18n.locale)
-            .title
-        }}</v-btn
-      >
+      
       <v-layout class="my-4" row wrap align-start justify-center>
         <v-flex
           v-for="(type, i) in types"
@@ -77,16 +88,7 @@
       </v-layout>
       <p class="highlightText my-3">{{ $t('highlightText') }}</p>
       <p class="outroText my-5">{{ $t('outroText') }}</p>
-      <v-card
-        class="my-5"
-        v-scroll-to="'#faq'"
-        color="transparent"
-        ripple
-        flat
-        @click="() => {}"
-      >
-        <p class="priceText my-5" v-html="$t('priceText')"></p>
-      </v-card>
+      
     </v-container>
   </section>
 </template>
