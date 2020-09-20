@@ -1,15 +1,15 @@
 {
   "id": "1d17150c-4785-494b-9906-91bf5933bddf",
   "name": "2020Climathon_Ticketshop",
-  "url": "https://forms.gle/zJpckrtgN52cuFTC9",
+  "url": "https://hackerstolz.mptickets.com/",
   "titles": [
     {
       "language": "DE",
-      "title": "Informiert mich wenn Tickets verfügbar sind!"
+      "title": "Ticket bestellen"
     },
     {
       "language": "EN",
-      "title": "Tell me when tickets are available!"
+      "title": "Get a ticket"
     }
   ]
 }
