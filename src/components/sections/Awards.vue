@@ -47,7 +47,7 @@
         >
       </v-card>
 
-      <!-- TODO: use challenge awards -->
+      <!-- TODO: use challenge awards 
       <ClientOnly>
         <stack
           ref="stack"
@@ -126,7 +126,7 @@
             </v-card>
           </stack-item>
         </stack>
-      </ClientOnly>
+      </ClientOnly> -->
 
       <div class="infoArea mt-5">
         <p
