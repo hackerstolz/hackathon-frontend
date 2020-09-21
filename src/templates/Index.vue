@@ -28,7 +28,7 @@
       :hackathon="$page.hackathon"
       :challenges="$page.allChallenge.edges"
     />
-    <!-- TODO: complete team overview -->
+    <!-- TODO: complete team overview  -->
     <!-- <TeamOverview v-if="isEventOver" id="teams" themeColor="primary" :isMobile="isMobile" /> -->
     <Location id="location" themeColor="secondary" />
     <Schedule
