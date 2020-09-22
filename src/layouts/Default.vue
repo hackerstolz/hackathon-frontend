@@ -180,9 +180,9 @@
         </v-menu>
       </v-app-bar>
 
-      <v-main class="pa-0">
+      <v-content class="pa-0">
         <slot />
-      </v-main>
+      </v-content>
 
       <v-snackbar
         class="snackbar"
