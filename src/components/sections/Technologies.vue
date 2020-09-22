@@ -19,17 +19,23 @@
             >
               <v-layout column>
                 <v-img
-                  :src="technologie.image || technologie.provider.logo || require('../../../static/placeholder.svg')"
+                  :src="
+                    technologie.image ||
+                      technologie.provider.logo ||
+                      require('../../../static/placeholder.svg')
+                  "
                   max-height="128px"
                   contain
                 ></v-img>
                 <p
                   v-if="!technologie.provider === ''"
                   :class="{
-                    author: true,                    
-                    'my-4': true
+                    author: true,
+                    'my-4': true,
                   }"
-                  v-html="getI18nNode(technologie.provider.names, $i18n.locale).name"
+                  v-html="
+                    getI18nNode(technologie.provider.names, $i18n.locale).name
+                  "
                 ></p>
                 <h4
                   class="mb-4"
@@ -41,12 +47,12 @@
               class="technologie-content"
               color="rgba(255,255,255,0.1)"
             >
-              <v-layout column>                
+              <v-layout column>
                 <v-img
                   v-if="!technologie.provider === ''"
                   :class="{
                     batch: true,
-                    'my-5': true
+                    'my-5': true,
                   }"
                   :src="technologie.provider.logo"
                   max-height="84px"
@@ -84,10 +90,10 @@ export default {
   props: {
     themeColor: {
       type: String,
-      default: 'primary'
+      default: 'primary',
     },
     isMobile: Boolean,
-    technologies: Array
+    technologies: Array,
   },
   mounted() {
     this.routeUpdate(this.$route)
@@ -99,7 +105,7 @@ export default {
       ) !== -1
         ? this.$vuetify.theme.themes.dark[this.themeColor]
         : this.$vuetify.theme.themes.dark.primary
-    }
+    },
   },
   methods: {
     formatMarkdown(text) {
@@ -108,14 +114,15 @@ export default {
     getI18nNode(i18nNodes = [], lang) {
       const locale = lang.toUpperCase()
       const [i18nNode = {}] = i18nNodes.filter(
-        n => n.language === locale || n.language === locale.split('-'[0])
+        (n) => n.language === locale || n.language === locale.split('-'[0])
       ) || [{}]
 
       return i18nNode
     },
     routeUpdate($route) {
       const query = getQuery()
-      const validTechnologie=
+      const validTechnologie =
+        process.isClient &&
         query.technologie &&
         document.getElementById(`tech-${technologie.id}`)
 
@@ -131,18 +138,18 @@ export default {
           ? ((c.expand = true), (this.challengeOpen = i))
           : (c.expand = false)
       )
-    }
+    },
   },
   watch: {
     $route: function(value) {
       this.routeUpdate(value)
-    }
+    },
   },
   data() {
     return {
       challengeOpen: null,
     }
-  }
+  },
 }
 </script>
 
@@ -259,7 +266,7 @@ section {
       line-height: 1.4;
       letter-spacing: 1px;
       text-align: center;
-      color: rgba(255, 255, 255, 0.8);     
+      color: rgba(255, 255, 255, 0.8);
     }
 
     .batch {
@@ -283,7 +290,7 @@ section {
         right: 0px;
         position: absolute;
         display: block;
-      }      
+      }
     }
   }
 }

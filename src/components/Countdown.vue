@@ -420,17 +420,19 @@ export default {
      * @private
      */
     handleVisibilityChange() {
-      switch (document.visibilityState) {
-        case 'visible':
-          this.update()
-          this.continue()
-          break
+      if (process.isClient) {
+        switch (document.visibilityState) {
+          case 'visible':
+            this.update()
+            this.continue()
+            break
 
-        case 'hidden':
-          this.pause()
-          break
+          case 'hidden':
+            this.pause()
+            break
 
-        default:
+          default:
+        }
       }
     },
 
@@ -444,18 +446,22 @@ export default {
   },
 
   mounted() {
-    document.addEventListener(
-      EVENT_VISIBILITY_CHANGE,
-      this.handleVisibilityChange
-    )
+    if (process.isClient) {
+      document.addEventListener(
+        EVENT_VISIBILITY_CHANGE,
+        this.handleVisibilityChange
+      )
+    }
     this.calcWidth()
   },
 
   beforeDestroy() {
-    document.removeEventListener(
-      EVENT_VISIBILITY_CHANGE,
-      this.handleVisibilityChange
-    )
+    if (process.isClient) {
+      document.removeEventListener(
+        EVENT_VISIBILITY_CHANGE,
+        this.handleVisibilityChange
+      )
+    }
     this.pause()
   },
 }

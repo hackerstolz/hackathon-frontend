@@ -125,7 +125,9 @@ export default {
   },
   mounted() {
     this.routeUpdate(this.$route)
-    this.localeURL = document.location.href.replace(/#.*/, '')
+    this.localeURL = process.isClient
+      ? document.location.href.replace(/#.*/, '')
+      : ''
   },
   computed: {
     categoriesSorted() {
@@ -173,6 +175,7 @@ export default {
     routeUpdate($route) {
       const query = getQuery()
       const validChallenge =
+        process.isClient &&
         query.challenge &&
         document.getElementById(`challenge-${query.challenge}`)
 
@@ -193,7 +196,9 @@ export default {
   watch: {
     $route: function(value) {
       this.routeUpdate(value)
-      this.localeURL = document.location.href.replace(/#.*/, '')
+      this.localeURL = process.isClient
+        ? document.location.href.replace(/#.*/, '')
+        : ''
     },
   },
   data() {

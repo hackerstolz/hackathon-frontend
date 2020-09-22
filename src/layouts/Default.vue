@@ -182,9 +182,9 @@
         </v-menu>
       </v-app-bar>
 
-      <v-content class="pa-0">
+      <v-main class="pa-0">
         <slot />
-      </v-content>
+      </v-main>
 
       <v-snackbar
         class="snackbar"
@@ -303,14 +303,20 @@ export default {
       // switch vuetify locale
       this.$vuetify.lang.current = lang
 
-      // a11y: ensures the lang attribute of the <html> element has a valid value
-      document.querySelector('html').setAttribute('lang', lang)
+      if (process.isClient) {
+        // a11y: ensures the lang attribute of the <html> element has a valid value
+        document.querySelector('html').setAttribute('lang', lang)
+      }
     },
     routeUpdate() {
       const query = getQuery() || {}
 
       // scroll to section if defined
-      if (query.section && document.getElementById(query.section)) {
+      if (
+        process.isClient &&
+        query.section &&
+        document.getElementById(query.section)
+      ) {
         this.$scrollTo(`#${query.section}`)
       }
 
