@@ -184,31 +184,16 @@ const converter = new showdown.Converter()
 
 export default {
   name: 'Awards',
-  // FIXME: Stack and Stack-Grid are causeing issues when loaded during build and not on client side...
-  // components: {
-  //   Stack: () =>
-  //     import('vue-stack-grid')
-  //       .then((m) => m.Stack)
-  //       .catch(),
-  //   StackItem: () =>
-  //     import('vue-stack-grid')
-  //       .then((m) => m.StackItem)
-  //       .catch(),
-  // },
-  // components: {
-  //   Stack: () =>
-  //     process.isClient
-  //       ? import('vue-stack-grid')
-  //           .then((m) => m.Stack)
-  //           .catch()
-  //       : Promise.resolve(),
-  //   StackItem: () =>
-  //     process.isClient
-  //       ? import('vue-stack-grid')
-  //           .then((m) => m.StackItem)
-  //           .catch()
-  //       : Promise.resolve(),
-  // },
+  components: {
+    Stack: () =>
+      import('vue-stack-grid')
+        .then((m) => m.Stack)
+        .catch(),
+    StackItem: () =>
+      import('vue-stack-grid')
+        .then((m) => m.StackItem)
+        .catch(),
+  },
   props: {
     themeColor: {
       type: String,

@@ -105,9 +105,7 @@ export default {
         { property: 'og:type', content: 'website' },
         {
           property: 'og:url',
-          content: `https://climathon.hackerstolz.de/${
-            this.$page.hackathon.urlName
-          }`,
+          content: `https://climathon.hackerstolz.de/${this.$page.hackathon.urlName}`,
         },
         { property: 'og:site_name', content: this.$page.hackathon.title },
         { property: 'og:title', content: this.$page.hackathon.title },
