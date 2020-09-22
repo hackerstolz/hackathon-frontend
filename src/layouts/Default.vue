@@ -69,9 +69,7 @@
             class="app-btn-contact mb-4"
             color="info"
             :href="
-              `mailto:${
-                selectedHackathon.contactEmail
-              }?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.`
+              `mailto:${selectedHackathon.contactEmail}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.`
             "
             outlined
             >{{ $t('button.contactus') }}</v-btn
@@ -279,17 +277,19 @@ export default {
     }
   },
   mounted() {
-    setTimeout(() => {
-      // show snackbar with delay
-      this.snackbar.show = true
-    }, 500)
+    if (process.isClient) {
+      setTimeout(() => {
+        // show snackbar with delay
+        this.snackbar.show = true
+      }, 1000)
 
-    setTimeout(() => {
-      // nav to section initially
-      if (this.$route) {
-        this.routeUpdate()
-      }
-    }, 1500)
+      setTimeout(() => {
+        // nav to section initially
+        if (this.$route) {
+          this.routeUpdate()
+        }
+      }, 1500)
+    }
   },
   methods: {
     copySuccess(text) {
@@ -311,6 +311,11 @@ export default {
     routeUpdate() {
       const query = getQuery() || {}
 
+      // switch language
+      if (query.lang && query.lang !== this.$root.$i18n.locale) {
+        this.setNewLocale(query.lang)
+      }
+
       // scroll to section if defined
       if (
         process.isClient &&
@@ -318,11 +323,6 @@ export default {
         document.getElementById(query.section)
       ) {
         this.$scrollTo(`#${query.section}`)
-      }
-
-      // switch language
-      if (query.lang && query.lang !== this.$root.$i18n.locale) {
-        this.setNewLocale(query.lang)
       }
     },
   },
