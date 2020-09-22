@@ -68,9 +68,7 @@
           <v-btn
             class="app-btn-contact mb-4"
             color="info"
-            :href="
-              `mailto:${selectedHackathon.contactEmail}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.`
-            "
+            :href="contactEmail"
             outlined
             >{{ $t('button.contactus') }}</v-btn
           >
@@ -180,9 +178,9 @@
         </v-menu>
       </v-app-bar>
 
-      <v-content class="pa-0">
+      <v-main class="pa-0">
         <slot />
-      </v-content>
+      </v-main>
 
       <v-snackbar
         class="snackbar"
@@ -327,6 +325,9 @@ export default {
     },
   },
   computed: {
+    contactEmail() {
+      return `mailto:${this.selectedHackathon.contactEmail}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.`
+    },
     selectedHackathon() {
       const selectedHackathonNodes =
         (this.$static.allHackathon.edges || []).filter(
