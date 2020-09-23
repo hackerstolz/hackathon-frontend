@@ -21,13 +21,18 @@
       :technologies="$page.allTechnologie.edges"
     />
     <Awards
-      v-if="$page && $page.hackathon && $page.hackathon.awards.length > 0"
+      v-if="
+        $page &&
+          $page.hackathon &&
+          $page.hackathon.awards &&
+          $page.hackathon.awards.length > 0
+      "
       id="awards"
       themeColor="primary"
       :isMobile="isMobile"
       :hackathon="$page.hackathon"
-      :challenges="$page.allChallenge.edges"
     />
+    <!-- :challenges="$page.allChallenge.edges" -->
     <!-- TODO: complete team overview  -->
     <!-- <TeamOverview v-if="isEventOver" id="teams" themeColor="primary" :isMobile="isMobile" /> -->
     <Location id="location" themeColor="secondary" />
@@ -105,7 +110,9 @@ export default {
         { property: 'og:type', content: 'website' },
         {
           property: 'og:url',
-          content: `https://climathon.hackerstolz.de/${this.$page.hackathon.urlName}`,
+          content: `https://climathon.hackerstolz.de/${
+            this.$page.hackathon.urlName
+          }`,
         },
         { property: 'og:site_name', content: this.$page.hackathon.title },
         { property: 'og:title', content: this.$page.hackathon.title },
