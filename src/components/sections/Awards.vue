@@ -3,7 +3,7 @@
     <v-container>
       <h2>{{ $t('title') }}</h2>
       <v-card
-        v-for="(award, i) in $props.hackathon.awards"
+        v-for="(award, i) in $props.hackathon.awards || []"
         :key="i"
         class="card pa-3 mb-4"
         width="100%"
@@ -23,26 +23,26 @@
         >
           {{ getI18nNode(award.prize, $i18n.locale).prize }}
         </div>
-        <p
-          class="description"
-          v-html="
-            formatMarkdown(
-              getI18nNode(award.descriptions, $i18n.locale).description
-            )
-          "
-        ></p>
+        <div>
+          <p
+            class="description"
+            v-html="
+              formatMarkdown(
+                getI18nNode(award.descriptions || [], $i18n.locale)
+                  .description || ''
+              )
+            "
+          ></p>
+        </div>
         <v-btn
-          v-if="award.criteria.length > 0"
+          v-if="award.criteria && award.criteria.length > 0"
           class="mt-2 mr-2"
           width="auto"
           color="warning"
           outlined
           text
           small
-          @click="
-            ;(criteria = getI18nNode(award.criteria, $i18n.locale).criteria),
-              (criteriaShow = true)
-          "
+          @click="showCriteriaDialog(award)"
           >{{ $t('button.showCriteria') }}</v-btn
         >
       </v-card>
@@ -184,16 +184,16 @@ const converter = new showdown.Converter()
 
 export default {
   name: 'Awards',
-  components: {
-    Stack: () =>
-      import('vue-stack-grid')
-        .then((m) => m.Stack)
-        .catch(),
-    StackItem: () =>
-      import('vue-stack-grid')
-        .then((m) => m.StackItem)
-        .catch(),
-  },
+  // components: {
+  //   Stack: () =>
+  //     import('vue-stack-grid')
+  //       .then((m) => m.Stack)
+  //       .catch(),
+  //   StackItem: () =>
+  //     import('vue-stack-grid')
+  //       .then((m) => m.StackItem)
+  //       .catch(),
+  // },
   props: {
     themeColor: {
       type: String,
@@ -201,7 +201,7 @@ export default {
     },
     isMobile: Boolean,
     hackathon: Object,
-    challenges: Array,
+    // challenges: Array,
   },
   computed: {
     sectionColor() {
@@ -211,15 +211,19 @@ export default {
         ? this.$vuetify.theme.themes.dark[this.themeColor]
         : this.$vuetify.theme.themes.dark.primary
     },
-    challengeAwards() {
-      return this.$props.challenges
-        .filter(({ node }) => !!node.award)
-        .map(({ node }) => ({ ...node.award, $challengeID: node.id }))
-    },
+    // challengeAwards() {
+    //   return this.$props.challenges
+    //     .filter(({ node }) => !!node.award)
+    //     .map(({ node }) => ({ ...node.award, $challengeID: node.id }))
+    // },
   },
   methods: {
     formatMarkdown(text) {
-      return converter.makeHtml(text)
+      try {
+        return converter.makeHtml(text)
+      } catch {
+        return ''
+      }
     },
     getI18nNode(i18nNodes = [], lang) {
       const locale = lang.toUpperCase()
@@ -229,9 +233,16 @@ export default {
 
       return i18nNode
     },
-    reflow: debounce(function() {
-      this.$refs.stack.reflow()
-    }, 100),
+    showCriteriaDialog(award) {
+      this.criteria = this.getI18nNode(
+        award.criteria,
+        this.$i18n.locale
+      ).criteria
+      this.criteriaShow = true
+    },
+    // reflow: debounce(() => {
+    //   this.$refs.stack.reflow()
+    // }, 100),
   },
   data() {
     return {

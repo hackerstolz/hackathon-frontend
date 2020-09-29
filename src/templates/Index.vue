@@ -20,15 +20,20 @@
       :isMobile="isMobile"
       :technologies="$page.allTechnologie.edges"
     />
-    <!-- <Awards
-      v-if="$page && $page.hackathon && $page.hackathon.awards.length > 0"
+    <Awards
+      v-if="
+        $page &&
+          $page.hackathon &&
+          $page.hackathon.awards &&
+          $page.hackathon.awards.length > 0
+      "
       id="awards"
       themeColor="primary"
       :isMobile="isMobile"
       :hackathon="$page.hackathon"
-      :challenges="$page.allChallenge.edges"
-    /> -->
-    <!-- TODO: complete team overview -->
+    />
+    <!-- :challenges="$page.allChallenge.edges" -->
+    <!-- TODO: complete team overview  -->
     <!-- <TeamOverview v-if="isEventOver" id="teams" themeColor="primary" :isMobile="isMobile" /> -->
     <Location id="location" themeColor="secondary" />
     <Schedule
@@ -105,7 +110,9 @@ export default {
         { property: 'og:type', content: 'website' },
         {
           property: 'og:url',
-          content: `https://climathon.hackerstolz.de/${this.$page.hackathon.urlName}`,
+          content: `https://climathon.hackerstolz.de/${
+            this.$page.hackathon.urlName
+          }`,
         },
         { property: 'og:site_name', content: this.$page.hackathon.title },
         { property: 'og:title', content: this.$page.hackathon.title },
@@ -183,7 +190,7 @@ export default {
       return this.$page && this.$page.allPerson
         ? this.$page.allPerson.edges
             .filter(({ node }) =>
-              node.roles.some(({ role }) => role.title === 'Speaker')
+              node.roles.some(role => role.role.title === 'Speaker' && role.hackathon.id === this.$page.hackathon.id )
             )
             .map(({ node }) => node)
         : []
@@ -198,6 +205,7 @@ export default {
                     'Technology Mentor',
                     'Challenge Mentor',
                     'Pitch Trainer',
+                    'Team Builder'
                   ].includes(role.title)
                 )
               )
@@ -208,9 +216,10 @@ export default {
       for (const mentor of allMentors) {
         for (const role of mentor.roles) {
           if (
-            ['Technology Mentor', 'Challenge Mentor', 'Pitch Trainer'].includes(
+            ['Technology Mentor', 'Challenge Mentor', 'Pitch Trainer', 'Team Builder'].includes(
               role.role.title
             )
+            && role.hackathon.id === this.$page.hackathon.id
           ) {
             allMentorRoles.push({
               ...mentor,
@@ -226,7 +235,7 @@ export default {
       return this.$page && this.$page.allPerson
         ? this.$page.allPerson.edges
             .filter(({ node }) =>
-              node.roles.some(({ role }) => role.title === 'Judge')
+              node.roles.some( role => role.role.title === 'Judge' && role.hackathon.id === this.$page.hackathon.id )
             )
             .map(({ node }) => node)
         : []
@@ -235,7 +244,7 @@ export default {
       return this.$page && this.$page.allPerson
         ? this.$page.allPerson.edges
             .filter(({ node }) =>
-              node.roles.some(({ role }) => role.title === 'Organizer')
+              node.roles.some( role => role.role.title === 'Organizer' && role.hackathon.id === this.$page.hackathon.id )
             )
             .map(({ node }) => node)
         : []
@@ -513,7 +522,10 @@ query ($id: ID!) {
         salutation # Salutation 
         image # Image 
         roles { # Roles 
-          title # Title 
+          title # Title
+          hackathon {
+            id
+          }
           challenge { # Challenge 
             id # ID 
             type { # Type 

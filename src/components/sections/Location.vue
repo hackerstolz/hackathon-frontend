@@ -4,6 +4,7 @@
       <h2>{{ $t('title') }}</h2>
     </v-container>
     <ClientOnly>
+      <!--
       <video-bg
         ref="videobg"
         class="video-container"
@@ -14,28 +15,33 @@
         ]"
         :img="require('../../assets/video/mafinex-footage.jpg')"
       >
+      -->
         <div
           class="shade-top"
           :style="{
             'background-image': `linear-gradient(to top, rgba(16, 24, 47, 0), ${sectionColor})`,
           }"
         ></div>
-        <v-layout
-          class="video-content flex align-center py-5"
+        <v-layout          
+          class="virtual video-content flex align-center py-5"
           fill-height
           column
         >
           <h3 class="align-left">{{ $t('locationSlogan') }}</h3>
           <!-- <v-flex xs12 align-end> -->
           <v-spacer />
+          
+          <h3 class="align-left">{{ $t('locationDescription') }}</h3>
+          <!--
           <v-icon class="pa-1" color="rgba(255, 255, 255, 0.38)" x-large
             >place</v-icon
           >
           <p class="location-text pa-1">
-            ONLINE
+            ONLINE only
+            
             <br />&
             <br />MAFINEX-Technologiezentrum
-            <br />Julius-Hatry-Str. 1 <br />68163 Mannheim
+            <br />Julius-Hatry-Str. 1 <br />68163 Mannheim 
           </p>
           <v-btn
             class="my-2"
@@ -45,10 +51,11 @@
             color="rgba(255, 255, 255, 0.8)"
             outlined
             text
-          >
+          >         
             {{ $t('button.link2Maps') }}
             <v-icon dark right>open_in_new</v-icon>
           </v-btn>
+          -->  
           <!-- </v-flex> -->
         </v-layout>
         <div
@@ -57,7 +64,7 @@
             'background-image': `linear-gradient(to bottom, rgba(24, 36, 69, 0), ${sectionColor})`,
           }"
         ></div>
-      </video-bg>
+      <!--</video-bg> -->
     </ClientOnly>
   </section>
 </template>
@@ -97,14 +104,16 @@ export default {
 {
   "en": {
     "title": "Location",
-    "locationSlogan": "Virtual & with limited number of participants at the greatest hacker location in Mannheim",
+    "locationSlogan": "This year due to the current situation unfortunately only virtual!",
+    "locationDescription": "We will use Google Meets, provide a Slack Workspace and will be able to use some Mural licenses.",
     "button": {
       "link2Maps": "Open in maps"
     }
   },
   "de": {
     "title": "Standort",
-    "locationSlogan": "Virtuell & mit begrenzter Teilnehmerzahl im großartigsten Hackerstandort in Mannheim",
+    "locationSlogan": "Dieses Jahr aufgrund der aktuellen Situation leider nur virtuell!",
+    "locationDescription": "Wir werden Google Meets nutzen, einen Slack Workspace bereitstellen sowie ein paar Mural Lizenzen nutzen können.",
     "button": {
       "link2Maps": "In Karten öffnen"
     }
@@ -125,6 +134,10 @@ section {
     color: #ffffff;
     margin-top: 128px;
     margin-bottom: 64px;
+  }
+  
+  .virtual{
+   color: #ffc533;
   }
 
   .video-container {
@@ -164,7 +177,7 @@ section {
         line-height: 1;
         letter-spacing: 3.5px;
         text-align: center;
-        color: rgba(255, 255, 255, 0.38);
+        color: rgba(255, 255, 255, 1);
 
         @media screen and (max-width: 600px) {
           font-size: 32px;

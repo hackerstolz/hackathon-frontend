@@ -1,0 +1,41 @@
+{
+  "name": "Janett Fuhlrott",
+  "salutation": "W",
+  "roles": [
+    {
+      "title": "Climathon 2020 - TeamBuilder",
+      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "SAP Schweiz AG"
+        },
+        {
+          "language": "EN",
+          "profession": "SAP Schweiz AG"
+        }
+      ],
+      "timeslots": [
+        {
+          "from": "1605279600",
+          "to": "1605290400"
+        },
+        {
+          "from": "1605380400",
+          "to": "1605384000"
+        }
+      ],
+      "role": "20200929164255",
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Team Building, Pitch Training"
+        },
+        {
+          "language": "EN",
+          "description": "Team Building, Pitch Training"
+        }
+      ]
+    }
+  ]
+}
