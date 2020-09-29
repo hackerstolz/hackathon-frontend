@@ -190,7 +190,7 @@ export default {
       return this.$page && this.$page.allPerson
         ? this.$page.allPerson.edges
             .filter(({ node }) =>
-              node.roles.some(({ role }) => role.title === 'Speaker')
+              node.roles.some(role => role.role.title === 'Speaker' && role.hackathon.id === this.$page.hackathon.id )
             )
             .map(({ node }) => node)
         : []
@@ -205,6 +205,7 @@ export default {
                     'Technology Mentor',
                     'Challenge Mentor',
                     'Pitch Trainer',
+                    'Team Builder'
                   ].includes(role.title)
                 )
               )
@@ -215,9 +216,10 @@ export default {
       for (const mentor of allMentors) {
         for (const role of mentor.roles) {
           if (
-            ['Technology Mentor', 'Challenge Mentor', 'Pitch Trainer'].includes(
+            ['Technology Mentor', 'Challenge Mentor', 'Pitch Trainer', 'Team Builder'].includes(
               role.role.title
             )
+            && role.hackathon.id === this.$page.hackathon.id
           ) {
             allMentorRoles.push({
               ...mentor,
@@ -233,7 +235,7 @@ export default {
       return this.$page && this.$page.allPerson
         ? this.$page.allPerson.edges
             .filter(({ node }) =>
-              node.roles.some(({ role }) => role.title === 'Judge')
+              node.roles.some( role => role.role.title === 'Judge' && role.hackathon.id === this.$page.hackathon.id )
             )
             .map(({ node }) => node)
         : []
@@ -242,7 +244,7 @@ export default {
       return this.$page && this.$page.allPerson
         ? this.$page.allPerson.edges
             .filter(({ node }) =>
-              node.roles.some(({ role }) => role.title === 'Organizer')
+              node.roles.some( role => role.role.title === 'Organizer' && role.hackathon.id === this.$page.hackathon.id )
             )
             .map(({ node }) => node)
         : []
@@ -520,7 +522,10 @@ query ($id: ID!) {
         salutation # Salutation 
         image # Image 
         roles { # Roles 
-          title # Title 
+          title # Title
+          hackathon {
+            id
+          }
           challenge { # Challenge 
             id # ID 
             type { # Type 

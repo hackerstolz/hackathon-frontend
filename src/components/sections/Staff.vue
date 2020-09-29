@@ -47,14 +47,14 @@
           <p class="speaker-name my-1">{{ speaker.name }}</p>
           <p class="speaker-description my-1">
             {{
-              getI18nNode(getSpeakerRole(speaker).professions, $i18n.locale)
+              getI18nNode(getSpeakerRole(speaker, $props.hackathon).professions, $i18n.locale)
                 .profession
             }}
           </p>
           <p class="speaker-talk my-1">
             {{
               `"${
-                getI18nNode(getSpeakerRole(speaker).talkTitles, $i18n.locale)
+                getI18nNode(getSpeakerRole(speaker, $props.hackathon).talkTitles, $i18n.locale)
                   .talkTitle
               }"`
             }}
@@ -111,7 +111,7 @@
             <p class="annotation-text mb-4">
               {{
                 getI18nNode(
-                  getSpeakerRole(dialog.speaker.node).professions,
+                  getSpeakerRole(dialog.speaker.node, $props.hackathon).professions,
                   $i18n.locale
                 ).profession
               }}
@@ -121,7 +121,7 @@
               {{
                 `"${
                   getI18nNode(
-                    getSpeakerRole(dialog.speaker.node).talkTitles,
+                    getSpeakerRole(dialog.speaker.node, $props.hackathon).talkTitles,
                     $i18n.locale
                   ).talkTitle
                 }"`
@@ -139,7 +139,7 @@
               v-html="
                 formatMarkdown(
                   getI18nNode(
-                    getSpeakerRole(dialog.speaker.node).descriptions,
+                    getSpeakerRole(dialog.speaker.node, $props.hackathon).descriptions,
                     $i18n.locale
                   ).description
                 )
@@ -357,19 +357,19 @@
           <p class="mentor-title my-1">{{ mentor.name }}</p>
           <p class="mentor-description my-1">
             {{
-              getI18nNode(getMentorRole(mentor).professions, $i18n.locale)
+              getI18nNode(getMentorRole(mentor, $props.hackathon).professions, $i18n.locale)
                 .profession
             }}
           </p>
           <p :class="`mentor-expertise my-1 ${getCategoryByMentor(mentor)}`">
             {{
-              getI18nNode(getMentorRole(mentor).descriptions, $i18n.locale)
+              getI18nNode(getMentorRole(mentor, $props.hackathon).descriptions, $i18n.locale)
                 .description
             }}
           </p>
           <p class="mentor-availability my-1">
             {{
-              getMentorRole(mentor)
+              getMentorRole(mentor, $props.hackathon)
                 .timeslots.map(
                   ({ from, to }) =>
                     $d(new Date(parseInt(from, 10) * 1000), 'weekdayShort') +
@@ -423,30 +423,30 @@ export default {
 
       return i18nNode
     },
-    getSpeakerRole(speaker) {
+    getSpeakerRole(speaker, hackathon) {
       const { roles = [] } = speaker || {}
       const [firstSpeakerRole = {}] =
-        roles.filter(({ role }) => role.title === 'Speaker') || {}
+        roles.filter( role => role.role.title === 'Speaker' && role.hackathon.id === hackathon.id) || {}
 
       return firstSpeakerRole
     },
-    getJudgeRole(judge) {
+    getJudgeRole(judge, hackathon) {
       const { roles = [] } = judge || {}
       const [firstJudgeRole = {}] =
-        roles.filter(({ role }) => role.title === 'Judge') || {}
+        roles.filter(role => role.role.title === 'Judge' && role.hackathon.id === hackathon.id) || {}
 
       return firstJudgeRole
     },
-    getMentorRole(judge) {
-      const { roles = [] } = judge || {}
-      const [firstJudgeRole = {}] =
-        roles.filter(({ role }) =>
-          ['Technology Mentor', 'Challenge Mentor', 'Pitch Trainer'].includes(
-            role.title
-          )
+    getMentorRole(mentor, hackathon) {
+      const { roles = [] } = mentor || {}
+      const [firstMentorRole = {}] =
+        roles.filter(role => 
+          ['Technology Mentor', 'Challenge Mentor', 'Pitch Trainer', 'Team Builder'].includes(
+            role.role.title
+          ) && role.hackathon.id === hackathon.id
         ) || {}
 
-      return firstJudgeRole
+      return firstMentorRole
     },
     getCategoryByMentor(mentor) {
       const {
