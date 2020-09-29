@@ -19,9 +19,23 @@
         {
           "from": "1605279600",
           "to": "1605290400"
+        },
+        {
+          "from": "1605380400",
+          "to": "1605384000"
         }
       ],
-      "role": "20200929164255"
+      "role": "20200929164255",
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Team Building, Pitch Training"
+        },
+        {
+          "language": "EN",
+          "description": "Team Building, Pitch Training"
+        }
+      ]
     }
   ]
 }
