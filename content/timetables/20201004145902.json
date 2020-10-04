@@ -1,0 +1,31 @@
+{
+  "date": "1602799200",
+  "slots": [
+    {
+      "from": "1602860400",
+      "image": "/images/uploads/thumbnail-general.jpg",
+      "descriptions": [
+        {
+          "language": "EN",
+          "description": "Introduction to Climathon 2020 Mannheim with Q&A \nStreaming link will follow. "
+        },
+        {
+          "description": "Vorstellung des Climathon 2020 Mannheim mit Q&A.\nLink zum Stream folgt. ",
+          "language": "DE"
+        }
+      ],
+      "titles": [
+        {
+          "language": "DE",
+          "title": "Climathon 2020 Mannheim"
+        },
+        {
+          "language": "EN",
+          "title": "Climathon 2020 Mannheim"
+        }
+      ]
+    }
+  ],
+  "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+  "title": "Orga Webinar"
+}
