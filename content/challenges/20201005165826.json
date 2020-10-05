@@ -1,0 +1,34 @@
+{
+  "color": "#417505",
+  "author": [
+    {
+      "language": "DE",
+      "author": "Stadt Mannheim"
+    },
+    {
+      "language": "EN",
+      "author": "City of Mannheim"
+    }
+  ],
+  "name": "Mobilität",
+  "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "## ZUSAMMENFASSUNG\n\nDas Mobilitätsangebot und die Nutzung verschiedener Verkehrsmittel haben sich über die letzten Jahre grundlegend gewandelt. Der ÖPNV wird verstärkt genutzt, neue Angebote wie Car- oder Bikesharing haben sich auf dem Markt etabliert. Die Digitalisierung hat bei der Kundenansprache und Information durch E-Tickets und verschiedene Apps für Verkehrsunternehmen Einzug gehalten. Eine Optimierung der Nutzung verschiedener Verkehrsmittel und eine grundlegende Änderung unseres Mobilitätsverhaltens sind Kernelemente eines nachhaltigen Mobilitätswandels.\n\n## STATUS QUO & RESSOURCEN\n\nDer Individualverkehr hat immer noch einen hohen Anteil an der Mobilität, was unter anderem zu einer hohen Belastung der Innenstädte und der Umwelt im Allgemeinen führt. Gleichzeitig wächst das Angebot für den ÖPNV und die Fahrradnutzung nimmt zu. Die Auswahl an ÖPNV-Angebote wird leider immer unübersichtlicher und insbesondere deren Verknüpfung ist noch nicht optimiert. Neben dem innerstädtischen Verkehr spielt auch der überregionale Freizeitverkehr eine wichtige Rolle. Aufgrund der aktuellen Umstände erwarten wir einen weiteren Anstieg des Freizeitverkehrs innerhalb Deutschlands und zu touristischen Zielen innerhalb von Regionen. Aber schon jetzt kommen Bahnen und Freizeiteinrichtungen an ihre Auslastungsgrenze.\n\n## VISION & ERGEBNIS\n\nWir suchen für diese Challenge Lösungen für drei Kernbereiche des Mobilitätswandels:\n\n### 1. Änderung des Mobilitätsverhaltens / Verlagerung von Verkehr \n   Lösungen durch die das Mobilitätsverhalten einzelner Personen oder ganzer Personengruppen geändert werden kann. \n\n   Ziel kann dabei sein… \n* Menschen zu motivieren, die Verkehrsmittelwahl nachhaltiger zu gestalten und damit einen positiven Beitrag für die Umwelt zu leisten. \n* den Umfang der Mobilität bspw. durch intelligente Verknüpfung, Steuerung oder Nudging hinsichtlich Strecke und Wegeanzahl zu reduzieren. Löst das Home Office unser Verkehrsproblem von Alleine? \n* die Nutzung des Verkehrsraums zu optimieren, sodass insbesondere Innenstädte entlastet werden. In anderen Ländern werden neue Konzepte zur effektiven Verkehrsreduktion realisiert, von der City-Maut über wechselnde Fahrverbote bis hin zur intelligenten Verkehrssteuerung auf Grundlage von Umwelt- und Verkehrsdaten. \n* wie lässt sich beispielsweise die Attraktivität der Fahrradnutzung für tägliche Wege steigern? \n* Wie soll die urbane (Mikro-)Logistik von morgen in den Städten aussehen?\n\n### 2. Verknüpfung/Nutzung von verschiedenen Verkehrsmitteln\n   Lösungen, welche die übergreifende Nutzung verschiedener Verkehrsmittel einfach gestalten.\n\nZiel kann dabei sein…\n* die zentrale Auskunft und Buchung digitaler Tickets und eine einfache Bezahlung über die gesamte Reisekette hinweg zu gewährleisten. \n* die praktische Verknüpfung unterschiedlicher Angebote und Verkehrsformen wie bspw. Linienverkehre, nachfragebasierte Verkehrsangebote oder auch verschiedene Arten des Individualverkehrs. \n* die Verknüpfungspunkte bereitzuhalten und das Ineinandergreifen verschiedener Angebote zu optimieren.\n\n### 3. Mobilitätsverhalten im Freizeitverkehr \n   Lösungen, die auf der einen Seite touristische Ziele bewerben, gleichzeitig aber auch Verkehrsströme unter Beachtung der Auslastungsgrenzen zu Alternativen lenken. \n\nZiel kann dabei sein…\n* die Auslastung von Bahnen zu beliebten Freizeitzielen oder von Freizeiteinrichtungen selber (z. B. Badeseen, Strände, etc.), zu erfassen, um die Besucherströme zu optimieren.\n* ein Angebot zu entwickeln, wie Auslastungen in Fahrzeugen pandemiebedingt in Echtzeit dargestellt und prognostiziert werden können."
+    }
+  ],
+  "type": "f03fd5ed-dc66-4c9b-a480-4b8f114fefe2",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Wie können wir den Mobilitätswandel mithilfe von neuen Technologien und Verkehrskonzepten vorantreiben, um ein nachhaltiges Mobilitätsverhalten zu erreichen?"
+    },
+    {
+      "language": "EN",
+      "title": "How can we drive mobility change using new technologies and transport concepts to achieve sustainable mobility behavior?"
+    }
+  ],
+  "image": "/images/uploads/flat-icon-mobility.svg",
+  "category": "a6b2be75-63d6-4fe9-923b-2c3bbc75523c"
+}
