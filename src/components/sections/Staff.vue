@@ -193,7 +193,7 @@
           </p>
           <p class="judge-description my-1">
             {{
-              getI18nNode(getJudgeRole(judge).professions, $i18n.locale)
+              getI18nNode(getJudgeRole(judge, $props.hackathon).professions, $i18n.locale)
                 .profession
             }}
           </p>
@@ -247,7 +247,7 @@
             <p class="annotation-text judge mb-4">
               {{
                 getI18nNode(
-                  getJudgeRole(dialog.judge.node).professions,
+                  getJudgeRole(dialog.judge.node, $props.hackathon).professions,
                   $i18n.locale
                 ).profession
               }}
@@ -264,7 +264,7 @@
               v-html="
                 formatMarkdown(
                   getI18nNode(
-                    getJudgeRole(dialog.judge.node).descriptions,
+                    getJudgeRole(dialog.judge.node, $props.hackathon).descriptions,
                     $i18n.locale
                   ).description
                 )
