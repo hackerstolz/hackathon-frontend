@@ -8,11 +8,11 @@
       "titles": [
         {
           "language": "DE",
-          "title": "Vorort: Registrierung & Onboarding"
+          "title": "Login & Onboarding"
         },
         {
           "language": "EN",
-          "title": "Onsite: Registration & Onboarding"
+          "title": "Login & Onboarding"
         }
       ],
       "from": "1605272400",
@@ -20,11 +20,11 @@
       "descriptions": [
         {
           "language": "DE",
-          "description": "Kommt gemütlich an, die Anmeldung ist bis 16:00 Uhr geöffnet."
+          "description": "Kommt gemütlich an, meldet euch bitte bis 16 Uhr im Slack Workspace an (ihr werdet eingeladen)."
         },
         {
           "language": "EN",
-          "description": "Arrive comfortably, registration will be open until 4 pm."
+          "description": "Arrive comfortably, please register in the Slack Workspace by 4pm (you will be invited)."
         }
       ]
     },
