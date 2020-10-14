@@ -1,0 +1,38 @@
+{
+  "name": "Tobias Augspurger",
+  "salutation": "M",
+  "roles": [
+    {
+      "title": "2020 Mentor",
+      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+      "role": "20200929164255",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Protontypes"
+        },
+        {
+          "language": "EN",
+          "profession": "Protontypes"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Business Model, Innovation, Open Source"
+        },
+        {
+          "language": "EN",
+          "description": "Business Model, Innovation, Open Source"
+        }
+      ],
+      "timeslots": [
+        {
+          "from": "1605279600",
+          "to": "1605290400"
+        }
+      ],
+      "talkTitles": []
+    }
+  ]
+}
