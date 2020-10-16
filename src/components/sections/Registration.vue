@@ -210,7 +210,7 @@ export default {
     "introText": "Wondering what kind of hackers are needed to take on the challenges? Find them here, but please don’t forget, the only really important condition for you as a participant: <strong>planet earth lover!</strong> By the way, in our FAQ we explain in more detail that there are really no requirements to take part at the Climathon.",
     "highlightText": "Teams of 3 to 7 people work together on a project idea.",
     "outroText": "If you don’t have a complete team yet, don’t worry, you can register as an individual participant in the application process and then find teammates before the event in our slack community or during the first day.",
-    "priceText": "On site Tickets are <strong>free of charge</strong>. You pay 10€ for the tickets in our ticket shop, but you get 10€ refund in cash when you show up at the event. Online tickets cost 1€. More information can be found in our FAQ.",
+    "priceText": "Online tickets cost 1€. More information can be found in our FAQ.",
     "button": {
       "link2Ticktes": "Go to Ticketshop",
       "link2Slack": "Join slack community",
@@ -222,7 +222,7 @@ export default {
     "introText": "Du fragst dich, welche Art von Hackern benötigt werden, um die Herausforderungen anzunehmen? Hier findest du sie, aber vergiss nicht, die einzige wirklich wichtige Bedingung für dich als Teilnehmer: <strong>Liebhaber von Planet Erde!</strong> In unserem FAQ gehen wir übrigens näher darauf ein, dass es wirklich keine Voraussetzungen gibt beim Climathon mitzumachen.",
     "highlightText": "Teams von 3 bis 7 Personen arbeiten gemeinsam an einer Projektidee.",
     "outroText": "Wenn du noch kein komplettes Team hast, kannst du dich als Einzelteilnehmer im Bewerbungsprozess anmelden und dann vor der Veranstaltung in unserer Slack Community oder am ersten Tag vor Ort Teamkollegen finden.",
-    "priceText": "Vor Ort Tickets sind <strong>kostenslos</strong>. Du bezahlst 10€ für die Tickets in unserem Ticketshop, aber du erhältst 10€ Rückerstattung in Bar, wenn du auf dem Event auftauchst. Das Online-Ticket kostet symbolisch 1€. Weiter Informationen findest du in unserem FAQ.",
+    "priceText": "Das Online-Ticket kostet symbolisch 1€. Weiter Informationen findest du in unserem FAQ.",
     "button": {
       "link2Ticktes": "Zum Ticketshop",
       "link2Slack": "Slack Community beitreten",
