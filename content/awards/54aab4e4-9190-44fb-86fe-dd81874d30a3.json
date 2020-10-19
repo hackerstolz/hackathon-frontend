@@ -5,33 +5,33 @@
   "titles": [
     {
       "language": "DE",
-      "title": "3x Klima Förderungen",
-      "subtitle": "1. bis 3. Platz"
+      "title": "1x Klima Förderung",
+      "subtitle": "1. Platz"
     },
     {
       "language": "EN",
-      "title": "3x Climate Grants",
-      "subtitle": "1st to 3rd Place"
+      "title": "1x Climate Grant",
+      "subtitle": "1st Place"
     }
   ],
   "prize": [
     {
       "language": "DE",
-      "prize": "Förderbudget wird noch angekündigt"
+      "prize": "2.500 €"
     },
     {
       "language": "EN",
-      "prize": "Grant Budget to be announced"
+      "prize": "2.500 €"
     }
   ],
   "descriptions": [
     {
       "language": "DE",
-      "description": "Die drei von der Jury am besten bewerteten Projekte erhalten einen Projektstipendium, mit dem das Team seine Idee in die Tat umsetzen kann. Weitere Details werden noch definiert!"
+      "description": "Das von der Jury am besten bewertete Projekt erhält ein Projektstipendium, mit dem das Team seine Idee in die Tat umsetzen kann. Weitere Details werden noch definiert!"
     },
     {
       "language": "EN",
-      "description": "The three projects best evaluated by the jury win a project grant with which the team can turn its idea into reality. More details will be defined and announced. "
+      "description": "The project best evaluated by the jury win a project grant with which the team can turn its idea into reality. More details will be defined and announced."
     }
   ],
   "criteria": [

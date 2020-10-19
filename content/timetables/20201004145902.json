@@ -7,10 +7,10 @@
       "descriptions": [
         {
           "language": "EN",
-          "description": "Introduction to Climathon 2020 Mannheim with Q&A.\nPlease join: meet.google.com/gii-sfgy-qiv"
+          "description": "Introduction to Climathon 2020 Mannheim with Q&A."
         },
         {
-          "description": "Vorstellung des Climathon 2020 Mannheim mit Q&A.\nBitte nehmt via Google Meet teil: meet.google.com/gii-sfgy-qiv ",
+          "description": "Vorstellung des Climathon 2020 Mannheim mit Q&A.",
           "language": "DE"
         }
       ],
@@ -24,7 +24,7 @@
           "title": "Climathon 2020 Mannheim"
         }
       ],
-      "linkExternal": "20201013080000"
+      "linkExternal": ""
     }
   ],
   "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",

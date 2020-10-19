@@ -1,0 +1,33 @@
+{
+  "name": "Dr. Ralf Gitzel",
+  "salutation": "M",
+  "image": "/images/uploads/ralfgitzel.png",
+  "roles": [
+    {
+      "title": "2020 Speaker",
+      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+      "role": "1dcafdb8-4816-48e3-86a6-0820577f5e3d",
+      "professions": [],
+      "talkTitles": [
+        {
+          "language": "DE",
+          "talkTitle": "The Role of R&D in Climate Change Prevention"
+        },
+        {
+          "language": "EN",
+          "talkTitle": "The Role of R&D in Climate Change Prevention"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Ralf Gitzel ist Principal Scientist und lokaler Nachhaltigkeitsbeauftragter bei ABB. Er promovierte an der Universität Mannheim. In seiner Doppelfunktion ist er häufig mit den Herausforderungen und Chancen der Gestaltung von Produkten für die Zukunft konfrontiert."
+        },
+        {
+          "language": "EN",
+          "description": "Ralf Gitzel is a Principle Scientist and Local Sustainability Officer at ABB. He obtained his PhD from the University of Mannheim. In his dual roles he is often confronted with the challenges and opportunities of designing products for the future."
+        }
+      ]
+    }
+  ]
+}
