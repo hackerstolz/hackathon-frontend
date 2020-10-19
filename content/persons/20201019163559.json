@@ -7,7 +7,16 @@
       "title": "2020 Speaker",
       "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
       "role": "1dcafdb8-4816-48e3-86a6-0820577f5e3d",
-      "professions": [],
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Lokaler Nachhaltigkeitsbeauftragter bei ABB"
+        },
+        {
+          "language": "EN",
+          "profession": "Local Sustainability Officer at ABB"
+        }
+      ],
       "talkTitles": [
         {
           "language": "DE",
