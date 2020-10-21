@@ -506,7 +506,7 @@ export default {
     "aboutTheJudgeFemale": "About the jury member",
     "aboutTheJudgeMale": "About the jury member",
     "juryTitle": "Jury",
-    "introJury": "Here we will publish really cool jury members, one after each other. And because science has not been given enough attention so far, we have at least two jury members from this category. <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>Contact us</a> to become a jury member.",
+    "introJury": "Here we will publish really cool jury members, one after each other. <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>Contact us</a> to become a jury member.",
     "mentorsTitle": "Mentors",
     "introMentors": "So that you have a contact person ready to answer questions on a wide variety of topics, we will put a battalion of mentors at your side. Find out more soon who you can expect here. Would you like to support yourself as a mentor? With pleasure, <a class='link' href='https://drive.google.com/file/d/1Ozx2imKmgCPqQHFShIpflCElci1Zx0yi/view?usp=sharing'>here</a> you get more information - or you register directly via this <a class=#link' href='https://forms.gle/TQxpeQuKpaVNjxp47'>form</a>.",
     "button": {
@@ -525,7 +525,7 @@ export default {
     "aboutTheJudgeFemale": "Über die Jurorin",
     "aboutTheJudgeMale": "Über den Juror",
     "juryTitle": "Jury",
-    "introJury": "Hier werden wir Jurymitglieder veröffentlichen, eine*r nach der/m anderen. Und weil der Wissenschaft bisher nicht genügend Aufmerksamkeit geschenkt wurde, haben wir zwei Jurymitglieder aus dieser Kategorie. <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>Kontaktiere uns</a> um dich als Jury-Mitglied zu bewerben.",
+    "introJury": "Hier werden wir Jurymitglieder veröffentlichen, eine*r nach der/m anderen. <a class='link' href='mailto:{mailto}?subject=I%20want%20to%20be%20sponsor,%20mentor,%20speaker,%20etc.'>Kontaktiere uns</a> um dich als Jury-Mitglied zu bewerben.",
     "mentorsTitle": "Mentoren",
     "introMentors": "Damit du immer einen Ansprechpartner hast, der dir bei Fragen zu den unterschiedlichsten Themen zur Seite steht, stellen wir dir ein Bataillon von Mentoren zur Seite. Mehr darüber, wen du hier erwarten kannst, erfährst du in Kürze. Du möchtest selber als Mentor untertsützen? Sehr gerne, <a class='link' href='https://drive.google.com/file/d/1Ozx2imKmgCPqQHFShIpflCElci1Zx0yi/view?usp=sharing'>hier</a> ein paar Infos - oder du meldest dich direkt über dieses <a class=#link' href='https://forms.gle/TQxpeQuKpaVNjxp47'>Formular</a> an.",
     "button": {
