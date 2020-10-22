@@ -3,7 +3,7 @@
     <v-container>
       <h2>{{ $t('title') }}</h2>
       <v-card
-        v-for="(award, i) in $props.hackathon.awards || []"
+        v-for="(award, i) in awards || []"
         :key="i"
         class="card pa-3 mb-4"
         width="100%"
@@ -201,6 +201,7 @@ export default {
     },
     isMobile: Boolean,
     hackathon: Object,
+    awards: Array,
     // challenges: Array,
   },
   computed: {
