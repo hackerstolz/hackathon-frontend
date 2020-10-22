@@ -5,8 +5,19 @@
   "slots": [
     {
       "from": "1603465231",
-      "speaker": "20201014084537",
-      "linkExternal": "20201019160631"
+      "speaker": "",
+      "linkExternal": "",
+      "descriptions": [],
+      "titles": [
+        {
+          "language": "DE",
+          "title": "VERSCHOBEN auf den 06.11."
+        },
+        {
+          "language": "EN",
+          "title": "POSTPONED to November 6th!"
+        }
+      ]
     }
   ]
 }
