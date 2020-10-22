@@ -1,0 +1,26 @@
+{
+  "name": "Z_Platzhalter",
+  "image": "/images/uploads/flat-icon-schedule-award.svg",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Weitere spannende Preise",
+      "subtitle": "Werden bald bekannt gegeben!"
+    },
+    {
+      "language": "EN",
+      "title": "Further interesting Awards",
+      "subtitle": "will be announced soon"
+    }
+  ],
+  "prize": [
+    {
+      "language": "DE",
+      "prize": "Seid gespannt ;) "
+    },
+    {
+      "language": "EN",
+      "prize": "Be excited ;) "
+    }
+  ]
+}

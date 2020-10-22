@@ -31,6 +31,7 @@
       themeColor="primary"
       :isMobile="isMobile"
       :hackathon="$page.hackathon"
+      :awards="sortedAwards"
     />
     <!-- :challenges="$page.allChallenge.edges" -->
     <!-- TODO: complete team overview  -->
@@ -295,6 +296,13 @@ export default {
 
       return allSponsorRoles
     },
+    sortedAwards() {
+      const awards =
+        this.$page && this.$page.hackathon && this.$page.hackathon.awards && this.$page.hackathon.awards.length > 0
+        ? this.$page.hackathon.awards.sort(function(a, b) { return a.name > b.name ? 1 : -1; })
+        : []
+      return awards;
+    }
   },
 }
 </script>
@@ -378,7 +386,7 @@ query ($id: ID!) {
       } 
     } 
   }
-  allChallenge(filter: { hackathon: { eq: $id } }) {
+  allChallenge(filter: { hackathon: { eq: $id } } sortBy: "name" order:ASC) {
     edges {
       node {
         id # ID 
@@ -437,7 +445,7 @@ query ($id: ID!) {
       }
     }
   }  
-  allTechnologie(filter: { hackathon: { eq: $id } }){
+  allTechnologie(filter: { hackathon: { eq: $id } } sortBy: "name" order:ASC){
     edges{
       node{
         name # Name 

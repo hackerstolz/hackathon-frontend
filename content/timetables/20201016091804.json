@@ -1,12 +1,23 @@
 {
   "date": "1603444633",
   "title": "Webinar 23.10.2020",
-  "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+  "hackathon": "20200719135647",
   "slots": [
     {
       "from": "1603465231",
-      "speaker": "20201014084537",
-      "linkExternal": "20201019160631"
+      "speaker": "",
+      "linkExternal": "",
+      "descriptions": [],
+      "titles": [
+        {
+          "language": "DE",
+          "title": "VERSCHOBEN auf den 06.11."
+        },
+        {
+          "language": "EN",
+          "title": "POSTPONED to November 6th!"
+        }
+      ]
     }
   ]
 }
