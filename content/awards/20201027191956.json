@@ -1,0 +1,46 @@
+{
+  "name": "2020 2 SHub",
+  "image": "/images/uploads/img_20191223_123100_889.jpg",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "1 Jahr Accelerator Award",
+      "subtitle": "Für ein Team mit Gründungsabsicht"
+    },
+    {
+      "language": "EN",
+      "title": "1 Year Accelerator Award",
+      "subtitle": "For one team with founding intention"
+    }
+  ],
+  "prize": [
+    {
+      "language": "DE",
+      "prize": "S-HUB ACCELERATOR"
+    },
+    {
+      "language": "EN",
+      "prize": "S-HUB ACCELERATOR"
+    }
+  ],
+  "descriptions": [
+    {
+      "language": "EN",
+      "description": "Free participation in the S-HUB Accelerator Program with an individual start of about 1 year of systematic and intensive support from the idea to the foundation. Prerequisite is a desired foundation as a team in Mannheim, the seriousness behind the foundation wish should be high and all participants must have a certain degree of common welfare and environmental sensitivity.\n\nDer S-HUB Mannheim ist das Gründungszentrum in [\\#Mannheim](https://www.instagram.com/explore/tags/mannheim/) für Social Entre- & Intrapreneurship. ![✨](https://mail.google.com/mail/e/2728)![🚀](https://mail.google.com/mail/e/1f680) Durch Coworking-Fläche, regelmäßige Formate für die Community und individuelles Sparring für sozial- und kulturinnovative Gründer\\*innen ist der S-HUB das Zuhause für Changemaker\\*innen in der Rhein-Neckar-Region."
+    },
+    {
+      "language": "DE",
+      "description": "Kostenfreie Teilnahme am [S-HUB Accelerator Programm](https://www.shub-mannheim.de/) mit zeitlich individuellem Start einer ca. 1-jährigen systematischen und intensiven Betreuung von der Idee bis zur Gründung. Voraussetzung ist eine angestrebte Gründung als Team in Mannheim, die Ernsthaftigkeit hinter dem Gründungswunsch sollte hoch sein und alle Teilnehmer müssen ein gewisses Maß an Gemeinwohl- und Umweltempfinden mitbringen.\n\nDer S-HUB Mannheim ist das Gründungszentrum in [\\#Mannheim](https://www.instagram.com/explore/tags/mannheim/) für Social Entre- & Intrapreneurship. ![✨](https://mail.google.com/mail/e/2728)![🚀](https://mail.google.com/mail/e/1f680) Durch Coworking-Fläche, regelmäßige Formate für die Community und individuelles Sparring für sozial- und kulturinnovative Gründer\\*innen ist der S-HUB das Zuhause für Changemaker\\*innen in der Rhein-Neckar-Region."
+    }
+  ],
+  "criteria": [
+    {
+      "language": "DE",
+      "criteria": "*Unsere Auswahlkriterien in absteigender Gewichtung:*\n\n1. Authentizität des Gründungsteams\n2. Wichtigkeit des gesellschaftlichen Problems\n3. Finanzielle Tragfähigkeit\n4. Skalierbarkeit\n5. Innovationsgrad\n6. Fachlicher Hintergrund des Gründungsteams\n7. Proof of Concept\n\nHinweis: Die Authentizität des Gründungsteams bezieht sich überwiegend auf die zu erklärende Absicht, eine reale Gründung (in Mannheim) zu vollziehen sowie sich eines möglichen \"Mission Drift\" bewusst zu sein. "
+    },
+    {
+      "language": "EN",
+      "criteria": "*Our selection criteria in descending weighting:*\n\n1. Authenticity of the founding team\n2. Importance of the social problem\n3. Financial viability\n4. Scalability\n5. Degree of innovation\n6. Professional background of the founding team.\n7. Proof of Concept\n\nNote: The authenticity of the founding team refers mainly to the declared intention to carry out a real foundation (in Mannheim) and to be aware of a possible \"mission drift\". "
+    }
+  ]
+}
