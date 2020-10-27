@@ -36,11 +36,11 @@
   "criteria": [
     {
       "language": "DE",
-      "criteria": "*Unsere Auswahlkriterien in absteigender Gewichtung:*\n\n1. Authentizität des Gründungsteams\n2. Wichtigkeit des gesellschaftlichen Problems\n3. Finanzielle Tragfähigkeit\n4. Skalierbarkeit\n5. Innovationsgrad\n6. Fachlicher Hintergrund des Gründungsteams\n7. Proof of Concept\n\nHinweis: Die Authentizität des Gründungsteams bezieht sich überwiegend auf die zu erklärende Absicht, eine reale Gründung (in Mannheim) zu vollziehen sowie sich eines möglichen \"Mission Drift\" bewusst zu sein. "
+      "criteria": "*Unsere Auswahlkriterien in absteigender Gewichtung:*\n\n* Authentizität des Gründungsteams\n* Wichtigkeit des gesellschaftlichen Problems\n* Finanzielle Tragfähigkeit\n* Skalierbarkeit\n* Innovationsgrad\n* Fachlicher Hintergrund des Gründungsteams\n* Proof of Concept\n\nHinweis: Die Authentizität des Gründungsteams bezieht sich überwiegend auf die zu erklärende Absicht, eine reale Gründung (in Mannheim) zu vollziehen sowie sich eines möglichen \"Mission Drift\" bewusst zu sein."
     },
     {
       "language": "EN",
-      "criteria": "*Our selection criteria in descending weighting:*\n\n1. Authenticity of the founding team\n2. Importance of the social problem\n3. Financial viability\n4. Scalability\n5. Degree of innovation\n6. Professional background of the founding team.\n7. Proof of Concept\n\nNote: The authenticity of the founding team refers mainly to the declared intention to carry out a real foundation (in Mannheim) and to be aware of a possible \"mission drift\". "
+      "criteria": "*Our selection criteria in descending weighting:*\n\n* Authenticity of the founding team\n* Importance of the social problem\n* Financial viability\n* Scalability\n* Degree of innovation\n* Professional background of the founding team.\n* Proof of Concept\n\nNote: The authenticity of the founding team refers mainly to the declared intention to carry out a real foundation (in Mannheim) and to be aware of a possible \"mission drift\"."
     }
   ]
 }
