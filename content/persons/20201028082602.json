@@ -1,0 +1,32 @@
+{
+  "name": "Lilli & Carsten",
+  "salutation": "W",
+  "image": "/images/uploads/dsc09968_klein.jpg",
+  "roles": [
+    {
+      "title": "2020 Jury",
+      "hackathon": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+      "role": "d53d2b01-e885-4b5e-b67a-b861e3c1daa5",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "S-HUB Mannheim"
+        },
+        {
+          "language": "EN",
+          "profession": "S-HUB Mannheim"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Der S-HUB Mannheim ist das Gründungszentrum in [\\#Mannheim](https://www.instagram.com/explore/tags/mannheim/) für Social Entre- & Intrapreneurship. ✨🚀 Durch Coworking-Fläche, regelmäßige Formate für die Community und individuelles Sparring für sozial- und kulturinnovative Gründer\\*innen ist der S-HUB das Zuhause für Changemaker\\*innen in der Rhein-Neckar-Region.\n\nDr. Lilli Leirich: Leitung DHPRENEUR, Initiatorin MAWOMEN, Gründerin NOX-Euer Proberaum\n\nCarsten Huber: Inhaber S-HUB Mannheim, Gründer NOX-Euer Proberaum"
+        },
+        {
+          "language": "EN",
+          "description": "The S-HUB Mannheim is the founding center in [\\#Mannheim](https://www.instagram.com/explore/tags/mannheim/) for Social Entre- & Intrapreneurship. ✨🚀 By Coworking surface, regular formats for the Community and individual Sparring for social and culture-innovative founders\\* inside the S-HUB is the home for Changemaker\\* inside in the Rhine Neckar region.\n\nTranslated with www.DeepL.com/Translator (free version)\n\nDr. Lilli Leirich: Management DHPRENEUR, Initiator MAWOMEN, Founder NOX-Euer Proberaum\n\nCarsten Huber: Owner S-HUB Mannheim, Founder NOX-Euer Proberaum"
+        }
+      ]
+    }
+  ]
+}
