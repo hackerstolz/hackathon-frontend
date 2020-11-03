@@ -43,6 +43,7 @@
           :label="$t('simulateSwitch')"
           color="error"
         ></v-switch>
+               
         <h1>
           <!-- TODO: title lines, should be replaced by title {{ hackathon.title }} in future -->
           <div>
@@ -60,6 +61,9 @@
             {{ simulate2050 ? $t('simulation.titleLine2') : $t('titleLine2') }}
           </div>
         </h1>
+        <div class="cancelText" :hidden="simulate2050">
+          {{ simulate2050 ? '' : $t('titleCancelLine') }}
+        </div> 
         <h2>{{ simulate2050 ? $t('simulation.subtitle') : $t('subtitle') }}</h2>
         <h3>
           {{
@@ -175,7 +179,8 @@ export default {
 {
   "en": {
     "event": "{duration}h Hackathon",
-    "titleLine1": "CANCELED - CLIMATHON {year}",
+    "titleCancelLine": "CANCELED",
+    "titleLine1": "CLIMATHON {year}",
     "titleLine2": "MANNHEIM",
     "subtitle": "Drive climate action!",
     "sloganBeforeHeart": "A hackathon made with",
@@ -192,7 +197,8 @@ export default {
   },
   "de": {
     "event": "{duration}h Hackathon",
-    "titleLine1": "ABGESAGT - CLIMATHON {year}",
+    "titleCancelLine": "ABGESAGT",
+    "titleLine1": "CLIMATHON {year}",
     "titleLine2": "MANNHEIM",
     "subtitle": "Klimaschutz antreiben!",
     "sloganBeforeHeart": "Ein Hackathon gemacht mit",
@@ -341,7 +347,7 @@ section {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: 1;
+      z-index: 1;   
 
       h1 {
         font-family: Gagalin, sans-serif;
@@ -383,6 +389,24 @@ section {
         line-height: 1.24;
         letter-spacing: 2px;
         text-align: center;
+      }
+      
+      .cancelText {
+        font-family: Gagalin, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 76px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-align: right;
+        white-space: nowrap;
+        box-shadow: 0 0 0 3px red, 0 0 0 2px red inset;  
+        border: 2px solid transparent;
+        border-radius: 4px;
+        color: red;
+        opacity: 0.8;
+        transform: rotate(20deg);
+        padding: 5px 2px;
       }
     }
 
