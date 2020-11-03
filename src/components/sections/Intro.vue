@@ -398,15 +398,16 @@ section {
         font-size: 76px;
         line-height: 1;
         letter-spacing: normal;
-        text-align: right;
+        text-align: center;
         white-space: nowrap;
         box-shadow: 0 0 0 3px red, 0 0 0 2px red inset;  
         border: 2px solid transparent;
         border-radius: 4px;
         color: red;
-        opacity: 0.8;
+        opacity: 0.9;
         transform: rotate(20deg);
         padding: 5px 2px;
+        position: absolute;
       }
     }
 
