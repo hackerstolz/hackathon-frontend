@@ -14,6 +14,7 @@
         <p class="priceText my-5" v-html="$t('priceText')"></p>
       </v-card>
       <v-btn
+        v-if="$props.hackathon.linkTicketshop"    
         class="buy-tickets mt-4 mb-8 white--text"
         width="auto"
         :href="ticketShopURL"
@@ -210,7 +211,7 @@ export default {
     "introText": "Wondering what kind of hackers are needed to take on the challenges? Find them here, but please don’t forget, the only really important condition for you as a participant: <strong>planet earth lover!</strong> By the way, in our FAQ we explain in more detail that there are really no requirements to take part at the Climathon.",
     "highlightText": "Teams of 3 to 7 people work together on a project idea.",
     "outroText": "If you don’t have a complete team yet, don’t worry, you can register as an individual participant in the application process and then find teammates before the event in our slack community or during the first day.",
-    "priceText": "Online tickets cost 1€. More information can be found in our FAQ.",
+    "priceText": "CANCELED - The new corona regulation, a noticeable increase in 'digital fatigue' and the resulting low ticket sales for this year's Climathon are factors that have moved us with a heavy heart to cancel the Climathon Mannheim for this year. We are looking forward to hopefully better conditions and to counting you again next year!",
     "button": {
       "link2Ticktes": "Go to Ticketshop",
       "link2Slack": "Join slack community",
@@ -222,7 +223,7 @@ export default {
     "introText": "Du fragst dich, welche Art von Hackern benötigt werden, um die Herausforderungen anzunehmen? Hier findest du sie, aber vergiss nicht, die einzige wirklich wichtige Bedingung für dich als Teilnehmer: <strong>Liebhaber von Planet Erde!</strong> In unserem FAQ gehen wir übrigens näher darauf ein, dass es wirklich keine Voraussetzungen gibt beim Climathon mitzumachen.",
     "highlightText": "Teams von 3 bis 7 Personen arbeiten gemeinsam an einer Projektidee.",
     "outroText": "Wenn du noch kein komplettes Team hast, kannst du dich als Einzelteilnehmer im Bewerbungsprozess anmelden und dann vor der Veranstaltung in unserer Slack Community oder am ersten Tag vor Ort Teamkollegen finden.",
-    "priceText": "Das Online-Ticket kostet symbolisch 1€. Weiter Informationen findest du in unserem FAQ.",
+    "priceText": "ABGESAGT - Die neue Corona-Verordnung, eine spürbar aufkommende digitale Müdigkeit und dem damit verbundenen geringen Ticketverkauf für den diesjährigen Climathon sind Faktoren, die uns schweren Herzens dazu bewegt haben, den Climathon Mannheim für dieses Jahr abzusagen. Wir freuen uns auf hoffentlich bessere Rahmenbedingungen im nächsten Jahr!",
     "button": {
       "link2Ticktes": "Zum Ticketshop",
       "link2Slack": "Slack Community beitreten",
@@ -271,6 +272,7 @@ section {
 
     &.priceText {
       cursor: pointer;
+      color: #ffc533;
     }
   }
 

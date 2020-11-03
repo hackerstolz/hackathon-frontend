@@ -175,7 +175,7 @@ export default {
 {
   "en": {
     "event": "{duration}h Hackathon",
-    "titleLine1": "CLIMATHON {year}",
+    "titleLine1": "CANCELED - CLIMATHON {year}",
     "titleLine2": "MANNHEIM",
     "subtitle": "Drive climate action!",
     "sloganBeforeHeart": "A hackathon made with",
@@ -192,7 +192,7 @@ export default {
   },
   "de": {
     "event": "{duration}h Hackathon",
-    "titleLine1": "CLIMATHON {year}",
+    "titleLine1": "ABGESAGT - CLIMATHON {year}",
     "titleLine2": "MANNHEIM",
     "subtitle": "Klimaschutz antreiben!",
     "sloganBeforeHeart": "Ein Hackathon gemacht mit",
