@@ -1,0 +1,58 @@
+{
+  "default": true,
+  "active": true,
+  "hashtags": [
+    {
+      "hashtag": "#climathonMA",
+      "isMain": true
+    },
+    {
+      "hashtag": "#Climathon",
+      "isMain": false
+    }
+  ],
+  "from": "1636124437",
+  "thumbnail": "/images/uploads/thumbnail-general.jpg",
+  "eventPageActive": false,
+  "linkCommunity": "cf26d674-bbcd-410a-be81-1ed85ef03f70",
+  "linkImprint": "2d4d652a-d5e1-43a1-8b5c-71c8b878cd57",
+  "twitter": "@hackerstolz",
+  "duration": 40,
+  "awards": [
+    "54aab4e4-9190-44fb-86fe-dd81874d30a3",
+    "20201022172526"
+  ],
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": ":earth_africa::sunny::rainbow: 100+ Teilnehmer*innen • Vielfältige Klima-Challenges • Wir wollen nicht nur über Nachhaltigkeit sprechen, sondern handeln und sehen, was Technologie zur Bekämpfung des Klimawandels beitragen kann. Registriere dich jetzt!"
+    },
+    {
+      "language": "EN",
+      "description": ":earth_africa::sunny::rainbow: 100+ Participants • Diverse Climate-Challenges • We don't just want to talk about sustainability, we want to act and see what technology can do to combat climate change. Register now!"
+    }
+  ],
+  "title": "Climathon 2021 Mannheim",
+  "urlName": "climathon2021ma",
+  "id": "33bf2af2-513c-4e59-9ed2-ff09147298ae",
+  "to": "1636293637",
+  "contactEmail": "climathon@hackerstolz.de",
+  "linkTicketshop": "",
+  "faqs": [
+    "20200627184525",
+    "20200627185722",
+    "20200627192352",
+    "20200627193110",
+    "fbc0135e-09e0-4284-9a7e-03e1d473f47d",
+    "fc03263a-d6e1-46b8-a1c9-00ad055fc403",
+    "20200707164942",
+    "20200707165104",
+    "20200707165235",
+    "20200707165351",
+    "20200707165447",
+    "20200707165542",
+    "20200707165631",
+    "20200707165717",
+    "20200707165818"
+  ]
+}
