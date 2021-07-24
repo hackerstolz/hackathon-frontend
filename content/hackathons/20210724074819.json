@@ -1,6 +1,6 @@
 {
-  "default": true,
-  "active": true,
+  "default": false,
+  "active": false,
   "hashtags": [
     {
       "hashtag": "#climathonMA",
