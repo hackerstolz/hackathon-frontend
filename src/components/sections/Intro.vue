@@ -61,8 +61,8 @@
             {{ simulate2050 ? $t('simulation.titleLine2') : $t('titleLine2') }}
           </div>
         </h1>
-        <div class="cancelText" :hidden="simulate2050 || !hackathon.canceled">
-          {{ (simulate2050 || !hackathon.canceled) ? '' : $t('titleCancelLine') }}
+        <div class="cancelText" :hidden="simulate2050 || hackathon.canceled == 'false'">
+          {{ (simulate2050 || hackathon.canceled == 'false') ? '' : $t('titleCancelLine') }}
         </div> 
         <h2>{{ simulate2050 ? $t('simulation.subtitle') : $t('subtitle') }}</h2>
         <h3>
