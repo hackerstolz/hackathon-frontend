@@ -99,6 +99,7 @@ query {
         active # Active 
         from # From 
         to # To 
+        canceled
         duration # Duration 
         eventPageActive # Event Page active 
         contactEmail # Contact EMail 
