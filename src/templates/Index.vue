@@ -321,6 +321,7 @@ query ($id: ID!) {
     title # Title 
     default # Default 
     active # Active 
+    canceled
     from # From 
     to # To 
     duration # Duration 
