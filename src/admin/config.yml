@@ -25,6 +25,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Default", name: "default", widget: "boolean", default: false, hint: "Hackathon shown if none specified in URL"}
       - {label: "Active", name: "active", widget: "boolean", default: false, hint: "Visible on website"}
+      - {label: "Canceled", name: "canceled", widget: "boolean", default: false, hint: "Adds 'canceled' stamp"}
       - {label: "From", name: "from", widget: "datetime", format: "X"}
       - {label: "To", name: "to", widget: "datetime", format: "X"}
       - {label: "Duration", name: "duration", widget: "number", valueType: "int", hint: "Hackduration in Hours"}
