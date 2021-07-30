@@ -1,4 +1,14 @@
 {
+  "priceDescriptions": [
+    {
+      "language": "DE",
+      "description": "ABGESAGT - Die neue Corona-Verordnung, eine spürbar aufkommende digitale Müdigkeit und dem damit verbundenen geringen Ticketverkauf für den diesjährigen Climathon sind Faktoren, die uns schweren Herzens dazu bewegt haben, den Climathon Mannheim für dieses Jahr abzusagen. Wir freuen uns auf hoffentlich bessere Rahmenbedingungen im nächsten Jahr!"
+    },
+    {
+      "language": "EN",
+      "description": "CANCELED - The new corona regulation, a noticeable increase in 'digital fatigue' and the resulting low ticket sales for this year's Climathon are factors that have moved us with a heavy heart to cancel the Climathon Mannheim for this year. We are looking forward to hopefully better conditions and to counting you again next year!"
+    }
+  ],
   "default": true,
   "active": true,
   "hashtags": [
