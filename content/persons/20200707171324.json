@@ -27,6 +27,31 @@
           "description": "Cooperation and communication are particularly close to her heart, both in local, regional and international networks."
         }
       ]
+    },
+    {
+      "title": "Orga 2021",
+      "hackathon": "20210724074819",
+      "role": "76174be1-a179-4d26-abf1-08ff97d7c5a8",
+      "professions": [
+        {
+          "profession": "City of Mannheim",
+          "language": "EN"
+        },
+        {
+          "language": "DE",
+          "profession": "Stadt Mannheim"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Kooperation und Kommunikation liegen ihr besonders am Herzen, sowohl in lokalen, als auch regionalen und internationalen Netzwerken. "
+        },
+        {
+          "language": "EN",
+          "description": "Cooperation and communication are particularly close to her heart, both in local, regional and international networks."
+        }
+      ]
     }
   ]
 }
