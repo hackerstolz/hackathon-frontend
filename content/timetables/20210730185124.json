@@ -1,0 +1,31 @@
+{
+  "date": "1636141198",
+  "hackathon": "20210724074819",
+  "title": "Climathon 2021 - Friday",
+  "slots": [
+    {
+      "from": "1636128000",
+      "titles": [
+        {
+          "language": "DE",
+          "title": "Eröffnung"
+        },
+        {
+          "language": "EN",
+          "title": "Welcome"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Ein paar Begrüßungsworte zur Eröffnung des Climathon 2020 Mannheim"
+        },
+        {
+          "language": "EN",
+          "description": "A few words of welcome to the opening of the Climathon 2020 Mannheim."
+        }
+      ],
+      "image": "/images/uploads/flat-icon-schedule-mic.svg"
+    }
+  ]
+}
