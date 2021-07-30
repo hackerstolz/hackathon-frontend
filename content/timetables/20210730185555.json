@@ -1,0 +1,31 @@
+{
+  "date": "1636153200",
+  "hackathon": "20210724074819",
+  "title": "Climathon 2021 - Saturday",
+  "slots": [
+    {
+      "from": "1636099200",
+      "titles": [
+        {
+          "language": "DE",
+          "title": "Coding & Workshops"
+        },
+        {
+          "language": "EN",
+          "title": "Coding & Workshops"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Zeit für den Hackathon (eigenständig oder durch Mentoren unterstützt) \n(Weitere Details folgen)"
+        },
+        {
+          "language": "EN",
+          "description": "Time for the hackathon (independent or mentor supported). \n(More details to follow)"
+        }
+      ],
+      "image": "/images/uploads/flat-icon-schedule-code.svg"
+    }
+  ]
+}
