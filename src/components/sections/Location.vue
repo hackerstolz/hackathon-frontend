@@ -105,7 +105,7 @@ export default {
   "en": {
     "title": "Location",
     "locationSlogan": "This year due to the current situation unfortunately only virtual!",
-    "locationDescription": "We will use Google Meets, provide a Slack Workspace and will be able to use some Mural licenses.",
+    "locationDescription": "We will use MS Teams, provide a Slack Workspace and will be able to use some Mural licenses.",
     "button": {
       "link2Maps": "Open in maps"
     }
@@ -113,7 +113,7 @@ export default {
   "de": {
     "title": "Standort",
     "locationSlogan": "Dieses Jahr aufgrund der aktuellen Situation leider nur virtuell!",
-    "locationDescription": "Wir werden Google Meets nutzen, einen Slack Workspace bereitstellen sowie ein paar Mural Lizenzen nutzen können.",
+    "locationDescription": "Wir werden MS Teams nutzen, einen Slack Workspace bereitstellen sowie ein paar Mural Lizenzen nutzen können.",
     "button": {
       "link2Maps": "In Karten öffnen"
     }

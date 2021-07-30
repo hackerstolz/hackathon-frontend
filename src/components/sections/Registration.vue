@@ -11,7 +11,12 @@
         flat
         @click="() => {}"
       >
-        <p class="priceText my-5" v-html="$t('priceText')"></p>
+        <p class="priceText my-5">
+		{{
+		  getI18nNode($props.hackathon.priceDescriptions, $i18n.locale)
+			.description
+        }}
+		</p>
       </v-card>
       <v-btn
         v-if="$props.hackathon.linkTicketshop"    

@@ -47,6 +47,13 @@ collections:
         searchFields: ["name"]
         valueField: "{{slug}}"
         displayFields: ["name"]
+      - label: Price Descriptions
+        name: priceDescriptions
+        widget: list
+        required: false
+        fields:
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Description, name: description, widget: text}
       - label: Community Link
         name: linkCommunity
         widget: "relation"
