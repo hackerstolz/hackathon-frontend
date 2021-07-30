@@ -1,0 +1,22 @@
+{
+  "name": "Elena Berberich",
+  "salutation": "W",
+  "roles": [
+    {
+      "title": "Orga 2021",
+      "hackathon": "20210724074819",
+      "role": "76174be1-a179-4d26-abf1-08ff97d7c5a8",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Stadt Mannheim"
+        },
+        {
+          "language": "EN",
+          "profession": "City of Mannheim"
+        }
+      ],
+      "descriptions": []
+    }
+  ]
+}
