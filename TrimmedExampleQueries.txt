@@ -5,6 +5,7 @@ query{
 		title # Title 
 		default # Default 
 		active # Active 
+		canceled # Canceled 
 		from # From 
 		to # To 
 		duration # Duration 
@@ -17,6 +18,10 @@ query{
 		} 
 		linkTicketshop{ # Ticketshop Link 
 			name # Name - further fields see Link 
+		} 
+		priceDescriptions{ # Price Descriptions 
+			language # Language 
+			description # Description 
 		} 
 		linkCommunity{ # Community Link 
 			name # Name - further fields see Link 

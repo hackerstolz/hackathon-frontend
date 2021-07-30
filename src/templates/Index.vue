@@ -340,6 +340,7 @@ query ($id: ID!) {
 	priceDescriptions { # Price Descriptions 
         language # Language 
         description # Description 
+	}
     linkCommunity { # Community Link 
       id # ID - further fields see Link  
 			name # Name 
