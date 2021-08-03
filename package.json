@@ -11,7 +11,7 @@
     "core-js": "3.6.5",
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "netlify-cms": "^2.10.51",
     "netlify-cms-oauth-provider-node": "^1.1.0",
     "netlify-cms-widget-color": "^3.0.1",
