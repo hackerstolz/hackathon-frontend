@@ -3,30 +3,6 @@
   "title": "Climathon 2021 - Sunday",
   "slots": [
     {
-      "from": "1636272000",
-      "titles": [
-        {
-          "language": "DE",
-          "title": "Frist fürs Coden"
-        },
-        {
-          "language": "EN",
-          "title": "Deadline of Coding"
-        }
-      ],
-      "descriptions": [
-        {
-          "language": "DE",
-          "description": "Wir wissen, der größte Teil der Arbeit findet 10 Minuten vor der Deadline statt. Aber vergesse nicht, die Dokumentation deiner Lösung hier zu veröffentlichen."
-        },
-        {
-          "language": "EN",
-          "description": "We know, most of the work happens the 10 minutes before the deadline. But don’t forget to publish the documentation of your solution here."
-        }
-      ],
-      "image": "/images/uploads/flat-icon-schedule-timer.svg"
-    },
-    {
       "from": "1636275600",
       "titles": [
         {
