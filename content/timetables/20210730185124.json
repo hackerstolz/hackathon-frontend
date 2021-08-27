@@ -4,6 +4,26 @@
   "title": "Climathon 2021 - Friday",
   "slots": [
     {
+      "from": "1636117200",
+      "titles": [
+        {
+          "language": "DE",
+          "title": "Workshops & Vorträge"
+        }
+      ],
+      "image": "/images/uploads/flat-icon-bulp.svg",
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Wir sind gerade dabei einen Workshop am Freitagnachmittag zu planen und auch Vorträge als Impulsgeber - mehr Infos folgen!"
+        },
+        {
+          "language": "EN",
+          "description": "We are in the process of planning a Friday afternoon workshop as well as keynote presentations - more info to follow!"
+        }
+      ]
+    },
+    {
       "from": "1636128000",
       "titles": [
         {
@@ -26,26 +46,6 @@
         }
       ],
       "image": "/images/uploads/flat-icon-schedule-mic.svg"
-    },
-    {
-      "from": "1636117200",
-      "titles": [
-        {
-          "language": "DE",
-          "title": "Workshops & Vorträge"
-        }
-      ],
-      "image": "/images/uploads/flat-icon-bulp.svg",
-      "descriptions": [
-        {
-          "language": "DE",
-          "description": "Wir sind gerade dabei einen Workshop am Freitagnachmittag zu planen und auch Vorträge als Impulsgeber - mehr Infos folgen!"
-        },
-        {
-          "language": "EN",
-          "description": "We are in the process of planning a Friday afternoon workshop as well as keynote presentations - more info to follow!"
-        }
-      ]
     }
   ]
 }
