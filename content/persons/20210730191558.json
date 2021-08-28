@@ -16,7 +16,16 @@
           "profession": "City of Mannheim"
         }
       ],
-      "descriptions": []
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Die Koordinatorin zwischen Stadt, KIC und Projektteam. Sie kümmert sich um alles und hält die Fäden zusammen."
+        },
+        {
+          "description": "The coordinator between the city, KIC and the project team. She takes care of everything and keeps the threads together.",
+          "language": "EN"
+        }
+      ]
     }
   ],
   "image": "/images/uploads/elenaberberich.jpg"
