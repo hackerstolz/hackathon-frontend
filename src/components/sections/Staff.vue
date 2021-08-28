@@ -281,15 +281,17 @@
       </v-dialog>
 
       <h2 id="mentor">{{ $t('mentorsTitle') }}</h2>
-      <p class="introMentors my-5" >
       <!-- quick fix: mentor intro as Hackathon attribute  -->
-        {{
-          getI18nNode(
-             $props.hackathon.mentorIntro,
-             $i18n.locale
-                ).description
-        }}
-      </p>
+      <p class="introMentors my-5"
+        v-html="
+          formatMarkdown(
+            getI18nNode(
+              $props.hackathon.mentorIntro,
+              $i18n.locale
+            ).description
+          )
+        "
+      ></p>
       <!-- TODO: enhance schema to maintain registration & info links to roles - more general: flexible definition of roles-->
       <!-- <v-layout
         class="mb-5"
