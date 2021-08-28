@@ -60,7 +60,7 @@ collections:
         required: false
         fields:
           - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
-          - {label: Description, name: description, widget: text}
+          - {label: Description, name: description, widget: markdown}
       - label: Community Link
         name: linkCommunity
         widget: "relation"

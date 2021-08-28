@@ -28,6 +28,10 @@ query{
 			language # Language 
 			description # Description 
 		} 
+		mentorIntro{ # Mentor Intro 
+			language # Language 
+			description # Description 
+		} 
 		linkCommunity{ # Community Link 
 			name # Name 
 			url # URL 
@@ -116,6 +120,10 @@ query{
 				} 
 			} 
 			priceDescriptions{ # Price Descriptions 
+				language # Language 
+				description # Description 
+			} 
+			mentorIntro{ # Mentor Intro 
 				language # Language 
 				description # Description 
 			} 
@@ -284,6 +292,10 @@ query{
 				language # Language 
 				description # Description 
 			} 
+			mentorIntro{ # Mentor Intro 
+				language # Language 
+				description # Description 
+			} 
 			linkCommunity{ # Community Link 
 				name # Name 
 				url # URL 
@@ -401,6 +413,10 @@ query{
 						language # Language 
 						description # Description 
 					} 
+					mentorIntro{ # Mentor Intro 
+						language # Language 
+						description # Description 
+					} 
 					linkCommunity{ # Community Link 
 						name # Name 
 						url # URL 
@@ -486,6 +502,10 @@ query{
 							} 
 						} 
 						priceDescriptions{ # Price Descriptions 
+							language # Language 
+							description # Description 
+						} 
+						mentorIntro{ # Mentor Intro 
 							language # Language 
 							description # Description 
 						} 
@@ -745,6 +765,10 @@ query{
 					language # Language 
 					description # Description 
 				} 
+				mentorIntro{ # Mentor Intro 
+					language # Language 
+					description # Description 
+				} 
 				linkCommunity{ # Community Link 
 					name # Name 
 					url # URL 
@@ -830,6 +854,10 @@ query{
 						} 
 					} 
 					priceDescriptions{ # Price Descriptions 
+						language # Language 
+						description # Description 
+					} 
+					mentorIntro{ # Mentor Intro 
 						language # Language 
 						description # Description 
 					} 
@@ -1027,6 +1055,10 @@ query{
 					language # Language 
 					description # Description 
 				} 
+				mentorIntro{ # Mentor Intro 
+					language # Language 
+					description # Description 
+				} 
 				linkCommunity{ # Community Link 
 					name # Name 
 					url # URL 
@@ -1112,6 +1144,10 @@ query{
 						} 
 					} 
 					priceDescriptions{ # Price Descriptions 
+						language # Language 
+						description # Description 
+					} 
+					mentorIntro{ # Mentor Intro 
 						language # Language 
 						description # Description 
 					} 
@@ -1283,6 +1319,10 @@ query{
 				language # Language 
 				description # Description 
 			} 
+			mentorIntro{ # Mentor Intro 
+				language # Language 
+				description # Description 
+			} 
 			linkCommunity{ # Community Link 
 				name # Name 
 				url # URL 
@@ -1387,6 +1427,10 @@ query{
 							language # Language 
 							description # Description 
 						} 
+						mentorIntro{ # Mentor Intro 
+							language # Language 
+							description # Description 
+						} 
 						linkCommunity{ # Community Link 
 							name # Name 
 							url # URL 
@@ -1472,6 +1516,10 @@ query{
 								} 
 							} 
 							priceDescriptions{ # Price Descriptions 
+								language # Language 
+								description # Description 
+							} 
+							mentorIntro{ # Mentor Intro 
 								language # Language 
 								description # Description 
 							} 

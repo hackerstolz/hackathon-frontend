@@ -23,6 +23,10 @@ query{
 			language # Language 
 			description # Description 
 		} 
+		mentorIntro{ # Mentor Intro 
+			language # Language 
+			description # Description 
+		} 
 		linkCommunity{ # Community Link 
 			name # Name - further fields see Link 
 		} 
