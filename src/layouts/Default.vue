@@ -576,7 +576,7 @@ export default {
 
 <static-query>
 query {
-  allHackathon(filter: {default: {eq: true}, active: {eq: true}}) {
+  allHackathon(filter: {active: {eq: true}}) {
     edges {
       node {
         id
