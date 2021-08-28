@@ -263,7 +263,7 @@ export default {
 
       for (const partner of allPartners) {
         for (const role of partner.roles) {
-          if (role.isSponsor === false) {
+          if (role.isSponsor === false && role.hackathon.id === this.$page.hackathon.id) {
             allPartnerRoles.push({
               ...partner,
               role: role,
@@ -590,6 +590,9 @@ query ($id: ID!) {
       } 
       logo # Logo 
       roles{ # Roles 
+        hackathon {
+          id
+        }
         challenge{ # Challenge 
           id # ID 
         } 
