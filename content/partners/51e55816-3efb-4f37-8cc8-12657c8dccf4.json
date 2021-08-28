@@ -26,6 +26,20 @@
           "subtitle": "Sustainability Partner"
         }
       ]
+    },
+    {
+      "isSponsor": false,
+      "hackathon": "20210724074819",
+      "subtitles": [
+        {
+          "language": "DE",
+          "subtitle": "Nachhaltigkeitspartner"
+        },
+        {
+          "language": "EN",
+          "subtitle": "Sustainability Partner"
+        }
+      ]
     }
   ]
 }
