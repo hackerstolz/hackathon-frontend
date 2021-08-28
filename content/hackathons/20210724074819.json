@@ -22,6 +22,16 @@
     }
   ],
   "from": "1636124437",
+  "mentorIntro": [
+    {
+      "language": "DE",
+      "description": "Damit du immer einen Ansprechpartner hast, der dir bei Fragen zu den unterschiedlichsten Themen zur Seite steht, stellen wir dir ein Bataillon von Mentoren zur Seite. Mehr darüber, wen du hier erwarten kannst, erfährst du in Kürze. Du möchtest selber als Mentor unterstützen? Sehr gerne, [hier](https://drive.google.com/file/d/1sRycFD9quwM6G5victaO4H8F2InsVlgP/view?usp=sharing) ein paar Infos - oder du meldest dich direkt über dieses [Formular](https://forms.gle/wtt5aJroM5aoHDGEA) an."
+    },
+    {
+      "language": "EN",
+      "description": "So that you have a contact person ready to answer questions on a wide variety of topics, we will put a battalion of mentors at your side. Find out more soon who you can expect here. Would you like to support yourself as a mentor? With pleasure, [here](https://drive.google.com/file/d/1sRycFD9quwM6G5victaO4H8F2InsVlgP/view?usp=sharing) you get more information - or you register directly via this [form](https://forms.gle/wtt5aJroM5aoHDGEA)."
+    }
+  ],
   "thumbnail": "/images/uploads/thumbnail-general.jpg",
   "eventPageActive": false,
   "linkCommunity": "cf26d674-bbcd-410a-be81-1ed85ef03f70",
