@@ -9,7 +9,7 @@
       "description": "Online tickets cost 5€ but it is just a no show fee which will be refunded if you attend the event. More information can be found in our FAQ."
     }
   ],
-  "default": false,
+  "default": true,
   "active": true,
   "hashtags": [
     {
