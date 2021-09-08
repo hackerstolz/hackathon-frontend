@@ -1,0 +1,51 @@
+{
+  "date": "1636141198",
+  "hackathon": "20210724074819",
+  "title": "Climathon 2021 - Friday",
+  "slots": [
+    {
+      "from": "1636117200",
+      "titles": [
+        {
+          "language": "DE",
+          "title": "Workshops & Vorträge"
+        }
+      ],
+      "image": "/images/uploads/flat-icon-bulp.svg",
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Wir sind gerade dabei einen Workshop am Freitagnachmittag zu planen und auch Vorträge als Impulsgeber - mehr Infos folgen!"
+        },
+        {
+          "language": "EN",
+          "description": "We are in the process of planning a Friday afternoon workshop as well as keynote presentations - more info to follow!"
+        }
+      ]
+    },
+    {
+      "from": "1636128000",
+      "titles": [
+        {
+          "language": "DE",
+          "title": "Eröffnung"
+        },
+        {
+          "language": "EN",
+          "title": "Welcome"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Ein paar Begrüßungsworte zur Eröffnung des Climathon 2020 Mannheim.\n(Weitere Agenda Punkte folgen)"
+        },
+        {
+          "language": "EN",
+          "description": "A few words of welcome to the opening of the Climathon 2020 Mannheim.\n(More agenda details will follow)"
+        }
+      ],
+      "image": "/images/uploads/flat-icon-schedule-mic.svg"
+    }
+  ]
+}

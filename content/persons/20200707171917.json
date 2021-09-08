@@ -27,6 +27,31 @@
           "description": "He is king of organizing, making the plans and providing structural progress."
         }
       ]
+    },
+    {
+      "title": "Orga 2021",
+      "hackathon": "20210724074819",
+      "role": "76174be1-a179-4d26-abf1-08ff97d7c5a8",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Hackerstolz e.V."
+        },
+        {
+          "language": "EN",
+          "profession": "Hackerstolz e.V."
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Er ist der König der Organisation, der Planung und des strukturellen Fortschritts."
+        },
+        {
+          "language": "EN",
+          "description": "He is king of organizing, making the plans and providing structural progress."
+        }
+      ]
     }
   ]
 }

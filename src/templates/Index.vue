@@ -263,7 +263,7 @@ export default {
 
       for (const partner of allPartners) {
         for (const role of partner.roles) {
-          if (role.isSponsor === false) {
+          if (role.isSponsor === false && role.hackathon.id === this.$page.hackathon.id) {
             allPartnerRoles.push({
               ...partner,
               role: role,
@@ -321,6 +321,7 @@ query ($id: ID!) {
     title # Title 
     default # Default 
     active # Active 
+    canceled
     from # From 
     to # To 
     duration # Duration 
@@ -336,6 +337,14 @@ query ($id: ID!) {
       } 
 			url # URL 
     } 
+    mentorIntro{ # Mentor Intro 
+			language # Language 
+			description # Description 
+		} 
+    priceDescriptions { # Price Descriptions 
+        language # Language 
+        description # Description 
+    }
     linkCommunity { # Community Link 
       id # ID - further fields see Link  
 			name # Name 
@@ -585,6 +594,9 @@ query ($id: ID!) {
       } 
       logo # Logo 
       roles{ # Roles 
+        hackathon {
+          id
+        }
         challenge{ # Challenge 
           id # ID 
         } 

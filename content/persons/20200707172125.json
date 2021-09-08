@@ -27,6 +27,31 @@
           "description": "Our backbone of the city with the tasks of networking the most important parties and ensuring the necessary support of the city for the entire project."
         }
       ]
+    },
+    {
+      "title": "Orga 2021",
+      "hackathon": "20210724074819",
+      "role": "76174be1-a179-4d26-abf1-08ff97d7c5a8",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Stadt Mannheim"
+        },
+        {
+          "language": "EN",
+          "profession": "City of Mannheim"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Unser Rückgrat der Stadt mit der Aufgabe, die wichtigsten Parteien zu vernetzen und die notwendige Unterstützung der Stadt für das gesamte Projekt sicherzustellen."
+        },
+        {
+          "language": "EN",
+          "description": "Our backbone of the city with the tasks of networking the most important parties and ensuring the necessary support of the city for the entire project."
+        }
+      ]
     }
   ]
 }

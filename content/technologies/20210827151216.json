@@ -1,0 +1,26 @@
+{
+  "name": "Z_Platzhalter 2021",
+  "hackathon": "20210724074819",
+  "titles": [
+    {
+      "language": "DE",
+      "title": "Spannende Datensätze und Technologien"
+    },
+    {
+      "language": "EN",
+      "title": "Exciting data sets and technologies"
+    }
+  ],
+  "image": "/images/uploads/flat-icon-stack.svg",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "Spannende Datensätze und Technologien werden demnächst bekannt gegeben!"
+    },
+    {
+      "language": "EN",
+      "description": "Interesting Datasets and Technologies will be announced soon!"
+    }
+  ],
+  "color": "#417505"
+}

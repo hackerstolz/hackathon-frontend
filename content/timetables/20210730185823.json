@@ -1,0 +1,55 @@
+{
+  "date": "1636239600",
+  "title": "Climathon 2021 - Sunday",
+  "slots": [
+    {
+      "from": "1636275600",
+      "titles": [
+        {
+          "language": "DE",
+          "title": "Präsentationen der Lösungen"
+        },
+        {
+          "language": "EN",
+          "title": "Pitches"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Licht aus, Spot an! Hier ist der Teil, wo das Adrenalin auf dem höchsten Punkt ist."
+        },
+        {
+          "language": "EN",
+          "description": "Lights out, spot on! Here is the part where your adrenaline is on the highest point."
+        }
+      ],
+      "image": "/images/uploads/flat-icon-schedule-presentation.svg"
+    },
+    {
+      "from": "1636290000",
+      "titles": [
+        {
+          "language": "EN",
+          "title": "Award Ceremony"
+        },
+        {
+          "language": "DE",
+          "title": "Preisverleihung"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "EN",
+          "description": "Money rain and stuff."
+        },
+        {
+          "language": "DE",
+          "description": "Geldregen und so."
+        }
+      ],
+      "image": "/images/uploads/flat-icon-schedule-award.svg"
+    }
+  ],
+  "hackathon": "20210724074819"
+}

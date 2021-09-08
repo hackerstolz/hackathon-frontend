@@ -60,6 +60,31 @@
           "description": "He keeps an overview and above all calm. Experienced in partner management."
         }
       ]
+    },
+    {
+      "title": "Orga 2021",
+      "hackathon": "20210724074819",
+      "role": "76174be1-a179-4d26-abf1-08ff97d7c5a8",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Hackerstolz e.V."
+        },
+        {
+          "profession": "Hackerstolz e.V.",
+          "language": "EN"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Er behält den Überblick und vor allem die Ruhe. Erfahren im Partner Management."
+        },
+        {
+          "language": "EN",
+          "description": "He keeps an overview and above all calm. Experienced in partner management."
+        }
+      ]
     }
   ]
 }
