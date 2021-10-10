@@ -1,0 +1,31 @@
+{
+  "name": "Marianne Crevon",
+  "salutation": "W",
+  "roles": [
+    {
+      "hackathon": "20210724074819",
+      "role": "d53d2b01-e885-4b5e-b67a-b861e3c1daa5",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Kaufmännische Leiterin, Prokuristin bei der Klimaschutzagentur Mannheim"
+        },
+        {
+          "language": "EN",
+          "profession": "Commercial manager, authorized signatory at the Mannheim Climate Protection Agency"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Marianne Crevon ist Bioinformatik-Ingenieurin und Umweltschutzberaterin und seit 2015 bei der Klimaschutzagentur. Sie setzte bei dem Nutzermotivations-Programm „FlurfunkE“ und in der Umweltbildung ihre Akzente in der Arbeit der Klimaschutzagentur. Als Projektmanagerin führte sie das Projekt \"Spar dir dein Auto\" durch und organisierte regelmäßig öffentlichkeitswirksame Aktionen. 2018 bildet sie sich als Energieberaterin weiter. Seit Januar 2019 übernimmt sie die kaufmännische Leitung der Agentur und leitet das landesgeförderte Projekt Photovoltaik-Netzwerke."
+        },
+        {
+          "language": "EN",
+          "description": "Marianne Crevon is a bioinformatics engineer and environmental protection consultant and has been with the Climate Protection Agency since 2015. She set her accents in the work of the Climate Protection Agency with the user motivation program \"FlurfunkE\" and in environmental education. As project manager, she implemented the project \"Save your car\" and regularly organized high-profile campaigns. In 2018, she is continuing her education as an energy consultant. Since January 2019, she has taken over the commercial management of the agency and manages the state-funded project Photovoltaic Networks.\n"
+        }
+      ],
+      "title": "Judge"
+    }
+  ]
+}
