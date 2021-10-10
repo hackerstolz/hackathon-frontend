@@ -1,0 +1,31 @@
+{
+  "name": "Prof. Kirstin Kohler ",
+  "salutation": "W",
+  "roles": [
+    {
+      "title": "Jury 2021",
+      "hackathon": "20210724074819",
+      "role": "d53d2b01-e885-4b5e-b67a-b861e3c1daa5",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Professorin an der Hochschule Mannheim in der Fakultät für Informatik"
+        },
+        {
+          "language": "EN",
+          "profession": "Professor at the Mannheim University of Applied Sciences at the Faculty of Computer Science"
+        }
+      ],
+      "descriptions": [
+        {
+          "description": "Prof. Kirstin Kohler ist Expertin in den Fachgebieten rund um User Experience Design/Interaction Design, Design Thinking/Menschzentrierte Innovation und Prototyping. \nSie ist Gründungsmitglied des „German Chapters der Usability Professionals Association“. Seit 2008 organisiert sie jährlich den WUD Mannheim. 2015 findet dieser unter neuem Namen als UX-Day Mannheim (ux-day.de) statt. \nAußerdem leitet sie den Innovation-Hub und Makerspace der Hochschule \"inno.space - Design Factory Mannheim\".",
+          "language": "DE"
+        },
+        {
+          "language": "EN",
+          "description": "Prof. Kirstin Kohler is an expert in the fields of user experience design/interaction design, design thinking/human-centered innovation, and prototyping. \nShe is a founding member of the German Chapter of the Usability Professionals Association. Since 2008 she organizes the annual WUD Mannheim. In 2015, this will take place under a new name as UX-Day Mannheim (ux-day.de). \nShe also manages the university's innovation hub and makerspace \"inno.space - Design Factory Mannheim\"."
+        }
+      ]
+    }
+  ]
+}
