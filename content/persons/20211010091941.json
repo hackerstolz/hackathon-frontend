@@ -1,0 +1,32 @@
+{
+  "name": "Dr. Lilli Leirich ",
+  "salutation": "W",
+  "roles": [
+    {
+      "title": "Jury 2021",
+      "hackathon": "20210724074819",
+      "challenge": "",
+      "role": "d53d2b01-e885-4b5e-b67a-b861e3c1daa5",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Leitung DHPRENEUR, Initiatorin MAWOMEN, Gründerin NOX-Euer Proberaum bei S-HUB Mannhein"
+        },
+        {
+          "language": "EN",
+          "profession": "Director DHPRENEUR, Initiator MAWOMEN, Founder NOX-Euer rehearsal room at S-HUB Mannhein"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Dr. Lilli Leirich gestaltet aktiv im S-Hub Mannheim mit. Der S-Hub ist Zuhause für Changemaker in der Metropolregion Rhein-Neckar. Sie gibt damit Studierenden, Angestellten, Startups und Freiberuflern mit sozial und kulturell innovativen Ambitionen den Raum, gemeinschaftlich zu wirken und sich weiterzuentwickeln."
+        },
+        {
+          "language": "EN",
+          "description": "Dr. Lilli Leirich is actively involved in shaping the S-Hub Mannheim. The S-Hub is home to changemakers in the Rhine-Neckar metropolitan region. It gives students, employees, startups and freelancers with socially and culturally innovative ambitions the space to work together and develop further."
+        }
+      ]
+    }
+  ]
+}
