@@ -52,6 +52,31 @@
           "description": "She supports many environmental projects, knows a lot of useful details and is bubbling over with ideas."
         }
       ]
+    },
+    {
+      "title": "Speaker 2021",
+      "hackathon": "20210724074819",
+      "role": "1dcafdb8-4816-48e3-86a6-0820577f5e3d",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Klimaschutzagentur Mannheim gGmbh"
+        },
+        {
+          "language": "EN",
+          "profession": "Cimate Protection Agency Mannheim gGmbH"
+        }
+      ],
+      "talkTitles": [
+        {
+          "language": "DE",
+          "talkTitle": "Klima-Café"
+        },
+        {
+          "language": "EN",
+          "talkTitle": "Climate-Café"
+        }
+      ]
     }
   ]
 }
