@@ -12,7 +12,7 @@
         flexbox
         wrap
       >
-        <!-- Climate KIC VIDEO -->
+        <!-- Climate KIC VIDEO 
         <iframe
           class="mb-4 mr-4"
           style="border-radius: 8px;"
@@ -22,7 +22,13 @@
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        ></iframe>
+        ></iframe> -->
+        
+        <video src="https://drive.google.com/file/d/1JYmuHglQd5KOKJvVC6VkBOjEi4PIZHAq/view?usp=sharing">
+          Sorry, your browser doesn't support embedded videos,
+          but don't worry, you can <a href="https://drive.google.com/file/d/1JYmuHglQd5KOKJvVC6VkBOjEi4PIZHAq/view?usp=sharing">download it</a>
+          and watch it with your favorite video player!
+        </video>
 
         <iframe
           class="mb-4 mr-4"
