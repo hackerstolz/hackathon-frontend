@@ -1,0 +1,32 @@
+{
+  "name": "Michael Grötsch",
+  "salutation": "M",
+  "image": "/images/uploads/grötsch.jpg",
+  "roles": [
+    {
+      "hackathon": "20210724074819",
+      "role": "76174be1-a179-4d26-abf1-08ff97d7c5a8",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Bürgermeister der Stadt Mannheim für Wirtschaft, Arbeit, Soziales und Kultur "
+        },
+        {
+          "language": "EN",
+          "profession": "Mayor of the City of Mannheim for Economy, Labor, Social Affairs and Culture "
+        }
+      ],
+      "title": "Bürgermeister der Stadt Mannheim für Wirtschaft, Arbeit, Soziales und Kultur ",
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Michael Grötsch ist seit März 2008 Bürgermeister der Stadt Mannheim für Wirtschaft, Arbeit, Soziales und Kultur. Das Dezernat – damals aus einem Modernisierungsprozess der Stadtverwaltung Mannheim hervorgegangen – vereint zentrale strategische Potenziale Mannheims. In diesem Zusammenhang wurde 2010 eine neue wirtschaftspolitische Strategie auf den Weg gebracht, um Mannheim als führenden Wirtschafts- und Industriestandort noch besser zu positionieren. Diese Strategie wird stetig weiterentwickelt. Ein Beispiel dafür sind die regionalen Kompetenzfelder Energie(-effizienz) und Umwelt, die Themen wie den Climathon auf die Agenda nehmen."
+        },
+        {
+          "language": "EN",
+          "description": "Michael Grötsch has been Mayor of the City of Mannheim for Economic Affairs, Labor, Social Affairs and Culture since March 2008. The department - which at the time emerged from a modernization process of the Mannheim city administration - combines central strategic potentials of Mannheim. In this context, a new economic policy strategy was launched in 2010 to position Mannheim even better as a leading business and industrial location. This strategy is constantly being developed further. One example of this is the regional competence fields of energy (efficiency) and the environment, which include topics such as the Climathon on the agenda.\n"
+        }
+      ]
+    }
+  ]
+}

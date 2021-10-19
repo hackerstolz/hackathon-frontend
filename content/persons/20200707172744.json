@@ -52,6 +52,41 @@
           "description": "She supports many environmental projects, knows a lot of useful details and is bubbling over with ideas."
         }
       ]
+    },
+    {
+      "title": "Speaker 2021",
+      "hackathon": "20210724074819",
+      "role": "1dcafdb8-4816-48e3-86a6-0820577f5e3d",
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Klimaschutzagentur Mannheim gGmbh"
+        },
+        {
+          "language": "EN",
+          "profession": "Cimate Protection Agency Mannheim gGmbH"
+        }
+      ],
+      "talkTitles": [
+        {
+          "language": "DE",
+          "talkTitle": "Workshop: Klima-Café"
+        },
+        {
+          "language": "EN",
+          "talkTitle": "Workshop: Climate-Café"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "„Den Klimawandel gibt es doch schon immer.“ „Was Klimaschützer:innen fordern ist absoluter Wahnsinn.“ Diesen und weiteren Behauptungen gehen wir im Online-Seminar „Klima-Café“ auf den Grund. Dabei steht nicht eine einseitige Darstellung von Fakten und Hintergrundwissen im Fokus. Vielmehr erarbeitest du die Themen Klimawandel, Klimagerechtigkeit und Klimaschutz mit anderen Teilnehmenden in verschiedenen interaktiven Methoden. Dazu gehört auch  deine persönliche Klimabilanz und mit welchen Maßnahmen sich diese reduzieren lässt. "
+        },
+        {
+          "language": "EN",
+          "description": "\"Climate change has always existed.\" \"What climate activists are calling for is absolute madness.\" In the online seminar \"Climate Café\", we get to the bottom of these and other claims. The focus is not on a one-sided presentation of facts and background knowledge. Instead, you will work on the topics of climate change, climate justice and climate protection with other participants using various interactive methods. This also includes your personal climate footprint and the measures you can take to reduce it. "
+        }
+      ]
     }
   ]
 }
