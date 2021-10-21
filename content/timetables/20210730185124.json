@@ -83,7 +83,8 @@
           "description": "A few words of welcome to the opening of the Climathon 2021 Mannheim by mayor Michael Grötsch.\n"
         }
       ],
-      "image": "/images/uploads/flat-icon-schedule-mic.svg"
+      "image": "/images/uploads/flat-icon-schedule-mic.svg",
+      "speaker": "20211015093235"
     }
   ]
 }
