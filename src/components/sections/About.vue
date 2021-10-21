@@ -24,7 +24,8 @@
           allowfullscreen
         ></iframe> -->
         
-        <video 
+        <video
+          controls
           class="mb-4 mr-4"
           style="border-radius: 8px;"
           width="374"
