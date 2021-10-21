@@ -24,7 +24,13 @@
           allowfullscreen
         ></iframe> -->
         
-        <video src="https://climathon-beta.hackerstolz.de/images/uploads/climathon-opening-video-short-2021.mp4">
+        <video 
+          class="mb-4 mr-4"
+          style="border-radius: 8px;"
+          width="374"
+          height="210"
+          src="https://climathon-beta.hackerstolz.de/images/uploads/climathon-opening-video-short-2021.mp4"
+        >
           Sorry, your browser doesn't support embedded videos,
           but don't worry, you can <a href="https://climathon-beta.hackerstolz.de/images/uploads/climathon-opening-video-short-2021.mp4">download it</a>
           and watch it with your favorite video player!
