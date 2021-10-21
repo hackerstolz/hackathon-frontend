@@ -24,9 +24,9 @@
           allowfullscreen
         ></iframe> -->
         
-        <video src="https://drive.google.com/file/d/1JYmuHglQd5KOKJvVC6VkBOjEi4PIZHAq/view?usp=sharing">
+        <video src="https://climathon-beta.hackerstolz.de/images/uploads/climathon-opening-video-short-2021.mp4">
           Sorry, your browser doesn't support embedded videos,
-          but don't worry, you can <a href="https://drive.google.com/file/d/1JYmuHglQd5KOKJvVC6VkBOjEi4PIZHAq/view?usp=sharing">download it</a>
+          but don't worry, you can <a href="https://climathon-beta.hackerstolz.de/images/uploads/climathon-opening-video-short-2021.mp4">download it</a>
           and watch it with your favorite video player!
         </video>
 
