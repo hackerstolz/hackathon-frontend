@@ -26,6 +26,16 @@
           "language": "EN",
           "description": "Michael Grötsch has been Mayor of the City of Mannheim for Economic Affairs, Labor, Social Affairs and Culture since March 2008. "
         }
+      ],
+      "talkTitles": [
+        {
+          "language": "DE",
+          "talkTitle": "Eröffnung des Climathon 2021 Mannheim"
+        },
+        {
+          "language": "EN",
+          "talkTitle": "Opening the Climathon 2021 Mannheim"
+        }
       ]
     }
   ]
