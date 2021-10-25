@@ -17,7 +17,17 @@
           "talkTitle": "Workshop: Using method to move from grand challenges to concrete solution ideas - A hand-on introduction to creative problem-solving processes"
         }
       ],
-      "timeslots": []
+      "timeslots": [],
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Professorin an der Hochschule Mannheim in der Fakultät für Informatik"
+        },
+        {
+          "profession": "Professor at the Mannheim University of Applied Sciences at the Faculty of Computer Science ",
+          "language": "EN"
+        }
+      ]
     }
   ]
 }
