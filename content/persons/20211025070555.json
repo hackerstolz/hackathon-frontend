@@ -1,0 +1,43 @@
+{
+  "name": "Prof. Kirstin Kohler & Team",
+  "salutation": "W",
+  "image": "/images/uploads/kirstin-kohler.png",
+  "roles": [
+    {
+      "title": "Speaker",
+      "hackathon": "20210724074819",
+      "role": "1dcafdb8-4816-48e3-86a6-0820577f5e3d",
+      "talkTitles": [
+        {
+          "language": "DE",
+          "talkTitle": "Workshop: Mit Methode von großen Herausforderungen zu konkreten Lösungsideen - Eine hand-on Einführung in kreative Problemlösungsprozesse"
+        },
+        {
+          "language": "EN",
+          "talkTitle": "Workshop: Using method to move from grand challenges to concrete solution ideas - A hand-on introduction to creative problem-solving processes"
+        }
+      ],
+      "timeslots": [],
+      "professions": [
+        {
+          "language": "DE",
+          "profession": "Professorin an der Hochschule Mannheim in der Fakultät für Informatik"
+        },
+        {
+          "profession": "Professor at the Mannheim University of Applied Sciences at the Faculty of Computer Science ",
+          "language": "EN"
+        }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Prof. Kirstin Kohler wird gemeinsam mit ihrem Team durch den Workshop führen."
+        },
+        {
+          "language": "EN",
+          "description": "Prof. Kirstin Kohler will lead the workshop together with her team."
+        }
+      ]
+    }
+  ]
+}

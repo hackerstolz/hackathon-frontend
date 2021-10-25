@@ -18,47 +18,12 @@
       ],
       "descriptions": [
         {
-          "description": "Prof. Kirstin Kohler ist Expertin in den Fachgebieten rund um User Experience Design/Interaction Design, Design Thinking/Menschzentrierte Innovation und Prototyping. \nSie ist Gründungsmitglied des „German Chapters der Usability Professionals Association“. Seit 2008 organisiert sie jährlich den WUD Mannheim. 2015 findet dieser unter neuem Namen als UX-Day Mannheim (ux-day.de) statt. \nAußerdem leitet sie den Innovation-Hub und Makerspace der Hochschule \"inno.space - Design Factory Mannheim\".",
+          "description": "Prof. Kirstin Kohler ist Expertin in den Fachgebieten rund um User Experience Design/Interaction Design, Design Thinking/Menschzentrierte Innovation und Prototyping. Sie ist Gründungsmitglied des „German Chapters der Usability Professionals Association“. Außerdem leitet sie den Innovation-Hub und Makerspace der Hochschule \"inno.space - Design Factory Mannheim\".",
           "language": "DE"
         },
         {
           "language": "EN",
-          "description": "Prof. Kirstin Kohler is an expert in the fields of user experience design/interaction design, design thinking/human-centered innovation, and prototyping. \nShe is a founding member of the German Chapter of the Usability Professionals Association. Since 2008 she organizes the annual WUD Mannheim. In 2015, this will take place under a new name as UX-Day Mannheim (ux-day.de). \nShe also manages the university's innovation hub and makerspace \"inno.space - Design Factory Mannheim\"."
-        }
-      ]
-    },
-    {
-      "title": "Speaker 2021",
-      "hackathon": "20210724074819",
-      "role": "1dcafdb8-4816-48e3-86a6-0820577f5e3d",
-      "talkTitles": [
-        {
-          "language": "DE",
-          "talkTitle": "Workshop: Mit Methode von großen Herausforderungen zu konkreten Lösungsideen - Eine hand-on Einführung in kreative Problemlösungsprozesse"
-        },
-        {
-          "language": "EN",
-          "talkTitle": "Workshop: Using method to move from grand challenges to concrete solution ideas - A hand-on introduction to creative problem-solving processes."
-        }
-      ],
-      "professions": [
-        {
-          "language": "DE",
-          "profession": "Professorin an der Hochschule Mannheim in der Fakultät für Informatik"
-        },
-        {
-          "language": "EN",
-          "profession": "Professor at the Mannheim University of Applied Sciences at the Faculty of Computer Science"
-        }
-      ],
-      "descriptions": [
-        {
-          "language": "DE",
-          "description": "Prof. Kirstin Kohler ist Expertin in den Fachgebieten rund um User Experience Design/Interaction Design, Design Thinking/Menschzentrierte Innovation und Prototyping. \nSie ist Gründungsmitglied des „German Chapters der Usability Professionals Association“. Seit 2008 organisiert sie jährlich den WUD Mannheim. 2015 findet dieser unter neuem Namen als UX-Day Mannheim (ux-day.de) statt. \nAußerdem leitet sie den Innovation-Hub und Makerspace der Hochschule \"inno.space - Design Factory Mannheim\"."
-        },
-        {
-          "description": "Prof. Kirstin Kohler is an expert in the fields of user experience design/interaction design, design thinking/human-centered innovation, and prototyping. \nShe is a founding member of the German Chapter of the Usability Professionals Association. Since 2008 she organizes the annual WUD Mannheim. In 2015, this will take place under a new name as UX-Day Mannheim (ux-day.de). \nShe also manages the university's innovation hub and makerspace \"inno.space - Design Factory Mannheim\".",
-          "language": "EN"
+          "description": "Prof. Kirstin Kohler is an expert in the fields of user experience design/interaction design, design thinking/human-centered innovation, and prototyping. She is a founding member of the German Chapter of the Usability Professionals Association. She also manages the university's innovation hub and makerspace \"inno.space - Design Factory Mannheim\"."
         }
       ]
     }
