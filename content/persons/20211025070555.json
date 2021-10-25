@@ -1,0 +1,13 @@
+{
+  "name": "Prof. Kirstin Kohler & Team",
+  "salutation": "W",
+  "image": "/images/uploads/kirstin-kohler.png",
+  "roles": [
+    {
+      "title": "Speaker",
+      "hackathon": "20210724074819",
+      "role": "1dcafdb8-4816-48e3-86a6-0820577f5e3d",
+      "talkTitles": []
+    }
+  ]
+}
