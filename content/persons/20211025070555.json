@@ -7,7 +7,17 @@
       "title": "Speaker",
       "hackathon": "20210724074819",
       "role": "1dcafdb8-4816-48e3-86a6-0820577f5e3d",
-      "talkTitles": []
+      "talkTitles": [
+        {
+          "language": "DE",
+          "talkTitle": "Workshop: Mit Methode von großen Herausforderungen zu konkreten Lösungsideen - Eine hand-on Einführung in kreative Problemlösungsprozesse"
+        },
+        {
+          "language": "EN",
+          "talkTitle": "Workshop: Using method to move from grand challenges to concrete solution ideas - A hand-on introduction to creative problem-solving processes"
+        }
+      ],
+      "timeslots": []
     }
   ]
 }
