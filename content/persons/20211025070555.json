@@ -27,6 +27,16 @@
           "profession": "Professor at the Mannheim University of Applied Sciences at the Faculty of Computer Science ",
           "language": "EN"
         }
+      ],
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Prof. Kirstin Kohler wird gemeinsam mit ihrem Team durch den Workshop führen."
+        },
+        {
+          "language": "EN",
+          "description": "Prof. Kirstin Kohler will lead the workshop together with her team."
+        }
       ]
     }
   ]
