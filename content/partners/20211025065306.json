@@ -1,0 +1,20 @@
+{
+  "roles": [
+    {
+      "isSponsor": false,
+      "hackathon": "20210724074819"
+    }
+  ],
+  "nameInternal": "inno.space",
+  "names": [
+    {
+      "language": "DE",
+      "name": "inno.space"
+    },
+    {
+      "language": "EN",
+      "name": "inno.space"
+    }
+  ],
+  "logo": "/images/uploads/inno.space.jpg"
+}
