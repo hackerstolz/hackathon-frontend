@@ -2,11 +2,11 @@
   "priceDescriptions": [
     {
       "language": "DE",
-      "description": "Das Online-Ticket kostet 5€ - es handelt sich aber nur um eine No-Show-Fee die bei Teilnahme erstattet wird! Weiter Informationen findest du in unserem FAQ."
+      "description": "LEIDER ABGESAGT - wir sehen dich hoffentlich nächstes Jahr!"
     },
     {
       "language": "EN",
-      "description": "Online tickets cost 5€ but it is just a no show fee which will be refunded if you attend the event. More information can be found in our FAQ."
+      "description": "Unfortunately the Climathon 2021 Mannheim is CANCELED. See you next year! "
     }
   ],
   "default": true,
